@@ -3,10 +3,5 @@ title: How to make spaghetti
 ---
 # How to make spaghetti
 
-# Massive spaghetti title (1 `#`)
-## Huge spaghetti title (2 `#`s)
-### Big spaghetti title (3 `#`s)
-#### Normal spaghetti title (4 `#`s)
-##### Small spaghetti title (5 `#`s)
-###### Tiny spaghetti title (6 `#`s)
-####### Not a spaghetti title (7 `#`s)
+This is what spaghetti looks like:
+![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/spaghetti.jpg)
