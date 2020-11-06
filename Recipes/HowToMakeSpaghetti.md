@@ -1,7 +1,8 @@
 ---
-title: How to make spaghetti
+title: How to Make Spaghetti
+tags: recipes
 ---
-# How to make spaghetti
+# How to Make Spaghetti
 
 # Massive spaghetti title (1 `#`)
 ## Huge spaghetti title (2 `#`s)

@@ -1,8 +1,9 @@
 ---
-title: How to prepare ramen
+title: How to Prepare Ramen
+tags: recipes
 ---
 
-# How to enjoy ramen (as you can see this can be whatever you want, does not need to match the `title`)
+# How to Enjoy Ramen (as you can see this can be whatever you want, does not need to match the `title`)
 
 Instant ramen tastes good, so I'll emphasize is with italics. *Instant ramen tastes good!!!*
 
