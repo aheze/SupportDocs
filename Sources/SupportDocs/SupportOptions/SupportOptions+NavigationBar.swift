@@ -14,6 +14,22 @@ public extension SupportOptions {
      */
     struct NavigationBar {
         
+        public init(
+            title: String = "Support",
+            titleColor: UIColor = UIColor.black,
+            dismissButtonTitle: String? = nil,
+            buttonTintColor: UIColor? = nil,
+            backgroundColor: UIColor? = nil,
+            backgroundImage: UIImage? = nil
+        ) {
+            self.title = title
+            self.titleColor = titleColor
+            self.dismissButtonTitle = dismissButtonTitle
+            self.buttonTintColor = buttonTintColor
+            self.backgroundColor = backgroundColor
+            self.backgroundImage = backgroundImage
+        }
+        
         /**
          The title to show at the top of the screen
          */

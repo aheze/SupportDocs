@@ -19,23 +19,6 @@ public extension SupportOptions {
         case insetGroupedListStyle
         case insetListStyle
         case sidebarListStyle
-        
-        func getString() -> String {
-            switch self {
-            case .defaultListStyle:
-                return "DefaultListStyle"
-            case .plainListStyle:
-                return "PlainListStyle"
-            case .groupedListStyle:
-                return "GroupedListStyle"
-            case .insetGroupedListStyle:
-                return "InsetGroupedListStyle"
-            case .insetListStyle:
-                return "InsetListStyle"
-            case .sidebarListStyle:
-                return "SidebarListStyle"
-            }
-        }
     }
 }
 

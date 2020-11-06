@@ -14,6 +14,14 @@ public extension SupportOptions {
      */
     struct Other {
         
+        public init(
+            activityIndicatorStyle: UIActivityIndicatorView.Style = .medium,
+            footer: AnyView? = nil
+        ) {
+            self.activityIndicatorStyle = activityIndicatorStyle
+            self.footer = footer
+        }
+        
         /**
          The style of the activity indicator, shown when the JSON is being downloaded
          */
@@ -23,18 +31,5 @@ public extension SupportOptions {
          A custom `View` you can add to the bottom of the list
          */
         var footer: AnyView? = nil
-    }
-}
-
-extension UIActivityIndicatorView.Style {
-    func getString() -> String {
-        switch self {
-        case .medium:
-            return "Medium"
-        case .large:
-            return "Large"
-        default:
-            return "Unknown Style"
-        }
     }
 }

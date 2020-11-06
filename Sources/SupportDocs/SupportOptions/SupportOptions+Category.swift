@@ -31,6 +31,16 @@ public extension SupportOptions {
      */
     struct Category {
         
+        public init(
+            jsonTagNames: [String],
+            displayName: String,
+            displayColor: UIColor = UIColor.label
+        ) {
+            self.jsonTagNames = jsonTagNames
+            self.displayName = displayName
+            self.displayColor = displayColor
+        }
+        
         /**
          Determines which `tag`s this category should include
          
@@ -54,7 +64,7 @@ public extension SupportOptions {
         /**
          The color of the row in the `List`
          */
-        var displayColor: UIColor
+        var displayColor: UIColor = UIColor.label
         
     }
     

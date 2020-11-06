@@ -14,6 +14,14 @@ public extension SupportOptions {
      */
     struct ProgressBar {
         
+        public init(
+            foregroundColor: UIColor = UIColor.systemBlue,
+            backgroundColor: UIColor = UIColor.secondarySystemBackground
+        ) {
+            self.foregroundColor = foregroundColor
+            self.backgroundColor = backgroundColor
+        }
+        
         /**
          Color of the moving part of the progress bar
          */
