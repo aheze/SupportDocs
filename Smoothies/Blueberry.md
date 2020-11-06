@@ -4,7 +4,7 @@ title: Blueberry smoothie
 
 # Blueberry smoothie
 
-Smoothies taste great! What is your favorite smoothie?
+Blueberry smoothies taste great! What is your favorite smoothie?
 
 Apple | Blueberry | Peach | Plum | Red Berry
 --- | --- | --- | --- | ---
