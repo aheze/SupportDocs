@@ -1,3 +1,3 @@
-# SupportDocs
+<img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SupportDocs.png" height="80">
 
-A description of this package.
+Generate help centers for your iOS apps, using GitHub Pages.
