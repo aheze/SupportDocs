@@ -8,12 +8,12 @@
 
 import SwiftUI
 
-struct SupportDocsView: View {
+public struct SupportDocsView: View {
     
     /**
      Options used for configuring SupportDocs. `urls.dataSource` is required, everything else is optional (mostly for changing the SupportDocs' appearance).
      */
-    let options: SupportOptions
+    public let options: SupportOptions
     
     /**
      The Binding that you use to present SupportDocs in SwiftUI. Required if you want a "Done" button.
@@ -37,29 +37,29 @@ struct SupportDocsView: View {
      # In UIKit:
      You don't need to do this in UIKit. As long as you set `options.navigationBar.dismissButtonTitle = "Dismiss"`, SupportDocs will dismiss itself.
      */
-    var isPresented: Binding<Bool>?
+    public var isPresented: Binding<Bool>?
     
     /**
      The dismiss button handler for UIKit. This is automatically passed in by `SupportDocsViewController`, you don't access this property.
      */
-    var donePressed: (() -> Void)?
+    internal var donePressed: (() -> Void)?
     
     /**
      The documents decoded from the JSON
      */
-    @State var documents: [JSONSupportDocument] = [JSONSupportDocument]()
+    @State internal var documents: [JSONSupportDocument] = [JSONSupportDocument]()
     
     /**
      If the JSON is downloading, display the loading spinner
      */
-    @State var isDownloadingJSON = true
+    @State internal var isDownloadingJSON = true
     
     /**
      The data from the JSON is sorted into this, based on how you configured `options.categories`. The list that displays your documents' titles gets it data from here.
      */
-    @State var sections: [SupportSection] = [SupportSection]()
+    @State internal var sections: [SupportSection] = [SupportSection]()
     
-    var body: some View {
+    public var body: some View {
         NavigationView {
             Group {
                 if isDownloadingJSON {

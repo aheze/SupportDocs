@@ -17,7 +17,7 @@ import SwiftUI
  - `listStyle` - the style of the `List`.
  - `other` - set the activity indicator size and a custom footer view.
  */
-struct SupportOptions {
+public struct SupportOptions {
     var urls = URLs()
     var categories: [Category]?
     var navigationBar = NavigationBar()

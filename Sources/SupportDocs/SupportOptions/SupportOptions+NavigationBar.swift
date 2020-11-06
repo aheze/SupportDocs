@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension SupportOptions {
+public extension SupportOptions {
     
     /**
      Customize the appearance of the Navigation Bar

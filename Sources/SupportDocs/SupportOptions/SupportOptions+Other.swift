@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension SupportOptions {
+public extension SupportOptions {
     
     /**
      Options for the progress bar color

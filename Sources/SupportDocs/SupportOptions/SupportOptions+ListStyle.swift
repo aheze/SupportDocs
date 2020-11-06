@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension SupportOptions {
+public extension SupportOptions {
     
     /**
      Enum wrapper for `ListStyle`

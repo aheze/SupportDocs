@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension SupportOptions {
+public extension SupportOptions {
     
     /**
      A group of `Documents` to be displayed as a section inside the `List`

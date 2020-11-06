@@ -11,20 +11,20 @@ import SwiftUI
 /**
  UIKit wrapper for `SupportDocsView`
  */
-class SupportDocsViewController: UIViewController {
+public class SupportDocsViewController: UIViewController {
     
-    var options: SupportOptions
+    public var options: SupportOptions
     
-    init(options: SupportOptions) {
+    public init(options: SupportOptions) {
         self.options = options
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
+    public override func loadView() {
         
         /**
          Instantiate the base `view`

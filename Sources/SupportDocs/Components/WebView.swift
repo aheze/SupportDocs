@@ -13,7 +13,7 @@ import WebKit
  
  This is presented when a cell is tapped (in the main page)
 */
-struct WebViewContainer: View {
+internal struct WebViewContainer: View {
     
     /// URL to load
     var url: URL
@@ -70,7 +70,7 @@ struct WebViewContainer: View {
  # Source
  https://medium.com/macoclock/how-to-use-webkit-webview-in-swiftui-4b944d04190a
  */
-class WebViewStateModel: ObservableObject {
+internal class WebViewStateModel: ObservableObject {
     @Published var pageTitle: String = "Web View"
     @Published var progress: Float = 0
     @Published var estimatedProgressObserver: NSKeyValueObservation?
@@ -84,7 +84,7 @@ class WebViewStateModel: ObservableObject {
  
  Made possible with `UIViewRepresentable` and the `WebViewStateModel: ObservableObject` for delegate callback
  */
-struct WebView: View {
+internal struct WebView: View {
      enum NavigationAction {
            case decidePolicy(WKNavigationAction,  (WKNavigationActionPolicy) -> Void)
            case didStartProvisionalNavigation(WKNavigation)
@@ -113,7 +113,7 @@ struct WebView: View {
 /**
  WKWebView ported over to SwiftUI with `UIViewRepresentable`
  */
-final class WebViewWrapper: UIViewRepresentable {
+internal final class WebViewWrapper: UIViewRepresentable {
     
     /// Port the `WKNavigationDelegate` delegate over to SwiftUI
     @ObservedObject var webViewStateModel: WebViewStateModel

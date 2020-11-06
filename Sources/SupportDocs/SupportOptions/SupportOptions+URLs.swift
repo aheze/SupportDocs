@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension SupportOptions {
+public extension SupportOptions {
     
     /**
      `URL`s of the data source JSON and a custom 404 error page.

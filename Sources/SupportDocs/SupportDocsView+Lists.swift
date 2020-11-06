@@ -10,7 +10,7 @@ import SwiftUI
 /**
  Each section in the List
  */
-struct SupportSection: Identifiable {
+internal struct SupportSection: Identifiable {
     let id = UUID() /// Required for the List
     
     var name: String
@@ -21,7 +21,7 @@ struct SupportSection: Identifiable {
 /**
  Each item in a section in the List
  */
-struct SupportItem: Identifiable {
+internal struct SupportItem: Identifiable {
     let id = UUID() /// Required for the List
     
     var title: String
@@ -33,7 +33,7 @@ struct SupportItem: Identifiable {
  
  Think of this as the `Cell` class for `cellForItemAt` if this was UIKit
  */
-struct SupportItemRow: View {
+internal struct SupportItemRow: View {
     
     /**
      Title of the document
@@ -76,7 +76,7 @@ struct SupportItemRow: View {
  
  SupportDocs uses a custom enum (`SupportOptions.CustomListStyle`) that wraps SwiftUI's `ListStyle`. This is because `ListStyle` conforms to a generic, which makes it hard to store as a property inside `SupportOptions`.
  */
-extension List {
+internal extension List {
     @ViewBuilder
     func listStyle(for customListStyle: SupportOptions.CustomListStyle) -> some View {
         switch customListStyle {

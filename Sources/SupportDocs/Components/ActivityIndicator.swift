@@ -12,7 +12,7 @@ import SwiftUI
  
  Source: [https://stackoverflow.com/a/56496896/14351818](https://stackoverflow.com/a/56496896/14351818)
  */
-struct ActivityIndicator: UIViewRepresentable {
+internal struct ActivityIndicator: UIViewRepresentable {
 
     @Binding var isAnimating: Bool
     let style: UIActivityIndicatorView.Style

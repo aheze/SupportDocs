@@ -18,7 +18,7 @@ import SwiftUI
  # Source
  https://www.simpleswiftguide.com/how-to-build-linear-progress-bar-in-swiftui/
 */
-struct ProgressBar: View {
+internal struct ProgressBar: View {
     
     /// From 0.0 to 1.0
     @Binding var value: Float

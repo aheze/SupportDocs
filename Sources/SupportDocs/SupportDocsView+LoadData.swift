@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-extension SupportDocsView {
+internal extension SupportDocsView {
     
     /**
      Load the JSON

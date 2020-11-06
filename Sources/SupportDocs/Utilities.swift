@@ -12,7 +12,7 @@ import SwiftUI
  
  Source: [https://stackoverflow.com/a/58427754/14351818](https://stackoverflow.com/a/58427754/14351818)
  */
-struct NavigationConfigurator: UIViewControllerRepresentable {
+internal struct NavigationConfigurator: UIViewControllerRepresentable {
     var configure: (UINavigationController) -> Void = { _ in }
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
@@ -30,7 +30,7 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
  
  Source: [https://stackoverflow.com/a/57685253/14351818](https://stackoverflow.com/a/57685253/14351818)
  */
-extension View {
+internal extension View {
    @ViewBuilder
    func ifConditional<Content: View>(_ conditional: Bool, content: (Self) -> Content) -> some View {
         if conditional {
@@ -42,7 +42,7 @@ extension View {
 }
 
 
-extension View {
+internal extension View {
     @ViewBuilder
     func displayTextAsConfigured() -> some View {
         if #available(iOS 14, *) {
