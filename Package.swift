@@ -5,17 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "SupportDocs",
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "SupportDocs",
-            targets: ["SupportDocs"]),
-        .library(
-            name: "ReusableButton",
-            targets: ["ReusableButton"]),
-        .library(
-            name: "ReusableSlider",
-            targets: ["ReusableSlider"])
+            targets: ["SupportDocs"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -27,15 +24,6 @@ let package = Package(
         .target(
             name: "SupportDocs",
             dependencies: []),
-        
-        .target(
-            name: "ReusableButton",
-            dependencies: []
-        ),
-        .target(
-            name: "ReusableSlider",
-            dependencies: []
-        ),
         .testTarget(
             name: "SupportDocsTests",
             dependencies: ["SupportDocs"])
