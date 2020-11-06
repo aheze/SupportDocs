@@ -13,8 +13,9 @@ public struct SupportDocsView: View {
     /**
      Allow instantiating `SupportDocsView` in your app
      */
-    public init(options: SupportOptions) {
+    public init(options: SupportOptions, isPresented: Binding<Bool>? = nil) {
         self.options = options
+        self.isPresented = isPresented
     }
     
     /**

@@ -13,8 +13,6 @@ import SwiftUI
  */
 public class SupportDocsViewController: UIViewController {
     
-    public var options: SupportOptions
-    
     /**
      Allow instantiating `SupportDocsView` in your app
      */
@@ -26,6 +24,8 @@ public class SupportDocsViewController: UIViewController {
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    public var options: SupportOptions
     
     public override func loadView() {
         
