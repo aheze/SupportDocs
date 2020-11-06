@@ -1,8 +1,8 @@
 ---
-title: How to make ramen
+title: How to prepare ramen
 ---
 
-# How to make ramen
+# How to enjoy ramen (as you can see this can be whatever you want, does not need to match the `title`)
 
 Instant ramen tastes good, so I'll emphasize is with italics. *Instant ramen tastes good!!!*
 
