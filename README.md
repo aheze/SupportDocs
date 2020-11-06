@@ -1,3 +1,3 @@
-<img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SupportDocs.png" height="80">
+<img src="Assets/SupportDocs.png?raw=true" height="80">
 
 Generate help centers for your iOS apps, using GitHub Pages.
