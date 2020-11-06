@@ -4,7 +4,7 @@ title: Apple smoothie
 
 # Apple smoothie
 
-Smoothies taste great! What is your favorite smoothie?
+Apple smoothies taste great! What is your favorite smoothie?
 
 Apple | Blueberry | Peach | Plum | Red Berry
 --- | --- | --- | --- | ---
