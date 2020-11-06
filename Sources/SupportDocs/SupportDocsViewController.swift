@@ -15,6 +15,9 @@ public class SupportDocsViewController: UIViewController {
     
     public var options: SupportOptions
     
+    /**
+     Allow instantiating `SupportDocsView` in your app
+     */
     public init(options: SupportOptions) {
         self.options = options
         super.init(nibName: nil, bundle: nil)

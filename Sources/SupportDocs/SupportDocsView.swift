@@ -11,6 +11,13 @@ import SwiftUI
 public struct SupportDocsView: View {
     
     /**
+     Allow instantiating `SupportDocsView` in your app
+     */
+    public init(options: SupportOptions) {
+        self.options = options
+    }
+    
+    /**
      Options used for configuring SupportDocs. `urls.dataSource` is required, everything else is optional (mostly for changing the SupportDocs' appearance).
      */
     public let options: SupportOptions

@@ -24,4 +24,9 @@ public struct SupportOptions {
     var progressBar = ProgressBar()
     var listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle
     var other: Other = Other()
+    
+    /**
+     Allow instantiating `SupportOptions` in your app
+     */
+    public init() {}
 }
