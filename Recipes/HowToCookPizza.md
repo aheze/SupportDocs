@@ -8,8 +8,8 @@ Cooking pizza is easy!
 
 Here is an image of a pizza:
 
-![](https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/phut_0.jpg?itok=h30EAnkk)
+![](/Images/pizza.jpg?raw=true)
 
 Here is an image of a pizza, but resized with 300 width:
 
-<img src="https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/phut_0.jpg?itok=h30EAnkk" width="300">
+<img src="/Images/pizza.jpg?raw=true" width="300">
