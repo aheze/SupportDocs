@@ -18,10 +18,8 @@ jobs:
                   python -m pip install --upgrade pip python-frontmatter jinja2
                   python _scripts/datasource_generator.py
             - name: Run Diff
-              env:
-                BRANCH: ${{ github.head_ref }}
               run: |
-                git diff --name-only "$GITHUB_BASE_REF..${BRANCH}"
+                git diff DataSource origin
             - name: Commit Files
               id: commit
               run: |
