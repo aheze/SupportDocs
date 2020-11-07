@@ -1,5 +1,6 @@
 ---
 title: Apple smoothie
+tags: smoothies
 ---
 
 # Apple smoothie
