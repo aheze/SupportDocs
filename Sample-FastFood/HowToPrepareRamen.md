@@ -1,6 +1,6 @@
 ---
 title: How to Prepare Ramen
-tags: recipes
+tags: fastFood
 ---
 
 # How to Enjoy Ramen (as you can see this can be whatever you want, does not need to match the `title`)
