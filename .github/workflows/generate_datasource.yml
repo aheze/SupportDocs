@@ -9,9 +9,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - id: extract_branch
-              name: Extract Branch Name
-              run: echo running on branch ${GITHUB_REF##*/}
             - name: Setup Python 3.8.6
               uses: actions/setup-python@v1
               with:
@@ -41,4 +38,4 @@ jobs:
               uses: ad-m/github-push-action@master
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  branch: main
+                  branch: DataSource
