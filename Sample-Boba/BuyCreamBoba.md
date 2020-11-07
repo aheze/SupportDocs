@@ -1,5 +1,6 @@
 ---
 title: Buy cream boba
+tags: boba
 ---
 
 # Buy cream boba
