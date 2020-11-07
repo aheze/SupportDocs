@@ -14,14 +14,20 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == listStylePicker {
+        switch pickerView {
+        case listStylePicker:
             return listStyleOptions.count
-        } else {
+        case activityIndicatorStylePicker:
             return activityIndicatorStyleOptions.count
+        case navigationViewStylePicker:
+            return navigationViewStyleOptions.count
+        default:
+            return 0
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         if pickerView == listStylePicker {
             return listStyleOptions[row].getString()
         } else {

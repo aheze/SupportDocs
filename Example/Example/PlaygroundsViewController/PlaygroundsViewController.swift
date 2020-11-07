@@ -97,6 +97,22 @@ class PlaygroundsViewController: UIViewController {
         listStyleButton.becomeFirstResponder()
     }
     
+    // MARK: - Navigation View Style
+    @IBOutlet weak var navigationViewStyleView: UIView!
+    let navigationViewStylePicker = UIPickerView()
+    let navigationViewStyleOptions: [SupportOptions.CustomNavigationViewStyle] = [.defaultNavigationViewStyle, .doubleColumnNavigationViewStyle, .stackNavigationViewStyle]
+    
+    @IBOutlet weak var navigationViewStyleButton: InputViewButton!
+    @IBAction func navigationViewStyleButtonPressed(_ sender: InputViewButton) {
+        let currentNavigationViewStyle = options.navigationViewStyle
+        
+        if let firstIndex = navigationViewStyleOptions.firstIndex(of: currentNavigationViewStyle) {
+            navigationViewStylePicker.selectRow(firstIndex, inComponent: 0, animated: false)
+        }
+        
+        navigationViewStyleButton.becomeFirstResponder()
+    }
+    
     // MARK: - Other
     @IBOutlet weak var otherView: UIView!
     let activityIndicatorStylePicker = UIPickerView()

@@ -10,7 +10,7 @@ import SwiftUI
 public extension SupportOptions {
     
     /**
-     Enum wrapper for `ListStyle`.
+     Enum wrapper for `NavigationViewStyle`.
      */
     enum CustomNavigationViewStyle {
         
@@ -29,5 +29,24 @@ public extension SupportOptions {
          */
         case stackNavigationViewStyle
         
+    }
+}
+
+/**
+ Custom extension to apply a `NavigationViewStyle`.
+ 
+ SupportDocs uses a custom enum (`SupportOptions.CustomNavigationViewStyle`) that wraps SwiftUI's `NavigationViewStyle`. This is because `NavigationViewStyle` conforms to a generic, which makes it hard to store as a property inside `SupportOptions`.
+ */
+internal extension NavigationView {
+    @ViewBuilder
+    func navigationViewStyle(for customNavigationViewStyle: SupportOptions.CustomNavigationViewStyle) -> some View {
+        switch customNavigationViewStyle {
+        case .defaultNavigationViewStyle:
+            navigationViewStyle(DefaultNavigationViewStyle())
+        case .doubleColumnNavigationViewStyle:
+            navigationViewStyle(DoubleColumnNavigationViewStyle())
+        case .stackNavigationViewStyle:
+            navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }
