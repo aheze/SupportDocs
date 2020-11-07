@@ -1,6 +1,6 @@
 //
 //  SupportOptions+NavigationBar.swift
-//  SupportDocsSwiftUI
+//  SupportDocs
 //
 //  Created by Zheng on 10/24/20.
 //

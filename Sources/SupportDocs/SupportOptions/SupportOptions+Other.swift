@@ -1,6 +1,6 @@
 //
 //  SupportOptions+Other.swift
-//  SupportDocsSwiftUI
+//  SupportDocs
 //
 //  Created by Zheng on 10/31/20.
 //
@@ -18,7 +18,7 @@ public extension SupportOptions {
          Set the loading spinner size, welcome view, and an optional footer to be displayed at the bottom of the `List`.
          
          - parameter activityIndicatorStyle: The style of the activity indicator, shown when the JSON is being downloaded.
-         - parameter welcomeView: A custom `View` that will be presented at first if you're in landscape mode -- when you don't have any row selected in the list yet.
+         - parameter welcomeView: A custom `View` that will be presented at first, if you're in landscape mode with `doubleColumnNavigationViewStyle`  -- when you don't have any row selected in the list yet.
          - parameter footer: A custom `View` that you can add to the bottom of the list.
          */
         public init(
@@ -37,7 +37,7 @@ public extension SupportOptions {
         public var activityIndicatorStyle: UIActivityIndicatorView.Style = .medium
         
         /**
-         A custom `View` that will be presented at first if you're in landscape mode -- when you don't have any row selected in the list yet.
+         A custom `View` that will be presented at first, if you're in landscape mode with `doubleColumnNavigationViewStyle`  -- when you don't have any row selected in the list yet.
          */
         public var welcomeView: AnyView? = nil
         

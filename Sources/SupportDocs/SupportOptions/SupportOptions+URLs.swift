@@ -1,6 +1,6 @@
 //
 //  SupportOptions+URLs.swift
-//  SupportDocsSwiftUI
+//  SupportDocs
 //
 //  Created by Zheng on 10/25/20.
 //

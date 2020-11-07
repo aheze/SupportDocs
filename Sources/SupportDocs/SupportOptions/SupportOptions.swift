@@ -1,6 +1,6 @@
 //
 //  SupportOptions.swift
-//  SupportDocsSwiftUI
+//  SupportDocs
 //
 //  Created by Zheng on 10/24/20.
 //
@@ -16,6 +16,7 @@ import SwiftUI
  - `navigationBar`: Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
  - `progressBar`: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
  - `listStyle`: The style of the `List`. Defaults to `.defaultListStyle`.
+ - `navigationViewStyle`: The style of the `NavigationView`. Defaults to `.defaultNavigationViewStyle`.
  - `other`: Set the loading spinner size, welcome view, and an optional footer to be displayed at the bottom of the `List`.
  */
 public struct SupportOptions {
@@ -46,6 +47,11 @@ public struct SupportOptions {
     public var listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle
     
     /**
+     The style of the `NavigationView`. Defaults to `.defaultNavigationViewStyle`.
+     */
+    public var navigationViewStyle: CustomNavigationViewStyle = CustomNavigationViewStyle.defaultNavigationViewStyle
+    
+    /**
      Set the loading spinner size, welcome view, and an optional footer to be displayed at the bottom of the `List`.
      */
     public var other: Other = Other()
@@ -58,6 +64,7 @@ public struct SupportOptions {
      - parameter navigationBar: Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
      - parameter progressBar: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
      - parameter listStyle: The style of the `List`. Defaults to `.defaultListStyle`.
+     - parameter navigationViewStyle: The style of the `NavigationView`. Defaults to `.defaultNavigationViewStyle`.
      - parameter other: Set the loading spinner size, welcome view, and an optional footer to be displayed at the bottom of the `List`.
      */
     public init(
@@ -66,6 +73,7 @@ public struct SupportOptions {
         navigationBar: NavigationBar = NavigationBar(),
         progressBar: ProgressBar = ProgressBar(),
         listStyle: CustomListStyle = CustomListStyle.defaultListStyle,
+        navigationViewStyle: CustomNavigationViewStyle = CustomNavigationViewStyle.defaultNavigationViewStyle,
         other: Other = Other()
     ) {
         self.urls = urls
@@ -73,6 +81,7 @@ public struct SupportOptions {
         self.navigationBar = navigationBar
         self.progressBar = progressBar
         self.listStyle = listStyle
+        self.navigationViewStyle = navigationViewStyle
         self.other = other
     }
 }

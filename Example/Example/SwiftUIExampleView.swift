@@ -12,10 +12,12 @@ struct SwiftUIExampleView: View {
     
     let options = SupportOptions(
         urls: .init(
-            dataSource: URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/dataSource.json")!,
+            dataSource: URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/data.json")!,
             error404: URL(string: "https://google.com")!
         ),
-        categories: nil,
+        categories: [
+            .init(jsonTagNames: ["recipes"], displayName: "Recipes")
+        ],
         navigationBar: .init(
             title: "Support",
             titleColor: UIColor.white,
@@ -27,7 +29,7 @@ struct SwiftUIExampleView: View {
             foregroundColor: UIColor.green,
             backgroundColor: UIColor.systemBackground
         ),
-        listStyle: .groupedListStyle,
+        listStyle: .insetGroupedListStyle,
         other: .init(
             activityIndicatorStyle: UIActivityIndicatorView.Style.large,
             footer: AnyView(Footer())

@@ -100,6 +100,7 @@ extension PlaygroundsViewController {
         let defaultListStyle = SupportOptions.CustomListStyle.insetGroupedListStyle
         
         let defaultActivityIndicatorStyle = UIActivityIndicatorView.Style.large
+        let defaultWelcomeView = WelcomeView()
         let defaultFooter = Footer()
         
         // MARK: - Set options
@@ -120,6 +121,7 @@ extension PlaygroundsViewController {
         options.listStyle = defaultListStyle
         
         options.other.activityIndicatorStyle = defaultActivityIndicatorStyle
+        options.other.welcomeView = AnyView(defaultWelcomeView) /// set the welcome view
         options.other.footer = AnyView(defaultFooter) /// set the footer
         
         // MARK: - Set UI
