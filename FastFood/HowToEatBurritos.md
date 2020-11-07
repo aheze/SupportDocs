@@ -1,11 +1,15 @@
 ---
-title: How to prepare ramen
+title: How to eat burritos
 ---
 
-# How to enjoy ramen (as you can see this can be whatever you want, does not need to match the `title`)
+# How to eat burritos
 
-Instant ramen tastes good, so I'll emphasize is with italics. *Instant ramen tastes good!!!*
+Burritos are cool.
 
-Real ramen tastes great, so I'll emphasize is with bold. **Real ramen tastes great!!!**
+1. Eat
+2. Eat
+3. Eat
+4. Eat
+5. Eat
 
-In general, ramen tastes good and great, so I'll emphasize is with italivs and bold. **_Real ramen tastes great!!!_**
+![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/burrito.jpg)
