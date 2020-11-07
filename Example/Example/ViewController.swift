@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
     
@@ -15,19 +16,40 @@ class ViewController: UIViewController {
     
     @IBAction func playgroundsButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let viewController = storyboard.instantiateViewController(withIdentifier: "PlaygroundsViewController") as? PlaygroundsViewController {
-            self.present(viewController, animated: true, completion: nil)
+        if let playgroundsViewController = storyboard.instantiateViewController(withIdentifier: "PlaygroundsViewController") as? PlaygroundsViewController {
+            
+            playgroundsViewController.title = "Playgrounds"
+            playgroundsViewController.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(playgroundsViewController, animated: true)
+            
         }
     }
+    
     @IBAction func swiftuiExampleButtonTapped(_ sender: Any) {
+        let hostingViewController = UIHostingController(rootView: SwiftUIExampleView())
+        
+        hostingViewController.title = "SwiftUI Example"
+        hostingViewController.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(hostingViewController, animated: true)
     }
+    
     @IBAction func uikitExampleButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let uikitExampleViewController = storyboard.instantiateViewController(withIdentifier: "UIKitExampleController") as? UIKitExampleController {
+            
+            uikitExampleViewController.title = "UIKit Example"
+            uikitExampleViewController.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(uikitExampleViewController, animated: true)
+            
+        }
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.title = "SupportDocs"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         playgroundsButton.layer.cornerRadius = 12
         swiftuiExampleButton.layer.cornerRadius = 12

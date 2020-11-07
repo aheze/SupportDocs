@@ -10,36 +10,36 @@ import SupportDocs
 
 struct SwiftUIExampleView: View {
     
-    @State var supportDocsPresented = false
     let options = SupportOptions(
         urls: .init(
-            dataSource: <#T##URL#>,
-            error404: <#T##URL#>
+            dataSource: URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsSwiftUI/main/SupportDocsSwiftUI/docData.json")!,
+            error404: URL(string: "https://google.com")!
         ),
         categories: nil,
         navigationBar: .init(
-            title: <#T##String#>,
-            titleColor: <#T##UIColor#>,
-            dismissButtonTitle: <#T##String?#>,
-            buttonTintColor: <#T##UIColor?#>,
-            backgroundColor: <#T##UIColor?#>,
-            backgroundImage: <#T##UIImage?#>
+            title: "Support",
+            titleColor: UIColor.white,
+            dismissButtonTitle: "Done",
+            buttonTintColor: UIColor.white,
+            backgroundColor: UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
         ),
         progressBar: .init(
-            foregroundColor: <#T##UIColor#>,
-            backgroundColor: <#T##UIColor#>
+            foregroundColor: UIColor.green,
+            backgroundColor: UIColor.systemBackground
         ),
-        listStyle: .defaultListStyle,
+        listStyle: .groupedListStyle,
         other: .init(
-            activityIndicatorStyle: <#T##UIActivityIndicatorView.Style#>,
-            footer: <#T##AnyView?#>
+            activityIndicatorStyle: UIActivityIndicatorView.Style.large,
+            footer: AnyView(Footer())
         )
     )
+    
+    @State var supportDocsPresented = false
     
     var body: some View {
         Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
         .sheet(isPresented: $supportDocsPresented, content: {
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Sheet Content")/*@END_MENU_TOKEN@*/
+            SupportDocsView(options: options, isPresented: $supportDocsPresented)
         })
     }
 }

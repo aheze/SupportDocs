@@ -9,6 +9,14 @@ import SwiftUI
 
 /**
  Options for configuring SupportDocs.
+ 
+ # Parameters
+ - `urls`: Contains the `URL` of the data source JSON and a custom 404 error page.
+ - `categories`: Allows you to group documents with the same `tag` into the same section of the list. Each category may contain more than one `tag`.
+ - `navigationBar`: Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
+ - `progressBar`: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
+ - `listStyle`: The style of the `List`. Defaults to `.defaultListStyle`.
+ - `other`: Set the activity indicator size and a custom footer view.
  */
 public struct SupportOptions {
     

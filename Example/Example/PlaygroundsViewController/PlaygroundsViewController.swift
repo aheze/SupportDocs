@@ -125,23 +125,7 @@ class PlaygroundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.navigationBar.prefersLargeTitles = true
-
-        self.title = "SupportDocs"
-
-        let largeTitleAppearance = UINavigationBarAppearance()
-
-        largeTitleAppearance.configureWithOpaqueBackground()
-        largeTitleAppearance.backgroundImage = UIImage(named: "kunal-shinde--f0YLss50Bs-unsplash")
-        largeTitleAppearance.backgroundImageContentMode = .scaleAspectFill
-
-
-        navigationController?.navigationBar.standardAppearance = largeTitleAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = largeTitleAppearance
-//        navigationController?.navigationBar.clipsToBounds = true
-
-
+    
         setupCornerRadius()
         setupTextFieldDelegates()
         setupPickerDelegates()

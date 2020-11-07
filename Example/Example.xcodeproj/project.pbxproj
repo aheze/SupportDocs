@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4916CE2225563A0600BE0ACD /* SupportDocs in Frameworks */ = {isa = PBXBuildFile; productRef = 4916CE2125563A0600BE0ACD /* SupportDocs */; };
+		4916CE262556441100BE0ACD /* SupportDocs in Frameworks */ = {isa = PBXBuildFile; productRef = 4916CE252556441100BE0ACD /* SupportDocs */; };
 		49702F0D25562B4400DCD8DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49702F0C25562B4400DCD8DD /* AppDelegate.swift */; };
 		49702F0F25562B4400DCD8DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49702F0E25562B4400DCD8DD /* SceneDelegate.swift */; };
 		49702F1125562B4400DCD8DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49702F1025562B4400DCD8DD /* ViewController.swift */; };
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4916CE2225563A0600BE0ACD /* SupportDocs in Frameworks */,
+				4916CE262556441100BE0ACD /* SupportDocs in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +84,7 @@
 				49702F1225562B4400DCD8DD /* Main.storyboard */,
 				49702F35255636C400DCD8DD /* UIKitExampleController.swift */,
 				49702F38255636F400DCD8DD /* SwiftUIExampleView.swift */,
+				49702F3025562C0000DCD8DD /* Footer.swift */,
 				49702F2D25562BE800DCD8DD /* PlaygroundsViewController */,
 				49702F1525562B4700DCD8DD /* Assets.xcassets */,
 				49702F1725562B4700DCD8DD /* LaunchScreen.storyboard */,
@@ -101,7 +102,6 @@
 				49702F2725562BE300DCD8DD /* PlaygroundsViewController+Setup.swift */,
 				49702F2425562BE300DCD8DD /* PlaygroundsViewController+TextFields.swift */,
 				49702F2E25562C0000DCD8DD /* ColorPicker.swift */,
-				49702F3025562C0000DCD8DD /* Footer.swift */,
 				49702F2F25562C0000DCD8DD /* InputViewButton.swift */,
 			);
 			path = PlaygroundsViewController;
@@ -124,7 +124,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				4916CE2125563A0600BE0ACD /* SupportDocs */,
+				4916CE252556441100BE0ACD /* SupportDocs */,
 			);
 			productName = Example;
 			productReference = 49702F0925562B4400DCD8DD /* Example.app */;
@@ -154,7 +154,7 @@
 			);
 			mainGroup = 49702F0025562B4300DCD8DD;
 			packageReferences = (
-				4916CE2025563A0600BE0ACD /* XCRemoteSwiftPackageReference "SupportDocs" */,
+				4916CE242556441100BE0ACD /* XCRemoteSwiftPackageReference "SupportDocs" */,
 			);
 			productRefGroup = 49702F0A25562B4400DCD8DD /* Products */;
 			projectDirPath = "";
@@ -401,20 +401,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4916CE2025563A0600BE0ACD /* XCRemoteSwiftPackageReference "SupportDocs" */ = {
+		4916CE242556441100BE0ACD /* XCRemoteSwiftPackageReference "SupportDocs" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aheze/SupportDocs.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.9;
+				minimumVersion = 0.0.10;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4916CE2125563A0600BE0ACD /* SupportDocs */ = {
+		4916CE252556441100BE0ACD /* SupportDocs */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4916CE2025563A0600BE0ACD /* XCRemoteSwiftPackageReference "SupportDocs" */;
+			package = 4916CE242556441100BE0ACD /* XCRemoteSwiftPackageReference "SupportDocs" */;
 			productName = SupportDocs;
 		};
 /* End XCSwiftPackageProductDependency section */
