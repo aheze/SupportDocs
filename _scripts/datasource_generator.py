@@ -16,8 +16,8 @@ GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
 FULL_GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
 GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
 DATA_JSON_FILE_PATH = "_data/data.json"
-READ_README_FILE_PATH = "README.md"
-WRITE_README_FILE_PATH = "_scripts/README.md"
+READ_README_FILE_PATH = "_scripts/README.md"
+WRITE_README_FILE_PATH = "README.md"
 
 
 def add_help_file(title: str, directory: str, filename: str, tags: list):
