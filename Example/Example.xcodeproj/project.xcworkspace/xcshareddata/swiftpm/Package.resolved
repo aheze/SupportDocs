@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SupportDocs",
+        "repositoryURL": "https://github.com/aheze/SupportDocs.git",
+        "state": {
+          "branch": null,
+          "revision": "0a7dbb992ccbe199c4a383521faaf3c8af323222",
+          "version": "0.0.9"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

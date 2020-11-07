@@ -10,7 +10,28 @@ import SwiftUI
 public struct SupportDocsView: View {
     
     /**
-     Allow instantiating `SupportDocsView` in your app
+     Instantiate SupportDocs in your app.
+     
+     - parameter options: Options used for configuring SupportDocs. `urls.dataSource` is required, everything else is optional (mostly for changing the SupportDocs' appearance).
+     - parameter isPresented: The Binding that you use to present SupportDocs in SwiftUI. Required if you want a "Dismiss" button.
+     
+     If you want to have a "Dismiss" button, you must pass in the same `@State` property as you do the the `.sheet`, like this:
+     
+     ```
+     struct ContentView: View {
+         @State var supportDocsPresented = false
+         let options: SupportOptions = SupportOptions()
+         var body: some View {
+             Button("Present") { self.supportDocsPresented = true }
+             .sheet(isPresented: $supportDocsPresented) {
+    
+                /// pass it in here!
+                SupportDocsView(options: options, isPresented: $supportDocsPresented)
+             }
+         }
+     }
+     ```
+     This is only for SwiftUI -- You don't need to do this in UIKit. As long as you set `options.navigationBar.dismissButtonTitle = "Dismiss"`, SupportDocs will dismiss itself.
      */
     public init(options: SupportOptions, isPresented: Binding<Bool>? = nil) {
         self.options = options
@@ -52,12 +73,12 @@ public struct SupportDocsView: View {
     internal var donePressed: (() -> Void)?
     
     /**
-     The documents decoded from the JSON
+     The documents decoded from the JSON.
      */
     @State internal var documents: [JSONSupportDocument] = [JSONSupportDocument]()
     
     /**
-     If the JSON is downloading, display the loading spinner
+     If the JSON is downloading, display the loading spinner.
      */
     @State internal var isDownloadingJSON = true
     

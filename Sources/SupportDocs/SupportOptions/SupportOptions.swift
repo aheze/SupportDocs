@@ -8,32 +8,56 @@
 import SwiftUI
 
 /**
- Options for configuring SupportDocs
- 
- - `urls` - contains the `URL`s of the data source JSON and a custom 404 error page.
- - `categories` - allows you to group documents with the same `tag` into the same section of the list. Each category may contain more than one `tag`.
- - `navigationBar` - customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
- - `progressBar` - customize the `foregroundColor` and `backgroundColor` of the progress bar.
- - `listStyle` - the style of the `List`.
- - `other` - set the activity indicator size and a custom footer view.
+ Options for configuring SupportDocs.
  */
 public struct SupportOptions {
+    
+    /**
+     Contains the `URL` of the data source JSON and a custom 404 error page.
+     */
     public var urls: URLs = URLs()
+    
+    /**
+     Allows you to group documents with the same `tag` into the same section of the list. Each category may contain more than one `tag`.
+     */
     public var categories: [Category]? = nil
+    
+    /**
+     Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
+     */
     public var navigationBar: NavigationBar = NavigationBar()
+    
+    /**
+     Customize the `foregroundColor` and `backgroundColor` of the progress bar.
+     */
     public var progressBar: ProgressBar = ProgressBar()
+    
+    /**
+     The style of the `List`. Defaults to `.defaultListStyle`.
+     */
     public var listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle
+    
+    /**
+     Set the activity indicator size and a custom footer view.
+     */
     public var other: Other = Other()
     
     /**
-     Allow instantiating `SupportOptions` in your app
+     Options for configuring SupportDocs.
+     
+     - parameter urls: Contains the `URL` of the data source JSON and a custom 404 error page.
+     - parameter categories: Allows you to group documents with the same `tag` into the same section of the list. Each category may contain more than one `tag`.
+     - parameter navigationBar: Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
+     - parameter progressBar: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
+     - parameter listStyle: The style of the `List`. Defaults to `.defaultListStyle`.
+     - parameter other: Set the activity indicator size and a custom footer view.
      */
     public init(
         urls: URLs = URLs(),
         categories: [Category]? = nil,
         navigationBar: NavigationBar = NavigationBar(),
         progressBar: ProgressBar = ProgressBar(),
-        listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle,
+        listStyle: CustomListStyle = CustomListStyle.defaultListStyle,
         other: Other = Other()
     ) {
         self.urls = urls
