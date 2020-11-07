@@ -53,7 +53,7 @@ if __name__ == "__main__":
     directory_list = [
         directory
         for directory in next(os.walk("."))[1]
-        if directory not in ("images", "Images", "Changelogs")
+        if directory not in ("images", "Images", "Changelogs", "Example")
         and not directory.startswith("_")
         and not directory.startswith(".")
     ]
