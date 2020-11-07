@@ -10,7 +10,6 @@ import SupportDocs
 
 extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        print("call")
         return 1
     }
     
@@ -45,7 +44,6 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
             }
         }
     }
-    
     
     @objc func dismissPicker() {
         view.endEditing(true)

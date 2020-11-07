@@ -19,23 +19,38 @@ extension PlaygroundsViewController: UITextFieldDelegate {
         
         switch textField {
         case dataSourceTextField:
-            if let url = URL(string: updatedString) {
-                options.urls.dataSource = url
+            if updatedString.isEmpty {
+                options.urls.dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsSwiftUI/main/SupportDocsSwiftUI/docData.json")!
+            } else {
+                if let url = URL(string: updatedString) {
+                    options.urls.dataSource = url
+                }
             }
         case error404TextField:
-            if let url = URL(string: updatedString) {
-                options.urls.error404 = url
+            if updatedString.isEmpty {
+                options.urls.error404 = URL(string: "https://google.com")!
+            } else {
+                if let url = URL(string: updatedString) {
+                    options.urls.error404 = url
+                }
             }
         case titleTextField:
-            options.navigationBar.title = updatedString
+            if updatedString.isEmpty {
+                options.navigationBar.title = "Support"
+            } else {
+                options.navigationBar.title = updatedString
+            }
         case dismissButtonTitleTextField:
-            options.navigationBar.dismissButtonTitle = updatedString
+            if updatedString.isEmpty {
+                options.navigationBar.dismissButtonTitle = "Done"
+            } else {
+                options.navigationBar.dismissButtonTitle = updatedString
+            }
         default:
             print("unknown textfield")
         }
         
         return true
     }
-    
 }
 

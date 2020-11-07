@@ -97,7 +97,6 @@ class PlaygroundsViewController: UIViewController {
         listStyleButton.becomeFirstResponder()
     }
     
-    
     // MARK: - Other
     @IBOutlet weak var otherView: UIView!
     let activityIndicatorStylePicker = UIPickerView()
@@ -114,14 +113,12 @@ class PlaygroundsViewController: UIViewController {
         activityIndicatorStyleButton.becomeFirstResponder()
     }
     
-    
     // MARK: - Present
     @IBOutlet weak var presentButton: UIButton!
     @IBAction func presentButtonPressed(_ sender: Any) {
         let supportDocsViewController = SupportDocsViewController(options: options)
         self.present(supportDocsViewController, animated: true, completion: nil)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -46,6 +46,5 @@ extension PlaygroundsViewController: UIPopoverPresentationControllerDelegate {
             }
             present(popoverVC, animated: true, completion: nil)
         }
-        
     }
 }

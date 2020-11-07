@@ -11,7 +11,6 @@ import SupportDocs
 
 extension PlaygroundsViewController {
     func setupCornerRadius() {
-        
         urlsView.clipsToBounds = true
         categoriesView.clipsToBounds = true
         navigationBarView.clipsToBounds = true
@@ -41,7 +40,6 @@ extension PlaygroundsViewController {
         addShadow(button: backgroundColorButton)
         
         presentButton.layer.cornerRadius = presentButton.frame.height / 2
-        
     }
     
     func setupTextFieldDelegates() {
@@ -52,7 +50,6 @@ extension PlaygroundsViewController {
     }
     
     func setupPickerDelegates() {
-        
         
         listStylePicker.delegate = self
         listStyleButton.inputView = listStylePicker
@@ -82,9 +79,8 @@ extension PlaygroundsViewController {
         activityIndicatorStyleToolbar.isUserInteractionEnabled = true
         
         activityIndicatorStyleButton.inputAccessoryView = activityIndicatorStyleToolbar
+        
     }
-    
-    
     
     func setupDefaultValues() {
         

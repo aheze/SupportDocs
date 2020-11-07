@@ -37,9 +37,13 @@ struct SwiftUIExampleView: View {
     @State var supportDocsPresented = false
     
     var body: some View {
-        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
-        .sheet(isPresented: $supportDocsPresented, content: {
-            SupportDocsView(options: options, isPresented: $supportDocsPresented)
-        })
+        VStack {
+            Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+                .sheet(isPresented: $supportDocsPresented, content: {
+                    SupportDocsView(options: options, isPresented: $supportDocsPresented)
+                })
+            Text("SwiftUIExampleView.swift")
+                .foregroundColor(Color(UIColor.secondaryLabel))
+        }
     }
 }

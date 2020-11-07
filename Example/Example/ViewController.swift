@@ -8,6 +8,9 @@
 import UIKit
 import SwiftUI
 
+/**
+ Home screen of the example app.
+ */
 class ViewController: UIViewController {
     
     @IBOutlet weak var playgroundsButton: UIButton!
@@ -60,7 +63,5 @@ class ViewController: UIViewController {
         swiftuiExampleButton.layer.cornerRadius = 12
         uikitExampleButton.layer.cornerRadius = 12
     }
-
-
 }
 

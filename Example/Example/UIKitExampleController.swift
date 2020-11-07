@@ -11,6 +11,8 @@ import SupportDocs
 
 class UIKitExampleController: UIViewController {
     
+    
+    // MARK: - For UIKit, this is one way of making `SupportOptions`
     let options = SupportOptions(
         urls: .init(
             dataSource: URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsSwiftUI/main/SupportDocsSwiftUI/docData.json")!,
@@ -37,6 +39,13 @@ class UIKitExampleController: UIViewController {
     
     @IBOutlet weak var presentButton: UIButton!
     @IBAction func presentButtonPressed(_ sender: Any) {
+        
+        // MARK: - You can also make `SupportOptions` like this (Only UIKit):
+//        var options = SupportOptions()
+//        options.urls.dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsSwiftUI/main/SupportDocsSwiftUI/docData.json")!
+//        options.urls.error404 = URL(string: "https://google.com")!
+//        options.progressBar.foregroundColor = UIColor.green
+//        options.listStyle = .groupedListStyle
         
         let supportDocsViewController = SupportDocsViewController(options: options)
         self.present(supportDocsViewController, animated: true, completion: nil)

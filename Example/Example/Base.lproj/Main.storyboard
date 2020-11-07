@@ -26,7 +26,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to SupportDocs!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hk8-jq-xrl">
                                                 <rect key="frame" x="20" y="26" width="279" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                                <color key="textColor" red="0.26666666666666666" green="0.6705882352941176" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.023529411764705882" green="0.59215686274509804" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nI-Xr-25h">
@@ -75,7 +75,7 @@
                                                 <rect key="frame" x="119.5" y="359" width="175" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="View source on GitHub">
-                                                    <color key="titleColor" systemColor="secondaryLabelColor"/>
+                                                    <color key="titleColor" red="0.023529411764705882" green="0.59215686274509804" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="viewSourcePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6A2-hp-yJ4"/>
@@ -773,17 +773,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8u-LK-QHm">
-                                <rect key="frame" x="94.5" y="433" width="225" height="30"/>
+                                <rect key="frame" x="82" y="419.5" width="250" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Present SupportDocs from UIKit!"/>
                                 <connections>
                                     <action selector="presentButtonPressed:" destination="LhL-41-vL7" eventType="touchUpInside" id="2mg-Sb-Cbd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIKitExampleController.swift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2r-al-2Yj">
+                                <rect key="frame" x="99" y="449.5" width="216" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Ux-a9-Vwa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="H8u-LK-QHm" firstAttribute="centerY" secondItem="vvt-HD-Sgi" secondAttribute="centerY" id="Qoe-2g-P2I"/>
+                            <constraint firstItem="K2r-al-2Yj" firstAttribute="centerY" secondItem="vvt-HD-Sgi" secondAttribute="centerY" constant="12" id="9ae-HS-aQW"/>
+                            <constraint firstItem="K2r-al-2Yj" firstAttribute="centerX" secondItem="vvt-HD-Sgi" secondAttribute="centerX" id="Qga-xk-OTL"/>
+                            <constraint firstItem="H8u-LK-QHm" firstAttribute="centerY" secondItem="vvt-HD-Sgi" secondAttribute="centerY" constant="-12" id="Qoe-2g-P2I"/>
                             <constraint firstItem="H8u-LK-QHm" firstAttribute="centerX" secondItem="vvt-HD-Sgi" secondAttribute="centerX" id="gRZ-7Y-utS"/>
                         </constraints>
                     </view>
