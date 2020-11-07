@@ -1,5 +1,6 @@
 ---
 title: How to eat tacos
+tags: fastFood
 ---
 
 # How to eat tacos
