@@ -13,11 +13,26 @@ public extension SupportOptions {
      Enum wrapper for `ListStyle`
      */
     enum CustomListStyle {
+        
         case defaultListStyle
+        
         case plainListStyle
+        
         case groupedListStyle
+        
+        /**
+          **iOS 14.0 and above only.** Otherwise, defaults to `defaultListStyle`
+         */
         case insetGroupedListStyle
+        
+        /**
+          **iOS 14.0 and above only.** Otherwise, defaults to `defaultListStyle`
+         */
         case insetListStyle
+        
+        /**
+          **iOS 14.0 and above only.** Otherwise, defaults to `defaultListStyle`
+         */
         case sidebarListStyle
     }
 }
