@@ -1,4 +1,1 @@
-# SupportDocs: DataSource
-## This is where SupportDocs gets its data!
-
-Data Source URL: <a id="datasource_url" href="{{ datasource_url }}">{{ datasource_url }}</a>
+Please wait, the README is generating...
