@@ -75,7 +75,8 @@ if __name__ == "__main__":
     with open(READ_README_FILE_PATH, "r") as readme_file:
         readme = jinja2.Template(readme_file.read(), trim_blocks=True)
 
-    rendered_readme = readme.render(datasource_url=f"https://github.com/{FULL_GITHUB_REPOSITORY}".replace("//github.com/", "//raw.githubusercontent.com/").replace("/blob/", "/"))
+    datasource_url = f"https://github.com/{FULL_GITHUB_REPOSITORY}".replace("//github.com/", "//raw.githubusercontent.com/").replace("/blob/", "/") + f"/{GITHUB_REPOSITORY}/{DATA_JSON_FILE_PATH}"
+    rendered_readme = readme.render(datasource_url=datasource_url)
     readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
     readme_output.write(rendered_readme)
     readme_output.close()
