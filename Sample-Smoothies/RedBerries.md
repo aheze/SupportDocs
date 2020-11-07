@@ -1,5 +1,6 @@
 ---
 title: Red berry smoothie
+tags: smoothies
 ---
 
 # Red berry smoothie
