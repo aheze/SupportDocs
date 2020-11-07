@@ -8,11 +8,7 @@ jobs:
     run:
         runs-on: ubuntu-latest
         steps:
-            #- uses: actions/checkout@v2
-            - name: Pull Latest Commit
-              id: pull-latest
-              run: |
-                git pull origin DataSource
+            - uses: actions/checkout@v2
             - name: Setup Python 3.8.6
               uses: actions/setup-python@v1
               with:
@@ -23,7 +19,7 @@ jobs:
                   python _scripts/datasource_generator.py
             - name: Run Diff
               run: |
-                git diff DataSource origin/DataSource
+                echo $(git diff DataSource origin/DataSource)
             - name: Commit Files
               id: commit
               run: |
