@@ -1,11 +1,15 @@
 ---
-title: Apple smoothie
+title: Blue boba
 ---
 
-# Apple smoothie
+# Blue boba
 
-Apple smoothies taste great! What is your favorite smoothie?
+Blue and yummy.
 
-Apple | Blueberry | Peach | Plum | Red Berry
---- | --- | --- | --- | ---
-![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/apples.jpg) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/berrySmoothie.jpg) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/peaches.jpg) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/plums.jpg) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/redSmoothie.jpg) 
+1. Eat
+2. Eat
+3. Eat
+4. Eat
+5. Eat
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/blueBoba.jpg)
