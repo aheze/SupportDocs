@@ -1,5 +1,6 @@
 ---
 title: How to eat nachos
+tags: fastFood
 ---
 
 # How to eat nachos
