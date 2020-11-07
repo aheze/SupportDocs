@@ -18,12 +18,12 @@ import SwiftUI
  - `other` - set the activity indicator size and a custom footer view.
  */
 public struct SupportOptions {
-    var urls: URLs = URLs()
-    var categories: [Category]? = nil
-    var navigationBar: NavigationBar = NavigationBar()
-    var progressBar: ProgressBar = ProgressBar()
-    var listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle
-    var other: Other = Other()
+    public var urls: URLs = URLs()
+    public var categories: [Category]? = nil
+    public var navigationBar: NavigationBar = NavigationBar()
+    public var progressBar: ProgressBar = ProgressBar()
+    public var listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle
+    public var other: Other = Other()
     
     /**
      Allow instantiating `SupportOptions` in your app

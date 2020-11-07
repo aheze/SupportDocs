@@ -33,11 +33,11 @@ public extension SupportOptions {
          2. Create a [category](x-source-tag://Category) inside your app
          3. Assign your `category` to `SupportOptions.categories`
         */
-        var dataSource: URL = URL(string: "https://google.com")!
+        public var dataSource: URL = URL(string: "https://google.com")!
         
         /**
          Web page to display in case something goes wrong.
          */
-        var error404: URL = URL(string: "https://google.com")!
+        public var error404: URL = URL(string: "https://google.com")!
     }
 }

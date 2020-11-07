@@ -33,12 +33,12 @@ public extension SupportOptions {
         /**
          The title to show at the top of the screen
          */
-        var title: String = "Support"
+        public var title: String = "Support"
         
         /**
          Color of the title
          */
-        var titleColor: UIColor = UIColor.black
+        public var titleColor: UIColor = UIColor.black
         
         /**
          The title of the dismiss button
@@ -71,18 +71,18 @@ public extension SupportOptions {
          }
          ```
          */
-        var dismissButtonTitle: String? = nil
+        public var dismissButtonTitle: String? = nil
         
         /**
          Color of the Back and Dismiss buttons
          */
-        var buttonTintColor: UIColor? = nil
+        public var buttonTintColor: UIColor? = nil
         
         /**
          Background color of the Navigation Bar
          */
-        var backgroundColor: UIColor? = nil
-        var backgroundImage: UIImage? = nil
+        public var backgroundColor: UIColor? = nil
+        public var backgroundImage: UIImage? = nil
         
     }
 }

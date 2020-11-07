@@ -25,12 +25,12 @@ public extension SupportOptions {
         /**
          Color of the moving part of the progress bar
          */
-        var foregroundColor: UIColor = UIColor.systemBlue
+        public var foregroundColor: UIColor = UIColor.systemBlue
         
         /**
          Color of the progress bar's background
          */
-        var backgroundColor: UIColor = UIColor.secondarySystemBackground
+        public var backgroundColor: UIColor = UIColor.secondarySystemBackground
     }
 }
 

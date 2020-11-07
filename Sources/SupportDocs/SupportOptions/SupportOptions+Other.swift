@@ -25,11 +25,11 @@ public extension SupportOptions {
         /**
          The style of the activity indicator, shown when the JSON is being downloaded
          */
-        var activityIndicatorStyle: UIActivityIndicatorView.Style = .medium
+        public var activityIndicatorStyle: UIActivityIndicatorView.Style = .medium
         
         /**
          A custom `View` you can add to the bottom of the list
          */
-        var footer: AnyView? = nil
+        public var footer: AnyView? = nil
     }
 }

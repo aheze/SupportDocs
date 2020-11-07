@@ -54,17 +54,17 @@ public extension SupportOptions {
          ```
          Each `category` gets its own section in the `List`.
          */
-        var jsonTagNames: [String]
+        public var jsonTagNames: [String]
         
         /**
          What to display in the header of the `List`
          */
-        var displayName: String
+        public var displayName: String
         
         /**
          The color of the row in the `List`
          */
-        var displayColor: UIColor = UIColor.label
+        public var displayColor: UIColor = UIColor.label
         
     }
     
