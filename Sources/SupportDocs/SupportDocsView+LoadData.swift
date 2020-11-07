@@ -56,8 +56,14 @@ internal extension SupportDocsView {
                                  If the document's `tags` contains `jsonTagName`, append it to the `containingSupportItems`
                                  */
                                 if document.tags.contains(jsonTagName) {
-                                    let supportItem = SupportItem(title: document.title, url: document.url)
-                                    containingSupportItems.append(supportItem)
+                                    
+                                    /**
+                                     Prevent duplicate documents in each section -- only append it if its `URL` is unique
+                                     */
+                                    if !containingSupportItems.contains(where: { item in item.url == document.url }) {
+                                        let supportItem = SupportItem(title: document.title, url: document.url)
+                                        containingSupportItems.append(supportItem)
+                                    }
                                 }
                             }
                         }

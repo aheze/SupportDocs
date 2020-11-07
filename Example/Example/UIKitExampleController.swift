@@ -15,7 +15,7 @@ class UIKitExampleController: UIViewController {
     // MARK: - For UIKit, this is one way of making `SupportOptions`
     let options = SupportOptions(
         urls: .init(
-            dataSource: URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsSwiftUI/main/SupportDocsSwiftUI/docData.json")!,
+            dataSource: URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/dataSource.json")!,
             error404: URL(string: "https://google.com")!
         ),
         categories: nil,
