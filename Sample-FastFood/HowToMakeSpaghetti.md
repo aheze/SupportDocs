@@ -1,5 +1,6 @@
 ---
 title: How to make spaghetti
+tags: fastFood
 ---
 # How to make spaghetti
 
