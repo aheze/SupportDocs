@@ -17,37 +17,51 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         switch pickerView {
         case listStylePicker:
             return listStyleOptions.count
-        case activityIndicatorStylePicker:
-            return activityIndicatorStyleOptions.count
         case navigationViewStylePicker:
             return navigationViewStyleOptions.count
+        case activityIndicatorStylePicker:
+            return activityIndicatorStyleOptions.count
         default:
             return 0
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        if pickerView == listStylePicker {
+        switch pickerView {
+        case listStylePicker:
             return listStyleOptions[row].getString()
-        } else {
+        case navigationViewStylePicker:
+            return navigationViewStyleOptions[row].getString()
+        case activityIndicatorStylePicker:
             return activityIndicatorStyleOptions[row].getString()
+        default:
+            return nil
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == listStylePicker {
+        switch pickerView {
+        case listStylePicker:
             let selectedStyle = listStyleOptions[row]
             options.listStyle = selectedStyle
             DispatchQueue.main.async {
                 self.listStyleButton.setTitle(selectedStyle.getString(), for: .normal)
             }
-        } else {
+        case navigationViewStylePicker:
+            print("selec: \(navigationViewStyleOptions[row])")
+            let selectedStyle = navigationViewStyleOptions[row]
+            options.navigationViewStyle = selectedStyle
+            DispatchQueue.main.async {
+                self.navigationViewStyleButton.setTitle(selectedStyle.getString(), for: .normal)
+            }
+        case activityIndicatorStylePicker:
             let selectedStyle = activityIndicatorStyleOptions[row]
             options.other.activityIndicatorStyle = selectedStyle
             DispatchQueue.main.async {
                 self.activityIndicatorStyleButton.setTitle(selectedStyle.getString(), for: .normal)
             }
+        default:
+            return
         }
     }
     

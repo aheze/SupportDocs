@@ -92,12 +92,12 @@ public struct SupportDocsView: View {
             Group {
                 if isDownloadingJSON {
                     
-                    /// Show the loading spinner if JSON is downloading
+                    /// Show the loading spinner if JSON is downloading.
                     ActivityIndicator(isAnimating: $isDownloadingJSON, style: options.other.activityIndicatorStyle)
                 } else {
                     List {
                         
-                        /// First, display the titles of your documents
+                        /// First, display the titles of your documents.
                         ForEach(sections) { section in
                             Section(header: Text(section.name)) {
                                 ForEach(section.supportItems) { item in
@@ -109,7 +109,7 @@ public struct SupportDocsView: View {
                                     )
                                 }
                             }
-                            .displayTextAsConfigured() /// Prevent default all-caps behavior if possible (iOS 14 and above)
+                            .displayTextAsConfigured() /// Prevent default all-caps behavior if possible (iOS 14 and above).
                         }
                         
                         /// Then, display the footer. Customize this inside `options.other.footer`.
@@ -118,12 +118,12 @@ public struct SupportDocsView: View {
                         .frame(maxWidth: .infinity, minHeight: 60)
                         .background(Color(UIColor.systemGroupedBackground))
                     }
-                    .listStyle(for: options.listStyle) /// Set the `listStyle` of your selection
+                    .listStyle(for: options.listStyle) /// Set the `listStyle` of your selection.
                 }
             }
-            .transition(.opacity) /// Fade it in once the JSON loads
-            .navigationBarTitle(Text(options.navigationBar.title), displayMode: .large) /// Set your title
-            .background(NavigationConfigurator { nc in /// Set the other properties of `options.navigationBar`
+            .transition(.opacity) /// Fade it in once the JSON loads.
+            .navigationBarTitle(Text(options.navigationBar.title), displayMode: .large) /// Set your title.
+            .background(NavigationConfigurator { nc in /// Set the other properties of `options.navigationBar`.
                 let navBarAppearance = UINavigationBarAppearance()
                 navBarAppearance.configureWithOpaqueBackground()
                 navBarAppearance.titleTextAttributes = [.foregroundColor: options.navigationBar.titleColor]
@@ -142,7 +142,7 @@ public struct SupportDocsView: View {
             /**
              If you have a dismiss button, display it.
              */
-            .ifConditional( /// Helper inside `Utilities.swift`
+            .ifConditional( /// Helper inside `Utilities.swift`.
                 options.navigationBar.dismissButtonTitle != nil
                     &&
                 (isPresented != nil || donePressed != nil)
@@ -154,17 +154,18 @@ public struct SupportDocsView: View {
                             /**
                              When the dismiss button is pressed, dismiss SupportDocs.
                              */
-                            isPresented?.wrappedValue = false /// if presented with SwiftUI, toggle the `Binding` that presented this in a sheet
-                            donePressed?() /// if presented with UIKit, trigger the done handler
+                            isPresented?.wrappedValue = false /// if presented with SwiftUI, toggle the `Binding` that presented this in a sheet.
+                            donePressed?() /// if presented with UIKit, trigger the done handler.
                         }
                 )
             }
             
             /**
-             Show the welcome view if in landscape or on iPad, when a row hasn't been selected yet
+             Show the welcome view if in landscape or on iPad, when a row hasn't been selected yet.
              */
             options.other.welcomeView
         }
+        .navigationViewStyle(for: options.navigationViewStyle) /// Set the `navigationViewStyle` of your selection.
         
         /**
          When everything first loads, load the JSON.

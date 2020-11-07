@@ -8,9 +8,9 @@
 import SwiftUI
 
 /**
- Port `UIActivityIndicatorView` over to SwiftUI
+ Port `UIActivityIndicatorView` over to SwiftUI.
  
- Source: [https://stackoverflow.com/a/56496896/14351818](https://stackoverflow.com/a/56496896/14351818)
+ Source: [https://stackoverflow.com/a/56496896/14351818](https://stackoverflow.com/a/56496896/14351818).
  */
 internal struct ActivityIndicator: UIViewRepresentable {
 

@@ -8,10 +8,10 @@
 import SwiftUI
 
 /**
- Each section in the List
+ Each section in the List.
  */
 internal struct SupportSection: Identifiable {
-    let id = UUID() /// Required for the List
+    let id = UUID() /// Required for the List.
     
     var name: String
     var color: UIColor
@@ -19,39 +19,39 @@ internal struct SupportSection: Identifiable {
 }
 
 /**
- Each item in a section in the List
+ Each item in a section in the List.
  */
 internal struct SupportItem: Identifiable {
-    let id = UUID() /// Required for the List
+    let id = UUID() /// Required for the List.
     
     var title: String
     var url: String
 }
 
 /**
- The `View` that displays the title of each document, used in the List
+ The `View` that displays the title of each document, used in the List.
  
- Think of this as the `Cell` class for `cellForItemAt` if this was UIKit
+ Think of this as the `Cell` class for `cellForItemAt` if this was UIKit.
  */
 internal struct SupportItemRow: View {
     
     /**
-     Title of the document
+     Title of the document.
      */
     var title: String
     
     /**
-     Color of the title
+     Color of the title.
      */
     var titleColor: UIColor
     
     /**
-     The URL to load when this `View` is tapped
+     The URL to load when this `View` is tapped.
      */
     var url: URL
     
     /**
-     Options for how to display the progress bar (foreground + background color)
+     Options for how to display the progress bar (foreground + background color).
      */
     var progressBarOptions: SupportOptions.ProgressBar
     
@@ -60,7 +60,7 @@ internal struct SupportItemRow: View {
             destination:
                 
                 /**
-                 Push to the web view when tapped
+                 Push to the web view when tapped.
                  */
                 WebViewContainer(url: url, progressBarOptions: progressBarOptions)
                 .navigationBarTitle(Text(title), displayMode: .inline)

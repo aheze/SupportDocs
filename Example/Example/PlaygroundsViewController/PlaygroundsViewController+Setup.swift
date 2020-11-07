@@ -16,6 +16,7 @@ extension PlaygroundsViewController {
         navigationBarView.clipsToBounds = true
         progressBarView.clipsToBounds = true
         listStyleView.clipsToBounds = true
+        navigationViewStyleView.clipsToBounds = true
         otherView.clipsToBounds = true
         
         urlsView.layer.cornerRadius = 12
@@ -23,6 +24,7 @@ extension PlaygroundsViewController {
         navigationBarView.layer.cornerRadius = 12
         progressBarView.layer.cornerRadius = 12
         listStyleView.layer.cornerRadius = 12
+        navigationViewStyleView.layer.cornerRadius = 12
         otherView.layer.cornerRadius = 12
         
         titleColorButton.layer.cornerRadius = 8
@@ -31,6 +33,7 @@ extension PlaygroundsViewController {
         foregroundColorButton.layer.cornerRadius = 8
         backgroundColorButton.layer.cornerRadius = 8
         listStyleButton.layer.cornerRadius = 8
+        navigationViewStyleButton.layer.cornerRadius = 8
         activityIndicatorStyleButton.layer.cornerRadius = 8
         
         addShadow(button: titleColorButton)
@@ -65,6 +68,19 @@ extension PlaygroundsViewController {
         
         listStyleButton.inputAccessoryView = listStyleToolbar
         
+        navigationViewStylePicker.delegate = self
+        navigationViewStyleButton.inputView = navigationViewStylePicker
+        
+        let navigationViewToolbar = UIToolbar()
+        navigationViewToolbar.sizeToFit()
+        
+        let navigationViewFlexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let navigationViewDoneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissPicker))
+        
+        navigationViewToolbar.setItems([navigationViewFlexibleButton, navigationViewDoneButton], animated: true)
+        navigationViewToolbar.isUserInteractionEnabled = true
+        
+        navigationViewStyleButton.inputAccessoryView = navigationViewToolbar
         
         activityIndicatorStylePicker.delegate = self
         activityIndicatorStyleButton.inputView = activityIndicatorStylePicker
@@ -99,6 +115,8 @@ extension PlaygroundsViewController {
         
         let defaultListStyle = SupportOptions.CustomListStyle.insetGroupedListStyle
         
+        let defaultNavigationViewStyle = SupportOptions.CustomNavigationViewStyle.defaultNavigationViewStyle
+        
         let defaultActivityIndicatorStyle = UIActivityIndicatorView.Style.large
         let defaultWelcomeView = WelcomeView()
         let defaultFooter = Footer()
@@ -120,6 +138,8 @@ extension PlaygroundsViewController {
         
         options.listStyle = defaultListStyle
         
+        options.navigationViewStyle = defaultNavigationViewStyle
+        
         options.other.activityIndicatorStyle = defaultActivityIndicatorStyle
         options.other.welcomeView = AnyView(defaultWelcomeView) /// set the welcome view
         options.other.footer = AnyView(defaultFooter) /// set the footer
@@ -139,6 +159,7 @@ extension PlaygroundsViewController {
         backgroundColorButton.backgroundColor = defaultProgressBarBackgroundColor
         
         listStyleButton.setTitle(defaultListStyle.getString(), for: .normal)
+        navigationViewStyleButton.setTitle(defaultNavigationViewStyle.getString(), for: .normal)
         activityIndicatorStyleButton.setTitle(defaultActivityIndicatorStyle.getString(), for: .normal)
         
     }
@@ -167,6 +188,18 @@ extension SupportOptions.CustomListStyle {
             return "InsetListStyle"
         case .sidebarListStyle:
             return "SidebarListStyle"
+        }
+    }
+}
+extension SupportOptions.CustomNavigationViewStyle {
+    func getString() -> String {
+        switch self {
+        case .defaultNavigationViewStyle:
+            return "DefaultNavigationViewStyle"
+        case .doubleColumnNavigationViewStyle:
+            return "DoubleColumnNavigationViewStyle"
+        case .stackNavigationViewStyle:
+            return "StackNavigationViewStyle"
         }
     }
 }
