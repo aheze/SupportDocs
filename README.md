@@ -2,7 +2,7 @@
 This is where SupportDocs gets its data!
 
 ## Data Source URL
-<a id="datasource_url" href="https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/data.json">https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/data.json</a>
+<a id="datasource_url" href="https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
 
 ## Table of Contents
 - [How to Make Spaghetti](https://hkamran80.github.io/SupportDocs/Recipes/HowToMakeSpaghetti)
