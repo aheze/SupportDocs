@@ -1,5 +1,6 @@
 ---
 title: Peach smoothie
+tags: smoothies
 ---
 
 # Peach smoothie
