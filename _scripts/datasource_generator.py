@@ -15,6 +15,7 @@ import os
 GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
 FULL_GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
 GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
+GITHUB_BRANCH = os.environ.get("GITHUB_REF").split("/")[-1] if os.environ.get("GITHUB_REF") else GITHUB_REPOSITORY
 DATA_JSON_FILE_PATH = "_data/data.json"
 READ_README_FILE_PATH = "_scripts/README.md"
 WRITE_README_FILE_PATH = "README.md"
@@ -75,7 +76,7 @@ if __name__ == "__main__":
     with open(READ_README_FILE_PATH, "r") as readme_file:
         readme = jinja2.Template(readme_file.read(), trim_blocks=True)
 
-    datasource_url = f"https://github.com/{FULL_GITHUB_REPOSITORY}".replace("//github.com/", "//raw.githubusercontent.com/").replace("/blob/", "/") + f"/{GITHUB_REPOSITORY}/{DATA_JSON_FILE_PATH}"
+    datasource_url = f"https://github.com/{FULL_GITHUB_REPOSITORY}".replace("//github.com/", "//raw.githubusercontent.com/").replace("/blob/", "/") + f"/{GITHUB_BRANCH}/{DATA_JSON_FILE_PATH}"
     rendered_readme = readme.render(datasource_url=datasource_url)
     readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
     readme_output.write(rendered_readme)
