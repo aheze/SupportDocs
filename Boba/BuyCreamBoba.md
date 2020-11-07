@@ -1,8 +1,8 @@
 ---
-title: Cream boba
+title: Buy cream boba
 ---
 
-# Cream boba
+# Buy cream boba
 
 Creamy and yummy. Buy this at [google.com](https://google.com)
 
