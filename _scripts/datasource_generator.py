@@ -16,7 +16,7 @@ GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
 FULL_GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
 GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
 GITHUB_BRANCH = os.environ.get("GITHUB_REF").split("/")[-1] if os.environ.get("GITHUB_REF") else GITHUB_REPOSITORY
-DATA_JSON_FILE_PATH = "_data/data.json"
+DATA_JSON_FILE_PATH = "_data/supportdocs_datasource.json"
 READ_README_FILE_PATH = "_scripts/README.md"
 WRITE_README_FILE_PATH = "README.md"
 
@@ -41,6 +41,9 @@ def parse_markdown(path: str):
 def remove_preexisting_data():
     if os.path.exists(os.path.abspath("_data/data.json")):
         os.remove(os.path.abspath("_data/data.json"))
+
+    if os.path.exists(os.path.abspath("_data/supportdocs_datasource.json")):
+        os.remove(os.path.abspath("_data/supportdocs_datasource.json"))
 
 if __name__ == "__main__":
     data = []
