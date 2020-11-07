@@ -1,6 +1,6 @@
 ---
 title: How to Cook Pizza
-tags: recipes
+tags: fastFood
 --- 
 
 # How to Cook Pizza
