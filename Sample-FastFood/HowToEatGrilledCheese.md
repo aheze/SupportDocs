@@ -1,5 +1,6 @@
 ---
 title: How to eat grilled cheese
+tags: fastFood
 ---
 
 # How to eat grilled cheese
