@@ -1,8 +1,8 @@
 ---
-title: Blue boba
+title: Buy blue boba
 ---
 
-# Blue boba
+# Buy blue boba
 
 Blue and yummy. Buy this at [google.com](https://google.com)
 
