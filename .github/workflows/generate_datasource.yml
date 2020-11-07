@@ -19,7 +19,7 @@ jobs:
                   python _scripts/datasource_generator.py
             - name: Run Diff
               run: |
-                git diff DataSource origin
+                git diff DataSource origin/DataSource
             - name: Commit Files
               id: commit
               run: |
