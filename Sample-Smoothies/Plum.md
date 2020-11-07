@@ -1,5 +1,6 @@
 ---
 title: Plum smoothie
+tags: smoothies
 ---
 
 # Plum smoothie
