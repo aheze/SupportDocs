@@ -1,14 +1,15 @@
 ---
-title: How to cook pizza
+title: How to Cook Pizza
+tags: recipes
 --- 
 
-# How to cook pizza
+# How to Cook Pizza
 
 Cooking pizza is easy!
 
 Here is an image of a pizza:
 
-![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/pizza.jpg)
+![Pizza](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/pizza.jpg)
 
 Here is an image of a pizza, but resized to 300 width:
 

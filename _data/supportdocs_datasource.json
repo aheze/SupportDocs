@@ -1,0 +1,30 @@
+[
+    {
+        "title": "How to Make Spaghetti",
+        "url": "https://hkamran80.github.io/SupportDocs/Recipes/HowToMakeSpaghetti",
+        "tags": [
+            "recipes"
+        ]
+    },
+    {
+        "title": "How to Prepare Ramen",
+        "url": "https://hkamran80.github.io/SupportDocs/Recipes/HowToPrepareRamen",
+        "tags": [
+            "recipes"
+        ]
+    },
+    {
+        "title": "How to Cook Pizza",
+        "url": "https://hkamran80.github.io/SupportDocs/Recipes/HowToCookPizza",
+        "tags": [
+            "recipes"
+        ]
+    },
+    {
+        "title": "Blueberry Smoothie",
+        "url": "https://hkamran80.github.io/SupportDocs/Smoothies/Blueberry",
+        "tags": [
+            "smoothies"
+        ]
+    }
+]
