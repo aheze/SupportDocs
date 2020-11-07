@@ -85,7 +85,7 @@ extension PlaygroundsViewController {
     func setupDefaultValues() {
         
         // MARK: - Define defaults
-        let defaultDataSourceURL = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsSwiftUI/main/SupportDocsSwiftUI/docData.json")!
+        let defaultDataSourceURL = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/dataSource.json")!
         let defaultError404URL = URL(string: "https://google.com")!
         
         let defaultNavigationBarTitle = "Support"

@@ -20,7 +20,7 @@ extension PlaygroundsViewController: UITextFieldDelegate {
         switch textField {
         case dataSourceTextField:
             if updatedString.isEmpty {
-                options.urls.dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsSwiftUI/main/SupportDocsSwiftUI/docData.json")!
+                options.urls.dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/dataSource.json")!
             } else {
                 if let url = URL(string: updatedString) {
                     options.urls.dataSource = url

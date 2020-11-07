@@ -159,6 +159,11 @@ public struct SupportDocsView: View {
                         }
                 )
             }
+            
+            /**
+             Show the welcome view if in landscape or on iPad, when a row hasn't been selected yet
+             */
+            options.other.welcomeView
         }
         
         /**

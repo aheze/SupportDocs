@@ -16,7 +16,7 @@ import SwiftUI
  - `navigationBar`: Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
  - `progressBar`: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
  - `listStyle`: The style of the `List`. Defaults to `.defaultListStyle`.
- - `other`: Set the activity indicator size and a custom footer view.
+ - `other`: Set the loading spinner size, welcome view, and an optional footer to be displayed at the bottom of the `List`.
  */
 public struct SupportOptions {
     
@@ -46,7 +46,7 @@ public struct SupportOptions {
     public var listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle
     
     /**
-     Set the activity indicator size and a custom footer view.
+     Set the loading spinner size, welcome view, and an optional footer to be displayed at the bottom of the `List`.
      */
     public var other: Other = Other()
     
@@ -58,7 +58,7 @@ public struct SupportOptions {
      - parameter navigationBar: Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
      - parameter progressBar: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
      - parameter listStyle: The style of the `List`. Defaults to `.defaultListStyle`.
-     - parameter other: Set the activity indicator size and a custom footer view.
+     - parameter other: Set the loading spinner size, welcome view, and an optional footer to be displayed at the bottom of the `List`.
      */
     public init(
         urls: URLs = URLs(),
