@@ -1,11 +1,15 @@
 ---
-title: Blueberry smoothie
+title: Cream boba
 ---
 
-# Blueberry smoothie
+# Cream boba
 
-Blueberry smoothies taste great! What is your favorite smoothie?
+Creamy and yummy. Buy this at [google.com](https://google.com)
 
-Apple | Blueberry | Peach | Plum | Red Berry
---- | --- | --- | --- | ---
-![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/apples.jpg) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/berrySmoothie.jpg) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/peaches.jpg) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/plums.jpg) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/redSmoothie.jpg) 
+1. Eat
+2. Eat
+3. Eat
+4. Eat
+5. Eat
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/creamBoba.jpg)
