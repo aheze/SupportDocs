@@ -2,13 +2,24 @@
 This is where SupportDocs gets its data!
 
 ## Data Source URL
-<a id="datasource_url" href="https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
+<a id="datasource_url" href="https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
 
 ## Table of Contents
-- [How to Make Spaghetti](https://hkamran80.github.io/SupportDocs/Recipes/HowToMakeSpaghetti)
-- [How to Prepare Ramen](https://hkamran80.github.io/SupportDocs/Recipes/HowToPrepareRamen)
-- [How to Cook Pizza](https://hkamran80.github.io/SupportDocs/Recipes/HowToCookPizza)
-- [Blueberry Smoothie](https://hkamran80.github.io/SupportDocs/Smoothies/Blueberry)
+- [How to eat grilled cheese](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToEatGrilledCheese)
+- [How to make spaghetti](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToMakeSpaghetti)
+- [How to eat burritos](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToEatBurritos)
+- [How to eat tacos](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToEatTacos)
+- [How to eat nachos](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToEatNachos)
+- [How to Prepare Ramen](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToPrepareRamen)
+- [How to Cook Pizza](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToCookPizza)
+- [Plum smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Plum)
+- [Peach smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Peach)
+- [Blueberry Smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Blueberry)
+- [Red berry smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/RedBerries)
+- [Apple smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Apple)
+- [Buy cream boba](https://aheze.github.io/SupportDocs/Sample-Boba/BuyCreamBoba)
+- [Buy blue boba](https://aheze.github.io/SupportDocs/Sample-Boba/BuyBlueBoba)
+- [Buy orange boba](https://aheze.github.io/SupportDocs/Sample-Boba/BuyOrangeBoba)
 
 
 ## Notes
