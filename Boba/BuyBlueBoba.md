@@ -4,7 +4,7 @@ title: Blue boba
 
 # Blue boba
 
-Blue and yummy.
+Blue and yummy. Buy this at [google.com](https://google.com)
 
 1. Eat
 2. Eat
