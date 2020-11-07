@@ -64,6 +64,7 @@ internal struct SupportItemRow: View {
                  */
                 WebViewContainer(url: url, progressBarOptions: progressBarOptions)
                 .navigationBarTitle(Text(title), displayMode: .inline)
+                .edgesIgnoringSafeArea(.all) /// Allow the web view to go under the home indicator, on devices similar to the iPhone X.
         ) {
             Text(title)
             .foregroundColor(Color(titleColor))
