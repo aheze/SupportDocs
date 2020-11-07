@@ -1,5 +1,6 @@
 ---
 title: Buy orange boba
+tags: boba
 ---
 
 # Buy orange boba
