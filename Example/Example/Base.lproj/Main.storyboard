@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5MV-DT-cd0" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="359"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="408"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to SupportDocs!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hk8-jq-xrl">
                                                 <rect key="frame" x="20" y="26" width="279" height="29"/>
@@ -71,18 +71,30 @@
                                                     <action selector="uikitExampleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nRf-v0-ChT"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyf-iG-bWG">
+                                                <rect key="frame" x="119.5" y="359" width="175" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="View source on GitHub">
+                                                    <color key="titleColor" systemColor="secondaryLabelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="viewSourcePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6A2-hp-yJ4"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Mqm-5p-VRj" secondAttribute="trailing" constant="20" id="5RJ-UG-7H7"/>
                                             <constraint firstItem="1nI-Xr-25h" firstAttribute="top" secondItem="Hk8-jq-xrl" secondAttribute="bottom" constant="16" id="6Vf-fh-dVQ"/>
                                             <constraint firstAttribute="trailing" secondItem="lfN-54-Cpf" secondAttribute="trailing" constant="20" id="6vi-Eg-d5Z"/>
-                                            <constraint firstAttribute="bottom" secondItem="lfN-54-Cpf" secondAttribute="bottom" constant="16" id="EVG-vG-NVa"/>
+                                            <constraint firstItem="pyf-iG-bWG" firstAttribute="centerX" secondItem="5MV-DT-cd0" secondAttribute="centerX" id="AoA-1N-aoJ"/>
                                             <constraint firstItem="Hk8-jq-xrl" firstAttribute="leading" secondItem="5MV-DT-cd0" secondAttribute="leading" constant="20" id="GrJ-mJ-rvL"/>
+                                            <constraint firstAttribute="bottom" secondItem="pyf-iG-bWG" secondAttribute="bottom" constant="16" id="H4N-3d-ZoY"/>
                                             <constraint firstItem="lfN-54-Cpf" firstAttribute="top" secondItem="Mqm-5p-VRj" secondAttribute="bottom" constant="16" id="MS1-Ia-lbc"/>
                                             <constraint firstItem="1nI-Xr-25h" firstAttribute="leading" secondItem="5MV-DT-cd0" secondAttribute="leading" constant="20" id="NxV-MD-nKk"/>
                                             <constraint firstItem="Hk8-jq-xrl" firstAttribute="top" secondItem="5MV-DT-cd0" secondAttribute="top" constant="26" id="QIA-33-4CY"/>
                                             <constraint firstAttribute="trailing" secondItem="1nI-Xr-25h" secondAttribute="trailing" constant="20" id="Wj0-LA-264"/>
+                                            <constraint firstItem="pyf-iG-bWG" firstAttribute="top" secondItem="lfN-54-Cpf" secondAttribute="bottom" constant="16" id="jlQ-Zl-zqm"/>
                                             <constraint firstItem="Mqm-5p-VRj" firstAttribute="top" secondItem="1nI-Xr-25h" secondAttribute="bottom" constant="16" id="kmG-aE-Lch"/>
                                             <constraint firstItem="lfN-54-Cpf" firstAttribute="leading" secondItem="5MV-DT-cd0" secondAttribute="leading" constant="20" id="uOj-SL-7ky"/>
                                             <constraint firstItem="Mqm-5p-VRj" firstAttribute="leading" secondItem="5MV-DT-cd0" secondAttribute="leading" constant="20" id="ze0-se-dVK"/>

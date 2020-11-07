@@ -44,7 +44,12 @@ class ViewController: UIViewController {
         }
     }
     
-
+    @IBAction func viewSourcePressed(_ sender: Any) {
+        if let url = URL(string: "https://github.com/aheze/SupportDocs") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
