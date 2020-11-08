@@ -16,7 +16,7 @@ import SwiftUI
  - `progressBar`: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
  - `listStyle`: The style of the `List`. Defaults to `.defaultListStyle`.
  - `navigationViewStyle`: The style of the `NavigationView`. Defaults to `.defaultNavigationViewStyle`.
- - `other`: Set the loading spinner size, welcome view, and an optional footer to be displayed at the bottom of the `List`.
+ - `other`: Set the loading spinner size, welcome view, footer to be displayed at the bottom of the `List`, and error 404 page.
  */
 public struct SupportOptions {
     
