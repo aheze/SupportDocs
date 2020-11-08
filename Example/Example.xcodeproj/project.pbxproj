@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		493AD624255880BB00AADC52 /* SupportDocs in Frameworks */ = {isa = PBXBuildFile; productRef = 493AD623255880BB00AADC52 /* SupportDocs */; };
+		49188AF02558AB3500AFD53F /* SupportDocs in Frameworks */ = {isa = PBXBuildFile; productRef = 49188AEF2558AB3500AFD53F /* SupportDocs */; };
 		49702F0D25562B4400DCD8DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49702F0C25562B4400DCD8DD /* AppDelegate.swift */; };
 		49702F0F25562B4400DCD8DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49702F0E25562B4400DCD8DD /* SceneDelegate.swift */; };
 		49702F1125562B4400DCD8DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49702F1025562B4400DCD8DD /* ViewController.swift */; };
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				493AD624255880BB00AADC52 /* SupportDocs in Frameworks */,
+				49188AF02558AB3500AFD53F /* SupportDocs in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +127,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				493AD623255880BB00AADC52 /* SupportDocs */,
+				49188AEF2558AB3500AFD53F /* SupportDocs */,
 			);
 			productName = Example;
 			productReference = 49702F0925562B4400DCD8DD /* Example.app */;
@@ -157,7 +157,7 @@
 			);
 			mainGroup = 49702F0025562B4300DCD8DD;
 			packageReferences = (
-				493AD622255880BB00AADC52 /* XCRemoteSwiftPackageReference "SupportDocs" */,
+				49188AEE2558AB3500AFD53F /* XCRemoteSwiftPackageReference "SupportDocs" */,
 			);
 			productRefGroup = 49702F0A25562B4400DCD8DD /* Products */;
 			projectDirPath = "";
@@ -405,20 +405,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		493AD622255880BB00AADC52 /* XCRemoteSwiftPackageReference "SupportDocs" */ = {
+		49188AEE2558AB3500AFD53F /* XCRemoteSwiftPackageReference "SupportDocs" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aheze/SupportDocs.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.18;
+				minimumVersion = 0.0.19;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		493AD623255880BB00AADC52 /* SupportDocs */ = {
+		49188AEF2558AB3500AFD53F /* SupportDocs */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 493AD622255880BB00AADC52 /* XCRemoteSwiftPackageReference "SupportDocs" */;
+			package = 49188AEE2558AB3500AFD53F /* XCRemoteSwiftPackageReference "SupportDocs" */;
 			productName = SupportDocs;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -20,18 +20,18 @@ extension PlaygroundsViewController: UITextFieldDelegate {
         switch textField {
         case dataSourceTextField:
             if updatedString.isEmpty {
-                options.urls.dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/dataSource.json")!
+                dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsTestingTemplate3/DataSource/_data/supportdocs_datasource.json")!
             } else {
                 if let url = URL(string: updatedString) {
-                    options.urls.dataSource = url
+                    dataSource = url
                 }
             }
         case error404TextField:
             if updatedString.isEmpty {
-                options.urls.error404 = URL(string: "https://google.com")!
+                options.other.error404 = URL(string: "https://google.com")!
             } else {
                 if let url = URL(string: updatedString) {
-                    options.urls.error404 = url
+                    options.other.error404 = url
                 }
             }
         case titleTextField:

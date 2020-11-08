@@ -10,11 +10,9 @@ import SupportDocs
 
 struct SwiftUIExampleView: View {
     
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
     let options = SupportOptions(
-        urls: .init(
-            dataSource: URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!,
-            error404: URL(string: "https://google.com")!
-        ),
         categories: [
             .init(jsonTagNames: ["recipes"], displayName: "Recipes")
         ],
@@ -32,7 +30,9 @@ struct SwiftUIExampleView: View {
         listStyle: .insetGroupedListStyle,
         other: .init(
             activityIndicatorStyle: UIActivityIndicatorView.Style.large,
-            footer: AnyView(Footer())
+            welcomeView: AnyView(WelcomeView()),
+            footer: AnyView(Footer()),
+            error404: URL(string: "https://google.com")!
         )
     )
     
@@ -42,7 +42,7 @@ struct SwiftUIExampleView: View {
         VStack {
             Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
                 .sheet(isPresented: $supportDocsPresented, content: {
-                    SupportDocsView(options: options, isPresented: $supportDocsPresented)
+                    SupportDocsView(dataSource: dataSource, options: options, isPresented: $supportDocsPresented)
                 })
             Text("SwiftUIExampleView.swift")
                 .foregroundColor(Color(UIColor.secondaryLabel))
@@ -55,11 +55,7 @@ struct SwiftUIExampleView: View {
  */
 struct SwiftUIExampleView_MinimalCode: View {
     
-    let options = SupportOptions(
-        urls: .init(
-            dataSource: URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
-        )
-    )
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
     
     @State var supportDocsPresented = false
     
@@ -67,7 +63,7 @@ struct SwiftUIExampleView_MinimalCode: View {
         VStack {
             Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
             .sheet(isPresented: $supportDocsPresented, content: {
-                SupportDocsView(options: options, isPresented: $supportDocsPresented)
+                SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
             })
         }
     }

@@ -11,7 +11,7 @@ import SupportDocs
 
 extension PlaygroundsViewController {
     func setupCornerRadius() {
-        urlsView.clipsToBounds = true
+        dataSourceView.clipsToBounds = true
         categoriesView.clipsToBounds = true
         navigationBarView.clipsToBounds = true
         progressBarView.clipsToBounds = true
@@ -19,7 +19,7 @@ extension PlaygroundsViewController {
         navigationViewStyleView.clipsToBounds = true
         otherView.clipsToBounds = true
         
-        urlsView.layer.cornerRadius = 12
+        dataSourceView.layer.cornerRadius = 12
         categoriesView.layer.cornerRadius = 12
         navigationBarView.layer.cornerRadius = 12
         progressBarView.layer.cornerRadius = 12
@@ -47,9 +47,9 @@ extension PlaygroundsViewController {
     
     func setupTextFieldDelegates() {
         dataSourceTextField.delegate = self
-        error404TextField.delegate = self
         titleTextField.delegate = self
         dismissButtonTitleTextField.delegate = self
+        error404TextField.delegate = self
     }
     
     func setupPickerDelegates() {
@@ -101,8 +101,7 @@ extension PlaygroundsViewController {
     func setupDefaultValues() {
         
         // MARK: - Define defaults
-        let defaultDataSourceURL = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/dataSource.json")!
-        let defaultError404URL = URL(string: "https://google.com")!
+        let defaultDataSourceURL = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsTestingTemplate3/DataSource/_data/supportdocs_datasource.json")!
         
         let defaultNavigationBarTitle = "Support"
         let defaultNavigationBarTitleColor = UIColor.label
@@ -120,11 +119,9 @@ extension PlaygroundsViewController {
         let defaultActivityIndicatorStyle = UIActivityIndicatorView.Style.large
         let defaultWelcomeView = WelcomeView()
         let defaultFooter = Footer()
+        let defaultError404URL = URL(string: "https://google.com")!
         
         // MARK: - Set options
-        options.urls.dataSource = defaultDataSourceURL
-        options.urls.error404 = defaultError404URL
-        
         
         let bobaCategory = SupportOptions.Category(jsonTagNames: ["boba"], displayName: "Boba")
         let fastFoodCategory = SupportOptions.Category(jsonTagNames: ["fastFood"], displayName: "Fast Food")
@@ -149,10 +146,10 @@ extension PlaygroundsViewController {
         options.other.activityIndicatorStyle = defaultActivityIndicatorStyle
         options.other.welcomeView = AnyView(defaultWelcomeView) /// set the welcome view
         options.other.footer = AnyView(defaultFooter) /// set the footer
+        options.other.error404 = defaultError404URL
         
         // MARK: - Set UI
         dataSourceTextField.placeholder = defaultDataSourceURL.absoluteString
-        error404TextField.placeholder = defaultError404URL.absoluteString
         
         titleTextField.placeholder = defaultNavigationBarTitle
         titleColorButton.backgroundColor = defaultNavigationBarTitleColor
@@ -167,6 +164,7 @@ extension PlaygroundsViewController {
         listStyleButton.setTitle(defaultListStyle.getString(), for: .normal)
         navigationViewStyleButton.setTitle(defaultNavigationViewStyle.getString(), for: .normal)
         activityIndicatorStyleButton.setTitle(defaultActivityIndicatorStyle.getString(), for: .normal)
+        error404TextField.placeholder = defaultError404URL.absoluteString
         
     }
     

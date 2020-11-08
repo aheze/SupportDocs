@@ -11,12 +11,13 @@ import SupportDocs
 
 class PlaygroundsViewController: UIViewController {
     
+    var dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsTestingTemplate3/DataSource/_data/supportdocs_datasource.json")!
     var options = SupportOptions()
     
     // MARK: - URLs
-    @IBOutlet weak var urlsView: UIView!
+    @IBOutlet weak var dataSourceView: UIView!
     @IBOutlet weak var dataSourceTextField: UITextField!
-    @IBOutlet weak var error404TextField: UITextField!
+    
     
     // MARK: - Categories
     @IBOutlet weak var categoriesView: UIView!
@@ -129,10 +130,12 @@ class PlaygroundsViewController: UIViewController {
         activityIndicatorStyleButton.becomeFirstResponder()
     }
     
+    @IBOutlet weak var error404TextField: UITextField!
+    
     // MARK: - Present
     @IBOutlet weak var presentButton: UIButton!
     @IBAction func presentButtonPressed(_ sender: Any) {
-        let supportDocsViewController = SupportDocsViewController(options: options)
+        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
         self.present(supportDocsViewController, animated: true, completion: nil)
     }
     

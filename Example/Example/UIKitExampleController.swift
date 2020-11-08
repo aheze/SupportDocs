@@ -13,11 +13,9 @@ class UIKitExampleController: UIViewController {
     
     // MARK: - The SwiftUI way of making `SupportOptions` also works in UIKit... but it's harder.
 //    let options = SupportOptions(
-//        urls: .init(
-//            dataSource: URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!,
-//            error404: URL(string: "https://google.com")!
-//        ),
-//        categories: nil,
+//        categories: [
+//            .init(jsonTagNames: ["recipes"], displayName: "Recipes")
+//        ],
 //        navigationBar: .init(
 //            title: "Support",
 //            titleColor: UIColor.white,
@@ -29,21 +27,23 @@ class UIKitExampleController: UIViewController {
 //            foregroundColor: UIColor.green,
 //            backgroundColor: UIColor.systemBackground
 //        ),
-//        listStyle: .groupedListStyle,
+//        listStyle: .insetGroupedListStyle,
 //        other: .init(
 //            activityIndicatorStyle: UIActivityIndicatorView.Style.large,
-//            footer: AnyView(Footer())
+//            welcomeView: AnyView(WelcomeView()),
+//            footer: AnyView(Footer()),
+//            error404: URL(string: "https://google.com")!
 //        )
 //    )
     
     @IBOutlet weak var presentButton: UIButton!
     @IBAction func presentButtonPressed(_ sender: Any) {
         
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        
         // MARK: - UIKit way to make `SupportOptions`
         var options = SupportOptions()
-        options.urls.dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
-        options.urls.error404 = URL(string: "https://google.com")!
-        options.categories = nil
+        options.categories = [SupportOptions.Category(jsonTagNames: ["recipes"], displayName: "Recipes")]
         options.navigationBar.title = "Support"
         options.navigationBar.titleColor = UIColor.white
         options.navigationBar.dismissButtonTitle = "Done"
@@ -53,9 +53,11 @@ class UIKitExampleController: UIViewController {
         options.progressBar.backgroundColor = UIColor.systemBackground
         options.listStyle = .groupedListStyle
         options.other.activityIndicatorStyle = .large
+        options.other.welcomeView = AnyView(WelcomeView())
         options.other.footer = AnyView(Footer())
+        options.other.error404 = URL(string: "https://google.com")!
         
-        let supportDocsViewController = SupportDocsViewController(options: options)
+        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
         self.present(supportDocsViewController, animated: true, completion: nil)
         
     }
@@ -74,10 +76,9 @@ class UIKitExampleController_MinimalCode: UIViewController {
      */
     @IBAction func presentButtonPressed(_ sender: Any) {
         
-        var options = SupportOptions()
-        options.urls.dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
         
-        let supportDocsViewController = SupportDocsViewController(options: options)
+        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource)
         self.present(supportDocsViewController, animated: true, completion: nil)
     }
 }
