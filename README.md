@@ -3,7 +3,7 @@
 
 ### Generate help centers for your iOS apps, with Markdown!
 
-![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Header.png)
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/New%20Header.png)
 
 # SupportDocs is currently under heavy development. Check back in a couple days!
 
