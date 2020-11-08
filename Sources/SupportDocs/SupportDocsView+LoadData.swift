@@ -14,7 +14,7 @@ internal extension SupportDocsView {
      Load the JSON.
      */
     func loadData() {
-        let request = URLRequest(url: options.urls.dataSource)
+        let request = URLRequest(url: dataSource)
         URLSession.shared.dataTask(with: request) { data, response, error in
             
             guard
