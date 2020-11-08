@@ -14,7 +14,7 @@ import SwiftUI
  - `categories`: Allows you to group documents with the same `tag` into the same section of the list. Each category may contain more than one `tag`.
  - `navigationBar`: Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
  - `progressBar`: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
- - `listStyle`: The style of the `List`. Defaults to `.defaultListStyle`.
+ - `listStyle`: The style of the `List`. Defaults to `.insetGroupedListStyle`.
  - `navigationViewStyle`: The style of the `NavigationView`. Defaults to `.defaultNavigationViewStyle`.
  - `other`: Set the loading spinner size, welcome view, footer to be displayed at the bottom of the `List`, and error 404 page.
  */
@@ -36,7 +36,7 @@ public struct SupportOptions {
     public var progressBar: ProgressBar = ProgressBar()
     
     /**
-     The style of the `List`. Defaults to `.defaultListStyle`.
+     The style of the `List`. Defaults to `.insetGroupedListStyle`.
      */
     public var listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle
     
@@ -56,7 +56,7 @@ public struct SupportOptions {
      - parameter categories: Allows you to group documents with the same `tag` into the same section of the list. Each category may contain more than one `tag`.
      - parameter navigationBar: Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
      - parameter progressBar: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
-     - parameter listStyle: The style of the `List`. Defaults to `.defaultListStyle`.
+     - parameter listStyle: The style of the `List`. Defaults to `.insetGroupedListStyle`.
      - parameter navigationViewStyle: The style of the `NavigationView`. Defaults to `.defaultNavigationViewStyle`.
      - parameter other: Set the loading spinner size, welcome view, and an optional footer to be displayed at the bottom of the `List`.
      */
@@ -64,7 +64,7 @@ public struct SupportOptions {
         categories: [Category]? = nil,
         navigationBar: NavigationBar = NavigationBar(),
         progressBar: ProgressBar = ProgressBar(),
-        listStyle: CustomListStyle = CustomListStyle.defaultListStyle,
+        listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle,
         navigationViewStyle: CustomNavigationViewStyle = CustomNavigationViewStyle.defaultNavigationViewStyle,
         other: Other = Other()
     ) {
