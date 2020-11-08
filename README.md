@@ -22,3 +22,48 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
 
 ### Installation
+
+
+
+### Customization — Library
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td rowspan="4">
+    Image here
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    navigationBar: .init(
+      title: "Support"
+    )
+  )
+  ```
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.navigationBar.title = "Support"
+  ```
+  </td>
+  </tr>
+</table>
