@@ -125,7 +125,13 @@ extension PlaygroundsViewController {
         options.urls.dataSource = defaultDataSourceURL
         options.urls.error404 = defaultError404URL
         
-        options.categories = nil
+        
+        let bobaCategory = SupportOptions.Category(jsonTagNames: ["boba"], displayName: "Boba")
+        let fastFoodCategory = SupportOptions.Category(jsonTagNames: ["fastFood"], displayName: "Fast Food")
+        let smoothiesCategory = SupportOptions.Category(jsonTagNames: ["smoothies"], displayName: "Smoothies")
+        
+//        options.categories = nil
+        options.categories = [bobaCategory, fastFoodCategory, smoothiesCategory]
         
         options.navigationBar.title = defaultNavigationBarTitle
         options.navigationBar.titleColor = defaultNavigationBarTitleColor

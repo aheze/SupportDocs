@@ -12,7 +12,7 @@ struct SwiftUIExampleView: View {
     
     let options = SupportOptions(
         urls: .init(
-            dataSource: URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/data.json")!,
+            dataSource: URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!,
             error404: URL(string: "https://google.com")!
         ),
         categories: [
@@ -46,6 +46,29 @@ struct SwiftUIExampleView: View {
                 })
             Text("SwiftUIExampleView.swift")
                 .foregroundColor(Color(UIColor.secondaryLabel))
+        }
+    }
+}
+
+/**
+ The least code that you need to make `SupportDocs` work.
+ */
+struct SwiftUIExampleView_MinimalCode: View {
+    
+    let options = SupportOptions(
+        urls: .init(
+            dataSource: URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        )
+    )
+    
+    @State var supportDocsPresented = false
+    
+    var body: some View {
+        VStack {
+            Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+            .sheet(isPresented: $supportDocsPresented, content: {
+                SupportDocsView(options: options, isPresented: $supportDocsPresented)
+            })
         }
     }
 }

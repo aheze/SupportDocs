@@ -28,6 +28,6 @@ struct Footer: View {
             .font(Font.system(size: 16, weight: .regular))
             .foregroundColor(Color.black)
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 8)
     }
 }
