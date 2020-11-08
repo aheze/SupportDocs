@@ -60,8 +60,6 @@ struct SwiftUIExampleView_MinimalCode: View {
     var body: some View {
         Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
         .sheet(isPresented: $supportDocsPresented, content: {
-
-                /// pass it in...                       ...here:
             SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
         })
     }
