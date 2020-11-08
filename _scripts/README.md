@@ -26,11 +26,7 @@ This is where SupportDocs gets its data!
   ```Swift
   struct SwiftUIExampleView_MinimalCode: View {
     
-      let options = SupportOptions(
-          urls: .init(
-              dataSource: URL(string: "{{ datasource_url }}")!
-          )
-      )
+      let dataSource = URL(string: "{{ datasource_url }}")!
     
       @State var supportDocsPresented = false
     
@@ -38,7 +34,7 @@ This is where SupportDocs gets its data!
           VStack {
               Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
               .sheet(isPresented: $supportDocsPresented, content: {
-                  SupportDocsView(options: options, isPresented: $supportDocsPresented)
+                  SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
               })
           }
       }
@@ -60,15 +56,14 @@ This is where SupportDocs gets its data!
     
       /**
        Connect this inside the storyboard.
-     
+       
        This is just for demo purposes, so it's not connected yet.
        */
       @IBAction func presentButtonPressed(_ sender: Any) {
         
-          var options = SupportOptions()
-          options.urls.dataSource = URL(string: "{{ datasource_url }}")!
+          let dataSource = URL(string: "{{ datasource_url }}")!
         
-          let supportDocsViewController = SupportDocsViewController(options: options)
+          let supportDocsViewController = SupportDocsViewController(dataSource: dataSource)
           self.present(supportDocsViewController, animated: true, completion: nil)
       }
   }
