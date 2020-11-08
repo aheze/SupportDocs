@@ -19,19 +19,20 @@ public struct SupportDocsView: View {
      If you want to have a "Dismiss" button, you must also pass in the `@State` property that you use for the `.sheet`, like this:
      
      ```
-     struct ContentView: View {
+     struct SwiftUIExampleView_MinimalCode: View {
+         let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
          @State var supportDocsPresented = false
-         let dataSource = URL("https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
-         let options: SupportOptions = SupportOptions()
+         
          var body: some View {
-             Button("Present") { self.supportDocsPresented = true }
-             .sheet(isPresented: $supportDocsPresented) {
-    
-                /// Scroll right...                                    ...pass it in here!
-                SupportDocsView(dataSource: dataSource, options: options, isPresented: $supportDocsPresented)
-             }
+             Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+             .sheet(isPresented: $supportDocsPresented, content: {
+     
+                     /// pass it in...                       ...here:
+                 SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
+             })
          }
      }
+
      ```
      This is only for SwiftUI -- You don't need to do this in UIKit. As long as you set `options.navigationBar.dismissButtonTitle = "Dismiss"`, SupportDocs will dismiss itself.
      */
@@ -49,31 +50,31 @@ public struct SupportDocsView: View {
     public let dataSource: URL
     
     /**
-     Options used for configuring SupportDocs. Options used for configuring SupportDocs. This is optional (mostly for changing the SupportDocs' appearance).
+     Options used for configuring SupportDocs. This is optional (mostly for changing the SupportDocs' appearance).
      */
     public var options: SupportOptions = SupportOptions()
     
     /**
      The Binding that you use to present SupportDocs in SwiftUI. Required if you want a "Done" button.
      
-     Pass in the same `@State` property as you do the the `.sheet`, like this:
+     Pass in the `@State` property that you use for the `.sheet`, like this:
      
      ```
-     struct ContentView: View {
-         @State var presentingModal = false
-         let options: SupportOptions = SupportOptions()
+     struct SwiftUIExampleView_MinimalCode: View {
+         let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+         @State var supportDocsPresented = false
+         
          var body: some View {
-             Button("Present") { self.presentingModal = true }
-             .sheet(isPresented: $presentingModal) {
-    
-                /// pass it in here!
-                SupportDocsView(options: options, isPresented: $presentingModal)
-             }
+             Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+             .sheet(isPresented: $supportDocsPresented, content: {
+     
+                     /// pass it in...                       ...here:
+                 SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
+             })
          }
      }
      ```
-     # In UIKit:
-     You don't need to do this in UIKit. As long as you set `options.navigationBar.dismissButtonTitle = "Dismiss"`, SupportDocs will dismiss itself.
+     This is only for SwiftUI -- You don't need to do this in UIKit. As long as you set `options.navigationBar.dismissButtonTitle = "Dismiss"`, SupportDocs will dismiss itself.
      */
     public var isPresented: Binding<Bool>? = nil
     

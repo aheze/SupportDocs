@@ -54,17 +54,15 @@ struct SwiftUIExampleView: View {
  The least code that you need to make `SupportDocs` work.
  */
 struct SwiftUIExampleView_MinimalCode: View {
-    
     let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
-    
     @State var supportDocsPresented = false
     
     var body: some View {
-        VStack {
-            Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
-            .sheet(isPresented: $supportDocsPresented, content: {
-                SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
-            })
-        }
+        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+        .sheet(isPresented: $supportDocsPresented, content: {
+
+                /// pass it in...                       ...here:
+            SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
+        })
     }
 }
