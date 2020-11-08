@@ -25,18 +25,14 @@ This is where SupportDocs gets its data!
      
   ```Swift
   struct SwiftUIExampleView_MinimalCode: View {
-    
       let dataSource = URL(string: "{{ datasource_url }}")!
-    
       @State var supportDocsPresented = false
-    
+      
       var body: some View {
-          VStack {
-              Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
-              .sheet(isPresented: $supportDocsPresented, content: {
-                  SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
-              })
-          }
+          Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+          .sheet(isPresented: $supportDocsPresented, content: {
+              SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
+          })
       }
   }
   ```
