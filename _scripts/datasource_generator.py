@@ -81,10 +81,13 @@ if __name__ == "__main__":
 
     toc = ""
     for support_document in data:
-        toc += f"- [{support_document['title']}]({support_document['url']})\n"
-
+        edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{'/'.join(support_document['url'].split('/')[-2:])}.md"
+        toc += f"- [{support_document['title']}]({support_document['url']})" + f" ([edit]({edit_link}))\n"
+        
+    deployment_progress = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/deployments/activity_log?environment=github-pages"
+        
     datasource_url = f"https://github.com/{FULL_GITHUB_REPOSITORY}".replace("//github.com/", "//raw.githubusercontent.com/").replace("/blob/", "/") + f"/{GITHUB_BRANCH}/{DATA_JSON_FILE_PATH}"
-    rendered_readme = readme.render(datasource_url=datasource_url, table_of_contents=toc)
+    rendered_readme = readme.render(datasource_url=datasource_url, table_of_contents=toc, deployment_progress=deployment_progress)
     readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
     readme_output.write(rendered_readme)
     readme_output.close()
