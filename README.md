@@ -9,7 +9,7 @@
 
 ---
 
-### How it works
+## How it works
 
 First, you write documents using Markdown, and GitHub Pages automatically converts them into web pages.
 Then, a GitHub Action goes through all your documents and compiles them into a single JSON, containing their URLs, titles, and tags.
@@ -18,15 +18,15 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HowItWorks.png)
 
 
-### Table of Contents
+# Table of Contents
 
 
-### Installation
+# Installation
 
-### Customization — Library
+# Customization — Library
 
-### Navigation Bar
-#### Title
+## Navigation Bar
+### Title
 
 <table>
 
@@ -69,7 +69,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   </tr>
 </table>
 
-#### Title Color
+### Title Color
 
 <table>
 
@@ -114,7 +114,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   </tr>
 </table>
 
-#### Dismiss Button Title
+### Dismiss Button Title
 
 <table>
 
@@ -157,7 +157,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   </tr>
 </table>
 
-#### Button Tint Color
+### Button Tint Color
 
 <table>
 
@@ -202,7 +202,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   </tr>
 </table>
 
-#### Background Color
+### Background Color
 
 <table>
 
@@ -252,5 +252,139 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   )
   ```
   </td>
+  </tr>
+</table>
+
+## Progress Bar
+
+### Foreground Color
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarForeground.png">
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    progressBar: .init(
+      foregroundColor: UIColor.red
+    )
+  )
+  ```
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.progressBar.foregroundColor = UIColor.red
+  ```
+  </td>
+  </tr>
+</table>
+
+### Background Color
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarBackground.png">
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    progressBar: .init(
+      foregroundColor: UIColor.red,
+      backgroundColor: UIColor.blue
+    )
+  )
+  ```
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.progressBar.foregroundColor = UIColor.red
+  options.progressBar.backgroundColor = UIColor.blue
+  ```
+  </td>
+  </tr>
+</table>
+
+## List Style
+
+<table>
+
+  <tr>
+  <td colspan="2">
+  <code>.defaultListStyle</code>
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png">
+  </td>
+  </tr>
+  <tr>
+  </tr>
+  
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    listStyle: .insetGroupedListStyle
+  )
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.listStyle = .insetGroupedListStyle
+  ```
+  </td>
+  
   </tr>
 </table>
