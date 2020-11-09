@@ -350,13 +350,14 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 <table>
 
   <tr>
-  <td colspan="2">
+  <td>
   <code>.defaultListStyle</code>
   </td>
-  <td rowspan="4">
+  <td rowspan="6">
     <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" height="300">
   </td>
   </tr>
+  
   <tr>
   </tr>
   
@@ -364,11 +365,8 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td>
-    UIKit
-  </td>
   </tr>
-
+  
   <tr>
   <td>
 
@@ -378,6 +376,16 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   )
   ```
   </td>
+  </tr>
+  
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  
+  <tr>
   <td>
 
   ```Swift
@@ -385,7 +393,6 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   options.listStyle = .defaultListStyle
   ```
   </td>
-  
   </tr>
   
 </table>
@@ -393,13 +400,14 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 <table>
 
   <tr>
-  <td colspan="2">
+  <td>
   <code>.plainListStyle</code>
   </td>
-  <td rowspan="4">
+  <td rowspan="6">
     <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" height="300">
   </td>
   </tr>
+  
   <tr>
   </tr>
   
@@ -407,11 +415,8 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td>
-    UIKit
-  </td>
   </tr>
-
+  
   <tr>
   <td>
 
@@ -421,6 +426,16 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   )
   ```
   </td>
+  </tr>
+  
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  
+  <tr>
   <td>
 
   ```Swift
@@ -428,7 +443,6 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   options.listStyle = .plainListStyle
   ```
   </td>
-  
   </tr>
   
 </table>
@@ -436,13 +450,14 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 <table>
 
   <tr>
-  <td colspan="2">
+  <td>
   <code>.groupedListStyle</code>
   </td>
-  <td rowspan="4">
+  <td rowspan="6">
     <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" height="300">
   </td>
   </tr>
+  
   <tr>
   </tr>
   
@@ -450,11 +465,8 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td>
-    UIKit
-  </td>
   </tr>
-
+  
   <tr>
   <td>
 
@@ -464,6 +476,16 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   )
   ```
   </td>
+  </tr>
+  
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  
+  <tr>
   <td>
 
   ```Swift
@@ -471,7 +493,6 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   options.listStyle = .groupedListStyle
   ```
   </td>
-  
   </tr>
   
 </table>
@@ -479,13 +500,14 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 <table>
 
   <tr>
-  <td colspan="2">
+  <td>
   <code>.insetGroupedListStyle</code>
   </td>
-  <td rowspan="4">
+  <td rowspan="6">
     <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" height="300">
   </td>
   </tr>
+  
   <tr>
   </tr>
   
@@ -493,11 +515,8 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td>
-    UIKit
-  </td>
   </tr>
-
+  
   <tr>
   <td>
 
@@ -507,6 +526,16 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   )
   ```
   </td>
+  </tr>
+  
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  
+  <tr>
   <td>
 
   ```Swift
@@ -514,7 +543,6 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   options.listStyle = .insetGroupedListStyle
   ```
   </td>
-  
   </tr>
   
 </table>
@@ -522,13 +550,14 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 <table>
 
   <tr>
-  <td colspan="2">
+  <td>
   <code>.insetListStyle</code>
   </td>
-  <td rowspan="4">
+  <td rowspan="6">
     <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" height="300">
   </td>
   </tr>
+  
   <tr>
   </tr>
   
@@ -536,11 +565,8 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td>
-    UIKit
-  </td>
   </tr>
-
+  
   <tr>
   <td>
 
@@ -550,6 +576,16 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   )
   ```
   </td>
+  </tr>
+  
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  
+  <tr>
   <td>
 
   ```Swift
@@ -557,7 +593,6 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   options.listStyle = .insetListStyle
   ```
   </td>
-  
   </tr>
   
 </table>
@@ -565,13 +600,14 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 <table>
 
   <tr>
-  <td colspan="2">
+  <td>
   <code>.sidebarListStyle</code>
   </td>
-  <td rowspan="4">
+  <td rowspan="6">
     <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" height="300">
   </td>
   </tr>
+  
   <tr>
   </tr>
   
@@ -579,11 +615,8 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td>
-    UIKit
-  </td>
   </tr>
-
+  
   <tr>
   <td>
 
@@ -593,6 +626,16 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   )
   ```
   </td>
+  </tr>
+  
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  
+  <tr>
   <td>
 
   ```Swift
@@ -600,7 +643,6 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   options.listStyle = .sidebarListStyle
   ```
   </td>
-  
   </tr>
   
 </table>
