@@ -201,3 +201,46 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   </td>
   </tr>
 </table>
+
+#### Background Color
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground1.png"> <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground2.png">
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    navigationBar: .init(
+      backgroundColor: UIColor(red: 217 / 255, green: 247 / 255, blue: 255 / 255, alpha: 1)
+    )
+  )
+  ```
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.navigationBar.backgroundColor = UIColor(red: 217 / 255, green: 247 / 255, blue: 255 / 255, alpha: 1)
+  ```
+  </td>
+  </tr>
+</table>
