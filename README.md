@@ -221,7 +221,12 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   ```Swift
   let options = SupportOptions(
     navigationBar: .init(
-      backgroundColor: UIColor(red: 217 / 255, green: 247 / 255, blue: 255 / 255, alpha: 1)
+      backgroundColor: UIColor(
+        red: 217 / 255,
+        green: 247 / 255,
+        blue: 255 / 255,
+        alpha: 1
+      )
     )
   )
   ```
@@ -239,7 +244,12 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
   ```Swift
   var options = SupportOptions()
-  options.navigationBar.backgroundColor = UIColor(red: 217 / 255, green: 247 / 255, blue: 255 / 255, alpha: 1)
+  options.navigationBar.backgroundColor = UIColor(
+    red: 217 / 255,
+    green: 247 / 255,
+    blue: 255 / 255,
+    alpha: 1
+  )
   ```
   </td>
   </tr>
