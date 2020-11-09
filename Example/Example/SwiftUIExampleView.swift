@@ -64,3 +64,32 @@ struct SwiftUIExampleView_MinimalCode: View {
         })
     }
 }
+
+struct SwiftUIExampleView_WithCategories: View {
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
+    let options = SupportOptions(
+        categories: [
+            .init(
+                jsonTagNames: ["boba"],
+                displayName: "Display Name Is Boba",
+                displayColor: UIColor.blue
+            ),
+            .init(
+                jsonTagNames: ["fastFood"],
+                displayName: "These aren't really healthy",
+                displayColor: UIColor.red
+            )
+        ]
+    )
+    
+    @State var supportDocsPresented = false
+    
+    var body: some View {
+        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+        .sheet(isPresented: $supportDocsPresented, content: {
+            SupportDocsView(dataSource: dataSource, options: options)
+        })
+    }
+}
+

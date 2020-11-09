@@ -82,3 +82,28 @@ class UIKitExampleController_MinimalCode: UIViewController {
         self.present(supportDocsViewController, animated: true, completion: nil)
     }
 }
+
+class UIKitExampleController_WithCategories: UIViewController {
+    
+    /**
+     Connect this inside the storyboard.
+     
+     This is just for demo purposes, so it's not connected yet.
+     */
+    @IBAction func presentButtonPressed(_ sender: Any) {
+        
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        
+        var options = SupportOptions()
+        let bobaCategory = SupportOptions.Category(
+            jsonTagNames: ["boba"],
+            displayName: "Display Name Is Boba",
+            displayColor: UIColor.blue
+        )
+        
+        options.categories = [bobaCategory]
+        
+        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
+        self.present(supportDocsViewController, animated: true, completion: nil)
+    }
+}
