@@ -73,7 +73,7 @@ Once your documents have `tags`, you can start using categories inside your app.
   ```
   </td>
   <td rowspan="3">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/oneCategory.png" width="200">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/oneCategory.png" width="200"></kbd>
   </td>
   </tr>
 
@@ -210,7 +210,7 @@ Here's how to use 2 categories:
   ```
   </td>
   <td rowspan="3">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/twoCategories.png" width="200">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/twoCategories.png" width="200"></kbd>
   </td>
   </tr>
 
@@ -357,7 +357,7 @@ You can also combine multiple `tags` into one category, like this:
   ```
   </td>
   <td rowspan="3">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/twoTagsInOneCategory.png" width="200">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/twoTagsInOneCategory.png" width="200"></kbd>
   </td>
   </tr>
 
@@ -488,7 +488,7 @@ You can also combine multiple `tags` into one category, like this:
   ```
   </td>
   <td rowspan="3">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitle.png">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitle.png"></kbd>
   </td>
   </tr>
 
@@ -536,7 +536,7 @@ You can also combine multiple `tags` into one category, like this:
   ```
   </td>
   <td rowspan="3">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitleColor.png">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitleColor.png"></kbd>
   </td>
   </tr>
 
@@ -584,7 +584,7 @@ You can also combine multiple `tags` into one category, like this:
   ```
   </td>
   <td rowspan="3">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationDismissButtonTitle.png">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationDismissButtonTitle.png"></kbd>
   </td>
   </tr>
 
@@ -632,7 +632,7 @@ You can also combine multiple `tags` into one category, like this:
   ```
   </td>
   <td rowspan="3">
-    Dismiss button ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor1.png" width="300"><br>Back button (after selecting a document) ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor2.png" width="300">
+    Dismiss button ↓<br><kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor1.png" width="300"></kbd><br>Back button (after selecting a document) ↓<br><kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor2.png" width="300"></kbd>
   </td>
   </tr>
 
@@ -685,7 +685,7 @@ You can also combine multiple `tags` into one category, like this:
   ```
   </td>
   <td rowspan="3">
-    Before scrolling ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground1.png" width="300"><br>After scrolling ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground2.png" width="300">
+    Before scrolling ↓<br><kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground1.png" width="300"></kbd><br>After scrolling ↓<br><kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground2.png" width="300"></kbd>
   </td>
   </tr>
 
@@ -739,7 +739,7 @@ You can also combine multiple `tags` into one category, like this:
   ```
   </td>
   <td rowspan="3">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarForeground.png">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarForeground.png"></kbd>
   </td>
   </tr>
 
@@ -787,7 +787,7 @@ You can also combine multiple `tags` into one category, like this:
   ```
   </td>
   <td rowspan="3">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarBackground.png">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarBackground.png"></kbd>
   </td>
   </tr>
 
