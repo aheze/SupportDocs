@@ -487,7 +487,7 @@ You can also combine multiple `tags` into one category, like this:
   )
   ```
   </td>
-  <td rowspan="4">
+  <td rowspan="3">
     <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitle.png">
   </td>
   </tr>
@@ -535,7 +535,7 @@ You can also combine multiple `tags` into one category, like this:
   )
   ```
   </td>
-  <td rowspan="4">
+  <td rowspan="3">
     <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitleColor.png">
   </td>
   </tr>
@@ -583,7 +583,7 @@ You can also combine multiple `tags` into one category, like this:
   )
   ```
   </td>
-  <td rowspan="4">
+  <td rowspan="3">
     <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationDismissButtonTitle.png">
   </td>
   </tr>
@@ -631,7 +631,7 @@ You can also combine multiple `tags` into one category, like this:
   )
   ```
   </td>
-  <td rowspan="4">
+  <td rowspan="3">
     Dismiss button ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor1.png">Back button (after selecting a document) ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor2.png">
   </td>
   </tr>
@@ -684,7 +684,7 @@ You can also combine multiple `tags` into one category, like this:
   )
   ```
   </td>
-  <td rowspan="4">
+  <td rowspan="3">
     Before scrolling ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground1.png"><br>After scrolling ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground2.png">
   </td>
   </tr>
@@ -738,7 +738,7 @@ You can also combine multiple `tags` into one category, like this:
   )
   ```
   </td>
-  <td rowspan="4">
+  <td rowspan="3">
     <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarForeground.png">
   </td>
   </tr>
@@ -768,9 +768,10 @@ You can also combine multiple `tags` into one category, like this:
   <td>
     SwiftUI
   </td>
-  <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarBackground.png">
+  <td>
+    Result:　　　　　　　　　　　　↓
   </td>
+  
   </tr>
 
   <tr>
@@ -784,6 +785,9 @@ You can also combine multiple `tags` into one category, like this:
     )
   )
   ```
+  </td>
+  <td rowspan="3">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarBackground.png">
   </td>
   </tr>
 
