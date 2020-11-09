@@ -24,6 +24,442 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 # Installation
 
 # Customization — Library
+## Categories
+Group multiple documents in the same section. You make a category by specifying the JSON tag name(s), title to display, and color of the row.
+
+It’s easier to understand with an example. We’ll use the [documents](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json) inside the DataSource branch, which are these:
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/colorCategories.png)
+
+As you can see, each document has `tags` applied to them. You put this in the [front matter](https://jekyllrb.com/docs/front-matter/), underneath the `title:` like this:
+
+```
+---
+title: Buy blue boba
+tags: boba <!-- put tags here! -->
+---
+
+# Buy blue boba
+
+Blue and yummy. Buy this at [google.com](https://google.com)
+```
+Once your documents have `tags`, you can start using categories inside your app. Here’s how to make SupportDocs display one category that contains all documents tagged with “boba”:
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  
+  <td>
+    Result:　　　　　　　　↓
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+      categories: [
+          .init(
+              jsonTagNames: ["boba"],
+              displayName: "Display Name Is Boba",
+              displayColor: UIColor.blue
+          )
+      ]
+  )
+  ```
+  </td>
+  <td rowspan="3">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/oneCategory.png" width="200">
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  let bobaCategory = SupportOptions.Category(
+      jsonTagNames: ["boba"],
+      displayName: "Display Name Is Boba",
+      displayColor: UIColor.blue
+  )
+        
+  options.categories = [bobaCategory]
+  ```
+  </td>
+  </tr>
+</table>
+
+<details>
+  <summary>Show full code</summary>
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+  
+  <tr>
+  <td>
+
+  ```Swift
+  struct SwiftUIExampleView_WithCategories: View {
+      let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
+      let options = SupportOptions(
+          categories: [
+              .init(
+                  jsonTagNames: ["boba"],
+                  displayName: "Display Name Is Boba",
+                  displayColor: UIColor.blue
+              )
+          ]
+      )
+    
+      @State var supportDocsPresented = false
+    
+      var body: some View {
+          Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+          .sheet(isPresented: $supportDocsPresented, content: {
+              SupportDocsView(dataSource: dataSource, options: options)
+          })
+      }
+  }
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  class UIKitExampleController_WithCategories: UIViewController {
+    
+      /**
+       Connect this inside the storyboard.
+       
+       This is just for demo purposes, so it's not connected yet.
+       */
+      @IBAction func presentButtonPressed(_ sender: Any) {
+        
+          let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        
+          var options = SupportOptions()
+          let bobaCategory = SupportOptions.Category(
+              jsonTagNames: ["boba"],
+              displayName: "Display Name Is Boba",
+              displayColor: UIColor.blue
+          )
+        
+          options.categories = [bobaCategory]
+        
+          let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
+          self.present(supportDocsViewController, animated: true, completion: nil)
+      }
+  }
+  ```
+  </td>
+  </tr>
+
+</table>
+</details>
+
+Here's how to use 2 categories:
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result:　　　　　　　　↓
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+      categories: [
+          .init(
+              jsonTagNames: ["boba"],
+              displayName: "Display Name Is Boba",
+              displayColor: UIColor.blue
+          ),
+          .init(
+              jsonTagNames: ["fastFood"],
+              displayName: "These aren't really healthy",
+              displayColor: UIColor.red
+          )
+      ]
+  )
+  ```
+  </td>
+  <td rowspan="3">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/twoCategories.png" width="200">
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  let bobaCategory = SupportOptions.Category(
+      jsonTagNames: ["boba"],
+      displayName: "Display Name Is Boba",
+      displayColor: UIColor.blue
+  )
+  let fastFoodCategory = SupportOptions.Category(
+      jsonTagNames: ["fastFood"],
+      displayName: "These aren't really healthy",
+      displayColor: UIColor.red
+  )
+        
+  options.categories = [bobaCategory, fastFoodCategory]
+  ```
+  </td>
+  </tr>
+</table>
+
+<details>
+  <summary>Show full code</summary>
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+  
+  <tr>
+  <td>
+
+  ```Swift
+  struct SwiftUIExampleView_WithCategories: View {
+      let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
+      let options = SupportOptions(
+          categories: [
+              .init(
+                  jsonTagNames: ["boba"],
+                  displayName: "Display Name Is Boba",
+                  displayColor: UIColor.blue
+              ),
+              .init(
+                  jsonTagNames: ["fastFood"],
+                  displayName: "These aren't really healthy",
+                  displayColor: UIColor.red
+              )
+          ]
+      )
+    
+      @State var supportDocsPresented = false
+    
+      var body: some View {
+          Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+          .sheet(isPresented: $supportDocsPresented, content: {
+              SupportDocsView(dataSource: dataSource, options: options)
+          })
+      }
+  }
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  class UIKitExampleController_WithCategories: UIViewController {
+    
+      /**
+       Connect this inside the storyboard.
+       
+       This is just for demo purposes, so it's not connected yet.
+       */
+      @IBAction func presentButtonPressed(_ sender: Any) {
+        
+          let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        
+          var options = SupportOptions()
+          let bobaCategory = SupportOptions.Category(
+              jsonTagNames: ["boba"],
+              displayName: "Display Name Is Boba",
+              displayColor: UIColor.blue
+          )
+          let fastFoodCategory = SupportOptions.Category(
+              jsonTagNames: ["fastFood"],
+              displayName: "These aren't really healthy",
+              displayColor: UIColor.red
+          )
+        
+          options.categories = [bobaCategory, fastFoodCategory]
+        
+          let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
+          self.present(supportDocsViewController, animated: true, completion: nil)
+      }
+  }
+  ```
+  </td>
+  </tr>
+
+</table>
+</details>
+
+You can also combine multiple `tags` into one category, like this:
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result:　　　　　　　　↓
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+      categories: [
+          .init(
+              jsonTagNames: ["boba", "fastFood"],
+              displayName: "Food that tastes great",
+              displayColor: UIColor.orange
+          )
+      ]
+  )
+  ```
+  </td>
+  <td rowspan="3">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/twoTagsInOneCategory.png" width="200">
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  let bobaAndFastFoodCategory = SupportOptions.Category(
+      jsonTagNames: ["boba", "fastFood"],
+      displayName: "Food that tastes great",
+      displayColor: UIColor.orange
+  )
+        
+  options.categories = [bobaAndFastFoodCategory]
+  ```
+  </td>
+  </tr>
+</table>
+
+
+<details>
+  <summary>Show full code</summary>
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+  
+  <tr>
+  <td>
+
+  ```Swift
+  struct SwiftUIExampleView_WithCategories: View {
+      let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
+      let options = SupportOptions(
+          categories: [
+              .init(
+                  jsonTagNames: ["boba", "fastFood"],
+                  displayName: "Food that tastes great",
+                  displayColor: UIColor.orange
+              )
+          ]
+      )
+    
+      @State var supportDocsPresented = false
+    
+      var body: some View {
+          Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+          .sheet(isPresented: $supportDocsPresented, content: {
+              SupportDocsView(dataSource: dataSource, options: options)
+          })
+      }
+  }
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  class UIKitExampleController_WithCategories: UIViewController {
+    
+      /**
+       Connect this inside the storyboard.
+       
+       This is just for demo purposes, so it's not connected yet.
+       */
+      @IBAction func presentButtonPressed(_ sender: Any) {
+        
+          let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        
+          var options = SupportOptions()
+          let bobaAndFastFoodCategory = SupportOptions.Category(
+              jsonTagNames: ["boba", "fastFood"],
+              displayName: "Food that tastes great",
+              displayColor: UIColor.orange
+          )
+        
+          options.categories = [bobaAndFastFoodCategory]
+        
+          let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
+          self.present(supportDocsViewController, animated: true, completion: nil)
+      }
+  }
+  ```
+  </td>
+  </tr>
+
+</table>
+</details>
+
 
 ## Navigation Bar
 ### Title
