@@ -37,6 +37,8 @@ def parse_markdown(path: str):
 
     return metadata
 
+def parse_frontmatter_tags(tags: str):
+    return [tag.strip() for tag in tags.split(",")]
 
 def remove_preexisting_data():
     if os.path.exists(os.path.abspath("_data/data.json")):
@@ -59,7 +61,8 @@ if __name__ == "__main__":
     ]
 
     for directory in directory_list:
-        for file in os.listdir(os.path.abspath(directory)):
+        file_list = [file for file in os.listdir(os.path.abspath(directory)) if file.endswith("md") and os.path.isfile(directory + "/" + file)]
+        for file in file_list:
             help_file_frontmatter = parse_markdown(
                 os.path.abspath(directory + "/" + file)
             )
@@ -67,7 +70,7 @@ if __name__ == "__main__":
                 help_file_frontmatter["title"],
                 directory,
                 file.replace(".md", ""),
-                [tag.strip() for tag in help_file_frontmatter["tags"].split(",")],
+                parse_frontmatter_tags(help_file_frontmatter["tags"]) if help_file_frontmatter["tags"] is not None else [],
             )
 
     if not os.path.isdir(os.path.abspath("_data")):
