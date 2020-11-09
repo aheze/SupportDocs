@@ -23,9 +23,10 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
 ### Installation
 
-
-
 ### Customization — Library
+
+### Navigation Bar
+#### Title
 
 <table>
 
@@ -34,7 +35,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     SwiftUI
   </td>
   <td rowspan="4">
-    Image here
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitle.png"
   </td>
   </tr>
 
@@ -44,7 +45,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   ```Swift
   let options = SupportOptions(
     navigationBar: .init(
-      title: "Support"
+      title: "Custom Nav Title"
     )
   )
   ```
@@ -62,7 +63,95 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
   ```Swift
   var options = SupportOptions()
-  options.navigationBar.title = "Support"
+  options.navigationBar.title = "Custom Nav Title"
+  ```
+  </td>
+  </tr>
+</table>
+
+#### Title Color
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitleColor.png"
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    navigationBar: .init(
+      title: "Custom Nav Title",
+      titleColor: UIColor.purple
+    )
+  )
+  ```
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.navigationBar.title = "Custom Nav Title"
+  options.navigationBar.titleColor = UIColor.purple
+  ```
+  </td>
+  </tr>
+</table>
+
+#### Dismiss Button Title
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationDismissButtonTitle.png"
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    navigationBar: .init(
+      dismissButtonTitle: "I Am Finished"
+    )
+  )
+  ```
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.navigationBar.dismissButtonTitle = "I Am Finished"
   ```
   </td>
   </tr>
