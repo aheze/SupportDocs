@@ -35,7 +35,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     SwiftUI
   </td>
   <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitle.png"
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitle.png">
   </td>
   </tr>
 
@@ -54,7 +54,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
   <tr>
   <td>
-    SwiftUI
+    UIKit
   </td>
   </tr>
 
@@ -78,7 +78,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     SwiftUI
   </td>
   <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitleColor.png"
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitleColor.png">
   </td>
   </tr>
 
@@ -98,7 +98,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
   <tr>
   <td>
-    SwiftUI
+    UIKit
   </td>
   </tr>
 
@@ -123,7 +123,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     SwiftUI
   </td>
   <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationDismissButtonTitle.png"
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationDismissButtonTitle.png">
   </td>
   </tr>
 
@@ -142,7 +142,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
   <tr>
   <td>
-    SwiftUI
+    UIKit
   </td>
   </tr>
 
@@ -152,6 +152,51 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   ```Swift
   var options = SupportOptions()
   options.navigationBar.dismissButtonTitle = "I Am Finished"
+  ```
+  </td>
+  </tr>
+</table>
+
+#### Button Tint Color
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor1.png"> <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor2.png">
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    navigationBar: .init(
+      dismissButtonTitle: "I Am Finished",
+      buttonTintColor: UIColor.green
+    )
+  )
+  ```
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.navigationBar.dismissButtonTitle = "I Am Finished"
+  options.navigationBar.buttonTintColor = UIColor.green
   ```
   </td>
   </tr>
