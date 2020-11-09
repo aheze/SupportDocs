@@ -374,6 +374,135 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
   ```Swift
   let options = SupportOptions(
+    listStyle: .defaultListStyle
+  )
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.listStyle = .defaultListStyle
+  ```
+  </td>
+  
+  </tr>
+  
+</table>
+
+<table>
+
+  <tr>
+  <td colspan="2">
+  <code>.plainListStyle</code>
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png">
+  </td>
+  </tr>
+  <tr>
+  </tr>
+  
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    listStyle: .plainListStyle
+  )
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.listStyle = .plainListStyle
+  ```
+  </td>
+  
+  </tr>
+  
+</table>
+
+<table>
+
+  <tr>
+  <td colspan="2">
+  <code>.groupedListStyle</code>
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png">
+  </td>
+  </tr>
+  <tr>
+  </tr>
+  
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    listStyle: .groupedListStyle
+  )
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.listStyle = .groupedListStyle
+  ```
+  </td>
+  
+  </tr>
+  
+</table>
+
+<table>
+
+  <tr>
+  <td colspan="2">
+  <code>.insetGroupedListStyle</code>
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png">
+  </td>
+  </tr>
+  <tr>
+  </tr>
+  
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
     listStyle: .insetGroupedListStyle
   )
   ```
@@ -387,4 +516,91 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   </td>
   
   </tr>
+  
+</table>
+
+<table>
+
+  <tr>
+  <td colspan="2">
+  <code>.insetListStyle</code>
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png">
+  </td>
+  </tr>
+  <tr>
+  </tr>
+  
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    listStyle: .insetListStyle
+  )
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.listStyle = .insetListStyle
+  ```
+  </td>
+  
+  </tr>
+  
+</table>
+
+<table>
+
+  <tr>
+  <td colspan="2">
+  <code>.sidebarListStyle</code>
+  </td>
+  <td rowspan="4">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png">
+  </td>
+  </tr>
+  <tr>
+  </tr>
+  
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    listStyle: .sidebarListStyle
+  )
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  options.listStyle = .sidebarListStyle
+  ```
+  </td>
+  
+  </tr>
+  
 </table>
