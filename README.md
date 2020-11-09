@@ -632,7 +632,7 @@ You can also combine multiple `tags` into one category, like this:
   ```
   </td>
   <td rowspan="3">
-    Dismiss button ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor1.png">Back button (after selecting a document) ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor2.png">
+    Dismiss button ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor1.png" width="300"><br>Back button (after selecting a document) ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor2.png" width="300">
   </td>
   </tr>
 
@@ -685,7 +685,7 @@ You can also combine multiple `tags` into one category, like this:
   ```
   </td>
   <td rowspan="3">
-    Before scrolling ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground1.png"><br>After scrolling ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground2.png">
+    Before scrolling ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground1.png" width="300"><br>After scrolling ↓<br><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground2.png" width="300">
   </td>
   </tr>
 
