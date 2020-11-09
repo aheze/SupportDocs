@@ -817,8 +817,16 @@ You can also combine multiple `tags` into one category, like this:
   <td>
   <code>.defaultListStyle</code>
   </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" width="160">
+  <td>
+  Result:　　　　　　↓
+  </td>
+  <td rowspan="30">
+  </td>
+  <td>
+  <code>.plainListStyle</code>
+  </td>
+  <td>
+  Result:　　　　　　↓
   </td>
   </tr>
   
@@ -828,6 +836,20 @@ You can also combine multiple `tags` into one category, like this:
   <tr>
   <td>
     SwiftUI
+  </td>
+  <td rowspan="4">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" width="160">
+  </kbd>
+  </td>
+  <td>
+    SwiftUI
+  </td>
+  </td>
+  <td rowspan="4">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" width="160">
+  </kbd>
   </td>
   </tr>
   
@@ -840,48 +862,6 @@ You can also combine multiple `tags` into one category, like this:
   )
   ```
   </td>
-  </tr>
-  
-  <tr>
-  <td>
-    UIKit
-  </td>
-  </tr>
-
-  
-  <tr>
-  <td>
-
-  ```Swift
-  var options = SupportOptions()
-  options.listStyle = .defaultListStyle
-  ```
-  </td>
-  </tr>
-  
-</table>
-
-<table>
-
-  <tr>
-  <td>
-  <code>.plainListStyle</code>
-  </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" width="160">
-  </td>
-  </tr>
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-    SwiftUI
-  </td>
-  </tr>
-  
-  <tr>
   <td>
 
   ```Swift
@@ -896,53 +876,6 @@ You can also combine multiple `tags` into one category, like this:
   <td>
     UIKit
   </td>
-  </tr>
-
-  
-  <tr>
-  <td>
-
-  ```Swift
-  var options = SupportOptions()
-  options.listStyle = .plainListStyle
-  ```
-  </td>
-  </tr>
-  
-</table>
-
-<table>
-
-  <tr>
-  <td>
-  <code>.groupedListStyle</code>
-  </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" width="160">
-  </td>
-  </tr>
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-    SwiftUI
-  </td>
-  </tr>
-  
-  <tr>
-  <td>
-
-  ```Swift
-  let options = SupportOptions(
-    listStyle: .groupedListStyle
-  )
-  ```
-  </td>
-  </tr>
-  
-  <tr>
   <td>
     UIKit
   </td>
@@ -954,23 +887,61 @@ You can also combine multiple `tags` into one category, like this:
 
   ```Swift
   var options = SupportOptions()
-  options.listStyle = .groupedListStyle
+  options.listStyle = .defaultListStyle
+  ```
+  </td>
+  <td>
+  
+  ```Swift
+  var options = SupportOptions()
+  options.listStyle = .plainListStyle
   ```
   </td>
   </tr>
   
-</table>
-
-<table>
-
+  
+  
+  
+  
+  
+  
+  
+  
   <tr>
+  <td colspan="5">
+  </td>
+  </tr>
+  
+  <tr>
+  </tr>
+  
+  <tr>
+  <td colspan="5">
+  </td>
+  </tr>
+  
+  <tr>
+  </tr>
+  
+  
+  
+  <tr>
+  <td>
+  <code>.groupedListStyle</code>
+  </td>
+  <td>
+  Result:　　　　　　↓
+  </td>
+  
+  </td>
   <td>
   <code>.insetGroupedListStyle</code>
   </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" width="160">
+  <td>
+  Result:　　　　　　↓
   </td>
   </tr>
+  
   
   <tr>
   </tr>
@@ -979,9 +950,33 @@ You can also combine multiple `tags` into one category, like this:
   <td>
     SwiftUI
   </td>
+  <td rowspan="4">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" width="160">
+  </kbd>
+  </td>
+  <td>
+    SwiftUI
+  </td>
+  </td>
+  <td rowspan="4">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" width="160">
+  </kbd>
+  </td>
+  </tr>
+  
   </tr>
   
   <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    listStyle: .groupedListStyle
+  )
+  ```
+  </td>
   <td>
 
   ```Swift
@@ -996,6 +991,9 @@ You can also combine multiple `tags` into one category, like this:
   <td>
     UIKit
   </td>
+  <td>
+    UIKit
+  </td>
   </tr>
 
   
@@ -1004,23 +1002,57 @@ You can also combine multiple `tags` into one category, like this:
 
   ```Swift
   var options = SupportOptions()
+  options.listStyle = .groupedListStyle
+  ```
+  </td>
+  <td>
+  
+  ```Swift
+  var options = SupportOptions()
   options.listStyle = .insetGroupedListStyle
   ```
   </td>
   </tr>
   
-</table>
-
-<table>
-
+  
+  
+  
+  
+  <tr>
+  <td colspan="5">
+  </td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  <td colspan="5">
+  </td>
+  </tr>
+  
+  <tr>
+  </tr>
+  
+  
+  
+  
+  
   <tr>
   <td>
   <code>.insetListStyle</code>
   </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" width="160">
+  <td>
+  Result:　　　　　　↓
+  </td>
+  
+  </td>
+  <td>
+  <code>.sidebarListStyle</code>
+  </td>
+  <td>
+  Result:　　　　　　↓
   </td>
   </tr>
+  
   
   <tr>
   </tr>
@@ -1028,6 +1060,20 @@ You can also combine multiple `tags` into one category, like this:
   <tr>
   <td>
     SwiftUI
+  </td>
+  <td rowspan="5">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" width="160">
+  </kbd>
+  </td>
+  <td>
+    SwiftUI
+  </td>
+  </td>
+  <td rowspan="5">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" width="160">
+  </kbd>
   </td>
   </tr>
   
@@ -1040,48 +1086,6 @@ You can also combine multiple `tags` into one category, like this:
   )
   ```
   </td>
-  </tr>
-  
-  <tr>
-  <td>
-    UIKit
-  </td>
-  </tr>
-
-  
-  <tr>
-  <td>
-
-  ```Swift
-  var options = SupportOptions()
-  options.listStyle = .insetListStyle
-  ```
-  </td>
-  </tr>
-  
-</table>
-
-<table>
-
-  <tr>
-  <td>
-  <code>.sidebarListStyle</code>
-  </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" width="160">
-  </td>
-  </tr>
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-    SwiftUI
-  </td>
-  </tr>
-  
-  <tr>
   <td>
 
   ```Swift
@@ -1096,6 +1100,9 @@ You can also combine multiple `tags` into one category, like this:
   <td>
     UIKit
   </td>
+  <td>
+    UIKit
+  </td>
   </tr>
 
   
@@ -1104,9 +1111,18 @@ You can also combine multiple `tags` into one category, like this:
 
   ```Swift
   var options = SupportOptions()
+  options.listStyle = .insetListStyle
+  ```
+  </td>
+  <td>
+  
+  ```Swift
+  var options = SupportOptions()
   options.listStyle = .sidebarListStyle
   ```
   </td>
   </tr>
   
+  
 </table>
+
