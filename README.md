@@ -354,7 +354,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <code>.defaultListStyle</code>
   </td>
   <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" height="300">
   </td>
   </tr>
   <tr>
@@ -397,7 +397,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <code>.plainListStyle</code>
   </td>
   <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" height="300">
   </td>
   </tr>
   <tr>
@@ -440,7 +440,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <code>.groupedListStyle</code>
   </td>
   <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" height="300">
   </td>
   </tr>
   <tr>
@@ -483,7 +483,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <code>.insetGroupedListStyle</code>
   </td>
   <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" height="300">
   </td>
   </tr>
   <tr>
@@ -526,7 +526,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <code>.insetListStyle</code>
   </td>
   <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" height="300">
   </td>
   </tr>
   <tr>
@@ -569,7 +569,7 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <code>.sidebarListStyle</code>
   </td>
   <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png">
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" height="300">
   </td>
   </tr>
   <tr>
