@@ -78,6 +78,7 @@ This is where SupportDocs gets its data!
 - [How to Cook Pizza](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToCookPizza) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToCookPizza.md))
 - [Plum smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Plum) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Plum.md))
 - [Peach smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Peach) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Peach.md))
+- [Markdown Test 2 in folder](https://aheze.github.io/SupportDocs/Sample-Smoothies/FolderMarkdownTest) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/FolderMarkdownTest.md))
 - [Blueberry Smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Blueberry) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Blueberry.md))
 - [Red berry smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/RedBerries) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/RedBerries.md))
 - [Apple smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Apple) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Apple.md))
