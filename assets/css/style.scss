@@ -4,6 +4,65 @@
 @import "{{ site.theme }}";
 
 @media (prefers-color-scheme: dark) {
+  .markdown-body {
+    h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: rgb(255,255,255); 
+  }
+  
+  p {
+    color: rgb(255,255,255);
+  }
+  
+  a {
+    color: rgb(102, 255, 102);
+  }
+  
+  pre code,
+  pre tt {
+    background-color: rgb(0, 153, 51);
+  }
+
+  code,
+  tt {
+    color: rgb(255,255,255);
+    background-color: rgb(102, 0, 51); /* dark purple */
+  }
+  
+  pre {
+    color: rgb(102, 102, 51); /* brown green */
+    background-color: rgb(0, 204, 153);  /* green teal */
+
+    > code {
+      color: rgb(102, 0, 51); /* dark purple */
+      background: rgb(64, 64, 64); /* grey */
+    }
+  }
+  
+  table {
+
+    th,
+    td {
+      border: 1px solid rgb(102, 0, 255); /* purple */
+    }
+
+    tr {
+      background-color: rgb(102, 255, 102);
+      border-top: 1px solid rgb(102, 255, 102); /* bright green */
+
+      &:nth-child(2n) {
+        background-color: rgb(255, 102, 153); /* pink */
+      }
+    }
+
+  }
+  }
+  
+  
   body {
     color: rgb(255,255,255);
     background-color: rgb(26,26,26);
@@ -23,7 +82,7 @@
   }
   
   a {
-    color: rgb(102, 0, 51); 
+    color: rgb(102, 255, 102);
   }
   
   pre code,
