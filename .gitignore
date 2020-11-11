@@ -4,3 +4,6 @@
 /*.xcodeproj
 xcuserdata/
 .dccache
+tmp*
+*.tmp.*
+notes.md
