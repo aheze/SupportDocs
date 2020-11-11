@@ -33,11 +33,12 @@
   }
   
   pre {
-    color: rgb(102, 102, 51);
+    color: rgb(102, 102, 51); /* brown green */
     background-color: rgb(0, 204, 153);  /* green teal */
 
     > code {
       color: rgb(255, 153, 102); /* salmon */
+      background-color: rgb(64, 64, 64); /* grey */
     }
   }
   
@@ -49,7 +50,7 @@
     }
 
     tr {
-      background-color: rgb(54,54,54);
+      background-color: rgb(102, 255, 102);
       border-top: 1px solid rgb(102, 255, 102); /* bright green */
 
       &:nth-child(2n) {
