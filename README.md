@@ -50,6 +50,7 @@ class UIKitExampleController_MinimalCode: UIViewController {
 - [How to eat nachos](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatNachos) (fastFood) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatNachos.md))
 - [How to eat tacos](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatTacos) (fastFood) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatTacos.md))
 - [How to make spaghetti](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToMakeSpaghetti) (fastFood) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToMakeSpaghetti.md))
+- [Markdown Test 2 in folder](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/FolderMarkdownTest) (other) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/FolderMarkdownTest.md))
 - [Peach smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Peach) (smoothies) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Peach.md))
 - [Plum smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Plum) (smoothies) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Plum.md))
 - [Red berry smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/RedBerries) (smoothies) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/RedBerries.md))
