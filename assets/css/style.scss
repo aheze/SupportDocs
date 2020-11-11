@@ -10,6 +10,18 @@
     background-color: rgb(26,26,26);
   }
   
+  code {
+    background-color: rgb(255, 255, 0);
+  }
+  
+  pre code {
+    background-color: rgb(0, 102, 204);
+  }
+  
+  pre {
+    background-color: rgb(255, 51, 204);
+  }
+  
   .markdown-body {
     
     h1,
@@ -39,8 +51,8 @@
     pre {
       background-color: rgb(44, 44, 44);
     }
+    
     pre {
-      
       > code {
         color: rgb(255,255,255);
       }
