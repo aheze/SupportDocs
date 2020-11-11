@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "SupportDocs",
-        "repositoryURL": "https://github.com/aheze/SupportDocs.git",
+        "repositoryURL": "https://github.com/aheze/SupportDocs",
         "state": {
           "branch": null,
-          "revision": "e78d3cd401064c6f622e493dcbbeba2979a9be90",
-          "version": "0.0.23"
+          "revision": "c1a3836016347fbdd875b216c38060d6b5489b78",
+          "version": "0.0.25"
         }
       }
     ]
