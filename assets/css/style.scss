@@ -30,6 +30,15 @@
     background-color: rgb(54,54,54);
   }
   
+  pre {
+    color: rgb(255,255,255);
+    background-color: $code-bg-color;
+
+    > code {
+      color: rgb(54,54,54);
+    }
+  }
+  
   table {
     background-color: rgb(60,60,60);
   }
