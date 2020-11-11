@@ -2,7 +2,24 @@
 ---
 
 @import "{{ site.theme }}";
-h1 {
-  color: #ff0000;
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(26,26,26);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    color: rgb(255,255,255);
+  }
+  a {
+    color: #00cfe2;
+  }
 }
 
