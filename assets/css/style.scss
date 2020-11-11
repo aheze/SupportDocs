@@ -4,12 +4,13 @@
 @import "{{ site.theme }}";
 
 @media (prefers-color-scheme: dark) {
+  
+  body {
+    color: rgb(255,255,255);
+    background-color: rgb(26,26,26);
+  }
+  
   .markdown-body {
-    
-    body {
-      color: rgb(255,255,255);
-      background-color: rgb(26,26,26);
-    }
     
     h1,
     h2,
@@ -43,7 +44,7 @@
       background-color: rgb(44, 44, 44);
       
       > code {
-        color: rgb(0, 102, 255); /* royal blue */
+        color: rgb(204, 153, 255); /* pink */
       }
     }
     
