@@ -1,4 +1,5 @@
 .dccache
 tmp*
+*.tmp.*
 .vscode
 notes.md

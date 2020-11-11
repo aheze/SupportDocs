@@ -1,9 +1,9 @@
 """
-Data Source Generator
+SupportDocs Generator
 Contributors:
     :: H. Kamran [@hkamran80] (author)
 Version: 1.1.0
-Last Updated: 2020-11-06, @hkamran80
+Last Updated: 2020-11-10, @hkamran80
 """
 
 import frontmatter
@@ -12,13 +12,25 @@ import codecs
 import json
 import os
 
-GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
-FULL_GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
-GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
-GITHUB_BRANCH = os.environ.get("GITHUB_REF").split("/")[-1] if os.environ.get("GITHUB_REF") else GITHUB_REPOSITORY
 DATA_JSON_FILE_PATH = "_data/supportdocs_datasource.json"
 READ_README_FILE_PATH = "_scripts/README.md"
 WRITE_README_FILE_PATH = "README.md"
+
+DEVELOPER_MODE = os.environ.get("DEVELOPER_MODE", False)
+if not DEVELOPER_MODE:
+    GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
+    FULL_GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
+    GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
+    GITHUB_BRANCH = (
+        os.environ.get("GITHUB_REF").split("/")[-1]
+        if os.environ.get("GITHUB_REF")
+        else GITHUB_REPOSITORY
+    )
+else:
+    GITHUB_USERNAME = "demo"
+    FULL_GITHUB_REPOSITORY = "demo/SupportDocs"
+    GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
+    GITHUB_BRANCH = "refs/head/DataSource"
 
 
 def add_help_file(title: str, directory: str, filename: str, tags: list):
@@ -37,15 +49,11 @@ def parse_markdown(path: str):
 
     return metadata
 
-def parse_frontmatter_tags(tags: str):
-    return [tag.strip() for tag in tags.split(",")]
 
 def remove_preexisting_data():
-    if os.path.exists(os.path.abspath("_data/data.json")):
-        os.remove(os.path.abspath("_data/data.json"))
-
     if os.path.exists(os.path.abspath("_data/supportdocs_datasource.json")):
         os.remove(os.path.abspath("_data/supportdocs_datasource.json"))
+
 
 if __name__ == "__main__":
     data = []
@@ -61,7 +69,11 @@ if __name__ == "__main__":
     ]
 
     for directory in directory_list:
-        file_list = [file for file in os.listdir(os.path.abspath(directory)) if file.endswith("md") and os.path.isfile(directory + "/" + file)]
+        file_list = [
+            file
+            for file in os.listdir(os.path.abspath(directory))
+            if file.endswith("md") and os.path.isfile(directory + "/" + file)
+        ]
         for file in file_list:
             help_file_frontmatter = parse_markdown(
                 os.path.abspath(directory + "/" + file)
@@ -70,7 +82,9 @@ if __name__ == "__main__":
                 help_file_frontmatter["title"],
                 directory,
                 file.replace(".md", ""),
-                parse_frontmatter_tags(help_file_frontmatter["tags"]) if help_file_frontmatter["tags"] is not None else [],
+                [tag.strip() for tag in help_file_frontmatter["tags"].split(",")]
+                if help_file_frontmatter["tags"] is not None
+                else [],
             )
 
     if not os.path.isdir(os.path.abspath("_data")):
@@ -83,14 +97,33 @@ if __name__ == "__main__":
         readme = jinja2.Template(readme_file.read(), trim_blocks=True)
 
     toc = ""
-    for support_document in data:
+    for support_document in sorted(data, key=lambda item: item["title"]):
         edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{'/'.join(support_document['url'].split('/')[-2:])}.md"
-        toc += f"- [{support_document['title']}]({support_document['url']})" + f" ([edit]({edit_link}))\n"
-        
+        toc += (
+            f"- [{support_document['title']}]({support_document['url']})"
+            + f" ({', '.join(support_document['tags'])})"
+            + f" ([edit]({edit_link}))\n"
+        )
+
     deployment_progress = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/deployments/activity_log?environment=github-pages"
-        
-    datasource_url = f"https://github.com/{FULL_GITHUB_REPOSITORY}".replace("//github.com/", "//raw.githubusercontent.com/").replace("/blob/", "/") + f"/{GITHUB_BRANCH}/{DATA_JSON_FILE_PATH}"
-    rendered_readme = readme.render(datasource_url=datasource_url, table_of_contents=toc, deployment_progress=deployment_progress)
-    readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
-    readme_output.write(rendered_readme)
-    readme_output.close()
+    editable_readme_url = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{READ_README_FILE_PATH}"
+    datasource_url = (
+        f"https://github.com/{FULL_GITHUB_REPOSITORY}".replace(
+            "//github.com/", "//raw.githubusercontent.com/"
+        ).replace("/blob/", "/")
+        + f"/{GITHUB_BRANCH}/{DATA_JSON_FILE_PATH}"
+    )
+
+    rendered_readme = readme.render(
+        datasource_url=datasource_url,
+        table_of_contents=toc,
+        deployment_progress=deployment_progress,
+        editable_readme_url=editable_readme_url,
+    )
+    if not DEVELOPER_MODE:
+        readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
+        readme_output.write(rendered_readme)
+        readme_output.close()
+    else:
+        with open("README.tmp.md", "w") as tmp_readme:
+            tmp_readme.write(rendered_readme)
