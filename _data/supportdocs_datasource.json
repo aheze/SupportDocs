@@ -49,11 +49,6 @@
         ]
     },
     {
-        "title": "No tags at all",
-        "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/noTagsAtAll",
-        "tags": []
-    },
-    {
         "title": "Plum smoothie",
         "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/Plum",
         "tags": [
@@ -80,24 +75,6 @@
         "tags": [
             "smoothies"
         ]
-    },
-    {
-        "title": "empty tags test",
-        "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/emptyTagsTest",
-        "tags": []
-    },
-    {
-        "title": "2 tags test",
-        "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/twoTagsTest",
-        "tags": [
-            "firstTag",
-            "secondTag"
-        ]
-    },
-    {
-        "title": "singleSpace tags test",
-        "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/singleSpaceTagsTest",
-        "tags": []
     },
     {
         "title": "Red berry smoothie",

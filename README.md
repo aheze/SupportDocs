@@ -38,7 +38,6 @@ class UIKitExampleController_MinimalCode: UIViewController {
 ```
 
 ## Table of Contents
-- [2 tags test](https://aheze.github.io/SupportDocs/Sample-Smoothies/twoTagsTest) (firstTag, secondTag) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/twoTagsTest.md))
 - [Apple smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Apple) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Apple.md))
 - [Blueberry Smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Blueberry) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Blueberry.md))
 - [Buy blue boba](https://aheze.github.io/SupportDocs/Sample-Boba/BuyBlueBoba) (boba) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Boba/BuyBlueBoba.md))
@@ -52,12 +51,9 @@ class UIKitExampleController_MinimalCode: UIViewController {
 - [How to eat tacos](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToEatTacos) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatTacos.md))
 - [How to make spaghetti](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToMakeSpaghetti) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToMakeSpaghetti.md))
 - [Markdown Test 2 in folder](https://aheze.github.io/SupportDocs/Sample-Smoothies/FolderMarkdownTest) (other) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/FolderMarkdownTest.md))
-- [No tags at all](https://aheze.github.io/SupportDocs/Sample-Smoothies/noTagsAtAll) (No Tags) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/noTagsAtAll.md))
 - [Peach smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Peach) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Peach.md))
 - [Plum smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Plum) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Plum.md))
 - [Red berry smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/RedBerries) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/RedBerries.md))
-- [empty tags test](https://aheze.github.io/SupportDocs/Sample-Smoothies/emptyTagsTest) (No Tags) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/emptyTagsTest.md))
-- [singleSpace tags test](https://aheze.github.io/SupportDocs/Sample-Smoothies/singleSpaceTagsTest) (No Tags) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/singleSpaceTagsTest.md))
 
 
 ## Notes
