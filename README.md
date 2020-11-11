@@ -24,6 +24,442 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 # Installation
 
 # Customization — Library
+## Categories
+Group multiple documents in the same section. You make a category by specifying the JSON tag name(s), title to display, and color of the row.
+
+It’s easier to understand with an example. We’ll use the [documents](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json) inside the DataSource branch, which are these:
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/colorCategories.png)
+
+As you can see, each document has `tags` applied to them. You put this in the [front matter](https://jekyllrb.com/docs/front-matter/), underneath the `title:` like this:
+
+```
+---
+title: Buy blue boba
+tags: boba <!-- put tags here! -->
+---
+
+# Buy blue boba
+
+Blue and yummy. Buy this at [google.com](https://google.com)
+```
+Once your documents have `tags`, you can start using categories inside your app. Here’s how to make SupportDocs display one category that contains all documents tagged with “boba”:
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  
+  <td>
+    Result:　　　　　　　　↓
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+      categories: [
+          .init(
+              jsonTagNames: ["boba"],
+              displayName: "Display Name Is Boba",
+              displayColor: UIColor.blue
+          )
+      ]
+  )
+  ```
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/oneCategory.png" width="200"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  let bobaCategory = SupportOptions.Category(
+      jsonTagNames: ["boba"],
+      displayName: "Display Name Is Boba",
+      displayColor: UIColor.blue
+  )
+        
+  options.categories = [bobaCategory]
+  ```
+  </td>
+  </tr>
+</table>
+
+<details>
+  <summary>Show full code</summary>
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+  
+  <tr>
+  <td>
+
+  ```Swift
+  struct SwiftUIExampleView_WithCategories: View {
+      let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
+      let options = SupportOptions(
+          categories: [
+              .init(
+                  jsonTagNames: ["boba"],
+                  displayName: "Display Name Is Boba",
+                  displayColor: UIColor.blue
+              )
+          ]
+      )
+    
+      @State var supportDocsPresented = false
+    
+      var body: some View {
+          Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+          .sheet(isPresented: $supportDocsPresented, content: {
+              SupportDocsView(dataSource: dataSource, options: options)
+          })
+      }
+  }
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  class UIKitExampleController_WithCategories: UIViewController {
+    
+      /**
+       Connect this inside the storyboard.
+       
+       This is just for demo purposes, so it's not connected yet.
+       */
+      @IBAction func presentButtonPressed(_ sender: Any) {
+        
+          let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        
+          var options = SupportOptions()
+          let bobaCategory = SupportOptions.Category(
+              jsonTagNames: ["boba"],
+              displayName: "Display Name Is Boba",
+              displayColor: UIColor.blue
+          )
+        
+          options.categories = [bobaCategory]
+        
+          let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
+          self.present(supportDocsViewController, animated: true, completion: nil)
+      }
+  }
+  ```
+  </td>
+  </tr>
+
+</table>
+</details>
+
+Here's how to use 2 categories:
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result:　　　　　　　　↓
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+      categories: [
+          .init(
+              jsonTagNames: ["boba"],
+              displayName: "Display Name Is Boba",
+              displayColor: UIColor.blue
+          ),
+          .init(
+              jsonTagNames: ["fastFood"],
+              displayName: "These aren't really healthy",
+              displayColor: UIColor.red
+          )
+      ]
+  )
+  ```
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/twoCategories.png" width="200"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  let bobaCategory = SupportOptions.Category(
+      jsonTagNames: ["boba"],
+      displayName: "Display Name Is Boba",
+      displayColor: UIColor.blue
+  )
+  let fastFoodCategory = SupportOptions.Category(
+      jsonTagNames: ["fastFood"],
+      displayName: "These aren't really healthy",
+      displayColor: UIColor.red
+  )
+        
+  options.categories = [bobaCategory, fastFoodCategory]
+  ```
+  </td>
+  </tr>
+</table>
+
+<details>
+  <summary>Show full code</summary>
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+  
+  <tr>
+  <td>
+
+  ```Swift
+  struct SwiftUIExampleView_WithCategories: View {
+      let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
+      let options = SupportOptions(
+          categories: [
+              .init(
+                  jsonTagNames: ["boba"],
+                  displayName: "Display Name Is Boba",
+                  displayColor: UIColor.blue
+              ),
+              .init(
+                  jsonTagNames: ["fastFood"],
+                  displayName: "These aren't really healthy",
+                  displayColor: UIColor.red
+              )
+          ]
+      )
+    
+      @State var supportDocsPresented = false
+    
+      var body: some View {
+          Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+          .sheet(isPresented: $supportDocsPresented, content: {
+              SupportDocsView(dataSource: dataSource, options: options)
+          })
+      }
+  }
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  class UIKitExampleController_WithCategories: UIViewController {
+    
+      /**
+       Connect this inside the storyboard.
+       
+       This is just for demo purposes, so it's not connected yet.
+       */
+      @IBAction func presentButtonPressed(_ sender: Any) {
+        
+          let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        
+          var options = SupportOptions()
+          let bobaCategory = SupportOptions.Category(
+              jsonTagNames: ["boba"],
+              displayName: "Display Name Is Boba",
+              displayColor: UIColor.blue
+          )
+          let fastFoodCategory = SupportOptions.Category(
+              jsonTagNames: ["fastFood"],
+              displayName: "These aren't really healthy",
+              displayColor: UIColor.red
+          )
+        
+          options.categories = [bobaCategory, fastFoodCategory]
+        
+          let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
+          self.present(supportDocsViewController, animated: true, completion: nil)
+      }
+  }
+  ```
+  </td>
+  </tr>
+
+</table>
+</details>
+
+You can also combine multiple `tags` into one category, like this:
+
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result:　　　　　　　　↓
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+      categories: [
+          .init(
+              jsonTagNames: ["boba", "fastFood"],
+              displayName: "Food that tastes great",
+              displayColor: UIColor.orange
+          )
+      ]
+  )
+  ```
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/twoTagsInOneCategory.png" width="200"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ```Swift
+  var options = SupportOptions()
+  let bobaAndFastFoodCategory = SupportOptions.Category(
+      jsonTagNames: ["boba", "fastFood"],
+      displayName: "Food that tastes great",
+      displayColor: UIColor.orange
+  )
+        
+  options.categories = [bobaAndFastFoodCategory]
+  ```
+  </td>
+  </tr>
+</table>
+
+
+<details>
+  <summary>Show full code</summary>
+<table>
+
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  </tr>
+  
+  <tr>
+  <td>
+
+  ```Swift
+  struct SwiftUIExampleView_WithCategories: View {
+      let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
+      let options = SupportOptions(
+          categories: [
+              .init(
+                  jsonTagNames: ["boba", "fastFood"],
+                  displayName: "Food that tastes great",
+                  displayColor: UIColor.orange
+              )
+          ]
+      )
+    
+      @State var supportDocsPresented = false
+    
+      var body: some View {
+          Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+          .sheet(isPresented: $supportDocsPresented, content: {
+              SupportDocsView(dataSource: dataSource, options: options)
+          })
+      }
+  }
+  ```
+  </td>
+  <td>
+
+  ```Swift
+  class UIKitExampleController_WithCategories: UIViewController {
+    
+      /**
+       Connect this inside the storyboard.
+       
+       This is just for demo purposes, so it's not connected yet.
+       */
+      @IBAction func presentButtonPressed(_ sender: Any) {
+        
+          let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        
+          var options = SupportOptions()
+          let bobaAndFastFoodCategory = SupportOptions.Category(
+              jsonTagNames: ["boba", "fastFood"],
+              displayName: "Food that tastes great",
+              displayColor: UIColor.orange
+          )
+        
+          options.categories = [bobaAndFastFoodCategory]
+        
+          let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
+          self.present(supportDocsViewController, animated: true, completion: nil)
+      }
+  }
+  ```
+  </td>
+  </tr>
+
+</table>
+</details>
+
 
 ## Navigation Bar
 ### Title
@@ -34,9 +470,10 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitle.png">
+  <td>
+    Result:　　　　　　　　　　　　↓
   </td>
+  
   </tr>
 
   <tr>
@@ -49,6 +486,9 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     )
   )
   ```
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitle.png"></kbd>
   </td>
   </tr>
 
@@ -77,9 +517,10 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitleColor.png">
+  <td>
+    Result:　　　　　　　　　　　　↓
   </td>
+  
   </tr>
 
   <tr>
@@ -93,6 +534,9 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     )
   )
   ```
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationTitleColor.png"></kbd>
   </td>
   </tr>
 
@@ -122,9 +566,10 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationDismissButtonTitle.png">
+  <td>
+    Result:　　　　　　　　　　　　↓
   </td>
+  
   </tr>
 
   <tr>
@@ -137,6 +582,9 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     )
   )
   ```
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationDismissButtonTitle.png"></kbd>
   </td>
   </tr>
 
@@ -165,9 +613,10 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor1.png"> <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor2.png">
+  <td>
+    Result:　　　　　　　　　　　　↓
   </td>
+  
   </tr>
 
   <tr>
@@ -181,6 +630,9 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     )
   )
   ```
+  </td>
+  <td rowspan="3">
+    Dismiss button ↓<br><kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor1.png" width="300"></kbd><br>Back button (after selecting a document) ↓<br><kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationButtonTintColor2.png" width="300"></kbd>
   </td>
   </tr>
 
@@ -210,9 +662,10 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground1.png"> <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground2.png">
+  <td>
+    Result:　　　　　　　　　　　　↓
   </td>
+  
   </tr>
 
   <tr>
@@ -230,6 +683,9 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     )
   )
   ```
+  </td>
+  <td rowspan="3">
+    Before scrolling ↓<br><kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground1.png" width="300"></kbd><br>After scrolling ↓<br><kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationBar/navigationBackground2.png" width="300"></kbd>
   </td>
   </tr>
 
@@ -265,9 +721,10 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarForeground.png">
+  <td>
+    Result:　　　　　　　　　　　　↓
   </td>
+  
   </tr>
 
   <tr>
@@ -280,6 +737,9 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     )
   )
   ```
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarForeground.png"></kbd>
   </td>
   </tr>
 
@@ -308,9 +768,10 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
-  <td rowspan="4">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarBackground.png">
+  <td>
+    Result:　　　　　　　　　　　　↓
   </td>
+  
   </tr>
 
   <tr>
@@ -324,6 +785,9 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
     )
   )
   ```
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ProgressBar/progressBarBackground.png"></kbd>
   </td>
   </tr>
 
@@ -353,8 +817,16 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
   <code>.defaultListStyle</code>
   </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" width="160">
+  <td>
+  Result:　　　　　　↓
+  </td>
+  <td rowspan="30">
+  </td>
+  <td>
+  <code>.plainListStyle</code>
+  </td>
+  <td>
+  Result:　　　　　　↓
   </td>
   </tr>
   
@@ -364,6 +836,20 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <tr>
   <td>
     SwiftUI
+  </td>
+  <td rowspan="4">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" width="160">
+  </kbd>
+  </td>
+  <td>
+    SwiftUI
+  </td>
+  </td>
+  <td rowspan="4">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" width="160">
+  </kbd>
   </td>
   </tr>
   
@@ -376,48 +862,6 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   )
   ```
   </td>
-  </tr>
-  
-  <tr>
-  <td>
-    UIKit
-  </td>
-  </tr>
-
-  
-  <tr>
-  <td>
-
-  ```Swift
-  var options = SupportOptions()
-  options.listStyle = .defaultListStyle
-  ```
-  </td>
-  </tr>
-  
-</table>
-
-<table>
-
-  <tr>
-  <td>
-  <code>.plainListStyle</code>
-  </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" width="160">
-  </td>
-  </tr>
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-    SwiftUI
-  </td>
-  </tr>
-  
-  <tr>
   <td>
 
   ```Swift
@@ -432,53 +876,6 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     UIKit
   </td>
-  </tr>
-
-  
-  <tr>
-  <td>
-
-  ```Swift
-  var options = SupportOptions()
-  options.listStyle = .plainListStyle
-  ```
-  </td>
-  </tr>
-  
-</table>
-
-<table>
-
-  <tr>
-  <td>
-  <code>.groupedListStyle</code>
-  </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" width="160">
-  </td>
-  </tr>
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-    SwiftUI
-  </td>
-  </tr>
-  
-  <tr>
-  <td>
-
-  ```Swift
-  let options = SupportOptions(
-    listStyle: .groupedListStyle
-  )
-  ```
-  </td>
-  </tr>
-  
-  <tr>
   <td>
     UIKit
   </td>
@@ -490,23 +887,61 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
   ```Swift
   var options = SupportOptions()
-  options.listStyle = .groupedListStyle
+  options.listStyle = .defaultListStyle
+  ```
+  </td>
+  <td>
+  
+  ```Swift
+  var options = SupportOptions()
+  options.listStyle = .plainListStyle
   ```
   </td>
   </tr>
   
-</table>
-
-<table>
-
+  
+  
+  
+  
+  
+  
+  
+  
   <tr>
+  <td colspan="5">
+  </td>
+  </tr>
+  
+  <tr>
+  </tr>
+  
+  <tr>
+  <td colspan="5">
+  </td>
+  </tr>
+  
+  <tr>
+  </tr>
+  
+  
+  
+  <tr>
+  <td>
+  <code>.groupedListStyle</code>
+  </td>
+  <td>
+  Result:　　　　　　↓
+  </td>
+  
+  </td>
   <td>
   <code>.insetGroupedListStyle</code>
   </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" width="160">
+  <td>
+  Result:　　　　　　↓
   </td>
   </tr>
+  
   
   <tr>
   </tr>
@@ -515,9 +950,33 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     SwiftUI
   </td>
+  <td rowspan="4">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" width="160">
+  </kbd>
+  </td>
+  <td>
+    SwiftUI
+  </td>
+  </td>
+  <td rowspan="4">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" width="160">
+  </kbd>
+  </td>
+  </tr>
+  
   </tr>
   
   <tr>
+  <td>
+
+  ```Swift
+  let options = SupportOptions(
+    listStyle: .groupedListStyle
+  )
+  ```
+  </td>
   <td>
 
   ```Swift
@@ -532,6 +991,9 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     UIKit
   </td>
+  <td>
+    UIKit
+  </td>
   </tr>
 
   
@@ -540,23 +1002,57 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
   ```Swift
   var options = SupportOptions()
+  options.listStyle = .groupedListStyle
+  ```
+  </td>
+  <td>
+  
+  ```Swift
+  var options = SupportOptions()
   options.listStyle = .insetGroupedListStyle
   ```
   </td>
   </tr>
   
-</table>
-
-<table>
-
+  
+  
+  
+  
+  <tr>
+  <td colspan="5">
+  </td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  <td colspan="5">
+  </td>
+  </tr>
+  
+  <tr>
+  </tr>
+  
+  
+  
+  
+  
   <tr>
   <td>
   <code>.insetListStyle</code>
   </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" width="160">
+  <td>
+  Result:　　　　　　↓
+  </td>
+  
+  </td>
+  <td>
+  <code>.sidebarListStyle</code>
+  </td>
+  <td>
+  Result:　　　　　　↓
   </td>
   </tr>
+  
   
   <tr>
   </tr>
@@ -564,6 +1060,20 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <tr>
   <td>
     SwiftUI
+  </td>
+  <td rowspan="5">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" width="160">
+  </kbd>
+  </td>
+  <td>
+    SwiftUI
+  </td>
+  </td>
+  <td rowspan="5">
+  <kbd>
+    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" width="160">
+  </kbd>
   </td>
   </tr>
   
@@ -576,48 +1086,6 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   )
   ```
   </td>
-  </tr>
-  
-  <tr>
-  <td>
-    UIKit
-  </td>
-  </tr>
-
-  
-  <tr>
-  <td>
-
-  ```Swift
-  var options = SupportOptions()
-  options.listStyle = .insetListStyle
-  ```
-  </td>
-  </tr>
-  
-</table>
-
-<table>
-
-  <tr>
-  <td>
-  <code>.sidebarListStyle</code>
-  </td>
-  <td rowspan="6">
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" width="160">
-  </td>
-  </tr>
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-    SwiftUI
-  </td>
-  </tr>
-  
-  <tr>
   <td>
 
   ```Swift
@@ -632,6 +1100,9 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
   <td>
     UIKit
   </td>
+  <td>
+    UIKit
+  </td>
   </tr>
 
   
@@ -640,9 +1111,18 @@ Finally, the SupportDocs library in your app downloads the JSON and presents the
 
   ```Swift
   var options = SupportOptions()
+  options.listStyle = .insetListStyle
+  ```
+  </td>
+  <td>
+  
+  ```Swift
+  var options = SupportOptions()
   options.listStyle = .sidebarListStyle
   ```
   </td>
   </tr>
   
+  
 </table>
+
