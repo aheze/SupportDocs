@@ -5,6 +5,7 @@
 
 @media (prefers-color-scheme: dark) {
   body {
+    color: rgb(255,255,255);
     background-color: rgb(26,26,26);
   }
   
@@ -27,20 +28,34 @@
   
   code {
     color: rgb(255,255,255);
-    background-color: rgb(54,54,54);
+    background-color: rgb(0, 51, 204);
   }
   
   pre {
     color: rgb(255,255,255);
-    background-color: rgb(54,54,54);
+    background-color: rgb(0, 51, 204);
 
     > code {
-      color: rgb(54,54,54);
+      color: rgb(0, 51, 204);
     }
   }
   
   table {
-    background-color: rgb(60,60,60);
+
+    th,
+    td {
+      border: 1px solid lighten(rgb(255,255,255), 5%);
+    }
+
+    tr {
+      background-color: rgb(54,54,54);
+      border-top: 1px solid darken(rgb(255,255,255), 4%);
+
+      &:nth-child(2n) {
+        background-color: rgb(68,68,68);
+      }
+    }
+
   }
   
   kbd {
