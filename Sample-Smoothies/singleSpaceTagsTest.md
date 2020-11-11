@@ -4,4 +4,4 @@ tags:
 ---
 
 # singleSpace tags test
-Testing
+Testing single space
