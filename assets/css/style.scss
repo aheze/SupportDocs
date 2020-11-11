@@ -9,18 +9,7 @@
     color: rgb(255,255,255);
     background-color: rgb(26,26,26);
   }
-  
-  code {
-    background-color: rgb(255, 255, 0);
-  }
-  
-  pre code {
-    background-color: rgb(0, 102, 204);
-  }
-  
-  pre {
-    background-color: rgb(255, 51, 204);
-  }
+ 
   
   .markdown-body {
     
@@ -41,13 +30,14 @@
       color: rgb(102, 255, 102);
     }
     
- 
+    
     code,
     tt {
       color: rgb(255,255,255);
       background-color: rgb(255, 0, 0); /* red */
     }
     
+    .highlight pre,
     pre {
       background-color: rgb(44, 44, 44);
     }
