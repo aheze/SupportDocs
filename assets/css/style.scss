@@ -5,127 +5,72 @@
 
 @media (prefers-color-scheme: dark) {
   .markdown-body {
+    
+    body {
+      color: rgb(255,255,255);
+      background-color: rgb(26,26,26);
+    }
+    
     h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: rgb(255,255,255); 
-  }
-  
-  p {
-    color: rgb(255,255,255);
-  }
-  
-  a {
-    color: rgb(102, 255, 102);
-  }
-  
-  pre code,
-  pre tt {
-    background-color: rgb(0, 153, 51);
-  }
-
-  code,
-  tt {
-    color: rgb(255,255,255);
-    background-color: rgb(102, 0, 51); /* dark purple */
-  }
-  
-  pre {
-    color: rgb(102, 102, 51); /* brown green */
-    background-color: rgb(0, 204, 153);  /* green teal */
-
-    > code {
-      color: rgb(102, 0, 51); /* dark purple */
-      background: rgb(64, 64, 64); /* grey */
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: rgb(255,255,255);
     }
-  }
-  
-  table {
-
-    th,
-    td {
-      border: 1px solid rgb(102, 0, 255); /* purple */
+    
+    p {
+      color: rgb(255,255,255);
     }
-
-    tr {
-      background-color: rgb(102, 255, 102);
-      border-top: 1px solid rgb(102, 255, 102); /* bright green */
-
-      &:nth-child(2n) {
-        background-color: rgb(255, 102, 153); /* pink */
+    
+    a {
+      color: rgb(102, 255, 102);
+    }
+    
+    pre code,
+    pre tt {
+      background-color: rgb(0, 153, 51); /* green */
+    }
+    
+    code,
+    tt {
+      color: rgb(255,255,255);
+      background-color: rgb(255, 0, 0); /* red */
+    }
+    
+    pre {
+      background-color: rgb(44, 44, 44);
+      
+      > code {
+        color: rgb(0, 102, 255); /* royal blue */
       }
     }
-
-  }
+    
+    table {
+      
+      th,
+      td {
+        border: 1px solid lighten(rgb(51, 102, 153), 5%); /* navy blue */
+      }
+      
+      tr {
+        background-color: rgb(46, 46, 46);
+        border-top: 1px solid darken(rgb(89, 89, 89), 4%);
+        
+        &:nth-child(2n) {
+          background-color: rgb(89, 89, 89);
+        }
+      }
+      
+    }
   }
   
-  
+  /*
   body {
     color: rgb(255,255,255);
     background-color: rgb(26,26,26);
   }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: rgb(255,255,255); 
-  }
-  
-  p {
-    color: rgb(255,255,255);
-  }
-  
-  a {
-    color: rgb(102, 255, 102);
-  }
-  
-  pre code,
-  pre tt {
-    background-color: rgb(0, 153, 51);
-  }
-
-  code,
-  tt {
-    color: rgb(255,255,255);
-    background-color: rgb(102, 0, 51); /* dark purple */
-  }
-  
-  pre {
-    color: rgb(102, 102, 51); /* brown green */
-    background-color: rgb(0, 204, 153);  /* green teal */
-
-    > code {
-      color: rgb(102, 0, 51); /* dark purple */
-      background: rgb(64, 64, 64); /* grey */
-    }
-  }
-  
-  table {
-
-    th,
-    td {
-      border: 1px solid rgb(102, 0, 255); /* purple */
-    }
-
-    tr {
-      background-color: rgb(102, 255, 102);
-      border-top: 1px solid rgb(102, 255, 102); /* bright green */
-
-      &:nth-child(2n) {
-        background-color: rgb(255, 102, 153); /* pink */
-      }
-    }
-
-  }
-  
-  kbd {
-    background-color: rgb(60,60,60);
-  }
+  */
 }
 
