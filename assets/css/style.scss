@@ -2,13 +2,73 @@
 ---
 
 @import "{{ site.theme }}";
-.main-content {
+
+@media (prefers-color-scheme: dark) {
+  
   body {
-    padding: 0;
-    margin: 0;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #00aeef;
+    color: rgb(255,255,255);
+    background-color: rgb(26,26,26);
+  }
+  
+  .highlight {
+    background-color: transparent;
+  }
+ 
+  
+  .markdown-body {
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: rgb(255,255,255);
+    }
+    
+    p {
+      color: rgb(255,255,255);
+    }
+    
+    a {
+      color: rgb(102, 255, 102);
+    }
+    
+    
+    code,
+    tt {
+      color: rgb(255,255,255);
+      background-color: rgb(255, 0, 0); /* red */
+    }
+    
+    .highlight pre,
+    pre {
+      background-color: rgb(44, 44, 44);
+    }
+    
+    pre {
+      > code {
+        color: rgb(255,255,255);
+      }
+    }
+    
+    table {
+      
+      th,
+      td {
+        border: 1px solid lighten(rgb(51, 102, 153), 5%); /* navy blue */
+      }
+      
+      tr {
+        background-color: rgb(46, 46, 46);
+        border-top: 1px solid darken(rgb(89, 89, 89), 4%);
+        
+        &:nth-child(2n) {
+          background-color: rgb(89, 89, 89);
+        }
+      }
+      
+    }
   }
 }
+
