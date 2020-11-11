@@ -78,13 +78,21 @@ if __name__ == "__main__":
             help_file_frontmatter = parse_markdown(
                 os.path.abspath(directory + "/" + file)
             )
+
+            try:
+                help_file_tags = (
+                    [tag.strip() for tag in help_file_frontmatter["tags"].split(",")]
+                    if help_file_frontmatter["tags"] is not None
+                    else []
+                )
+            except KeyError:
+                help_file_tags = []
+
             add_help_file(
                 help_file_frontmatter["title"],
                 directory,
                 file.replace(".md", ""),
-                [tag.strip() for tag in help_file_frontmatter["tags"].split(",")]
-                if help_file_frontmatter["tags"] is not None
-                else [],
+                help_file_tags,
             )
 
     if not os.path.isdir(os.path.abspath("_data")):
@@ -101,7 +109,7 @@ if __name__ == "__main__":
         edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{'/'.join(support_document['url'].split('/')[-2:])}.md"
         toc += (
             f"- [{support_document['title']}]({support_document['url']})"
-            + f" ({', '.join(support_document['tags'])})"
+            + f" ({', '.join(support_document['tags']) if support_document['tags'] else 'No Tags'})"
             + f" ([edit]({edit_link}))\n"
         )
 
