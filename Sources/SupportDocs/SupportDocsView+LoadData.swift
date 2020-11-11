@@ -11,10 +11,10 @@ import UIKit
 internal extension SupportDocsView {
     
     /**
-     Load the JSON
+     Load the JSON.
      */
     func loadData() {
-        let request = URLRequest(url: options.urls.dataSource)
+        let request = URLRequest(url: dataSource)
         URLSession.shared.dataTask(with: request) { data, response, error in
             
             guard
@@ -34,7 +34,7 @@ internal extension SupportDocsView {
                 self.documents = supportDocuments
                 
                 /**
-                 This will be what the List gets it data from
+                 This will be what the List gets it data from.
                  */
                 var sections = [SupportSection]()
                 
@@ -45,25 +45,31 @@ internal extension SupportDocsView {
                     for category in categories {
                         
                         /**
-                         For each `category`, see which documents contain the same `tags`
+                         For each `category`, see which documents contain the same `tags`.
                          */
                         var containingSupportItems = [SupportItem]()
                         
-                        for jsonTagName in category.jsonTagNames { /// Loop through each of your categories
-                            for document in documents { /// Loop through every document in the JSON
+                        for tag in category.tags { /// Loop through each of your categories.
+                            for document in documents { /// Loop through every document in the JSON.
                                 
                                 /**
-                                 If the document's `tags` contains `jsonTagName`, append it to the `containingSupportItems`
+                                 If the document's `tags` contains this `tag` in the category, append it to the `containingSupportItems`.
                                  */
-                                if document.tags.contains(jsonTagName) {
-                                    let supportItem = SupportItem(title: document.title, url: document.url)
-                                    containingSupportItems.append(supportItem)
+                                if document.tags.contains(tag) {
+                                    
+                                    /**
+                                     Prevent duplicate documents in each section -- only append it if its `URL` is unique.
+                                     */
+                                    if !containingSupportItems.contains(where: { item in item.url == document.url }) {
+                                        let supportItem = SupportItem(title: document.title, url: document.url)
+                                        containingSupportItems.append(supportItem)
+                                    }
                                 }
                             }
                         }
                         
                         /**
-                         After going through all the documents and seeing which ones belong to this `category`, convert it into a `SupportSection`.
+                         After going through all the documents and seeing which ones belong to this `category` (by comparing their `tags`), convert it into a `SupportSection`.
                          */
                         let section = SupportSection(
                             name: category.displayName,
@@ -72,10 +78,10 @@ internal extension SupportDocsView {
                         )
                         sections.append(section)
                     }
-                } else { /// If you did not configure categories
+                } else { /// If you did not configure categories.
                     
                     /**
-                     Just append every document to one section
+                     Just append every document to one section.
                      */
                     var containingSupportItems = [SupportItem]()
                     for document in documents {
@@ -84,15 +90,15 @@ internal extension SupportDocsView {
                     }
                     sections = [
                         SupportSection(
-                            name: "", /// This doesn't matter because there's only one section, no need to add a header
-                            color: UIColor.label, /// Also doesn't matter
+                            name: "", /// This doesn't matter because there's only one section, no need to add a header.
+                            color: UIColor.label, /// Also doesn't matter.
                             supportItems: containingSupportItems
                         )
                     ]
                 }
                 
                 /**
-                 Populate `self.sections` (what the List gets it data from) with `sections`
+                 Populate `self.sections` (what the List gets it data from) with `sections`.
                  */
                 self.sections = sections
                 

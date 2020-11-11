@@ -8,9 +8,9 @@
 import SwiftUI
 
 /**
- Configure the navigation bar's look
+ Configure the navigation bar's look.
  
- Source: [https://stackoverflow.com/a/58427754/14351818](https://stackoverflow.com/a/58427754/14351818)
+ Source: [https://stackoverflow.com/a/58427754/14351818](https://stackoverflow.com/a/58427754/14351818).
  */
 internal struct NavigationConfigurator: UIViewControllerRepresentable {
     var configure: (UINavigationController) -> Void = { _ in }
@@ -26,9 +26,9 @@ internal struct NavigationConfigurator: UIViewControllerRepresentable {
 }
 
 /**
- Hide or show a View (support for iOS 13)
+ Hide or show a View (support for iOS 13).
  
- Source: [https://stackoverflow.com/a/57685253/14351818](https://stackoverflow.com/a/57685253/14351818)
+ Source: [https://stackoverflow.com/a/57685253/14351818](https://stackoverflow.com/a/57685253/14351818).
  */
 internal extension View {
    @ViewBuilder
@@ -41,7 +41,9 @@ internal extension View {
     }
 }
 
-
+/**
+ Prevent default all-caps behavior if possible (iOS 14 and above).
+ */
 internal extension View {
     @ViewBuilder
     func displayTextAsConfigured() -> some View {

@@ -1,6 +1,6 @@
 //
 //  SupportOptions+Category.swift
-//  SupportDocsSwiftUI
+//  SupportDocs
 //
 //  Created by Zheng on 10/25/20.
 //
@@ -10,20 +10,18 @@ import UIKit
 public extension SupportOptions {
     
     /**
-     A group of `Documents` to be displayed as a section inside the `List`
+     A group of `Documents` to be displayed as a section inside the `List`.
      
      Before you create a `Category`, you must be using the `tag` property inside the MarkDown file on GitHub. Assign an array of `Strings` like this:
      ```
      title: "How to add a friend"
-     tags:
-       - friending
-       - generalHelp
+     tags: friending, generalHelp
      ```
      The GitHub action will automatically parse your `tag`s. Then, in your app, simply make a new `Category` instance and pass it into `options.categories`.
      ```
      let options: SupportOptions = SupportOptions(
          categories: [
-             .init(jsonTagNames: ["friending"], displayName: "Friends", displayColor: UIColor.label)
+             .init(tags: ["friending"], displayName: "Friends", displayColor: UIColor.label)
          ]
      )
      ```
@@ -31,40 +29,47 @@ public extension SupportOptions {
      */
     struct Category {
         
+        /**
+         A group of `Documents` to be displayed as a section inside the `List`
+         
+         - parameter tags: Determines which `tag`s this category should include.
+         - parameter displayName: What to display in the header of the section, in the `List`.
+         - parameter displayColor: The color of the row in the `List`.
+         */
         public init(
-            jsonTagNames: [String],
+            tags: [String],
             displayName: String,
             displayColor: UIColor = UIColor.label
         ) {
-            self.jsonTagNames = jsonTagNames
+            self.tags = tags
             self.displayName = displayName
             self.displayColor = displayColor
         }
         
         /**
-         Determines which `tag`s this category should include
+         Determines which `tag`s this category should include.
          
          You may include multiple `tag`s, like so:
          ```
          let options: SupportOptions = SupportOptions(
              categories: [
-                 .init(jsonTagNames: ["friending", "help", "betaHelp"], displayName: "Miscellaneous", displayColor: UIColor.label)
+                 .init(tags: ["friending", "help", "betaHelp"], displayName: "Miscellaneous", displayColor: UIColor.label)
              ]
          )
          ```
          Each `category` gets its own section in the `List`.
          */
-        var jsonTagNames: [String]
+        public var tags: [String]
         
         /**
-         What to display in the header of the `List`
+         What to display in the header of the section, in the `List`.
          */
-        var displayName: String
+        public var displayName: String
         
         /**
-         The color of the row in the `List`
+         The color of the row in the `List`.
          */
-        var displayColor: UIColor = UIColor.label
+        public var displayColor: UIColor = UIColor.label
         
     }
     
