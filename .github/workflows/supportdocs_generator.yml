@@ -7,7 +7,7 @@ jobs:
     generate:
         runs-on: ubuntu-latest
         steps:
-            - name: 
+            - name: Checkout Branch
               uses: actions/checkout@v2
             - name: Setup Python 3.8.6
               uses: actions/setup-python@v1
