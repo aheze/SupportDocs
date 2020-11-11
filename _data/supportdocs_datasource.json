@@ -1,61 +1,5 @@
 [
     {
-        "title": "Buy blue boba",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyBlueBoba",
-        "tags": [
-            "boba"
-        ]
-    },
-    {
-        "title": "Buy orange boba",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyOrangeBoba",
-        "tags": [
-            "boba"
-        ]
-    },
-    {
-        "title": "Buy cream boba",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyCreamBoba",
-        "tags": [
-            "boba"
-        ]
-    },
-    {
-        "title": "Apple smoothie",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Apple",
-        "tags": [
-            "smoothies"
-        ]
-    },
-    {
-        "title": "Plum smoothie",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Plum",
-        "tags": [
-            "smoothies"
-        ]
-    },
-    {
-        "title": "Red berry smoothie",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-Smoothies/RedBerries",
-        "tags": [
-            "smoothies"
-        ]
-    },
-    {
-        "title": "Peach smoothie",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Peach",
-        "tags": [
-            "smoothies"
-        ]
-    },
-    {
-        "title": "Blueberry Smoothie",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Blueberry",
-        "tags": [
-            "smoothies"
-        ]
-    },
-    {
         "title": "How to eat grilled cheese",
         "url": "https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatGrilledCheese",
         "tags": [
@@ -63,15 +7,8 @@
         ]
     },
     {
-        "title": "How to Cook Pizza",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToCookPizza",
-        "tags": [
-            "fastFood"
-        ]
-    },
-    {
-        "title": "How to eat nachos",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatNachos",
+        "title": "How to make spaghetti",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToMakeSpaghetti",
         "tags": [
             "fastFood"
         ]
@@ -91,8 +28,8 @@
         ]
     },
     {
-        "title": "How to make spaghetti",
-        "url": "https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToMakeSpaghetti",
+        "title": "How to eat nachos",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatNachos",
         "tags": [
             "fastFood"
         ]
@@ -102,6 +39,69 @@
         "url": "https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToPrepareRamen",
         "tags": [
             "fastFood"
+        ]
+    },
+    {
+        "title": "How to Cook Pizza",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToCookPizza",
+        "tags": [
+            "fastFood"
+        ]
+    },
+    {
+        "title": "Plum smoothie",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Plum",
+        "tags": [
+            "smoothies"
+        ]
+    },
+    {
+        "title": "Peach smoothie",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Peach",
+        "tags": [
+            "smoothies"
+        ]
+    },
+    {
+        "title": "Blueberry Smoothie",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Blueberry",
+        "tags": [
+            "smoothies"
+        ]
+    },
+    {
+        "title": "Red berry smoothie",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-Smoothies/RedBerries",
+        "tags": [
+            "smoothies"
+        ]
+    },
+    {
+        "title": "Apple smoothie",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Apple",
+        "tags": [
+            "smoothies"
+        ]
+    },
+    {
+        "title": "Buy cream boba",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyCreamBoba",
+        "tags": [
+            "boba"
+        ]
+    },
+    {
+        "title": "Buy blue boba",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyBlueBoba",
+        "tags": [
+            "boba"
+        ]
+    },
+    {
+        "title": "Buy orange boba",
+        "url": "https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyOrangeBoba",
+        "tags": [
+            "boba"
         ]
     }
 ]
