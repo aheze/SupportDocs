@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SupportDocs"
-  spec.version      = "0.0.23"
+  spec.version      = "0.0.24"
   spec.summary      = "Generate help centers for your iOS apps, with Markdown!"
 
   # This description is used to generate tags and improve search results.
@@ -77,7 +77,7 @@ Pod::Spec.new do |spec|
 
   # spec.source       = { :http => 'file:' + __dir__ + "/" }
   
-  spec.source       = { :git => "https://github.com/aheze/SupportDocs.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/aheze/SupportDocs.git", :tag => spec.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
