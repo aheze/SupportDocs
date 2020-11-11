@@ -38,6 +38,7 @@ class UIKitExampleController_MinimalCode: UIViewController {
 ```
 
 ## Table of Contents
+- [2 tags test](https://aheze.github.io/SupportDocs/Sample-Smoothies/emptyTagsTest) () ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/emptyTagsTest.md))
 - [2 tags test](https://aheze.github.io/SupportDocs/Sample-Smoothies/twoTagsTest) (firstTag, secondTag) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/twoTagsTest.md))
 - [Apple smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Apple) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Apple.md))
 - [Blueberry Smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Blueberry) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Blueberry.md))

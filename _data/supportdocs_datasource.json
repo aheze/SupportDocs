@@ -78,6 +78,11 @@
     },
     {
         "title": "2 tags test",
+        "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/emptyTagsTest",
+        "tags": []
+    },
+    {
+        "title": "2 tags test",
         "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/twoTagsTest",
         "tags": [
             "firstTag",
