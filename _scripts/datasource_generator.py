@@ -88,10 +88,11 @@ if __name__ == "__main__":
         toc += f"- [{support_document['title']}]({support_document['url']})" + f" ([edit]({edit_link}))\n"
 
     deployment_progress = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/deployments/activity_log?environment=github-pages"
+    editable_readme_url = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{READ_README_FILE_PATH}"
     datasource_url = f"https://github.com/{FULL_GITHUB_REPOSITORY}".replace("//github.com/", "//raw.githubusercontent.com/").replace("/blob/", "/") + f"/{GITHUB_BRANCH}/{DATA_JSON_FILE_PATH}"
 
     # TODO: Add developer mode so I don't have to CONSTANTLY comment out the render code!
-    rendered_readme = readme.render(datasource_url=datasource_url, table_of_contents=toc, deployment_progress=deployment_progress)
+    rendered_readme = readme.render(datasource_url=datasource_url, table_of_contents=toc, deployment_progress=deployment_progress, editable_readme_url=editable_readme_url)
     readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
     readme_output.write(rendered_readme)
     readme_output.close()
