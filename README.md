@@ -1,72 +1,40 @@
 # SupportDocs: DataSource
 This is where SupportDocs gets its data!
 
-<table>
-  <tr>
-    <td>
-      <strong>Your data source JSON url is:
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a id="datasource_url" href="https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
-    </td>
-  </tr>
-</table>
+## Data Source JSON URL
+<a href="https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
 
-<table>
-  <tr>
-    <td>
-      How to use (SwiftUI)
-    </td>
-  </tr>
-  <tr>
-  <td>
-     
-  ```Swift
-  struct SwiftUIExampleView_MinimalCode: View {
-      let dataSource = URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
-      @State var supportDocsPresented = false
-      
-      var body: some View {
-          Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
-          .sheet(isPresented: $supportDocsPresented, content: {
-              SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
-          })
-      }
-  }
-  ```
-  </td>
-  </tr>
-  
-  <tr>
-    <td>
-      How to use (UIKit)
-    </td>
-  </tr>
-  <tr>
-  <td>
-     
-  ```Swift
-  class UIKitExampleController_MinimalCode: UIViewController {
+## Examples: SwiftUI
+```swift
+struct SwiftUIExampleView_MinimalCode: View {
+    let dataSource = URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    @State var supportDocsPresented = false
     
-      /**
-       Connect this inside the storyboard.
-       
-       This is just for demo purposes, so it's not connected yet.
-       */
-      @IBAction func presentButtonPressed(_ sender: Any) {
-        
-          let dataSource = URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
-        
-          let supportDocsViewController = SupportDocsViewController(dataSource: dataSource)
-          self.present(supportDocsViewController, animated: true, completion: nil)
-      }
-  }
-  ```
-  </td>
-  </tr>
-</table>
+    var body: some View {
+        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+        .sheet(isPresented: $supportDocsPresented, content: {
+            SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
+        })
+    }
+}
+```
+
+## Examples: UIKit
+```swift
+class UIKitExampleController_MinimalCode: UIViewController {
+    /**
+    Connect this inside the storyboard.
+    
+    This is just for demo purposes, so it's not connected yet.
+    */
+    @IBAction func presentButtonPressed(_ sender: Any) {
+        let dataSource = URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
+        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource)
+        self.present(supportDocsViewController, animated: true, completion: nil)
+    }
+}
+```
 
 ## Table of Contents
 - [Apple smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Apple) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Apple.md))
@@ -88,4 +56,4 @@ This is where SupportDocs gets its data!
 
 ## Notes
 - Your changes make take up to five minutes to deploy. You can track the deployment progress [here](https://github.com/hkamran80/SupportDocs/deployments/activity_log?environment=github-pages).
-- Do **not** update this file (`README.md`) directly. Your changes will be overriden the next time you push (the GitHub action will re-generate this file). Instead, update the file in [`_scripts/README.md`](https://github.com/hkamran80/SupportDocs/edit/DataSource/_scripts/README.md). 
+- Do **not** update this file (`README.md`) directly. Your changes will be overriden the next time you push (the GitHub Action will regenerate this file). Instead, update the file in [`_scripts/README.md`](https://github.com/hkamran80/SupportDocs/edit/DataSource/_scripts/README.md). 
