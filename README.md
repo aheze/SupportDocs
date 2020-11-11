@@ -2,13 +2,13 @@
 This is where SupportDocs gets its data!
 
 ## Data Source JSON URL
-<a href="https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
+<a href="https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
 
 ## Examples
 ### SwiftUI
 ```swift
 struct SwiftUIExampleView_MinimalCode: View {
-    let dataSource = URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
     @State var supportDocsPresented = false
     
     var body: some View {
@@ -29,7 +29,7 @@ class UIKitExampleController_MinimalCode: UIViewController {
     This is just for demo purposes, so it's not connected yet.
     */
     @IBAction func presentButtonPressed(_ sender: Any) {
-        let dataSource = URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
     
         let supportDocsViewController = SupportDocsViewController(dataSource: dataSource)
         self.present(supportDocsViewController, animated: true, completion: nil)
@@ -56,7 +56,6 @@ class UIKitExampleController_MinimalCode: UIViewController {
 - [Plum smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Plum) (smoothies) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Plum.md))
 - [Red berry smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/RedBerries) (smoothies) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/RedBerries.md))
 
-
 ## Notes
-- Your changes make take up to five minutes to deploy. You can track the deployment progress [here](https://github.com/hkamran80/SupportDocs/deployments/activity_log?environment=github-pages).
-- Do **not** update this file (`README.md`) directly. Your changes will be overriden the next time you push (the GitHub Action will regenerate this file). Instead, update the file in [`_scripts/README.md`](https://github.com/hkamran80/SupportDocs/edit/DataSource/_scripts/README.md). 
+- Your changes make take up to five minutes to deploy. You can track the deployment progress [here](https://github.com/aheze/SupportDocs/deployments/activity_log?environment=github-pages).
+- Do **not** update this file (`README.md`) directly. Your changes will be overriden the next time you push (the GitHub Action will regenerate this file). Instead, update the file in [`_scripts/README.md`](https://github.com/aheze/SupportDocs/edit/DataSource/_scripts/README.md). 
