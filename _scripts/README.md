@@ -72,5 +72,5 @@ This is where SupportDocs gets its data!
 {{ table_of_contents }}
 
 ## Notes
-- Your changes make take up to five minutes to deploy. You can track the deployment progress [here]({{ deployment_progress }})
+- Your changes make take up to five minutes to deploy. You can track the deployment progress [here]({{ deployment_progress }}).
 - Do **not** update this file (`README.md`) directly. Your changes will be overriden the next time you push (the GitHub action will re-generate this file). Instead, update the file in [`_scripts/README.md`]({{ editable_readme_url }}). 

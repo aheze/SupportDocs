@@ -1,9 +1,9 @@
 """
-Data Source Generator
+SupportDocs Generator
 Contributors:
     :: H. Kamran [@hkamran80] (author)
 Version: 1.1.0
-Last Updated: 2020-11-06, @hkamran80
+Last Updated: 2020-11-10, @hkamran80
 """
 
 import frontmatter
