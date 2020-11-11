@@ -25,7 +25,7 @@ public extension SupportOptions {
          */
         public init(
             title: String = "Support",
-            titleColor: UIColor = UIColor.black,
+            titleColor: UIColor = UIColor.label,
             dismissButtonTitle: String? = nil,
             buttonTintColor: UIColor? = nil,
             backgroundColor: UIColor? = nil
@@ -45,7 +45,7 @@ public extension SupportOptions {
         /**
          Color of the title.
          */
-        public var titleColor: UIColor = UIColor.black
+        public var titleColor: UIColor = UIColor.label
         
         /**
          The title of the dismiss button.

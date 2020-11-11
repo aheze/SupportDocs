@@ -26,7 +26,7 @@ struct Footer: View {
             )
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(Font.system(size: 16, weight: .regular))
-            .foregroundColor(Color.black)
+            .foregroundColor(Color(UIColor.label))
         }
         .padding(.horizontal, 8)
     }

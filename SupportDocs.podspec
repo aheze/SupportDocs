@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SupportDocs"
-  spec.version      = "0.0.26"
+  spec.version      = "0.0.27"
   spec.summary      = "Generate help centers for your iOS apps, with Markdown!"
   spec.description  = <<-DESC
                    A lightweight Swift framework written in SwiftUI. Generate help centers using Markdown, hosted on GitHub pages.
