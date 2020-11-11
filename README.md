@@ -57,6 +57,7 @@ class UIKitExampleController_MinimalCode: UIViewController {
 - [Plum smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Plum) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Plum.md))
 - [Red berry smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/RedBerries) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/RedBerries.md))
 - [empty tags test](https://aheze.github.io/SupportDocs/Sample-Smoothies/emptyTagsTest) (No Tags) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/emptyTagsTest.md))
+- [singleSpace tags test](https://aheze.github.io/SupportDocs/Sample-Smoothies/singleSpaceTagsTest) (No Tags) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/singleSpaceTagsTest.md))
 
 
 ## Notes

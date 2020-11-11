@@ -95,6 +95,11 @@
         ]
     },
     {
+        "title": "singleSpace tags test",
+        "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/singleSpaceTagsTest",
+        "tags": []
+    },
+    {
         "title": "Red berry smoothie",
         "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/RedBerries",
         "tags": [
