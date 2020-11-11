@@ -109,7 +109,7 @@ if __name__ == "__main__":
         edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{'/'.join(support_document['url'].split('/')[-2:])}.md"
         toc += (
             f"- [{support_document['title']}]({support_document['url']})"
-            + f" ({', '.join(support_document['tags'])})"
+            + f" ({', '.join(support_document['tags']) if support_document['tags'] else 'No Tags'})"
             + f" ([edit]({edit_link}))\n"
         )
 
