@@ -29,11 +29,7 @@
       color: rgb(102, 255, 102);
     }
     
-    pre code,
-    pre tt {
-      background-color: rgb(0, 153, 51); /* green */
-    }
-    
+ 
     code,
     tt {
       color: rgb(255,255,255);
@@ -42,10 +38,11 @@
     
     pre {
       background-color: rgb(44, 44, 44);
+    }
+    pre {
       
       > code {
         color: rgb(255,255,255);
-        /* background-color: rgb(44, 44, 44); */
       }
     }
     
