@@ -86,7 +86,6 @@ This is where SupportDocs gets its data!
 - [Red berry smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/RedBerries) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/RedBerries.md))
 
 
-*Note: Your changes make take up to 5 minutes to update. You can track the progress [here](https://github.com/hkamran80/SupportDocs/deployments/activity_log?environment=github-pages).*
-
-## Warning
-Do **not** update this file (`README.md`) directly. Your changes will be overriden the next time you push (the GitHub action will re-generate this file). Instead, update the file in `_scripts/README.md`. 
+## Notes
+- Your changes make take up to five minutes to deploy. You can track the deployment progress [here](https://github.com/hkamran80/SupportDocs/deployments/activity_log?environment=github-pages)
+- Do **not** update this file (`README.md`) directly. Your changes will be overriden the next time you push (the GitHub action will re-generate this file). Instead, update the file in [`_scripts/README.md`](https://github.com/hkamran80/SupportDocs/edit/DataSource/_scripts/README.md). 
