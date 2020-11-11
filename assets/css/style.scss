@@ -28,12 +28,12 @@
   
   code {
     color: rgb(255,255,255);
-    background-color: rgb(0, 51, 204);
+    background-color: rgb(102, 0, 51);
   }
   
   pre {
-    color: rgb(255,255,255);
-    background-color: rgb(0, 51, 204);
+    color: rgb(102, 102, 51);
+    background-color: rgb(0, 204, 153);
 
     > code {
       color: rgb(0, 51, 204);
@@ -44,15 +44,15 @@
 
     th,
     td {
-      border: 1px solid lighten(rgb(255,255,255), 5%);
+      border: 1px solid lighten(rgb(102, 0, 255), 5%);
     }
 
     tr {
       background-color: rgb(54,54,54);
-      border-top: 1px solid darken(rgb(255,255,255), 4%);
+      border-top: 1px solid darken(rgb(102, 255, 102), 4%);
 
       &:nth-child(2n) {
-        background-color: rgb(68,68,68);
+        background-color: rgb(255, 102, 153);
       }
     }
 
