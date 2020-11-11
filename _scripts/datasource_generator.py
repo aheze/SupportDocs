@@ -83,13 +83,14 @@ if __name__ == "__main__":
         readme = jinja2.Template(readme_file.read(), trim_blocks=True)
 
     toc = ""
-    for support_document in data:
+    for support_document in sorted(data, key=lambda item: item["title"]):
         edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{'/'.join(support_document['url'].split('/')[-2:])}.md"
         toc += f"- [{support_document['title']}]({support_document['url']})" + f" ([edit]({edit_link}))\n"
-        
+
     deployment_progress = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/deployments/activity_log?environment=github-pages"
-        
     datasource_url = f"https://github.com/{FULL_GITHUB_REPOSITORY}".replace("//github.com/", "//raw.githubusercontent.com/").replace("/blob/", "/") + f"/{GITHUB_BRANCH}/{DATA_JSON_FILE_PATH}"
+
+    # TODO: Add developer mode so I don't have to CONSTANTLY comment out the render code!
     rendered_readme = readme.render(datasource_url=datasource_url, table_of_contents=toc, deployment_progress=deployment_progress)
     readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
     readme_output.write(rendered_readme)
