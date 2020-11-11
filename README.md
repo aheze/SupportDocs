@@ -4,7 +4,8 @@ This is where SupportDocs gets its data!
 ## Data Source JSON URL
 <a href="https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
 
-## Examples: SwiftUI
+## Examples
+### SwiftUI
 ```swift
 struct SwiftUIExampleView_MinimalCode: View {
     let dataSource = URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
@@ -19,7 +20,7 @@ struct SwiftUIExampleView_MinimalCode: View {
 }
 ```
 
-## Examples: UIKit
+### UIKit
 ```swift
 class UIKitExampleController_MinimalCode: UIViewController {
     /**
