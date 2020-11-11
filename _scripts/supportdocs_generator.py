@@ -16,7 +16,7 @@ DATA_JSON_FILE_PATH = "_data/supportdocs_datasource.json"
 READ_README_FILE_PATH = "_scripts/README.md"
 WRITE_README_FILE_PATH = "README.md"
 
-DEVELOPER_MODE = False
+DEVELOPER_MODE = os.environ.get("DEVELOPER_MODE", False)
 if not DEVELOPER_MODE:
     GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
     FULL_GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
@@ -101,6 +101,7 @@ if __name__ == "__main__":
         edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{'/'.join(support_document['url'].split('/')[-2:])}.md"
         toc += (
             f"- [{support_document['title']}]({support_document['url']})"
+            + f" ({', '.join(support_document['tags'])})"
             + f" ([edit]({edit_link}))\n"
         )
 
@@ -113,13 +114,16 @@ if __name__ == "__main__":
         + f"/{GITHUB_BRANCH}/{DATA_JSON_FILE_PATH}"
     )
 
+    rendered_readme = readme.render(
+        datasource_url=datasource_url,
+        table_of_contents=toc,
+        deployment_progress=deployment_progress,
+        editable_readme_url=editable_readme_url,
+    )
     if not DEVELOPER_MODE:
-        rendered_readme = readme.render(
-            datasource_url=datasource_url,
-            table_of_contents=toc,
-            deployment_progress=deployment_progress,
-            editable_readme_url=editable_readme_url,
-        )
         readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
         readme_output.write(rendered_readme)
         readme_output.close()
+    else:
+        with open("README.tmp.md", "w") as tmp_readme:
+            tmp_readme.write(rendered_readme)
