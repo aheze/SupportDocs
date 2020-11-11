@@ -130,6 +130,7 @@ internal final class WebViewWrapper: UIViewRepresentable {
     /// `UIViewRepresentable` required function #1.
     func makeUIView(context: Context) -> WKWebView  {
         let view = WKWebView()
+        view.isOpaque = false
         view.navigationDelegate = context.coordinator
         view.load(request)
         

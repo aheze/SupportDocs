@@ -11,7 +11,9 @@ import SupportDocs
 
 class PlaygroundsViewController: UIViewController {
     
-    var dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocsTestingTemplate3/DataSource/_data/supportdocs_datasource.json")!
+    
+    var dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
     var options = SupportOptions()
     
     // MARK: - URLs

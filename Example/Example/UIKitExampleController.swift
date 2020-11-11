@@ -14,7 +14,7 @@ class UIKitExampleController: UIViewController {
     // MARK: - The SwiftUI way of making `SupportOptions` also works in UIKit... but it's harder.
 //    let options = SupportOptions(
 //        categories: [
-//            .init(tags: ["recipes"], displayName: "Recipes")
+//            .init(tags: ["boba"], displayName: "Boba is awesome!")
 //        ],
 //        navigationBar: .init(
 //            title: "Support",
@@ -43,7 +43,7 @@ class UIKitExampleController: UIViewController {
         
         // MARK: - UIKit way to make `SupportOptions`
         var options = SupportOptions()
-        options.categories = [SupportOptions.Category(tags: ["recipes"], displayName: "Recipes")]
+        options.categories = [SupportOptions.Category(tags: ["boba"], displayName: "Boba is awesome!")]
         options.navigationBar.title = "Support"
         options.navigationBar.titleColor = UIColor.white
         options.navigationBar.dismissButtonTitle = "Done"
