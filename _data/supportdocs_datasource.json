@@ -77,6 +77,14 @@
         ]
     },
     {
+        "title": "2 tags test",
+        "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/twoTagsTest",
+        "tags": [
+            "firstTag",
+            "secondTag"
+        ]
+    },
+    {
         "title": "Red berry smoothie",
         "url": "https://aheze.github.io/SupportDocs/Sample-Smoothies/RedBerries",
         "tags": [
