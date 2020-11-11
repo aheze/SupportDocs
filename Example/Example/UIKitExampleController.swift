@@ -95,7 +95,8 @@ class UIKitExampleController_WithCategories: UIViewController {
         let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
         
         var options = SupportOptions()
-        let tags: ["boba"],
+        let bobaCategory = SupportOptions.Category(
+            tags: ["boba"],
             displayName: "Display Name Is Boba",
             displayColor: UIColor.blue
         )
