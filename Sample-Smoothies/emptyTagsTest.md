@@ -1,7 +1,7 @@
 ---
-title: 2 tags test
+title: empty tags test
 tags:
 ---
 
-# 2 tags test
+# empty tags test
 Testing
