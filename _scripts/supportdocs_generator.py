@@ -78,13 +78,21 @@ if __name__ == "__main__":
             help_file_frontmatter = parse_markdown(
                 os.path.abspath(directory + "/" + file)
             )
+
+            try:
+                help_file_tags = (
+                    [tag.strip() for tag in help_file_frontmatter["tags"].split(",")]
+                    if help_file_frontmatter["tags"] is not None
+                    else []
+                )
+            except KeyError:
+                help_file_tags = []
+
             add_help_file(
                 help_file_frontmatter["title"],
                 directory,
                 file.replace(".md", ""),
-                [tag.strip() for tag in help_file_frontmatter["tags"].split(",")]
-                if help_file_frontmatter["tags"] is not None
-                else [],
+                help_file_tags,
             )
 
     if not os.path.isdir(os.path.abspath("_data")):
