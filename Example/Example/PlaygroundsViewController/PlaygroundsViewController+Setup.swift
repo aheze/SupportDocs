@@ -123,9 +123,9 @@ extension PlaygroundsViewController {
         
         // MARK: - Set options
         
-        let bobaCategory = SupportOptions.Category(jsonTagNames: ["boba"], displayName: "Boba")
-        let fastFoodCategory = SupportOptions.Category(jsonTagNames: ["fastFood"], displayName: "Fast Food")
-        let smoothiesCategory = SupportOptions.Category(jsonTagNames: ["smoothies"], displayName: "Smoothies")
+        let bobaCategory = SupportOptions.Category(tags: ["boba"], displayName: "Boba")
+        let fastFoodCategory = SupportOptions.Category(tags: ["fastFood"], displayName: "Fast Food")
+        let smoothiesCategory = SupportOptions.Category(tags: ["smoothies"], displayName: "Smoothies")
         
 //        options.categories = nil
         options.categories = [bobaCategory, fastFoodCategory, smoothiesCategory]

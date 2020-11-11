@@ -49,13 +49,13 @@ internal extension SupportDocsView {
                          */
                         var containingSupportItems = [SupportItem]()
                         
-                        for jsonTagName in category.jsonTagNames { /// Loop through each of your categories.
+                        for tag in category.tags { /// Loop through each of your categories.
                             for document in documents { /// Loop through every document in the JSON.
                                 
                                 /**
-                                 If the document's `tags` contains `jsonTagName`, append it to the `containingSupportItems`.
+                                 If the document's `tags` contains this `tag` in the category, append it to the `containingSupportItems`.
                                  */
-                                if document.tags.contains(jsonTagName) {
+                                if document.tags.contains(tag) {
                                     
                                     /**
                                      Prevent duplicate documents in each section -- only append it if its `URL` is unique.
@@ -69,7 +69,7 @@ internal extension SupportDocsView {
                         }
                         
                         /**
-                         After going through all the documents and seeing which ones belong to this `category`, convert it into a `SupportSection`.
+                         After going through all the documents and seeing which ones belong to this `category` (by comparing their `tags`), convert it into a `SupportSection`.
                          */
                         let section = SupportSection(
                             name: category.displayName,

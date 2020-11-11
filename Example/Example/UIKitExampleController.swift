@@ -14,7 +14,7 @@ class UIKitExampleController: UIViewController {
     // MARK: - The SwiftUI way of making `SupportOptions` also works in UIKit... but it's harder.
 //    let options = SupportOptions(
 //        categories: [
-//            .init(jsonTagNames: ["recipes"], displayName: "Recipes")
+//            .init(tags: ["recipes"], displayName: "Recipes")
 //        ],
 //        navigationBar: .init(
 //            title: "Support",
@@ -43,7 +43,7 @@ class UIKitExampleController: UIViewController {
         
         // MARK: - UIKit way to make `SupportOptions`
         var options = SupportOptions()
-        options.categories = [SupportOptions.Category(jsonTagNames: ["recipes"], displayName: "Recipes")]
+        options.categories = [SupportOptions.Category(tags: ["recipes"], displayName: "Recipes")]
         options.navigationBar.title = "Support"
         options.navigationBar.titleColor = UIColor.white
         options.navigationBar.dismissButtonTitle = "Done"
@@ -95,8 +95,7 @@ class UIKitExampleController_WithCategories: UIViewController {
         let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
         
         var options = SupportOptions()
-        let bobaCategory = SupportOptions.Category(
-            jsonTagNames: ["boba"],
+        let tags: ["boba"],
             displayName: "Display Name Is Boba",
             displayColor: UIColor.blue
         )

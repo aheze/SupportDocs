@@ -21,7 +21,7 @@ public extension SupportOptions {
      ```
      let options: SupportOptions = SupportOptions(
          categories: [
-             .init(jsonTagNames: ["friending"], displayName: "Friends", displayColor: UIColor.label)
+             .init(tags: ["friending"], displayName: "Friends", displayColor: UIColor.label)
          ]
      )
      ```
@@ -32,16 +32,16 @@ public extension SupportOptions {
         /**
          A group of `Documents` to be displayed as a section inside the `List`
          
-         - parameter jsonTagNames: Determines which `tag`s this category should include.
+         - parameter tags: Determines which `tag`s this category should include.
          - parameter displayName: What to display in the header of the section, in the `List`.
          - parameter displayColor: The color of the row in the `List`.
          */
         public init(
-            jsonTagNames: [String],
+            tags: [String],
             displayName: String,
             displayColor: UIColor = UIColor.label
         ) {
-            self.jsonTagNames = jsonTagNames
+            self.tags = tags
             self.displayName = displayName
             self.displayColor = displayColor
         }
@@ -53,13 +53,13 @@ public extension SupportOptions {
          ```
          let options: SupportOptions = SupportOptions(
              categories: [
-                 .init(jsonTagNames: ["friending", "help", "betaHelp"], displayName: "Miscellaneous", displayColor: UIColor.label)
+                 .init(tags: ["friending", "help", "betaHelp"], displayName: "Miscellaneous", displayColor: UIColor.label)
              ]
          )
          ```
          Each `category` gets its own section in the `List`.
          */
-        public var jsonTagNames: [String]
+        public var tags: [String]
         
         /**
          What to display in the header of the section, in the `List`.

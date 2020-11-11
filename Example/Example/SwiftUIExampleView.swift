@@ -14,7 +14,7 @@ struct SwiftUIExampleView: View {
     
     let options = SupportOptions(
         categories: [
-            .init(jsonTagNames: ["recipes"], displayName: "Recipes")
+            .init(tags: ["recipes"], displayName: "Recipes")
         ],
         navigationBar: .init(
             title: "Support",
@@ -71,12 +71,12 @@ struct SwiftUIExampleView_WithCategories: View {
     let options = SupportOptions(
         categories: [
             .init(
-                jsonTagNames: ["boba"],
+                tags: ["boba"],
                 displayName: "Display Name Is Boba",
                 displayColor: UIColor.blue
             ),
             .init(
-                jsonTagNames: ["fastFood"],
+                tags: ["fastFood"],
                 displayName: "These aren't really healthy",
                 displayColor: UIColor.red
             )
