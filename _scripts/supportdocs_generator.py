@@ -12,13 +12,21 @@ import codecs
 import json
 import os
 
-GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
-FULL_GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
-GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
-GITHUB_BRANCH = os.environ.get("GITHUB_REF").split("/")[-1] if os.environ.get("GITHUB_REF") else GITHUB_REPOSITORY
 DATA_JSON_FILE_PATH = "_data/supportdocs_datasource.json"
 READ_README_FILE_PATH = "_scripts/README.md"
 WRITE_README_FILE_PATH = "README.md"
+
+DEVELOPER_MODE = False
+if not DEVELOPER_MODE:
+    GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
+    FULL_GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
+    GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
+    GITHUB_BRANCH = os.environ.get("GITHUB_REF").split("/")[-1] if os.environ.get("GITHUB_REF") else GITHUB_REPOSITORY
+else:
+    GITHUB_USERNAME = "demo"
+    FULL_GITHUB_REPOSITORY = "demo/SupportDocs"
+    GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
+    GITHUB_BRANCH = "refs/head/DataSource"
 
 
 def add_help_file(title: str, directory: str, filename: str, tags: list):
@@ -91,8 +99,8 @@ if __name__ == "__main__":
     editable_readme_url = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{READ_README_FILE_PATH}"
     datasource_url = f"https://github.com/{FULL_GITHUB_REPOSITORY}".replace("//github.com/", "//raw.githubusercontent.com/").replace("/blob/", "/") + f"/{GITHUB_BRANCH}/{DATA_JSON_FILE_PATH}"
 
-    # TODO: Add developer mode so I don't have to CONSTANTLY comment out the render code!
-    rendered_readme = readme.render(datasource_url=datasource_url, table_of_contents=toc, deployment_progress=deployment_progress, editable_readme_url=editable_readme_url)
-    readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
-    readme_output.write(rendered_readme)
-    readme_output.close()
+    if not DEVELOPER_MODE:
+        rendered_readme = readme.render(datasource_url=datasource_url, table_of_contents=toc, deployment_progress=deployment_progress, editable_readme_url=editable_readme_url)
+        readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
+        readme_output.write(rendered_readme)
+        readme_output.close()
