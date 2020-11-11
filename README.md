@@ -38,21 +38,21 @@ class UIKitExampleController_MinimalCode: UIViewController {
 ```
 
 ## Table of Contents
-- [Apple smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Apple) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Apple.md))
-- [Blueberry Smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Blueberry) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Blueberry.md))
-- [Buy blue boba](https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyBlueBoba) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Boba/BuyBlueBoba.md))
-- [Buy cream boba](https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyCreamBoba) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Boba/BuyCreamBoba.md))
-- [Buy orange boba](https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyOrangeBoba) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Boba/BuyOrangeBoba.md))
-- [How to Cook Pizza](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToCookPizza) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToCookPizza.md))
-- [How to Prepare Ramen](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToPrepareRamen) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToPrepareRamen.md))
-- [How to eat burritos](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatBurritos) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatBurritos.md))
-- [How to eat grilled cheese](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatGrilledCheese) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatGrilledCheese.md))
-- [How to eat nachos](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatNachos) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatNachos.md))
-- [How to eat tacos](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatTacos) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatTacos.md))
-- [How to make spaghetti](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToMakeSpaghetti) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToMakeSpaghetti.md))
-- [Peach smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Peach) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Peach.md))
-- [Plum smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Plum) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Plum.md))
-- [Red berry smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/RedBerries) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/RedBerries.md))
+- [Apple smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Apple) (smoothies) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Apple.md))
+- [Blueberry Smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Blueberry) (smoothies) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Blueberry.md))
+- [Buy blue boba](https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyBlueBoba) (boba) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Boba/BuyBlueBoba.md))
+- [Buy cream boba](https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyCreamBoba) (boba) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Boba/BuyCreamBoba.md))
+- [Buy orange boba](https://hkamran80.github.io/SupportDocs/Sample-Boba/BuyOrangeBoba) (boba) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Boba/BuyOrangeBoba.md))
+- [How to Cook Pizza](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToCookPizza) (fastFood) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToCookPizza.md))
+- [How to Prepare Ramen](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToPrepareRamen) (fastFood) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToPrepareRamen.md))
+- [How to eat burritos](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatBurritos) (fastFood) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatBurritos.md))
+- [How to eat grilled cheese](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatGrilledCheese) (fastFood) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatGrilledCheese.md))
+- [How to eat nachos](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatNachos) (fastFood) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatNachos.md))
+- [How to eat tacos](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToEatTacos) (fastFood) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatTacos.md))
+- [How to make spaghetti](https://hkamran80.github.io/SupportDocs/Sample-FastFood/HowToMakeSpaghetti) (fastFood) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-FastFood/HowToMakeSpaghetti.md))
+- [Peach smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Peach) (smoothies) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Peach.md))
+- [Plum smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/Plum) (smoothies) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/Plum.md))
+- [Red berry smoothie](https://hkamran80.github.io/SupportDocs/Sample-Smoothies/RedBerries) (smoothies) ([edit](https://github.com/hkamran80/SupportDocs/edit/DataSource/Sample-Smoothies/RedBerries.md))
 
 
 ## Notes
