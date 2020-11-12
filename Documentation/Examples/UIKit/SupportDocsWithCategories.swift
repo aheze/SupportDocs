@@ -1,14 +1,15 @@
 //
-//  SupportDocsWithCategories.UIKit.swift
-//  SupportDocsExamples
+//  SupportDocsWithCategories.swift
+//  SupportDocsExamplesUIKit
 //
 //  Created by H. Kamran on 11/11/20.
 //
 
+import UIKit
 import SwiftUI
 import SupportDocs
 
-class UIKitExampleControllerWithCategories: UIViewController {
+class SupportDocsWithCategories: UIViewController {
     /**
      Connect this inside the storyboard.
 

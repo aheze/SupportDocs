@@ -1,6 +1,6 @@
 //
 //  SupportOptions.swift
-//  SupportDocsExamples
+//  SupportDocsExamplesSwiftUI
 //
 //  Created by H. Kamran on 11/11/20.
 //
