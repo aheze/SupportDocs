@@ -14,12 +14,12 @@ class UIKitExampleController: UIViewController {
     // MARK: - The SwiftUI way of making `SupportOptions` also works in UIKit... but it's harder.
 //    let options = SupportOptions(
 //        categories: [
-//            .init(tags: ["boba"], displayName: "Boba is awesome!")
+//            .init(tag: "boba", displayName: "Boba is awesome!")
 //        ],
 //        navigationBar: .init(
 //            title: "Support",
 //            titleColor: UIColor.white,
-//            dismissButtonView = AnyView(Text("Done")),
+//            dismissButtonTitle: "Done",
 //            buttonTintColor: UIColor.white,
 //            backgroundColor: UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
 //        ),
@@ -43,7 +43,7 @@ class UIKitExampleController: UIViewController {
         
         // MARK: - UIKit way to make `SupportOptions`
         var options = SupportOptions()
-        options.categories = [SupportOptions.Category(tags: ["boba"], displayName: "Boba is awesome!")]
+        options.categories = [SupportOptions.Category(tag: "boba", displayName: "Boba is awesome!")]
         options.navigationBar.title = "Support"
         options.navigationBar.titleColor = UIColor.white
         options.navigationBar.dismissButtonView = AnyView(Text("Done"))
@@ -51,7 +51,7 @@ class UIKitExampleController: UIViewController {
         options.navigationBar.backgroundColor = UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
         options.progressBar.foregroundColor = UIColor.green
         options.progressBar.backgroundColor = UIColor.systemBackground
-        options.listStyle = .groupedListStyle
+        options.listStyle = .insetGroupedListStyle
         options.other.activityIndicatorStyle = .large
         options.other.welcomeView = AnyView(WelcomeView())
         options.other.footer = AnyView(Footer())
@@ -95,13 +95,20 @@ class UIKitExampleController_WithCategories: UIViewController {
         let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
         
         var options = SupportOptions()
+        
         let bobaCategory = SupportOptions.Category(
-            tags: ["boba"],
+            tag: "boba",
             displayName: "Display Name Is Boba",
             displayColor: UIColor.blue
         )
         
-        options.categories = [bobaCategory]
+        let fastFoodCategory = SupportOptions.Category(
+            tag: "fastFood",
+            displayName: "These aren't really healthy",
+            displayColor: UIColor.red
+        )
+        
+        options.categories = [bobaCategory, fastFoodCategory]
         
         let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource, options: options)
         self.present(supportDocsViewController, animated: true, completion: nil)

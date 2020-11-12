@@ -19,7 +19,7 @@ struct SwiftUIExampleView: View {
         navigationBar: .init(
             title: "Support",
             titleColor: UIColor.white,
-            dismissButtonView: AnyView(Text("Done")),
+            dismissButtonTitle: "Done",
             buttonTintColor: UIColor.white,
             backgroundColor: UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
         ),
@@ -71,12 +71,12 @@ struct SwiftUIExampleView_WithCategories: View {
     let options = SupportOptions(
         categories: [
             .init(
-                tags: ["boba"],
+                tag: "boba",
                 displayName: "Display Name Is Boba",
                 displayColor: UIColor.blue
             ),
             .init(
-                tags: ["fastFood"],
+                tag: "fastFood",
                 displayName: "These aren't really healthy",
                 displayColor: UIColor.red
             )
