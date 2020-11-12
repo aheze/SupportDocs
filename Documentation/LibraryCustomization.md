@@ -2,6 +2,9 @@
 
 ## Table of Contents
 
+-   [Examples](#examples)
+    -   [SwiftUI](#swiftui)
+    -   [UIKit](#uikit)
 -   [Categories](#categories)
     -   [One Tag](#one-tag)
     -   [Two Tags](#two-tags)
@@ -16,6 +19,20 @@
     -   [Foreground Color](#foreground-color)
     -   [Background Color](#background-color-1)
 -   [List Style](#list-style)
+
+## Examples
+
+### SwiftUI
+
+-   [MinimalSupportDocs.swift](Examples/SwiftUI/MinimalSupportDocs.swift)
+-   [SupportDocsWithCategories.swift](Examples/SwiftUI/SupportDocsWithCategories.swift)
+-   [SupportOptions.swift](Examples/SwiftUI/SupportOptions.swift)
+
+### UIKit
+
+-   [MinimalSupportDocs.swift](Examples/UIKit/MinimalSupportDocs.swift)
+-   [SupportDocsWithCategories.swift](Examples/UIKit/SupportDocsWithCategories.swift)
+-   [SupportOptions.swift](Examples/UIKit/SupportOptions.swift)
 
 ## Categories
 
@@ -230,11 +247,10 @@ options.categories = [bobaCategory, fastFoodCategory]
 
 <details>
   <summary>Show full code</summary>
+
 <table>
   <tr>
-  <td>
-    SwiftUI
-  </td>
+    <td>SwiftUI</td>
   </tr>
   
   <tr>
@@ -279,7 +295,7 @@ struct SwiftUIExampleView_WithCategories: View {
   <td>
 
 ```swift
-class UIKitExampleController_WithCategories: UIViewController {
+class UIKitExampleControllerWithCategories: UIViewController {
 
     /**
      Connect this inside the storyboard.
