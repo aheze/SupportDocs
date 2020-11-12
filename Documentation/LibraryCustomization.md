@@ -6,12 +6,23 @@
     - [One Tag](#one-tag)
     - [Two Tags](#two-tags)
     - [Multiple Tags in One Category](#multiple-tags-in-one-category)
+- [Navigation Bar](#navigation-bar)
+    - [Title](#title)
+    - [Title Color](#title-color)
+    - [Dismiss Button Title](#dismiss-button-title)
+    - [Button Tint Color](#button-tint-color)
+    - [Background Color](#background-color)
+- [Progress Bar](#progress-bar)
+    - [Foreground Color](#foreground-color)
+    - [Background Color](#background-color-1)
+- [List Style](#list-style)
 
 ## Categories
 
 Group multiple documents in the same section. You make a category by specifying the tag(s), display name, and (optionally) color of the text in the category.
 
-**Important:** Before you start, make sure you have added the correct front matter to your documents. See the [Tag Your Documents](../README.md#tag-your-documents) section of the README.
+### Important: Before You Begin
+Make sure you have added the correct front matter to your documents. See the [Tag Your Documents](../README.md#tag-your-documents) section of the README.
 
 ### One Tag
 Once your documents have tags, you can start using categories inside your app. Here’s how to make SupportDocs display one category that contains all documents with the tag “boba”:
@@ -149,9 +160,10 @@ class UIKitExampleController_WithCategories: UIViewController {
 </table>
 </details>
 
+---
+
 ### Two Tags
 <table>
-
   <tr>
   <td>
     SwiftUI
@@ -159,9 +171,7 @@ class UIKitExampleController_WithCategories: UIViewController {
   <td>
     Result
   </td>
-  
   </tr>
-
   <tr>
   <td>
 
@@ -187,13 +197,11 @@ let options = SupportOptions(
     <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/twoCategories.png" width="200"></kbd>
   </td>
   </tr>
-
   <tr>
   <td>
     UIKit
   </td>
   </tr>
-
   <tr>
   <td>
 
@@ -220,13 +228,9 @@ options.categories = [bobaCategory, fastFoodCategory]
 <details>
   <summary>Show full code</summary>
 <table>
-
   <tr>
   <td>
     SwiftUI
-  </td>
-  <td>
-    UIKit
   </td>
   </tr>
   
@@ -264,6 +268,11 @@ struct SwiftUIExampleView_WithCategories: View {
 ```
 
   </td>
+  </tr>
+  <tr>
+    <td>UIKit</td>
+  </tr>
+  <tr>
   <td>
 
 ```swift
@@ -299,24 +308,22 @@ class UIKitExampleController_WithCategories: UIViewController {
 ```
 
   </td>
-  </tr>
-
+</tr>
 </table>
 </details>
 
+---
+
 ### Multiple Tags in One Category
 <table>
-
   <tr>
   <td>
     SwiftUI
   </td>
   <td>
-    Result:　　　　　　　　↓
+    Result
   </td>
-  
   </tr>
-
   <tr>
   <td>
 
@@ -337,13 +344,11 @@ let options = SupportOptions(
     <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/twoTagsInOneCategory.png" width="200"></kbd>
   </td>
   </tr>
-
   <tr>
   <td>
     UIKit
   </td>
   </tr>
-
   <tr>
   <td>
 
@@ -365,16 +370,11 @@ options.categories = [bobaAndFastFoodCategory]
 <details>
   <summary>Show full code</summary>
 <table>
-
   <tr>
   <td>
     SwiftUI
   </td>
-  <td>
-    UIKit
-  </td>
   </tr>
-  
   <tr>
   <td>
 
@@ -404,6 +404,11 @@ struct SwiftUIExampleView_WithCategories: View {
 ```
 
   </td>
+  </tr>
+  <tr>
+    <td>UIKit</td>
+  </tr>
+  <tr>
   <td>
 
 ```swift
@@ -435,22 +440,20 @@ class UIKitExampleController_WithCategories: UIViewController {
 
   </td>
   </tr>
-
 </table>
 </details>
 
+---
+
 ## Navigation Bar
-
 ### Title
-
 <table>
-
   <tr>
   <td>
     SwiftUI
   </td>
   <td>
-    Result:　　　　　　　　　　　　↓
+    Result
   </td>
   
   </tr>
@@ -499,7 +502,7 @@ options.navigationBar.title = "Custom Nav Title"
     SwiftUI
   </td>
   <td>
-    Result:　　　　　　　　　　　　↓
+    Result
   </td>
   
   </tr>
@@ -550,7 +553,7 @@ options.navigationBar.titleColor = UIColor.purple
     SwiftUI
   </td>
   <td>
-    Result:　　　　　　　　　　　　↓
+    Result
   </td>
   
   </tr>
@@ -599,7 +602,7 @@ options.navigationBar.dismissButtonTitle = "I Am Finished"
     SwiftUI
   </td>
   <td>
-    Result:　　　　　　　　　　　　↓
+    Result
   </td>
   
   </tr>
@@ -650,7 +653,7 @@ options.navigationBar.buttonTintColor = UIColor.green
     SwiftUI
   </td>
   <td>
-    Result:　　　　　　　　　　　　↓
+    Result
   </td>
   
   </tr>
@@ -711,7 +714,7 @@ options.navigationBar.backgroundColor = UIColor(
     SwiftUI
   </td>
   <td>
-    Result:　　　　　　　　　　　　↓
+    Result
   </td>
   
   </tr>
@@ -760,7 +763,7 @@ options.progressBar.foregroundColor = UIColor.red
     SwiftUI
   </td>
   <td>
-    Result:　　　　　　　　　　　　↓
+    Result
   </td>
   
   </tr>
@@ -811,7 +814,7 @@ options.progressBar.backgroundColor = UIColor.blue
   <code>.defaultListStyle</code>
   </td>
   <td>
-  Result:　　　　　　↓
+  Result
   </td>
   <td rowspan="30">
   </td>
@@ -819,7 +822,7 @@ options.progressBar.backgroundColor = UIColor.blue
   <code>.plainListStyle</code>
   </td>
   <td>
-  Result:　　　　　　↓
+  Result
   </td>
   </tr>
   
@@ -893,15 +896,7 @@ options.listStyle = .defaultListStyle
   ```
   </td>
   </tr>
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   <tr>
   <td colspan="5">
   </td>
@@ -917,15 +912,13 @@ options.listStyle = .defaultListStyle
   
   <tr>
   </tr>
-  
-  
   
   <tr>
   <td>
   <code>.groupedListStyle</code>
   </td>
   <td>
-  Result:　　　　　　↓
+  Result
   </td>
   
   </td>
@@ -933,7 +926,7 @@ options.listStyle = .defaultListStyle
   <code>.insetGroupedListStyle</code>
   </td>
   <td>
-  Result:　　　　　　↓
+  Result
   </td>
   </tr>
   
@@ -1011,10 +1004,6 @@ options.listStyle = .groupedListStyle
   </td>
   </tr>
   
-  
-  
-  
-  
   <tr>
   <td colspan="5">
   </td>
@@ -1028,9 +1017,6 @@ options.listStyle = .groupedListStyle
   
   <tr>
   </tr>
-  
-  
-  
   
   
   <tr>
@@ -1038,7 +1024,7 @@ options.listStyle = .groupedListStyle
   <code>.insetListStyle</code>
   </td>
   <td>
-  Result:　　　　　　↓
+  Result
   </td>
   
   </td>
@@ -1046,10 +1032,9 @@ options.listStyle = .groupedListStyle
   <code>.sidebarListStyle</code>
   </td>
   <td>
-  Result:　　　　　　↓
+  Result
   </td>
   </tr>
-  
   
   <tr>
   </tr>
@@ -1121,6 +1106,4 @@ options.listStyle = .insetListStyle
   ```
   </td>
   </tr>
-  
-  
 </table>
