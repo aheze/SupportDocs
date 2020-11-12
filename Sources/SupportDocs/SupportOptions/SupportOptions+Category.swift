@@ -79,11 +79,11 @@ public extension SupportOptions.Category {
     /**
      A group of `Documents` to be displayed as a section inside the `List`
      
-     - parameter tag: Determines which `tag` this category should consist of.
+     - parameter tag: Determines which `tag` this category's documents should have.
      - parameter displayName: What to display in the header of the section, in the `List`.
      - parameter displayColor: The color of the row in the `List`.
      
-     This is an overload of the main initializer, init(tags:displayName:displayColor), allowing you to initialize a category with only 1 tag.
+     This is an overload of the main initializer, `init(tags:displayName:displayColor)`, allowing you to initialize a category with only 1 tag.
      */
     init(
         tag: String,

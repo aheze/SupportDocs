@@ -77,7 +77,7 @@ public extension SupportOptions {
          }
          ```
          */
-        var dismissButtonView: AnyView? = nil
+        public var dismissButtonView: AnyView? = nil
         
         /**
          Color of the Back and Dismiss buttons.
