@@ -18,6 +18,22 @@
 }
 
 @media (prefers-color-scheme: dark) {
+    :root {
+      --page-color: rgb(255, 255, 255);
+      --text-color: rgb(36, 41, 46);
+      --link-color: rgb(3, 102, 214);
+      --horizontal-line-color: rgb(225, 228, 232);
+      --code-block-background-color: rgb(246, 248, 250);
+      --inline-code-background-color: rgba(27, 31, 35, 0.05);
+      --block-quote-text-color: rgb(106, 115, 125);
+      --block-quote-left-bar-color: rgb(223, 226, 229);
+      --table-border-color: rgb(223, 226, 229);
+      --table-primary-background-color: rgb(255, 255, 255);
+       --table-secondary-background-color: rgb(246, 248, 250);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
   
   body {
     color: rgb(255,255,255);
