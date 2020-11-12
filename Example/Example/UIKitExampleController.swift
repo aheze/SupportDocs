@@ -57,7 +57,7 @@ class UIKitExampleController: UIViewController {
         options.other.footer = AnyView(Footer())
         options.other.error404 = URL(string: "https://google.com")!
         
-        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
+        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource, options: options)
         self.present(supportDocsViewController, animated: true, completion: nil)
         
     }

@@ -137,7 +137,7 @@ class PlaygroundsViewController: UIViewController {
     // MARK: - Present
     @IBOutlet weak var presentButton: UIButton!
     @IBAction func presentButtonPressed(_ sender: Any) {
-        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
+        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource, options: options)
         self.present(supportDocsViewController, animated: true, completion: nil)
     }
     

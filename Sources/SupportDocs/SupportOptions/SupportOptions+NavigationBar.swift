@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 public extension SupportOptions {
     
@@ -19,20 +20,20 @@ public extension SupportOptions {
          
          - parameter title: The title to show at the top of the screen.
          - parameter titleColor: Color of the title.
-         - parameter dismissButtonTitle: The title of the dismiss button. If you leave this as `nil`, no dismiss button will be shown.
+         - parameter dismissButtonView: The view to be used as the dismiss button. If you leave this as `nil`, no dismiss button will be shown.
          - parameter buttonTintColor: Color of the Back and Dismiss buttons.
          - parameter backgroundColor: Background color of the Navigation Bar.
          */
         public init(
             title: String = "Support",
             titleColor: UIColor = UIColor.label,
-            dismissButtonTitle: String? = nil,
+            dismissButtonView: AnyView? = nil,
             buttonTintColor: UIColor? = nil,
             backgroundColor: UIColor? = nil
         ) {
             self.title = title
             self.titleColor = titleColor
-            self.dismissButtonTitle = dismissButtonTitle
+            self.dismissButtonView = dismissButtonView
             self.buttonTintColor = buttonTintColor
             self.backgroundColor = backgroundColor
         }
@@ -48,7 +49,7 @@ public extension SupportOptions {
         public var titleColor: UIColor = UIColor.label
         
         /**
-         The title of the dismiss button.
+         The view to be shown as the dismiss button
          
          If you leave this as `nil`, no dismiss button will be shown.
          
@@ -56,20 +57,27 @@ public extension SupportOptions {
          If you're using SupportDocs in SwiftUI, you must also pass in the `Binding<Bool>` that you use to show the `sheet`. If you don't provide this, no dismiss button will be shown.
          ```
          struct ContentView: View {
-             @State var supportDocsPresented = false
-             let options: SupportOptions = SupportOptions()
+             let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+             
+             let options: SupportOptions = SupportOptions(
+                 navigationBar: .init(
+                     dismissButtonView: AnyView(Image(systemName: "xmark"))
+                 )
+             )
+         
+            @State var presentingModal = false /// the `Binding<Bool>` that you use to show the `sheet`
              var body: some View {
-                 Button("Present") { self.supportDocsPresented = true }
-                 .sheet(isPresented: $supportDocsPresented) {
-        
-                    /// pass it in here!
-                    SupportDocsView(options: options, isPresented: $supportDocsPresented)
+                 Button("Present") { self.presentingModal = true }
+                 .sheet(isPresented: $presentingModal) {
+         
+                     /// you MUST pass in `$presentingModal`!
+                     SupportDocs_SwiftUI(dataSourceURL: dataSource, options: options, isPresentedBinding: $presentingModal)
                  }
              }
          }
          ```
          */
-        public var dismissButtonTitle: String? = nil
+        var dismissButtonView: AnyView? = nil
         
         /**
          Color of the Back and Dismiss buttons.
@@ -82,4 +90,6 @@ public extension SupportOptions {
         public var backgroundColor: UIColor? = nil
         
     }
+    
+    
 }

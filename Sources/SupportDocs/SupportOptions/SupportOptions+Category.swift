@@ -21,7 +21,7 @@ public extension SupportOptions {
      ```
      let options: SupportOptions = SupportOptions(
          categories: [
-             .init(tags: ["friending"], displayName: "Friends", displayColor: UIColor.label)
+             .init(tag: "friending", displayName: "Friends", displayColor: UIColor.label)
          ]
      )
      ```
@@ -72,8 +72,26 @@ public extension SupportOptions {
         public var displayColor: UIColor = UIColor.label
         
     }
+}
+
+public extension SupportOptions.Category {
     
-    
-    
-    
+    /**
+     A group of `Documents` to be displayed as a section inside the `List`
+     
+     - parameter tag: Determines which `tag` this category should consist of.
+     - parameter displayName: What to display in the header of the section, in the `List`.
+     - parameter displayColor: The color of the row in the `List`.
+     
+     This is an overload of the main initializer, init(tags:displayName:displayColor), allowing you to initialize a category with only 1 tag.
+     */
+    init(
+        tag: String,
+        displayName: String,
+        displayColor: UIColor = UIColor.label
+    ) {
+        self.tags = [tag]
+        self.displayName = displayName
+        self.displayColor = displayColor
+    }
 }
