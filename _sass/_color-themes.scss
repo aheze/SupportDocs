@@ -1,0 +1,51 @@
+$themes: (
+    default: (
+        background: rgb(255, 255, 255),
+        text: rgb(36, 41, 46),
+        link: rgb(3, 102, 214),
+        horizontal-line: rgb(225, 228, 232),
+        code-block-background: rgb(246, 248, 250),
+        inline-code-background: rgba(27, 31, 35, 0.05),
+        blockquote-text: rgb(106, 115, 125),
+        blockquote-left-bar: rgb(223, 226, 229),
+        table-border: rgb(223, 226, 229),
+        table-primary-background: rgb(255, 255, 255),
+        table-secondary-background: rgb(246, 248, 250)
+    ),
+    dark: (
+        background: rgb(26, 26, 26),
+        text: rgb(255, 255, 255),
+        link: rgb(102, 153, 255),
+        horizontal-line: rgb(102, 102, 102),
+        code-block-background: rgb(38, 38, 38),
+        inline-code-background: rgb(38, 38, 38),
+        blockquote-text: rgb(191, 191, 191),
+        blockquote-left-bar: rgb(51, 51, 51),
+        table-border: rgb(80, 89, 98),
+        table-primary-background: rgb(26, 26, 26),
+        table-secondary-background: rgb(64, 64, 64)
+    ),
+);
+
+@mixin themed() {
+    @each $theme, $map in $themes {
+        .theme--#{$theme} & {
+            $theme-map: () !global;
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), "#{$key}");
+                $theme-map: map-merge(
+                    $theme-map,
+                    (
+                        $key: $value,
+                    )
+                ) !global;
+            }
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function t($key) {
+    @return map-get($theme-map, $key);
+}

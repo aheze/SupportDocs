@@ -1,0 +1,99 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+body {
+    @include themed() {
+        color: t($text);
+        background-color: t($background);
+    }
+}
+
+.highlight {
+    @include themed() {
+        background-color: transparent;
+    }
+}
+
+.markdown-body {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @include themed() {
+            color: t($text);
+        }
+    }
+
+    p {
+        @include themed() {
+            color: t($text);
+        }
+    }
+
+    a {
+        @include themed() {
+            color: t($text);
+        }
+    }
+
+    hr {
+        @include themed() {
+            background-color: t($horizontal-line);
+        }
+    }
+
+    code,
+    tt {
+        @include themed() {
+            color: t($text);
+            background-color: t($code-block-background);
+        }
+    }
+
+    .highlight pre, pre {
+        @include themed() {
+            background-color: t($code-block-background);
+        }
+    }
+
+    pre {
+        > code {
+            @include themed() {
+                color: t($text);
+            }
+        }
+    }
+
+    blockquote {
+        @include themed() {
+            border-left: t($blockquote-left-bar);
+            color: t($blockquote-text)
+        }
+    }
+
+    table {
+        th,
+        td {
+            @include themed() {
+                border: 1px solid t($table-border);
+            }
+        }
+
+        tr {
+            @include themed() {
+                background-color: t($table-primary-background);
+                border-top: 1px solid t($table-border);
+            }
+
+            &:nth-child(2n) {
+                @include themed() {
+                    background-color: t($table-secondary-background);
+                }
+            }
+        }
+    }
+}
