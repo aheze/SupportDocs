@@ -18,10 +18,10 @@
     - [Categories](Documentation/LibraryCustomization.md#categories)
 
 ## How It Works
-
-First, you write documents using Markdown, and GitHub Pages automatically converts them into web pages.
-Then, a GitHub Action goes through all your documents and compiles them into a single JSON, containing their URLs, titles, and tags.
-Finally, the SupportDocs library in your app downloads the JSON and presents them in a customizable container.
+1. Write documents in Markdown
+2. Wait for the GitHub Action to generate a JSON data source and a README for you
+3. Let GitHub Pages compile the documents into a website
+4. The SupportDocs library downloads the JSON and compiles it into a customizable format
 
 ![How It Works - Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HowItWorks.png)
 
