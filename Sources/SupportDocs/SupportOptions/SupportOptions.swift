@@ -27,8 +27,10 @@ public struct SupportOptions {
     
     /**
      Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
+     
+     `dismissButtonView` is set to nil here to avoid an "ambiguous init" compiler error. By default, `dismissButtonView` is already nil, so this doesn't affect anything.
      */
-    public var navigationBar: NavigationBar = NavigationBar()
+    public var navigationBar: NavigationBar = NavigationBar(dismissButtonView: nil)
     
     /**
      Customize the `foregroundColor` and `backgroundColor` of the progress bar.
@@ -62,7 +64,7 @@ public struct SupportOptions {
      */
     public init(
         categories: [Category]? = nil,
-        navigationBar: NavigationBar = NavigationBar(),
+        navigationBar: NavigationBar = NavigationBar(dismissButtonView: nil),
         progressBar: ProgressBar = ProgressBar(),
         listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle,
         navigationViewStyle: CustomNavigationViewStyle = CustomNavigationViewStyle.defaultNavigationViewStyle,

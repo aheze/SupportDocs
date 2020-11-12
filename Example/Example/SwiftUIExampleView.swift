@@ -14,7 +14,7 @@ struct SwiftUIExampleView: View {
     
     let options = SupportOptions(
         categories: [
-            .init(tags: ["boba"], displayName: "Boba is awesome!")
+            .init(tag: "boba", displayName: "Boba is awesome!")
         ],
         navigationBar: .init(
             title: "Support",
