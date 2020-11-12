@@ -2,29 +2,31 @@
 
 ## Table of Contents
 
-- [Categories](#categories)
-    - [One Tag](#one-tag)
-    - [Two Tags](#two-tags)
-    - [Multiple Tags in One Category](#multiple-tags-in-one-category)
-- [Navigation Bar](#navigation-bar)
-    - [Title](#title)
-    - [Title Color](#title-color)
-    - [Dismiss Button Title](#dismiss-button-title)
-    - [Button Tint Color](#button-tint-color)
-    - [Background Color](#background-color)
-- [Progress Bar](#progress-bar)
-    - [Foreground Color](#foreground-color)
-    - [Background Color](#background-color-1)
-- [List Style](#list-style)
+-   [Categories](#categories)
+    -   [One Tag](#one-tag)
+    -   [Two Tags](#two-tags)
+    -   [Multiple Tags in One Category](#multiple-tags-in-one-category)
+-   [Navigation Bar](#navigation-bar)
+    -   [Title](#title)
+    -   [Title Color](#title-color)
+    -   [Dismiss Button Title](#dismiss-button-title)
+    -   [Button Tint Color](#button-tint-color)
+    -   [Background Color](#background-color)
+-   [Progress Bar](#progress-bar)
+    -   [Foreground Color](#foreground-color)
+    -   [Background Color](#background-color-1)
+-   [List Style](#list-style)
 
 ## Categories
 
 Group multiple documents in the same section. You make a category by specifying the tag(s), display name, and (optionally) color of the text in the category.
 
 ### Important: Before You Begin
+
 Make sure you have added the correct front matter to your documents. See the [Tag Your Documents](../README.md#tag-your-documents) section of the README.
 
 ### One Tag
+
 Once your documents have tags, you can start using categories inside your app. Here’s how to make SupportDocs display one category that contains all documents with the tag “boba”:
 
 <table>
@@ -163,6 +165,7 @@ class UIKitExampleController_WithCategories: UIViewController {
 ---
 
 ### Two Tags
+
 <table>
   <tr>
   <td>
@@ -315,6 +318,7 @@ class UIKitExampleController_WithCategories: UIViewController {
 ---
 
 ### Multiple Tags in One Category
+
 <table>
   <tr>
   <td>
@@ -446,7 +450,9 @@ class UIKitExampleController_WithCategories: UIViewController {
 ---
 
 ## Navigation Bar
+
 ### Title
+
 <table>
   <tr>
   <td>
