@@ -19,7 +19,7 @@ class UIKitExampleController: UIViewController {
 //        navigationBar: .init(
 //            title: "Support",
 //            titleColor: UIColor.white,
-//            dismissButtonTitle: Any"Done",
+//            dismissButtonView = AnyView(Text("Done")),
 //            buttonTintColor: UIColor.white,
 //            backgroundColor: UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
 //        ),
@@ -78,7 +78,7 @@ class UIKitExampleController_MinimalCode: UIViewController {
         
         let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
         
-        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource)
+        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource)
         self.present(supportDocsViewController, animated: true, completion: nil)
     }
 }
@@ -103,7 +103,7 @@ class UIKitExampleController_WithCategories: UIViewController {
         
         options.categories = [bobaCategory]
         
-        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
+        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource, options: options)
         self.present(supportDocsViewController, animated: true, completion: nil)
     }
 }

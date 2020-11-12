@@ -132,7 +132,7 @@ extension PlaygroundsViewController {
         
         options.navigationBar.title = defaultNavigationBarTitle
         options.navigationBar.titleColor = defaultNavigationBarTitleColor
-        options.navigationBar.dismissButtonTitle = defaultNavigationBarDismissButtonTitle
+        options.navigationBar.dismissButtonView = AnyView(Text(defaultNavigationBarDismissButtonTitle))
         options.navigationBar.buttonTintColor = defaultNavigationBarButtonTintColor
         options.navigationBar.backgroundColor = defaultNavigationBarBackgroundColor
         

@@ -19,7 +19,7 @@ struct SwiftUIExampleView: View {
         navigationBar: .init(
             title: "Support",
             titleColor: UIColor.white,
-            dismissButtonTitle: "Done",
+            dismissButtonView: AnyView(Text("Done")),
             buttonTintColor: UIColor.white,
             backgroundColor: UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
         ),
@@ -42,7 +42,7 @@ struct SwiftUIExampleView: View {
         VStack {
             Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
                 .sheet(isPresented: $supportDocsPresented, content: {
-                    SupportDocsView(dataSource: dataSource, options: options, isPresented: $supportDocsPresented)
+                    SupportDocsView(dataSourceURL: dataSource, options: options, isPresented: $supportDocsPresented)
                 })
             Text("SwiftUIExampleView.swift")
                 .foregroundColor(Color(UIColor.secondaryLabel))
@@ -60,7 +60,7 @@ struct SwiftUIExampleView_MinimalCode: View {
     var body: some View {
         Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
         .sheet(isPresented: $supportDocsPresented, content: {
-            SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
+            SupportDocsView(dataSourceURL: dataSource, isPresented: $supportDocsPresented)
         })
     }
 }
@@ -88,7 +88,7 @@ struct SwiftUIExampleView_WithCategories: View {
     var body: some View {
         Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
         .sheet(isPresented: $supportDocsPresented, content: {
-            SupportDocsView(dataSource: dataSource, options: options)
+            SupportDocsView(dataSourceURL: dataSource, options: options)
         })
     }
 }

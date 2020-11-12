@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import SupportDocs
 
 extension PlaygroundsViewController: UITextFieldDelegate {
@@ -42,9 +43,9 @@ extension PlaygroundsViewController: UITextFieldDelegate {
             }
         case dismissButtonTitleTextField:
             if updatedString.isEmpty {
-                options.navigationBar.dismissButtonTitle = "Done"
+                options.navigationBar.dismissButtonView = AnyView(Text("Done"))
             } else {
-                options.navigationBar.dismissButtonTitle = updatedString
+                options.navigationBar.dismissButtonView = AnyView(Text(updatedString)) 
             }
         default:
             print("unknown textfield")
