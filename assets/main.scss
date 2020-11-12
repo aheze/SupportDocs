@@ -2,6 +2,7 @@
 ---
 
 @import "{{ site.theme }}";
+@import "color-themes";
 
 body {
     @include themed() {
