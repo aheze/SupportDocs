@@ -24,6 +24,7 @@ body {
     h4,
     h5,
     h6 {
+        background-color: rgb(0, 0, 255);
         @include themed() {
             color: t($text);
         }
