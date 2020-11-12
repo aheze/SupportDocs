@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 :root {
-  --page-color: rgb(255, 255, 255);
+  --page-background-color: rgb(255, 255, 255);
   --text-color: rgb(36, 41, 46);
   --link-color: rgb(3, 102, 214);
   --horizontal-line-color: rgb(225, 228, 232);
@@ -19,7 +19,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-      --page-color: rgb(255, 255, 255);
+      --page-background-color: rgb(255, 255, 255);
       --text-color: rgb(36, 41, 46);
       --link-color: rgb(3, 102, 214);
       --horizontal-line-color: rgb(225, 228, 232);
@@ -33,80 +33,79 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+
   
-  body {
-    color: rgb(255,255,255);
-    background-color: rgb(26,26,26);
+body {
+  color: var(--text-color);
+  background-color: var(--page-background-color);
+}
+
+.highlight {
+  background-color: transparent;
+}
+
+
+.markdown-body {
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-color);
   }
   
-  .highlight {
-    background-color: transparent;
+  p {
+    color: var(--text-color);
   }
- 
   
-  .markdown-body {
+  a {
+    color: var(--link-color);
+  }
+  
+  hr {
+    background-color: var(--horizontal-line-color);
+  }
+  
+  code,
+  tt {
+    color: var(--text-color);
+    background-color: var(--inline-code-background-color);
+  }
+  
+  .highlight pre,
+  pre {
+    background-color: var(--code-block-background-color);
+  }
+  
+  pre {
+    > code {
+      color: var(--text-color);
+    }
+  }
+  
+  blockquote {
+    border-left: var(--block-quote-left-bar-color);
+    color: --block-quote-text-color;
+  }
+  
+  table {
     
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: rgb(255,255,255);
+    th,
+    td {
+      border: 1px solid var(--table-border-color);
     }
     
-    p {
-      color: rgb(255,255,255);
-    }
-    
-    a {
-      color: rgb(102, 255, 102);
-    }
-    
-    hr {
-      background-color: rgb(225, 228, 232);
-    }
-    
-    code,
-    tt {
-      color: rgb(255,255,255);
-      background-color: rgb(255, 0, 0); /* red */
-    }
-    
-    .highlight pre,
-    pre {
-      background-color: rgb(44, 44, 44);
-    }
-    
-    pre {
-      > code {
-        color: rgb(255,255,255);
-      }
-    }
-    
-    table {
+    tr {
+      background-color: var(--table-primary-background-color);
+      border-top: 1px solid var(--table-border-color);
       
-      th,
-      td {
-        border: 1px solid rgb(223, 226, 229); /* grey */
-      }
-      
-      tr {
-        background-color: rgb(46, 46, 46);
-        border-top: 1px solid darken(rgb(89, 89, 89), 4%);
-        
-        &:nth-child(2n) {
-          background-color: rgb(89, 89, 89);
-        }
+      &:nth-child(2n) {
+        background-color: var(--table-secondary-background-color);
       }
     }
-    
-    blockquote {
-      color: rgb(106, 115, 125);
-      border-left: rgb(223, 226, 229);
-    }
-    
   }
 }
+
 
