@@ -3,7 +3,9 @@
 
 @import "{{ site.theme }}";
 
-:root {
+/* These are the colors used to render your Markdown into HTML. Customize them however you want! */
+
+:root { /* Default colors taken directly from GitHub Pages' Primer theme */
   --page-background-color: rgb(255, 255, 255); /* white */
   --text-color: rgb(36, 41, 46); /* very dark gray */
   --link-color: rgb(3, 102, 214); /* deep blue */
@@ -19,17 +21,17 @@
 
 @media (prefers-color-scheme: dark) { /* Dark mode colors */
     :root {
-      --page-background-color: rgb(255, 255, 255);
-      --text-color: rgb(36, 41, 46);
-      --link-color: rgb(3, 102, 214);
-      --horizontal-line-color: rgb(225, 228, 232);
-      --code-block-background-color: rgb(246, 248, 250);
-      --inline-code-background-color: rgba(27, 31, 35, 0.05);
-      --block-quote-text-color: rgb(106, 115, 125);
-      --block-quote-left-bar-color: rgb(223, 226, 229);
-      --table-border-color: rgb(223, 226, 229);
-      --table-primary-background-color: rgb(255, 255, 255);
-       --table-secondary-background-color: rgb(246, 248, 250);
+      --page-background-color: rgb(26, 26, 26); /* very dark gray */
+      --text-color: rgb(255, 255, 255); /* white */
+      --link-color: rgb(102, 153, 255); /* light blue */
+      --horizontal-line-color: rgb(102, 102, 102); /* medium dark gray */
+      --code-block-background-color: rgb(38, 38, 38); /* dark gray */
+      --inline-code-background-color: rgb(38, 38, 38); /* dark gray */
+      --block-quote-text-color: rgb(191, 191, 191)); /* medium light gray */
+      --block-quote-left-bar-color: rgb(51, 51, 51); /* darker gray */
+      --table-border-color: rgb(80, 89, 98); /* medium gray */
+      --table-primary-background-color: rgb(26, 26, 26); /* very dark gray */
+      --table-secondary-background-color: rgb(64, 64, 64); /* dark gray */
   }
 }
 
