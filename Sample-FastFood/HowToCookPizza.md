@@ -1,9 +1,9 @@
 ---
-title: How to Cook Pizza
+title: How to cook pizza
 tags: fastFood
 --- 
 
-# How to Cook Pizza
+# How to cook pizza
 
 Cooking pizza is easy!
 
