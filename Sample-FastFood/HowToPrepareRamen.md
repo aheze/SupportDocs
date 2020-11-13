@@ -1,5 +1,5 @@
 ---
-title: How to prepare pamen
+title: How to prepare ramen
 tags: fastFood
 ---
 
