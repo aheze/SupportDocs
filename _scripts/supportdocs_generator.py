@@ -33,11 +33,16 @@ else:
     GITHUB_BRANCH = "refs/head/DataSource"
 
 
-def add_help_file(title: str, directory: str, filename: str, tags: list):
+def add_help_file(title: str, _directory: str, filename: str, tags: list):
+    if _directory:
+        directory = _directory + "/"
+    else:
+        directory = _directory
+
     data.append(
         {
             "title": title,
-            "url": f"https://{GITHUB_USERNAME}.github.io/{GITHUB_REPOSITORY}/{directory}/{filename}",
+            "url": f"https://{GITHUB_USERNAME}.github.io/{GITHUB_REPOSITORY}/{directory}{filename}",
             "tags": tags,
         }
     )
@@ -95,17 +100,41 @@ if __name__ == "__main__":
                 help_file_tags,
             )
 
+    root_md_files = [
+        file
+        for file in os.listdir(".")
+        if file.endswith(".md")
+        and file not in ("README.md", "notes.md", "README.tmp.md")
+        and not file.startswith("_")
+        and not file.startswith(".")
+    ]
+    for file in root_md_files:
+        help_file_frontmatter = parse_markdown(os.path.abspath(file))
+
+        try:
+            help_file_tags = (
+                [tag.strip() for tag in help_file_frontmatter["tags"].split(",")]
+                if help_file_frontmatter["tags"] is not None
+                else []
+            )
+        except KeyError:
+            help_file_tags = []
+
+        add_help_file(
+            help_file_frontmatter["title"],
+            "",
+            file.replace(".md", ""),
+            help_file_tags,
+        )
+
     if not os.path.isdir(os.path.abspath("_data")):
         os.mkdir("_data")
-
-    with open(DATA_JSON_FILE_PATH, "w") as data_json:
-        data_json.write(json.dumps(data, indent=4))
 
     with open(READ_README_FILE_PATH, "r") as readme_file:
         readme = jinja2.Template(readme_file.read(), trim_blocks=True)
 
     toc = ""
-    for support_document in sorted(data, key=lambda item: item["title"]):
+    for support_document in sorted(data, key=lambda item: item["title"].lower()):
         if "SupportDocs/" in "/".join(support_document["url"].split("/")[-2:]):
             edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{support_document['url'].split('/')[-1]}.md"
         else:
@@ -133,9 +162,15 @@ if __name__ == "__main__":
         editable_readme_url=editable_readme_url,
     )
     if not DEVELOPER_MODE:
+        with open(DATA_JSON_FILE_PATH, "w") as data_json:
+            filename_sorted_data = sorted(data, key=lambda item: item["url"].split("/")[-1])
+            data_json.write(json.dumps(filename_sorted_data, indent=4))
+
+
         readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
         readme_output.write(rendered_readme)
         readme_output.close()
     else:
-        with open("README.tmp.md", "w") as tmp_readme:
-            tmp_readme.write(rendered_readme)
+        with open("SDG.tmp.json", "w") as sdg:
+            filename_sorted_data = sorted(data, key=lambda item: item["url"].split("/")[-1])
+            sdg.write(json.dumps(filename_sorted_data, indent=4))
