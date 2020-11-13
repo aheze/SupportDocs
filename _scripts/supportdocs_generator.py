@@ -2,8 +2,8 @@
 SupportDocs Generator
 Contributors:
     :: H. Kamran [@hkamran80] (author)
-Version: 1.1.0
-Last Updated: 2020-11-10, @hkamran80
+Version: 1.1.1
+Last Updated: 2020-11-12, @hkamran80
 """
 
 import frontmatter
@@ -106,7 +106,11 @@ if __name__ == "__main__":
 
     toc = ""
     for support_document in sorted(data, key=lambda item: item["title"]):
-        edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{'/'.join(support_document['url'].split('/')[-2:])}.md"
+        if "SupportDocs/" in "/".join(support_document["url"].split("/")[-2:]):
+            edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{support_document['url'].split('/')[-1]}.md"
+        else:
+            edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{'/'.join(support_document['url'].split('/')[-2:])}.md"
+
         toc += (
             f"- [{support_document['title']}]({support_document['url']})"
             + f" ({', '.join(support_document['tags']) if support_document['tags'] else 'No Tags'})"
