@@ -10,8 +10,10 @@
 
 -   [How It Works](#how-it-works)
 -   [Installation](#installation)
-    -   [CocoaPods](#cocoapods)
-    -   [Swift Package Manager](#swift-package-manager)
+    -   [Set up the GitHub repo](#set-up-the-github-repo)
+    -   [Install the library](#install-the-library)
+         -   [CocoaPods](#cocoapods)
+         -   [Swift Package Manager](#swift-package-manager)
 -   [Before You Begin](#before-you-begin)
     -   [Tag Your Documents](#tag-your-documents)
 -   [Library Customization](Documentation/LibraryCustomization.md)
@@ -47,7 +49,7 @@ Installing SupportDocs takes 2 steps:
 1. Set up the GitHub repo where you write your documents
 2. Install the library inside your app
 
-### 1. Set up the GitHub repo
+### Set up the GitHub repo
 This will be where you write your documents. GitHub Pages will translate your Markdown into HTML, and a custom GitHub Action will automatically compile the web pages into a JSON file.
 
 1. Scroll up to the top of this page and click <kbd>Use this template</kbd>
@@ -63,7 +65,7 @@ This will be where you write your documents. GitHub Pages will translate your Ma
 | --- | --- |
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo4.png)
 
-### 2. Install the library
+### Install the library
 This is the actual interface that your users will see. You can install using **CocoaPods** or **Swift Package Manager**, whichever one you prefer.
 
 #### CocoaPods
