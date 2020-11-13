@@ -134,7 +134,7 @@ if __name__ == "__main__":
         readme = jinja2.Template(readme_file.read(), trim_blocks=True)
 
     toc = ""
-    for support_document in sorted(data, key=lambda item: item["title"]):
+    for support_document in sorted(data, key=lambda item: item["title"].lower()):
         if "SupportDocs/" in "/".join(support_document["url"].split("/")[-2:]):
             edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{support_document['url'].split('/')[-1]}.md"
         else:
@@ -161,11 +161,20 @@ if __name__ == "__main__":
         deployment_progress=deployment_progress,
         editable_readme_url=editable_readme_url,
     )
+    
     if not DEVELOPER_MODE:
         with open(DATA_JSON_FILE_PATH, "w") as data_json:
-            data_json.write(json.dumps(data, indent=4))
-
+            filename_sorted_data = sorted(
+                data, key=lambda item: item["url"].split("/")[-1]
+            )
+            data_json.write(json.dumps(filename_sorted_data, indent=4))
 
         readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
         readme_output.write(rendered_readme)
         readme_output.close()
+    else:
+        with open("SDG.tmp.json", "w") as sdg:
+            filename_sorted_data = sorted(
+                data, key=lambda item: item["url"].split("/")[-1]
+            )
+            sdg.write(json.dumps(filename_sorted_data, indent=4))
