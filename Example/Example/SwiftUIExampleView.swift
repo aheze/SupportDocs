@@ -53,7 +53,7 @@ struct SwiftUIExampleView: View {
 /**
  The least code that you need to make `SupportDocs` work.
  */
-struct SwiftUIExampleView_MinimalCode: View {
+struct SwiftUIExampleViewMinimalCode: View {
     let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
     @State var supportDocsPresented = false
     
@@ -65,7 +65,7 @@ struct SwiftUIExampleView_MinimalCode: View {
     }
 }
 
-struct SwiftUIExampleView_WithCategories: View {
+struct SwiftUIExampleViewWithCategories: View {
     let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
     
     let options = SupportOptions(

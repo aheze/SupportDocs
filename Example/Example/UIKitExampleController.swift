@@ -67,7 +67,7 @@ class UIKitExampleController: UIViewController {
 /**
  The least code that you need to make `SupportDocs` work.
  */
-class UIKitExampleController_MinimalCode: UIViewController {
+class UIKitExampleControllerMinimalCode: UIViewController {
     
     /**
      Connect this inside the storyboard.
@@ -83,7 +83,7 @@ class UIKitExampleController_MinimalCode: UIViewController {
     }
 }
 
-class UIKitExampleController_WithCategories: UIViewController {
+class UIKitExampleControllerWithCategories: UIViewController {
     
     /**
      Connect this inside the storyboard.
