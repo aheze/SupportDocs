@@ -36,15 +36,37 @@
 ## How It Works
 
 1. Write documents in Markdown
-2. Wait for the GitHub Action to generate a JSON data source and a README for you
-3. Let GitHub Pages compile the documents into a website
+2. Let GitHub Pages compile the documents into a website
+3. Wait for the GitHub Action to generate a JSON data source and a README for you 
 4. The SupportDocs library downloads the JSON and compiles it into a customizable format
 
 ![How It Works - Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HowItWorks.png)
 
 ## Installation
+Installing SupportDocs takes 2 steps: 
+1. Set up the GitHub repo where you write your documents
+2. Install the library inside your app
 
-### CocoaPods
+### 1. Set up the GitHub repo
+This will be where you write your documents. GitHub Pages will translate your Markdown into HTML, and a custom GitHub Action will automatically compile the web pages into a JSON file.
+
+1. Scroll up to the top of this page and click <kbd>Use this template</kbd>
+2. Enter a repo name -- this can be whatever you want
+3. Make sure it's set to `Public` (If you have `GitHub free`, GitHub Pages only works for public repos)
+4. Make sure to check **Include all branches**. This is **really** important.
+5. Click <kbd>Create repository from template</kbd>
+6. In your brand new repo, click the <kbd>Settings</kbd> tab
+7. Scroll down to the GitHub Pages section, and specify **DataSource** branch and **/ (root)** folder. Then click <kbd>Save</kbd>.
+8. That's it for the GitHub repo! Now time to install the library in your app.
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo2.png)
+| --- | --- |
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo4.png)
+
+### 2. Install the library
+This is the actual interface that your users will see. You can install using **CocoaPods** or **Swift Package Manager**, whichever one you prefer.
+
+#### CocoaPods
 
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To install SupportDocs into your Xcode project using CocoaPods, add it in your `Podfile`:
 
@@ -52,13 +74,9 @@
 pod 'SupportDocs'
 ```
 
-### Swift Package Manager
+#### Swift Package Manager
 
 The [Swift Package Manager](https://swift.org/package-manager/) is built into Xcode, which makes it really easy to use.
-
-
-| ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM2.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM4.png) |
-| --- | --- | --- | --- |
 
 1. Go to your project settings
 2. Click your project
@@ -68,6 +86,10 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 6. Enter the latest version, `0.0.30`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
 7. Click <kbd>Next</kbd>
 8. Click <kbd>Finish</kbd>, and you're done!
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM2.png)
+| --- | --- |
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM4.png)
 
 
 ## Before You Begin
