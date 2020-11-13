@@ -1,8 +1,8 @@
-![SupportDocs Logo](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SupportDocs.png)
+![SupportDocs Logo](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SupportDocsSmall.png)
+
+![SupportDocs Header](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HeaderImage.png)
 
 ### Generate help centers for your iOS apps, with Markdown!
-
-![Examples](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/New%20Header.png)
 
 # SupportDocs is currently under heavy development. Check back in a couple days!
 
