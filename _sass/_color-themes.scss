@@ -1,17 +1,20 @@
-$background: 'background';
-$text: 'text';
-$link: 'link';
-$horizontal-line: 'horizontal-line';
-$code-block-background: 'code-block-background';
-$inline-code-background: 'inline-code-background';
-$blockquote-text: 'blockquote-text';
-$blockquote-left-bar: 'blockquote-left-bar';
-$table-border: 'table-border';
-$table-primary-background: 'table-primary-background';
-$table-secondary-background: 'table-secondary-background';
+$dark-theme: "dark-theme";
+$light-theme: "light-theme";
+
+$background: "background";
+$text: "text";
+$link: "link";
+$horizontal-line: "horizontal-line";
+$code-block-background: "code-block-background";
+$inline-code-background: "inline-code-background";
+$blockquote-text: "blockquote-text";
+$blockquote-left-bar: "blockquote-left-bar";
+$table-border: "table-border";
+$table-primary-background: "table-primary-background";
+$table-secondary-background: "table-secondary-background";
 
 $themes: (
-    default: (
+    $light-theme: (
         background: rgb(255, 255, 255),
         text: /*rgb(36, 41, 46)*/ rgb(0, 255, 0),
         link: rgb(3, 102, 214),
@@ -22,9 +25,9 @@ $themes: (
         blockquote-left-bar: rgb(223, 226, 229),
         table-border: rgb(223, 226, 229),
         table-primary-background: rgb(255, 255, 255),
-        table-secondary-background: rgb(246, 248, 250)
+        table-secondary-background: rgb(246, 248, 250),
     ),
-    dark: (
+    $dark-theme: (
         background: rgb(26, 26, 26),
         text: rgb(255, 255, 255),
         link: rgb(102, 153, 255),
@@ -35,29 +38,52 @@ $themes: (
         blockquote-left-bar: rgb(51, 51, 51),
         table-border: rgb(80, 89, 98),
         table-primary-background: rgb(26, 26, 26),
-        table-secondary-background: rgb(64, 64, 64)
+        table-secondary-background: rgb(64, 64, 64),
     ),
 );
 
-@mixin themed() {
-    @each $theme, $map in $themes {
-        .theme--#{$theme} & {
-            $theme-map: () !global;
-            @each $key, $submap in $map {
-                $value: map-get(map-get($themes, $theme), "#{$key}");
-                $theme-map: map-merge(
-                    $theme-map,
-                    (
-                        $key: $value,
-                    )
-                ) !global;
-            }
-            @content;
-            $theme-map: null !global;
-        }
+@mixin themeProperty(
+    $theme,
+    $property,
+    $color,
+    $additionalPropertiesPositionIsFront,
+    $additionalProperties
+) {
+    @if $additionalPropertiesPositionIsFront {
+        #{$property}: unquote(
+            $additionalProperties + " " + map-get($theme, $color)
+        );
+    } @else {
+        #{$property}: unquote(
+            map-get($theme, $color) + " " + $additionalProperties
+        );
     }
 }
 
-@function t($key) {
-    @return map-get($theme-map, $key);
+@mixin theme(
+    $property,
+    $color,
+    $additionalPropertiesPositionIsFront: false,
+    $additionalProperties: ""
+) {
+    $light: map-get($themes, $light-theme);
+    $dark: map-get($themes, $dark-theme);
+
+    @include themeProperty(
+        $light,
+        $property,
+        $color,
+        $additionalPropertiesPositionIsFront,
+        $additionalProperties
+    );
+
+    @media (prefers-color-scheme: dark) {
+        @include themeProperty(
+            $dark,
+            $property,
+            $color,
+            $additionalPropertiesPositionIsFront,
+            $additionalProperties
+        );
+    }
 }

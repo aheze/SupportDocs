@@ -5,16 +5,12 @@
 @import "color-themes";
 
 body {
-    @include themed() {
-        color: t($text);
-        background-color: t($background);
-    }
+    @include theme("color", $text);
+    @include theme("background-color", $background);
 }
 
 .highlight {
-    @include themed() {
-        background-color: transparent;
-    }
+    background-color: transparent;
 }
 
 .markdown-body {
@@ -24,77 +20,54 @@ body {
     h4,
     h5,
     h6 {
-        background-color: rgb(0, 0, 255);
-        @include themed() {
-            color: t($text);
-        }
+        @include theme("color", $text);
     }
 
     p {
-        @include themed() {
-            color: t($text);
-        }
+        @include theme("color", $text);
     }
 
     a {
-        @include themed() {
-            color: t($text);
-        }
+        @include theme("color", $text);
     }
 
     hr {
-        @include themed() {
-            background-color: t($horizontal-line);
-        }
+        @include theme("background-color", $horizontal-line);
     }
 
     code,
     tt {
-        @include themed() {
-            color: t($text);
-            background-color: t($code-block-background);
-        }
+        @include theme("color", $text);
+        @include theme("background-color", $code-block-background);
     }
 
     .highlight pre, pre {
-        @include themed() {
-            background-color: t($code-block-background);
-        }
+        @include theme("background-color", $code-block-background);
     }
 
     pre {
         > code {
-            @include themed() {
-                color: t($text);
-            }
+            @include theme("color", $text);
         }
     }
 
     blockquote {
-        @include themed() {
-            border-left: t($blockquote-left-bar);
-            color: t($blockquote-text)
-        }
+        @include theme("border-left", $blockquote-left-bar);
+        @include theme("color", $blockquote-text)
     }
 
     table {
         th,
         td {
-            @include themed() {
-                border: 1px solid t($table-border);
-            }
+            @include theme("border", $table-border, true, "1px solid");
         }
 
         tr {
-            @include themed() {
-                background-color: t($table-primary-background);
-                border-top: 1px solid t($table-border);
-            }
+            @include theme("background-color", $table-primary-background);
+            @include theme("border-top", $table-border, true, "1px solid");
 
             &:nth-child(2n) {
-                @include themed() {
-                    background-color: t($table-secondary-background);
-                }
+                @include theme("background-color", $table-secondary-background);
             }
         }
     }
