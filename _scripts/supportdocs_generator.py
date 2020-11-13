@@ -104,7 +104,7 @@ if __name__ == "__main__":
         file
         for file in os.listdir(".")
         if file.endswith(".md")
-        and file not in ("README.md", "notes.md", "README.tmp.md")
+        and file not in ("README.md", "notes.md", "README.tmp.md", "404.md")
         and not file.startswith("_")
         and not file.startswith(".")
     ]
