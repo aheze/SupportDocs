@@ -46,7 +46,7 @@
 
 ### CocoaPods
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate SupportDocs into your Xcode project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To install SupportDocs into your Xcode project using CocoaPods, add it in your `Podfile`:
 
 ```ruby
 pod 'SupportDocs'
@@ -54,15 +54,21 @@ pod 'SupportDocs'
 
 ### Swift Package Manager
 
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It is in early development, but SupportDocs does support its use on supported platforms.
+The [Swift Package Manager](https://swift.org/package-manager/) is built into Xcode, which makes it really easy to use.
 
-Once you have your Swift package set up, adding SupportDocs as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
 
-```swift
-dependencies: [
-    .package(url: "https://github.com/aheze/SupportDocs.git", .upToNextMajor(from: "0.0.27"))
-]
-```
+| ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM2.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM4.png) |
+| --- | --- | --- | --- |
+
+1. Go to your project settings
+2. Click your project
+3. Click the <kbd>+</kbd> button
+4. Enter `https://github.com/aheze/SupportDocs` in the text field
+5. Click <kbd>Next</kbd>
+6. Enter the latest version, `0.0.30`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
+7. Click <kbd>Next</kbd>
+8. Click <kbd>Finish</kbd>, and you're done!
+
 
 ## Before You Begin
 
