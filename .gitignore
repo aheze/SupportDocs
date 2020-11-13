@@ -1,5 +1,10 @@
 .DS_Store
-/.build
-/Packages
-/*.xcodeproj
+.build
+Packages
+*.xcodeproj
 xcuserdata/
+.dccache
+tmp*
+*.tmp.*
+notes.md
+.vscode
