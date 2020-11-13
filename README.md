@@ -82,3 +82,28 @@ In this front matter, we have a title and one tag. This title has two purposes. 
 
 You can see the front matter for the documents in the DataSource branch in this graphic:
 ![Front Matter Examples](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/colorCategories.png)
+
+
+## Library Customization
+Pretty much everything in the SupportDocs library can be customized through the `SupportOptions` struct.
+### Categories
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CategoriesPreview.png)
+### Navigation Bar
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationBarPreview.png)
+### Progress Bar
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ProgressBarPreview.png)
+### List Style
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ListStylePreview.png)
+### Navigation View Style
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
+### Other
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/OtherPreview.png)
+
+
+
