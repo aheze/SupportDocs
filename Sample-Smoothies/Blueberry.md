@@ -1,5 +1,5 @@
 ---
-title: Blueberry Smoothie
+title: Blueberry smoothie
 tags: smoothies
 ---
 

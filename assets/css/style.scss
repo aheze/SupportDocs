@@ -23,7 +23,7 @@
     :root {
       --page-background-color: rgb(26, 26, 26); /* very dark gray */
       --text-color: rgb(255, 255, 255); /* white */
-      --link-color: rgb(102, 153, 255); /* light blue */
+      --link-color: rgb(204, 230, 255); /* very light blue */
       --horizontal-line-color: rgb(102, 102, 102); /* medium dark gray */
       --code-block-background-color: rgb(38, 38, 38); /* dark gray */
       --inline-code-background-color: rgb(38, 38, 38); /* dark gray */
@@ -31,7 +31,7 @@
       --block-quote-left-bar-color: rgb(51, 51, 51); /* darker gray */
       --table-border-color: rgb(80, 89, 98); /* medium gray */
       --table-primary-background-color: rgb(26, 26, 26); /* very dark gray */
-      --table-secondary-background-color: rgb(64, 64, 64); /* dark gray */
+      --table-secondary-background-color: rgb(51, 51, 51); /* dark gray */
   }
 }
 
@@ -107,4 +107,7 @@ body {
     
   }
   
+  img {
+    background-color: transparent;
+  }
 }
