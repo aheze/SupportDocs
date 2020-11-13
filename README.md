@@ -86,6 +86,9 @@ You can see the front matter for the documents in the DataSource branch in this 
 
 ## Library Customization
 Pretty much everything in the SupportDocs library can be customized through the `SupportOptions` struct.
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
+
 ### Categories
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CategoriesPreview.png)
