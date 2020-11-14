@@ -102,6 +102,8 @@ SupportDocs is pretty simple to use, but there's 2 parts: the GitHub repo and th
 ### Adding and Editing Documents
 In you brand new repo that you set up earlier, switch to the **DataSource** branch. Take a look around -- here's a guide:
 
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Guide.png)
+
 - `.github/workflows` is for the GitHub Action, for compiling your documents into JSON
 - `Images` contains the images used in the example documents.
 - `Sample-Boba` contains all documents tagged with `boba`.
