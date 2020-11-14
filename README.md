@@ -50,7 +50,6 @@ class UIKitExampleController_MinimalCode: UIViewController {
 - [How to eat tacos](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToEatTacos) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatTacos.md))
 - [How to make spaghetti](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToMakeSpaghetti) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToMakeSpaghetti.md))
 - [How to prepare ramen](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToPrepareRamen) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToPrepareRamen.md))
-- [Markdown Test](https://aheze.github.io/SupportDocs/MarkdownTest) (other) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/MarkdownTest.md))
 - [Peach smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Peach) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Peach.md))
 - [Plum smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Plum) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Plum.md))
 - [Red berry smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/RedBerries) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/RedBerries.md))
