@@ -14,6 +14,7 @@
     -   [Install the library](#install-the-library)
          -   [CocoaPods](#cocoapods)
          -   [Swift Package Manager](#swift-package-manager)
+-   [Usage](#usage)
 -   [Before You Begin](#before-you-begin)
     -   [Tag Your Documents](#tag-your-documents)
 -   [Library Customization](Documentation/LibraryCustomization.md)
@@ -49,7 +50,7 @@ Installing SupportDocs takes 2 steps:
 1. Set up the GitHub repo where you write your documents
 2. Install the library inside your app
 
-### Set up the GitHub repo
+### Set Up the GitHub Repo
 This will be where you write your documents. GitHub Pages will translate your Markdown into HTML, and a custom GitHub Action will automatically compile the web pages into a JSON file.
 
 1. Scroll up to the top of this page and click <kbd>Use this template</kbd>
@@ -65,7 +66,7 @@ This will be where you write your documents. GitHub Pages will translate your Ma
 | --- | --- |
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo4.png)
 
-### Install the library
+### Install the Library
 This is the actual interface that your users will see. You can install using **CocoaPods** or **Swift Package Manager**, whichever one you prefer.
 
 #### CocoaPods
@@ -93,6 +94,28 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 | --- | --- |
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM4.png)
 
+## Usage
+SupportDocs is pretty simple to use, but there's 2 parts: the GitHub repo and the library in your app.
+- The GitHub repo is where you add and edit your documents, using Markdown. This is online, so you can edit at any time and always show the latest information to your users. All your documents are compiled into a single JSON file, which you'll pass into the library.
+- The library is what's displayed to your users, in your app. All it needs is the url of the JSON file, and you can either use SwiftUI or UIKit to embed it.
+
+### Adding and Editing Documents
+In you brand new repo that you set up earlier, switch to the **DataSource** branch. Take a look around -- here's a guide:
+
+- `.github/workflows` is for the GitHub Action, for compiling your documents into JSON
+- `Images` contains the images used in the example documents.
+- `Sample-Boba` contains all documents tagged with `boba`.
+- `Sample-FastFood` contains all documents tagged with `fastFood`.
+- `Sample-Smoothies` contains all documents tagged with `smoothies`.
+- `_data` contains the generated data source URL
+- `_layouts` is for GitHub Pages to convert your Markdown into HTML
+- `_sass` is where you can customize the look of the HTML, including light and dark mode colors.
+- `_scripts` contains the script used by the GitHub Action, as well as the README template. This template is what you should edit if you want to change the README at all -- if you change it directly, your changes will be overriden.
+- `assets/css` applies the `_sass`
+- `404.md` is the 404 document that will be displayed if your URLs are wrong. You can also pass this into `options.other.error404` in case your data source URL fails.
+- `README.md` is for your reference. It contains a link to the data source URL and a table of contents of all your documents. **Do not** edit this file directly, instead, edit the file in `_scripts/README.md`.
+- `_config.yml` sets the default theme "Primer" for GitHub Pages. We recommend that you don't change this, as we customized dark mode specifically for the "Primer" theme -- you'll need to configure `assets/css/main.scss` if you use your own theme.
+
 
 ## Before You Begin
 
@@ -110,7 +133,7 @@ tags: boba
 
 In this front matter, we have a title and one tag. This title has two purposes. It is the tab title if opened in a browser, and it is the title that SupportDocs shows. The tags can be linked as categories when configuring SupportDocs, and can be used to separate documents.
 
-You can see the front matter for the documents in the DataSource branch in this graphic:
+You can see the front matter for the documents in the **DataSource** branch in this graphic:
 ![Front Matter Examples](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Tags.png)
 
 
