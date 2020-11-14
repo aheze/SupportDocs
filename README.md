@@ -129,9 +129,9 @@ To make a document eligible for SupportDocs, you must fulfill these criteria:
 title: Buy blue boba
 tags: boba
 ---
-
 ```
 
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/DocumentCriteria.png)
 
 
 ## Before You Begin
