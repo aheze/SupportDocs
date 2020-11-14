@@ -22,7 +22,7 @@
     - [Using the Library](#using-the-library)
         - [SwiftUI](#swiftui)
         - [UIKit](#uikit)
--   [Library Customization](Documentation/LibraryCustomization.md)
+-   [Customization](#customization)
     -   [Examples](Documentation/LibraryCustomization.md#examples)
         -   [SwiftUI](Documentation/LibraryCustomization.md#swiftui)
         -   [UIKit](Documentation/LibraryCustomization.md#uikit)
@@ -249,7 +249,7 @@ import SwiftUI
 import SupportDocs
 
 struct SwiftUIExampleViewMinimalCode: View {
-    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/MyHelpCenter/DataSource/_data/supportdocs_datasource.json")!
     @State var supportDocsPresented = false
     
     var body: some View {
@@ -275,7 +275,7 @@ class UIKitExampleControllerMinimalCode: UIViewController {
      */
     @IBAction func presentButtonPressed(_ sender: Any) {
         
-        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/MyHelpCenter/DataSource/_data/supportdocs_datasource.json")!
         
         let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource)
         self.present(supportDocsViewController, animated: true, completion: nil)
@@ -283,29 +283,43 @@ class UIKitExampleControllerMinimalCode: UIViewController {
 }
 ```
 
+Here's the result:
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/BasicResult.png)
+
+Cool, right? Go treat yourself to some hot chocolate and take a break!
+
+Now that you've got everything set up and working, you can customize SupportDocs -- for example, adding a "Dismiss" button or only showing documents with specific `tags`. Read more in the next section.
+
 ---
 
-## Library Customization
+## Customization
+SupportDocs is heavily customizable, both in the rendered web page and the library view.
+
+### The Rendered Web Page
+
+### The Library View
+
 Pretty much everything in the SupportDocs library can be customized through the `SupportOptions` struct.
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
 
-### Categories
+#### Categories
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CategoriesPreview.png)
-### Navigation Bar
+#### Navigation Bar
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationBarPreview.png)
-### Progress Bar
+#### Progress Bar
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ProgressBarPreview.png)
-### List Style
+#### List Style
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ListStylePreview.png)
-### Navigation View Style
+#### Navigation View Style
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
-### Other
+#### Other
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/OtherPreview.png)
 
