@@ -99,12 +99,13 @@ SupportDocs is pretty simple to use, but there's 2 parts: the GitHub repo and th
 - The GitHub repo is where you add and edit your documents, using Markdown. This is online, so you can edit at any time and always show the latest information to your users. All your documents are compiled into a single JSON file, which you'll pass into the library.
 - The library is what's displayed to your users, in your app. All it needs is the url of the JSON file, and you can either use SwiftUI or UIKit to embed it.
 
-### Adding and Editing Documents
+### Using the GitHub Repo
+
 In you brand new repo that you set up earlier, switch to the **DataSource** branch. The example documents are inside `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` -- take a look around. Here's a guide:
 <details>
-  <summary><strong>Show guide</strong></summary>
+<summary><strong>Show guide</strong></summary>
   
-  <hr>
+<hr>
   
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Guide.png)
 
@@ -123,7 +124,7 @@ In you brand new repo that you set up earlier, switch to the **DataSource** bran
 - `README.md` is for your reference. It contains a link to the data source URL, and a table of contents that shows all your documents. **Do not** edit this file directly -- instead, edit the file in `_scripts/README.md`.
 - `_config.yml` sets the default theme, "Primer," for GitHub Pages. We recommend that you don't change this, as we customized dark mode specifically for the "Primer" theme -- you'll need to configure `assets/css/main.scss` if you use your own theme.
 
-  <hr>
+<hr>
 
 </details>
 
@@ -132,7 +133,14 @@ Documents don't need to be in folders -- they can be in the root directory, or i
 - Documents tagged with <kbd>fastFood</kbd> are in the `Sample-FastFood` folder, and
 - Documents tagged with <kbd>boba</kbd> are in the `Sample-Smoothies` folder.
 
-To make a document eligible for SupportDocs, you must fulfill these criteria:
+#### Adding and Editing Documents
+
+To add a document, just click the <kbd>Create new file</kbd> button. Or, to add it to a folder, navigate to the folder and then click the <kbd>Create new file</kbd> button.
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CreateNewFile.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CreateNewFile.png)
+--- | ---
+
+Then, to make the document eligible for SupportDocs, you must fulfill these criteria:
 1. The document extension must end in `.md`
 2. At the top of the document (this is called the [Front Matter](https://jekyllrb.com/docs/front-matter/)), you need to fill in the `title`. We strongly suggest you add tags too.
 ```yaml
@@ -142,11 +150,11 @@ tags: boba
 ---
 ```
 
-![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/DocumentCriteria.png)
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/DocumentCriteria.png)
 
 The `title` is what will be displayed in each row of the list, in the SupportDocs library. Once you select a row, it's also what's shown as the title of the navigation bar.
 
-![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/TitleInList.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/TitleInNavigationBar.png)
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/TitleInList.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/TitleInNavigationBar.png)
 --- | ---
 
 Everything after the `---` of the Front Matter will be the content of your document. You use Markdown to write this!
@@ -182,7 +190,7 @@ Blue and yummy. Buy this at [google.com](https://google.com)
 ```
 </td>
 <td>
-  <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/MarkdownResult.png">
+  <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/MarkdownResult.png">
 </td>
 </tr>
 </table>
