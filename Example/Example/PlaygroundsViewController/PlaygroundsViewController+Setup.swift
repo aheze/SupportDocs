@@ -127,14 +127,14 @@ extension PlaygroundsViewController {
 //        let fastFoodCategory = SupportOptions.Category(tag: "fastFood", displayName: "These aren't really healthy", displayColor: UIColor.red)
 //        let smoothiesCategory = SupportOptions.Category(tags: ["smoothies"], displayName: "Smoothies")
         
-//        options.categories = nil
+        options.categories = nil
 //        options.categories = [bobaCategory, fastFoodCategory, smoothiesCategory]
 //        options.categories = [bobaCategory, fastFoodCategory]
         
-        let bobaAndFastFoodCategory = SupportOptions.Category(tags: ["boba", "fastFood"], displayName: "Food that tastes great!", displayColor: UIColor.orange)
+//        let bobaAndFastFoodCategory = SupportOptions.Category(tags: ["boba", "fastFood"], displayName: "Food that tastes great!", displayColor: UIColor.orange)
 //        let fastFoodCategory = SupportOptions.Category(tags: ["fastFood"], displayName: "These aren't really healthy", displayColor: UIColor.red)
         
-        options.categories = [bobaAndFastFoodCategory]
+//        options.categories = [bobaAndFastFoodCategory]
                               
         options.navigationBar.title = defaultNavigationBarTitle
         options.navigationBar.titleColor = defaultNavigationBarTitleColor
