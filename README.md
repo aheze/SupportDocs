@@ -19,6 +19,9 @@
         - [Adding and Editing Documents](#adding-and-editing-documents)
         - [Tagging Documents](#tagging-documents)
         - [Deleting Documents](#deleting-documents)
+    - [Using the Library](#using-the-library)
+        - [SwiftUI](#swiftui)
+        - [UIKit](#uikit)
 -   [Library Customization](Documentation/LibraryCustomization.md)
     -   [Examples](Documentation/LibraryCustomization.md#examples)
         -   [SwiftUI](Documentation/LibraryCustomization.md#swiftui)
@@ -223,6 +226,56 @@ Once your documents have tags, you can choose to show which documents to show an
 #### Deleting Documents
 
 Select the document to delete, then just click on the trash icon in the top-right corner.
+
+### Using the Library
+The library is the view that you embed in your app, and what the user sees. But before you present it, you need to get the data source URL first! Go to your brand-new repo's `DataSource` branch, scroll down in the `README`, and **copy the URL**.
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CopyDataSourceURL.png)
+
+The custom GitHub Action generated this URL for you, so keep it safe! 
+
+Now you can present the view in your app. You can use SwiftUI *or* UIKit, and here's the least code that you need to write for it to work.
+
+#### SwiftUI
+```Swift
+import SwiftUI
+import SupportDocs
+
+struct SwiftUIExampleViewMinimalCode: View {
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    @State var supportDocsPresented = false
+    
+    var body: some View {
+        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+        .sheet(isPresented: $supportDocsPresented, content: {
+            SupportDocsView(dataSourceURL: dataSource, isPresented: $supportDocsPresented)
+        })
+    }
+}
+```
+
+#### UIKit
+```Swift
+import UIKit
+import SupportDocs
+
+class UIKitExampleControllerMinimalCode: UIViewController {
+    
+    /**
+     Connect this inside the storyboard.
+     
+     This is just for demo purposes, so it's not connected yet.
+     */
+    @IBAction func presentButtonPressed(_ sender: Any) {
+        
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        
+        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource)
+        self.present(supportDocsViewController, animated: true, completion: nil)
+    }
+}
+```
+
 
 
 ## Library Customization
