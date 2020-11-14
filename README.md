@@ -102,7 +102,9 @@ SupportDocs is pretty simple to use, but there's 2 parts: the GitHub repo and th
 ### Adding and Editing Documents
 In you brand new repo that you set up earlier, switch to the **DataSource** branch. The example documents are inside `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` -- take a look around. Here's a guide:
 <details>
-  <summary>Show guide</summary>
+  <summary><strong>Show guide</strong></summary>
+  
+  <hr>
   
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Guide.png)
 
@@ -120,6 +122,8 @@ In you brand new repo that you set up earlier, switch to the **DataSource** bran
 - `404.md` is the 404 document that will be displayed if your URLs are wrong. You can also pass this into `options.other.error404` in case your data source URL fails.
 - `README.md` is for your reference. It contains a link to the data source URL, and a table of contents that shows all your documents. **Do not** edit this file directly -- instead, edit the file in `_scripts/README.md`.
 - `_config.yml` sets the default theme, "Primer," for GitHub Pages. We recommend that you don't change this, as we customized dark mode specifically for the "Primer" theme -- you'll need to configure `assets/css/main.scss` if you use your own theme.
+
+<hr>
 
 </details>
 
