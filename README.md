@@ -15,6 +15,9 @@
          -   [CocoaPods](#cocoapods)
          -   [Swift Package Manager](#swift-package-manager)
 -   [Usage](#usage)
+    - [Using the GitHub Repo](#using-the-github-repo)
+        - [Adding and Editing Documents](#adding-and-editing-documents)
+        - [Tagging Documents](#tagging-documents)
 -   [Before You Begin](#before-you-begin)
     -   [Tag Your Documents](#tag-your-documents)
 -   [Library Customization](Documentation/LibraryCustomization.md)
@@ -141,6 +144,7 @@ Add a document | Add a document in `Sample-Boba` folder
 :--- | :---
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CreateNewFile.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CreateNewFileInFolder.png)
 
+If you want to add a folder, see [here](https://stackoverflow.com/a/63635965/14351818).
 
 Then, to make the document eligible for SupportDocs, you must fulfill these criteria:
 1. The document extension must end in `.md`
@@ -159,7 +163,7 @@ The `title` is what will be displayed in each row of the list, in the SupportDoc
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/TitleInList.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/TitleInNavigationBar.png)
 --- | ---
 
-Everything after the `---` of the Front Matter will be the content of your document. You use Markdown to write this!
+Everything after the `---` of the Front Matter will be the content of your document. You use [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to write this!
 <table>
 <tr>
 <td>
@@ -197,10 +201,9 @@ Blue and yummy. Buy this at [google.com](https://google.com)
 </tr>
 </table>
 
+That's it for adding and editing documents!
 
-## Before You Begin
-
-### Tag Your Documents
+#### Tagging Documents
 
 In your documents, add some [front matter](https://jekyllrb.com/docs/front-matter/) which sets the title and tags. Take [this example document](https://github.com/aheze/SupportDocs/blob/DataSource/Sample-Boba/BuyBlueBoba.md) in the `DataSource` branch.
 
