@@ -123,7 +123,7 @@ In you brand new repo that you set up earlier, switch to the **DataSource** bran
 - `README.md` is for your reference. It contains a link to the data source URL, and a table of contents that shows all your documents. **Do not** edit this file directly -- instead, edit the file in `_scripts/README.md`.
 - `_config.yml` sets the default theme, "Primer," for GitHub Pages. We recommend that you don't change this, as we customized dark mode specifically for the "Primer" theme -- you'll need to configure `assets/css/main.scss` if you use your own theme.
 
-<hr>
+  <hr>
 
 </details>
 
@@ -134,7 +134,7 @@ Documents don't need to be in folders -- they can be in the root directory, or i
 
 To make a document eligible for SupportDocs, you must fulfill these criteria:
 1. The document extension must end in `.md`
-2. At the top of the document, you need to fill in the `title`. We strongly suggest you add tags too.
+2. At the top of the document (this is called the [Front Matter](https://jekyllrb.com/docs/front-matter/)), you need to fill in the `title`. We strongly suggest you add tags too.
 ```yaml
 ---
 title: Buy blue boba
@@ -142,8 +142,50 @@ tags: boba
 ---
 ```
 
-
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/DocumentCriteria.png)
+
+The `title` is what will be displayed in each row of the list, in the SupportDocs library. Once you select a row, it's also what's shown as the title of the navigation bar.
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/TitleInList.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/TitleInNavigationBar.png)
+--- | ---
+
+Everything after the `---` of the Front Matter will be the content of your document. You use Markdown to write this!
+<table>
+<tr>
+<td>
+  Markdown
+</td>
+<td>
+  Result:　　　　　　　　　　　　　　　↓
+</td>
+</tr>
+<tr>
+<td>
+  
+```Markdown
+---
+title: Buy blue boba
+tags: boba
+---
+
+# Buy blue boba
+
+Blue and yummy. Buy this at [google.com](https://google.com)
+
+1. Eat
+2. Eat
+3. Eat
+4. Eat
+5. Eat
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/blueBoba.jpg)
+```
+</td>
+<td>
+  <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/MarkdownResult.png">
+</td>
+</tr>
+</table>
 
 
 ## Before You Begin
