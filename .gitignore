@@ -3,3 +3,5 @@ tmp*
 *.tmp.*
 .vscode
 notes.md
+.swiftpm/xcode
+Example/Example.xcodeproj
