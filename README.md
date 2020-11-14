@@ -137,8 +137,10 @@ Documents don't need to be in folders -- they can be in the root directory, or i
 
 To add a document, just click the <kbd>Create new file</kbd> button. Or, to add it to a folder, navigate to the folder and then click the <kbd>Create new file</kbd> button.
 
-![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CreateNewFile.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CreateNewFile.png)
---- | ---
+Add a document | Add a document in `Sample-Boba` folder
+:--- | :---
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CreateNewFile.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CreateNewFileInFolder.png)
+
 
 Then, to make the document eligible for SupportDocs, you must fulfill these criteria:
 1. The document extension must end in `.md`
