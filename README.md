@@ -71,6 +71,8 @@ This will be where you write your documents. GitHub Pages will translate your Ma
 | --- | --- |
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo4.png)
 
+---
+
 ### Install the Library
 This is the actual interface that your users will see. You can install using **CocoaPods** or **Swift Package Manager**, whichever one you prefer.
 
@@ -98,6 +100,8 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM2.png)
 | --- | --- |
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM4.png)
+
+---
 
 ## Usage
 SupportDocs is pretty simple to use, but there's 2 parts: the GitHub repo and the library in your app.
@@ -227,6 +231,9 @@ Once your documents have tags, you can choose to show which documents to show an
 
 Select the document to delete, then just click on the trash icon in the top-right corner.
 
+
+---
+
 ### Using the Library
 The library is the view that you embed in your app, and what the user sees. But before you present it, you need to get the data source URL first! Go to your brand-new repo's `DataSource` branch, scroll down in the `README`, and **copy the URL**.
 
@@ -276,7 +283,7 @@ class UIKitExampleControllerMinimalCode: UIViewController {
 }
 ```
 
-
+---
 
 ## Library Customization
 Pretty much everything in the SupportDocs library can be customized through the `SupportOptions` struct.
