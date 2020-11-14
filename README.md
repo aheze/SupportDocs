@@ -107,7 +107,7 @@ In you brand new repo that you set up earlier, switch to the **DataSource** bran
   
 <hr>
   
-![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Guide.png)
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/Guide.png)
 
 - `.github/workflows` is for the GitHub Action, for compiling your documents into JSON
 - `Images` contains the images used in the example documents
