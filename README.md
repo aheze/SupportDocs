@@ -110,9 +110,9 @@ In you brand new repo that you set up earlier, switch to the **DataSource** bran
 
 - `.github/workflows` is for the GitHub Action, for compiling your documents into JSON
 - `Images` contains the images used in the example documents
-- `Sample-Boba` contains all documents tagged with `boba`
-- `Sample-FastFood` contains all documents tagged with `fastFood`
-- `Sample-Smoothies` contains all documents tagged with `smoothies`
+- `Sample-Boba` contains all documents tagged with <kbd>boba</kbd>
+- `Sample-FastFood` contains all documents tagged with <kbd>fastFood</kbd>
+- `Sample-Smoothies` contains all documents tagged with <kbd>smoothies</kbd>
 - `_data` contains the generated data source URL
 - `_layouts` is for GitHub Pages to convert your Markdown into HTML
 - `_sass` is where you can customize the look of the HTML, including light and dark mode colors
@@ -127,7 +127,10 @@ In you brand new repo that you set up earlier, switch to the **DataSource** bran
 
 </details>
 
-There are 3 folders filled with example documents: `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies`. Documents don't need to be in folders -- they can be in the root directory, or inside a folder inside a folder, whatever. However, we recommmend that you use folders to organize your documents.
+Documents don't need to be in folders -- they can be in the root directory, or inside a folder inside a folder, whatever. However, we recommmend that you use folders to organize your documents. In the example:
+- Documents tagged with <kbd>boba</kbd> are in the `Sample-Boba` folder,
+- Documents tagged with <kbd>fastFood</kbd> are in the `Sample-FastFood` folder, and
+- Documents tagged with <kbd>boba</kbd> are in the `Sample-Smoothies` folder.
 
 To make a document eligible for SupportDocs, you must fulfill these criteria:
 1. The document extension must end in `.md`
