@@ -59,7 +59,7 @@ This will be where you write your documents. GitHub Pages will translate your Ma
 4. Make sure to check **Include all branches**. This is **really** important.
 5. Click <kbd>Create repository from template</kbd>
 6. In your brand new repo, click the <kbd>Settings</kbd> tab
-7. Scroll down to the GitHub Pages section, and specify **DataSource** branch and **/ (root)** folder. Then click <kbd>Save</kbd>.
+7. Scroll down to the GitHub Pages section, and select **DataSource** branch and **/ (root)** folder. Then click <kbd>Save</kbd>.
 8. That's it for the GitHub repo! Now time to install the library in your app.
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo2.png)
@@ -114,9 +114,24 @@ In you brand new repo that you set up earlier, switch to the **DataSource** bran
 - `_sass` is where you can customize the look of the HTML, including light and dark mode colors.
 - `_scripts` contains the script used by the GitHub Action, as well as the README template. This template is what you should edit if you want to change the README at all -- if you change it directly, your changes will be overriden.
 - `assets/css` applies the `_sass`
+- `.gitignore` is for git to ignore unnecessary files
 - `404.md` is the 404 document that will be displayed if your URLs are wrong. You can also pass this into `options.other.error404` in case your data source URL fails.
 - `README.md` is for your reference. It contains a link to the data source URL and a table of contents of all your documents. **Do not** edit this file directly, instead, edit the file in `_scripts/README.md`.
 - `_config.yml` sets the default theme "Primer" for GitHub Pages. We recommend that you don't change this, as we customized dark mode specifically for the "Primer" theme -- you'll need to configure `assets/css/main.scss` if you use your own theme.
+
+There are 3 folders filled with example documents: `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies`. Documents don't need to be in folders -- they can be in the root directory, or inside a folder inside a folder, whatever. However, we recommmend that you use folders to organize your documents.
+
+To make a document eligible for SupportDocs, you must fulfill these criteria:
+1. The document extension must end in `.md`
+2. At the top of the document, you need to fill in the `title`. We strongly suggest you add tags too.
+```yaml
+---
+title: Buy blue boba
+tags: boba
+---
+
+```
+
 
 
 ## Before You Begin
