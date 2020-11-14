@@ -148,7 +148,7 @@ If you want to add a folder, see [here](https://stackoverflow.com/a/63635965/143
 
 Then, to make the document eligible for SupportDocs, you must fulfill these criteria:
 1. The document extension must end in `.md`
-2. At the top of the document (this is called the [Front Matter](https://jekyllrb.com/docs/front-matter/)), you need to fill in the `title`. We strongly suggest you add tags too.
+2. At the top of the document (this is called the [Front Matter](https://jekyllrb.com/docs/front-matter/)), you need to fill in the `title`. We strongly suggest you add [tags](#tagging-documents) too.
 ```yaml
 ---
 title: Buy blue boba
@@ -205,7 +205,7 @@ That's it for adding and editing documents!
 
 #### Tagging Documents
 
-In your documents, add some [front matter](https://jekyllrb.com/docs/front-matter/) which sets the title and tags. Take [this example document](https://github.com/aheze/SupportDocs/blob/DataSource/Sample-Boba/BuyBlueBoba.md) in the `DataSource` branch.
+With tags, you get a lot of control over what to display in the library. To add tags, just fill in the `tags`, underneath the `title`. For example, check out this [example document](https://github.com/aheze/SupportDocs/blob/DataSource/Sample-Boba/BuyBlueBoba.md) in the `DataSource` branch.
 
 ```yaml
 ---
@@ -215,10 +215,15 @@ tags: boba
 
 ```
 
-In this front matter, we have a title and one tag. This title has two purposes. It is the tab title if opened in a browser, and it is the title that SupportDocs shows. The tags can be linked as categories when configuring SupportDocs, and can be used to separate documents.
+This document is tagged with <kbd>boba</kbd>. As you might assume, there are other documents in the `DataSource` branch also tagged with <kbd>boba</kbd> -- here they are:
 
-You can see the front matter for the documents in the **DataSource** branch in this graphic:
-![Front Matter Examples](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Tags.png)
+![Documents with tags](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Tags.png)
+
+Once your documents have tags, you can choose to show which documents to show and which ones to hide, in the library. This is covered in the `Categories` documentation.
+
+#### Deleting Documents
+
+Select the document to delete, then just click on the trash icon in the top-right corner.
 
 
 ## Library Customization
