@@ -235,7 +235,7 @@ Select the document to delete, then just click on the trash icon in the top-righ
 ---
 
 ### Using the Library
-The library is the view that you embed in your app, and what the user sees. But before you present it, you need to get the data source URL first! Go to your brand-new repo's `DataSource` branch, scroll down in the `README`, and **copy the URL**.
+The library is the view that you embed in your app, and what the user sees. But before you present it, you need to get the data source URL first! Go to your brand-new repo's **DataSource** branch, scroll down to the `README`, and **copy the URL**.
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CopyDataSourceURL.png)
 
