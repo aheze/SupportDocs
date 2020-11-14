@@ -111,7 +111,7 @@ tags: boba
 In this front matter, we have a title and one tag. This title has two purposes. It is the tab title if opened in a browser, and it is the title that SupportDocs shows. The tags can be linked as categories when configuring SupportDocs, and can be used to separate documents.
 
 You can see the front matter for the documents in the DataSource branch in this graphic:
-![Front Matter Examples](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/colorCategories.png)
+![Front Matter Examples](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Tags.png)
 
 
 ## Library Customization
