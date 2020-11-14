@@ -28,7 +28,7 @@ body {
     }
 
     a {
-        @include theme("color", $text);
+        @include theme("color", $link);
     }
 
     hr {
@@ -38,7 +38,7 @@ body {
     code,
     tt {
         @include theme("color", $text);
-        @include theme("background-color", $code-block-background);
+        @include theme("background-color", $inline-code-background);
     }
 
     .highlight pre, pre {
