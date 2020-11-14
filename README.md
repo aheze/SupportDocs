@@ -1,10 +1,14 @@
 # SupportDocs: DataSource
-This is where SupportDocs gets its data!
+This branch is where SupportDocs gets its data! You can add, edit, and delete documents here. For usage instructions, check out the `README`'s [usage](https://github.com/aheze/SupportDocs#using-the-github-repo) section in the main branch.
 
 ## Data Source JSON URL
 <a href="https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
 
-## Examples
+<details>
+<summary><strong>Show examples</strong></summary>
+
+<hr>
+
 ### SwiftUI
 ```swift
 struct SwiftUIExampleView_MinimalCode: View {
@@ -36,6 +40,10 @@ class UIKitExampleController_MinimalCode: UIViewController {
     }
 }
 ```
+
+<hr>
+
+</details>
 
 ## Table of Contents
 - [Apple smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Apple) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Apple.md))
