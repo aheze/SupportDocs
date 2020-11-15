@@ -94,7 +94,7 @@ Blue and yummy. Buy this at [google.com](https://google.com)
 
 ![Blue Boba Image](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/blueBoba.jpg)
 
-````
+```
 </td>
 <td>
   <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/MarkdownResult.png">

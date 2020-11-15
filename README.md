@@ -14,12 +14,15 @@
     -   [Install the Library](#install-the-library)
         -   [CocoaPods](#cocoapods)
         -   [Swift Package Manager](#swift-package-manager)
--   [Using the Repository](Documentation/UsingTheRepository.md)
-    -   [Overview](Documentation/UsingTheRepository.md#overview)
-    -   [Using the `DataSource` Branch](Documentation/UsingTheRepository.md#using-the-datasource-branch)
-    -   [Adding and Editing Documents](Documentation/UsingTheRepository.md#adding-and-editing-documents)
-    -   [Tagging Documents](Documentation/UsingTheRepository.md#tagging-documents)
-    -   [Deleting Documents](Documentation/UsingTheRepository.md#deleting-documents)
+-   [Basic Usage](#basic-usage)
+    -   [Adding and Editing Documents](#adding-and-editing-documents)
+    -   [Tagging Documents](#tagging-documents)
+    -   [Extended Documentation](Documentation/UsingTheRepository.md)
+        -   [Overview](#overview)
+        -   [Using the `DataSource` Branch](#using-the-datasource-branch)
+        -   [Adding and Editing Documents](#adding-and-editing-documents)
+        -   [Tagging Documents](#tagging-documents)
+        -   [Deleting Documents](#deleting-documents)
 -   [Library Customization](Documentation/LibraryCustomization.md)
     -   [Examples](Documentation/LibraryCustomization.md#examples)
         -   [SwiftUI](Documentation/LibraryCustomization.md#swiftui)
@@ -100,3 +103,107 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM2.png) |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM4.png) |
+
+## Basic Usage
+
+More Documentation:
+
+-   [Overview](Documentation/UsingTheRepository.md#overview)
+-   [Using the `DataSource` Branch](Documentation/UsingTheRepository.md#using-the-datasource-branch)
+-   [Adding and Editing Documents](Documentation/UsingTheRepository.md#adding-and-editing-documents)
+-   [Tagging Documents](Documentation/UsingTheRepository.md#tagging-documents)
+-   [Deleting Documents](Documentation/UsingTheRepository.md#deleting-documents)
+
+### Adding and Editing Documents
+
+To add a document, click the `Create new file` button.
+
+If you want to add a document to add a folder, there are two ways:
+
+1. Navigate to the folder then click `Create new file`
+2. Click `Create new file` then, in the filename, put the folder name, followed by a slash (`/`), followed by the filename. (Example: `fastFood/Burgers.md`)
+    - Must be used to create a new folder (read more [here](https://stackoverflow.com/a/63635965/14351818))
+
+| Add a Document                                                                                                               | Add a Document in the `Sample-Boba` Subfolder                                                                                   |
+| :--------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
+| ![Root Directory "Create new file"](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CreateNewFile.png) | ![Subfolder "Create new file"](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CreateNewFileInFolder.png) |
+
+Then, to make the document eligible for SupportDocs, you must fulfill these criteria:
+
+-   The document extension must end in `.md`
+-   At the top of the document (this is called the [front matter](https://jekyllrb.com/docs/front-matter/)), you need to fill in the `title`. We strongly suggest you add [tags](#tagging-documents) too.
+
+```yaml
+---
+title: Buy blue boba
+tags: boba
+---
+
+```
+
+![Example File With Front Matter Highlighted](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/DocumentCriteria.png)
+
+The `title` is what will be displayed in each row of the list, in the SupportDocs library. Once you select a row, it's also what's shown as the title of the navigation bar.
+
+| ![Title in Library List](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/TitleInList.png) | ![Title in Navigation Bar](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/TitleInNavigationBar.png) |
+| --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+
+
+Everything after the `---` of the front matter is your document's content. You use [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to write your documents.
+
+<table>
+<tr>
+<td>
+  Markdown
+</td>
+<td>
+  Result
+</td>
+</tr>
+<tr>
+<td>
+  
+```markdown
+---
+title: Buy blue boba
+tags: boba
+---
+
+# Buy blue boba
+
+Blue and yummy. Buy this at [google.com](https://google.com)
+
+1. Eat
+2. Eat
+3. Eat
+4. Eat
+5. Eat
+
+![Blue Boba Image](https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/Images/blueBoba.jpg)
+
+````
+</td>
+<td>
+  <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/MarkdownResult.png">
+</td>
+</tr>
+</table>
+
+### Tagging Documents
+
+With tags, you get a lot of control over what to display in the library. To add tags, just fill in the `tags`, underneath the `title`. For example, check out this [example document](https://github.com/aheze/SupportDocs/blob/DataSource/Sample-Boba/BuyBlueBoba.md) in the `DataSource` branch.
+
+```yaml
+---
+title: Buy blue boba
+tags: boba
+---
+````
+
+This document has the tag `boba`. As you might assume, there are other documents in the `DataSource` branch also tagged with `boba`.
+
+Here is a graphic which shows the documents, titles, and tags in the `DataSource` branch.
+
+![Documents with Front Matter](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Tags.png)
+
+Once your documents have tags, you can choose to show which documents to show and which ones to hide, in the library. This is covered in the [Categories section](Documentation/LibraryCustomization.md#categories) of the library customization documentation.
