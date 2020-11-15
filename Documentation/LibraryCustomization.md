@@ -851,7 +851,7 @@ options.progressBar.backgroundColor = UIColor.blue
   </tr>
   <tr>
     <td><code>.defaultListStyle</code></td>
-    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" width="160"></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" width="160"></td>
   </tr>
   <tr>
     <td>SwiftUI</td>
@@ -880,7 +880,7 @@ options.listStyle = .defaultListStyle
   </tr>
   <tr>
     <td><code>.plainListStyle</code></td>
-    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" width="160"></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" width="160"></td>
   </tr>
   <tr>
     <td>SwiftUI</td>
@@ -909,7 +909,7 @@ options.listStyle = .plainListStyle
   </tr>
   <tr>
     <td><code>.groupedListStyle</code></td>
-    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" width="160"></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" width="160"></td>
   </tr>
   <tr>
     <td>SwiftUI</td>
@@ -938,7 +938,7 @@ options.listStyle = .groupedListStyle
   </tr>
   <tr>
     <td><code>.insetGroupedListStyle</code></td>
-    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" width="160"></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" width="160"></td>
   </tr>
   <tr>
     <td>SwiftUI</td>
@@ -967,7 +967,7 @@ options.listStyle = .insetGroupedListStyle
   </tr>
   <tr>
     <td><code>.insetListStyle</code></td>
-    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" width="160"></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" width="160"></td>
   </tr>
   <tr>
     <td>SwiftUI</td>
@@ -996,7 +996,7 @@ options.listStyle = .insetListStyle
   </tr>
   <tr>
     <td><code>.sidebarListStyle</code></td>
-    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" width="160"></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" width="160"></td>
   </tr>
   <tr>
     <td>SwiftUI</td>
