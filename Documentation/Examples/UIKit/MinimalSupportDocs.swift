@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 import SupportDocs
 
 class MinimalSupportDocs: UIViewController {

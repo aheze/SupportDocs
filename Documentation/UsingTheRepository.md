@@ -35,7 +35,7 @@ If you want to add a document to add a folder, there are two ways:
 
 1. Navigate to the folder then click `Create new file`
 2. Click `Create new file` then, in the filename, put the folder name, followed by a slash (`/`), followed by the filename. (Example: `fastFood/Burgers.md`)
-    - Must be used to create a new folder (read more [here](https://stackoverflow.com/a/63635965/14351818))
+    - This method must be used if you want to create a new folder (read more [here](https://stackoverflow.com/a/63635965/14351818))
 
 | Add a Document                                                                                                               | Add a Document in the `Sample-Boba` Subfolder                                                                                   |
 | :--------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |

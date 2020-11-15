@@ -17,6 +17,10 @@
 -   [Basic Usage](#basic-usage)
     -   [Adding and Editing Documents](#adding-and-editing-documents)
     -   [Tagging Documents](#tagging-documents)
+    -   [Using the Library](#using-the-library)
+        -   [SwiftUI](#swiftui)
+        -   [UIKit](#uikit)
+        -   [Result](#result)
     -   [Extended Documentation](Documentation/UsingTheRepository.md)
         -   [Overview](#overview)
         -   [Using the `DataSource` Branch](#using-the-datasource-branch)
@@ -106,7 +110,7 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 
 ## Basic Usage
 
-More Documentation:
+Extended Documentation:
 
 -   [Overview](Documentation/UsingTheRepository.md#overview)
 -   [Using the `DataSource` Branch](Documentation/UsingTheRepository.md#using-the-datasource-branch)
@@ -122,7 +126,7 @@ If you want to add a document to add a folder, there are two ways:
 
 1. Navigate to the folder then click `Create new file`
 2. Click `Create new file` then, in the filename, put the folder name, followed by a slash (`/`), followed by the filename. (Example: `fastFood/Burgers.md`)
-    - Must be used to create a new folder (read more [here](https://stackoverflow.com/a/63635965/14351818))
+    - This method must be used if you want to create a new folder (read more [here](https://stackoverflow.com/a/63635965/14351818))
 
 | Add a Document                                                                                                               | Add a Document in the `Sample-Boba` Subfolder                                                                                   |
 | :--------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
@@ -207,3 +211,61 @@ Here is a graphic which shows the documents, titles, and tags in the `DataSource
 ![Documents with Front Matter](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Tags.png)
 
 Once your documents have tags, you can choose to show which documents to show and which ones to hide, in the library. This is covered in the [Categories section](Documentation/LibraryCustomization.md#categories) of the library customization documentation.
+
+### Using the Library
+
+The library is the view that you embed in your app, and what the user sees. But before you present it, you need to get the data source URL first! Go to your brand-new repository's `DataSource` branch, scroll down to the README, and copy the URL.
+
+![Data Source URL Location](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CopyDataSourceURL.png)
+
+Paste the URL in the SupportDocs constructor then you are ready to begin. Now you can present the view in your app. You can use SwiftUI or UIKit, and here's the least code that you need to write for it to work.
+
+#### SwiftUI
+
+[MinimalSupportDocs.swift](Documentation/Examples/SwiftUI/MinimalSupportDocs.swift)
+
+```swift
+import SwiftUI
+import SupportDocs
+
+struct MinimalSupportDocs: View {
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/MyHelpCenter/DataSource/_data/supportdocs_datasource.json")!
+
+    @State var supportDocsPresented: Bool = false
+    var body: some View {
+        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+        .sheet(isPresented: $supportDocsPresented, content: {
+            SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
+        })
+    }
+}
+```
+
+#### UIKit
+
+[MinimalSupportDocs.swift](Documentation/Examples/UIKit/MinimalSupportDocs.swift)
+
+```swift
+import UIKit
+import SupportDocs
+
+class MinimalSupportDocs: UIViewController {
+    /**
+     Connect this inside the storyboard.
+
+     This is just for demo purposes, so it's not connected yet.
+     */
+    @IBAction func presentButtonPressed(_ sender: Any) {
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/MyHelpCenter/DataSource/_data/supportdocs_datasource.json")!
+
+        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource)
+        self.present(supportDocsViewController, animated: true, completion: nil)
+    }
+}
+```
+
+#### Result
+
+![Result Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/BasicResult.png)
+
+Now that you have the basic library imported, you can hop on over to the [library customization section](Documentation/LibraryCustomization.md) and customize SupportDocs to your liking. Perhaps add a "Dismiss" button or only show documents with specific tags.
