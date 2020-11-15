@@ -1031,7 +1031,7 @@ options.listStyle = .sidebarListStyle
 <!-- TODO: Switch repository images URL to aheze from hkamran80 -->
 
 | Navigation View Style              | Portrait Result                                                                                                                                                 | Landscape Result                                                                                                                                                                    |
-|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `.defaultNavigationViewStyle`      | ![Default Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)       | ![Default Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/defaultStyle_landscape.png)            |
 | `.doubleColumnNavigationViewStyle` | ![Double Column Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png) | ![Double Column Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/doubleColumnStyle_landscape.png) |
 | `.stackNavigationViewStyle`        | ![Stack Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)         | ![Stack Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/stackStyle_landscape.png)                |
@@ -1047,4 +1047,7 @@ options.listStyle = .sidebarListStyle
 | `footer`                 | `AnyView`                       | --                                    | `nil`                                | Graphic #3            |
 | `error404`               | `URL`                           | `URL(string: "404.example.com")!`     | `URL(string: "https://google.com")!` | Graphic #4            |
 
-- `activityIndicatorStyle`: Style of the activity
+- `activityIndicatorStyle`: Style of the activity indicator, shown when the JSON is being downloaded
+- `welcomeView`: A custom view that will be shown that will be shown at first. If you are using the `defaultNavigationViewStyle` or `doubleColumnNavigationViewStyle`, this view will be shown if no row is selected
+- `footer`: A custom view you can add to the bottom of the list
+- `error404`: A web page to display in case something cannot be found
