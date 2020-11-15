@@ -176,7 +176,7 @@ public struct SupportDocsView: View {
              */
             options.other.welcomeView
         }
-//        .anavigationViewStyle(for: options.navigationViewStyle) /// Set the `navigationViewStyle` of your selection.
+        .navigationViewStyle(for: options.navigationViewStyle, customListStyle: options.listStyle) /// Set the `navigationViewStyle` of your selection.
         
         /**
          When everything first loads, load the JSON.
