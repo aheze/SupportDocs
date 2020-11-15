@@ -19,10 +19,13 @@
     -   [Foreground Color](#foreground-color)
     -   [Background Color](#background-color-1)
 -   [List Style](#list-style)
+-   [Navigation View Style](#navigation-view-style)
+-   [Other](#other)
 
 ---
 
 ## Overview
+
 Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct.
 
 ![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
@@ -864,6 +867,7 @@ let options = SupportOptions(
   listStyle: .defaultListStyle
 )
 ```
+
 </td>
   </tr>
   <tr>
@@ -876,6 +880,7 @@ let options = SupportOptions(
 var options = SupportOptions()
 options.listStyle = .defaultListStyle
 ```
+
 </td>
   </tr>
   <tr>
@@ -893,6 +898,7 @@ let options = SupportOptions(
   listStyle: .plainListStyle
 )
 ```
+
 </td>
   </tr>
   <tr>
@@ -905,6 +911,7 @@ let options = SupportOptions(
 var options = SupportOptions()
 options.listStyle = .plainListStyle
 ```
+
 </td>
   </tr>
   <tr>
@@ -922,6 +929,7 @@ let options = SupportOptions(
   listStyle: .groupedListStyle
 )
 ```
+
 </td>
   </tr>
   <tr>
@@ -934,6 +942,7 @@ let options = SupportOptions(
 var options = SupportOptions()
 options.listStyle = .groupedListStyle
 ```
+
 </td>
   </tr>
   <tr>
@@ -951,6 +960,7 @@ let options = SupportOptions(
   listStyle: .insetGroupedListStyle
 )
 ```
+
 </td>
   </tr>
   <tr>
@@ -963,6 +973,7 @@ let options = SupportOptions(
 var options = SupportOptions()
 options.listStyle = .insetGroupedListStyle
 ```
+
 </td>
   </tr>
   <tr>
@@ -980,6 +991,7 @@ let options = SupportOptions(
   listStyle: .insetListStyle
 )
 ```
+
 </td>
   </tr>
   <tr>
@@ -992,6 +1004,7 @@ let options = SupportOptions(
 var options = SupportOptions()
 options.listStyle = .insetListStyle
 ```
+
 </td>
   </tr>
   <tr>
@@ -1009,6 +1022,7 @@ let options = SupportOptions(
   listStyle: .sidebarListStyle
 )
 ```
+
 </td>
   </tr>
   <tr>
@@ -1021,17 +1035,19 @@ let options = SupportOptions(
 var options = SupportOptions()
 options.listStyle = .sidebarListStyle
 ```
+
 </td>
   </tr>
 </table>
 
 ## Navigation View Style
+
 ![Navigation View Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
 
 <!-- TODO: Switch repository images URL to aheze from hkamran80 -->
 
-| Navigation View Style              | Portrait Result                                                                                                                                                 | Landscape Result                                                                                                                                                                    |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Navigation View Style              | Portrait Result                                                                                                                                                    | Landscape Result                                                                                                                                                                    |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `.defaultNavigationViewStyle`      | ![Default Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)       | ![Default Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/defaultStyle_landscape.png)            |
 | `.doubleColumnNavigationViewStyle` | ![Double Column Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png) | ![Double Column Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/doubleColumnStyle_landscape.png) |
 | `.stackNavigationViewStyle`        | ![Stack Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)         | ![Stack Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/stackStyle_landscape.png)                |
@@ -1040,14 +1056,14 @@ options.listStyle = .sidebarListStyle
 
 ![Other](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/OtherPreview.png)
 
-| Parameter                | Type                            | Values                                | Default                              | Corresponding Graphic |
-| ------------------------ | ------------------------------- | ------------------------------------- | ------------------------------------ | --------------------- |
-| `activityIndicatorStyle` | `UIActivityIndicatorView.Style` | `.large` or `.medium`                 | `.medium`                            | Graphic #1            |
-| `welcomeView`            | `AnyView`                       | --                                    | `nil`                                | Graphic #2            |
-| `footer`                 | `AnyView`                       | --                                    | `nil`                                | Graphic #3            |
-| `error404`               | `URL`                           | `URL(string: "404.example.com")!`     | `URL(string: "https://google.com")!` | Graphic #4            |
+| Parameter                | Type                            | Values                            | Default                              | Corresponding Graphic |
+| ------------------------ | ------------------------------- | --------------------------------- | ------------------------------------ | --------------------- |
+| `activityIndicatorStyle` | `UIActivityIndicatorView.Style` | `.large` or `.medium`             | `.medium`                            | Graphic #1            |
+| `welcomeView`            | `AnyView`                       | --                                | `nil`                                | Graphic #2            |
+| `footer`                 | `AnyView`                       | --                                | `nil`                                | Graphic #3            |
+| `error404`               | `URL`                           | `URL(string: "404.example.com")!` | `URL(string: "https://google.com")!` | Graphic #4            |
 
-- `activityIndicatorStyle`: Style of the activity indicator, shown when the JSON is being downloaded
-- `welcomeView`: A custom view that will be shown that will be shown at first. If you are using the `defaultNavigationViewStyle` or `doubleColumnNavigationViewStyle`, this view will be shown if no row is selected
-- `footer`: A custom view you can add to the bottom of the list
-- `error404`: A web page to display in case something cannot be found
+-   `activityIndicatorStyle`: Style of the activity indicator, shown when the JSON is being downloaded
+-   `welcomeView`: A custom view that will be shown that will be shown at first. If you are using the `defaultNavigationViewStyle` or `doubleColumnNavigationViewStyle`, this view will be shown if no row is selected
+-   `footer`: A custom view you can add to the bottom of the list
+-   `error404`: A web page to display in case something cannot be found
