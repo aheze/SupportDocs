@@ -20,6 +20,13 @@
     -   [Background Color](#background-color-1)
 -   [List Style](#list-style)
 
+---
+
+## Overview
+Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct.
+
+![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
+
 ## Examples
 
 ### SwiftUI
@@ -37,6 +44,7 @@
 ## Categories
 
 Group multiple documents in the same section. You make a category by specifying the tag(s), display name, and (optionally) color of the text in the category.
+![Categories Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CategoriesPreview.png)
 
 ### Important: Before You Begin
 
@@ -467,6 +475,8 @@ class UIKitExampleController_WithCategories: UIViewController {
 
 ## Navigation Bar
 
+![Navigation Bar Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationBarPreview.png)
+
 ### Title
 
 <table>
@@ -727,6 +737,8 @@ options.navigationBar.backgroundColor = UIColor(
 
 ## Progress Bar
 
+![Progress Bar Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ProgressBarPreview.png)
+
 ### Foreground Color
 
 <table>
@@ -828,6 +840,8 @@ options.progressBar.backgroundColor = UIColor.blue
 </table>
 
 ## List Style
+
+![List Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ListStylePreview.png)
 
 <table>
 
@@ -1129,3 +1143,10 @@ options.listStyle = .insetListStyle
   </td>
   </tr>
 </table>
+
+## Navigation View Style
+![Navigation View Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
+
+## Other
+
+![Other](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/OtherPreview.png)
