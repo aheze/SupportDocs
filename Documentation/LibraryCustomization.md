@@ -1028,6 +1028,23 @@ options.listStyle = .sidebarListStyle
 ## Navigation View Style
 ![Navigation View Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
 
+<!-- TODO: Switch repository images URL to aheze from hkamran80 -->
+
+| Navigation View Style              | Portrait Result                                                                                                                                                 | Landscape Result                                                                                                                                                                    |
+|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `.defaultNavigationViewStyle`      | ![Default Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portrait.png)       | ![Default Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/defaultStyle_landscape.png)            |
+| `.doubleColumnNavigationViewStyle` | ![Double Column Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portrait.png) | ![Double Column Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/doubleColumnStyle_landscape.png) |
+| `.stackNavigationViewStyle`        | ![Stack Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portrait.png)         | ![Stack Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/stackStyle_landscape.png)                |
+
 ## Other
 
 ![Other](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/OtherPreview.png)
+
+| Parameter                | Type                            | Values                                | Default                              | Corresponding Graphic |
+| ------------------------ | ------------------------------- | ------------------------------------- | ------------------------------------ | --------------------- |
+| `activityIndicatorStyle` | `UIActivityIndicatorView.Style` | `.large` or `.medium`                 | `.medium`                            | Graphic #1            |
+| `welcomeView`            | `AnyView`                       | --                                    | `nil`                                | Graphic #2            |
+| `footer`                 | `AnyView`                       | --                                    | `nil`                                | Graphic #3            |
+| `error404`               | `URL`                           | `URL(string: "404.example.com")!`     | `URL(string: "https://google.com")!` | Graphic #4            |
+
+- `activityIndicatorStyle`: Style of the activity
