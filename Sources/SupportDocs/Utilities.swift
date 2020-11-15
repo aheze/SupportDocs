@@ -32,7 +32,7 @@ internal extension View {
     @ViewBuilder
     func configureNavigationBarIfAvailable(navigationOptions: SupportOptions.NavigationBar) -> some View {
         if #available(iOS 14, *) {
-            
+            let _ = print("iOS 14 nav bar!")
             self.background(
                 NavigationConfigurator { nc in /// Set the properties of `options.navigationBar`.
                     let navBarAppearance = UINavigationBarAppearance()
@@ -51,6 +51,7 @@ internal extension View {
                 }
             )
         } else {
+            let _ = print("NOT iOS 14 nav bar!")
             self
         }
     }
