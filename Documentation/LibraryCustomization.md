@@ -44,6 +44,7 @@ Almost everything in the SupportDocs library can be customized through the `Supp
 ## Categories
 
 Group multiple documents in the same section. You make a category by specifying the tag(s), display name, and (optionally) color of the text in the category.
+
 ![Categories Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CategoriesPreview.png)
 
 ### Important: Before You Begin
@@ -843,304 +844,184 @@ options.progressBar.backgroundColor = UIColor.blue
 
 ![List Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ListStylePreview.png)
 
-<table>
-
+<table width="100%">
   <tr>
-  <td>
-  <code>.defaultListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
-  <td rowspan="30">
-  </td>
-  <td>
-  <code>.plainListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
+    <td>List Style</td>
+    <td>Result</td>
   </tr>
-  
   <tr>
+    <td><code>.defaultListStyle</code></td>
+    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" width="160"></td>
   </tr>
-  
   <tr>
-  <td>
-    SwiftUI
-  </td>
-  <td rowspan="4">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" width="160">
-  </kbd>
-  </td>
-  <td>
-    SwiftUI
-  </td>
-  </td>
-  <td rowspan="4">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" width="160">
-  </kbd>
-  </td>
+    <td>SwiftUI</td>
   </tr>
-  
   <tr>
-  <td>
+<td>
 
 ```swift
 let options = SupportOptions(
   listStyle: .defaultListStyle
 )
 ```
+</td>
+  </tr>
+  <tr>
+    <td>UIKit</td>
+  </tr>
+  <tr>
+<td>
 
-  </td>
-  <td>
+```swift
+var options = SupportOptions()
+options.listStyle = .defaultListStyle
+```
+</td>
+  </tr>
+  <tr>
+    <td><code>.plainListStyle</code></td>
+    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" width="160"></td>
+  </tr>
+  <tr>
+    <td>SwiftUI</td>
+  </tr>
+  <tr>
+<td>
 
 ```swift
 let options = SupportOptions(
   listStyle: .plainListStyle
 )
 ```
-
-  </td>
+</td>
   </tr>
-  
   <tr>
-  <td>
-    UIKit
-  </td>
-  <td>
-    UIKit
-  </td>
+    <td>UIKit</td>
   </tr>
-
   <tr>
-  <td>
+<td>
 
 ```swift
 var options = SupportOptions()
-options.listStyle = .defaultListStyle
+options.listStyle = .plainListStyle
 ```
-
-  </td>
-  <td>
-  
-  ```swift
-  var options = SupportOptions()
-  options.listStyle = .plainListStyle
-  ```
-  </td>
+</td>
   </tr>
-
   <tr>
-  <td colspan="5">
-  </td>
+    <td><code>.groupedListStyle</code></td>
+    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" width="160"></td>
   </tr>
-  
   <tr>
+    <td>SwiftUI</td>
   </tr>
-  
   <tr>
-  <td colspan="5">
-  </td>
-  </tr>
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-  <code>.groupedListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
-  
-  </td>
-  <td>
-  <code>.insetGroupedListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
-  </tr>
-  
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-    SwiftUI
-  </td>
-  <td rowspan="4">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" width="160">
-  </kbd>
-  </td>
-  <td>
-    SwiftUI
-  </td>
-  </td>
-  <td rowspan="4">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" width="160">
-  </kbd>
-  </td>
-  </tr>
-  
-  </tr>
-  
-  <tr>
-  <td>
+<td>
 
 ```swift
 let options = SupportOptions(
   listStyle: .groupedListStyle
 )
 ```
+</td>
+  </tr>
+  <tr>
+    <td>UIKit</td>
+  </tr>
+  <tr>
+<td>
 
-  </td>
-  <td>
+```swift
+var options = SupportOptions()
+options.listStyle = .groupedListStyle
+```
+</td>
+  </tr>
+  <tr>
+    <td><code>.insetGroupedListStyle</code></td>
+    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" width="160"></td>
+  </tr>
+  <tr>
+    <td>SwiftUI</td>
+  </tr>
+  <tr>
+<td>
 
 ```swift
 let options = SupportOptions(
   listStyle: .insetGroupedListStyle
 )
 ```
-
-  </td>
+</td>
   </tr>
-  
   <tr>
-  <td>
-    UIKit
-  </td>
-  <td>
-    UIKit
-  </td>
+    <td>UIKit</td>
   </tr>
-
   <tr>
-  <td>
+<td>
 
 ```swift
 var options = SupportOptions()
-options.listStyle = .groupedListStyle
+options.listStyle = .insetGroupedListStyle
 ```
-
-  </td>
-  <td>
-  
-  ```swift
-  var options = SupportOptions()
-  options.listStyle = .insetGroupedListStyle
-  ```
-  </td>
-  </tr>
-  
-  <tr>
-  <td colspan="5">
-  </td>
+</td>
   </tr>
   <tr>
+    <td><code>.insetListStyle</code></td>
+    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" width="160"></td>
   </tr>
   <tr>
-  <td colspan="5">
-  </td>
+    <td>SwiftUI</td>
   </tr>
-  
   <tr>
-  </tr>
-  
-  
-  <tr>
-  <td>
-  <code>.insetListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
-  
-  </td>
-  <td>
-  <code>.sidebarListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
-  </tr>
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-    SwiftUI
-  </td>
-  <td rowspan="5">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" width="160">
-  </kbd>
-  </td>
-  <td>
-    SwiftUI
-  </td>
-  </td>
-  <td rowspan="5">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" width="160">
-  </kbd>
-  </td>
-  </tr>
-  
-  <tr>
-  <td>
+<td>
 
 ```swift
 let options = SupportOptions(
   listStyle: .insetListStyle
 )
 ```
+</td>
+  </tr>
+  <tr>
+    <td>UIKit</td>
+  </tr>
+  <tr>
+<td>
 
-  </td>
-  <td>
+```swift
+var options = SupportOptions()
+options.listStyle = .insetListStyle
+```
+</td>
+  </tr>
+  <tr>
+    <td><code>.sidebarListStyle</code></td>
+    <td rowspan="5"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" width="160"></td>
+  </tr>
+  <tr>
+    <td>SwiftUI</td>
+  </tr>
+  <tr>
+<td>
 
 ```swift
 let options = SupportOptions(
   listStyle: .sidebarListStyle
 )
 ```
-
-  </td>
+</td>
   </tr>
-  
   <tr>
-  <td>
-    UIKit
-  </td>
-  <td>
-    UIKit
-  </td>
+    <td>UIKit</td>
   </tr>
-
   <tr>
-  <td>
+<td>
 
 ```swift
 var options = SupportOptions()
-options.listStyle = .insetListStyle
+options.listStyle = .sidebarListStyle
 ```
-
-  </td>
-  <td>
-  
-  ```swift
-  var options = SupportOptions()
-  options.listStyle = .sidebarListStyle
-  ```
-  </td>
+</td>
   </tr>
 </table>
 
