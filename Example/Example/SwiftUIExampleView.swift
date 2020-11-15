@@ -27,7 +27,8 @@ struct SwiftUIExampleView: View {
             foregroundColor: UIColor.green,
             backgroundColor: UIColor.systemBackground
         ),
-        listStyle: .insetGroupedListStyle,
+        listStyle: .defaultListStyle,
+        navigationViewStyle: .defaultNavigationViewStyle,
         other: .init(
             activityIndicatorStyle: UIActivityIndicatorView.Style.large,
             welcomeView: AnyView(WelcomeView()),

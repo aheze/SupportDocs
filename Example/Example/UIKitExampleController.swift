@@ -27,7 +27,8 @@ class UIKitExampleController: UIViewController {
 //            foregroundColor: UIColor.green,
 //            backgroundColor: UIColor.systemBackground
 //        ),
-//        listStyle: .insetGroupedListStyle,
+//        listStyle: .defaultListStyle,
+//        navigationViewStyle: .defaultNavigationViewStyle,
 //        other: .init(
 //            activityIndicatorStyle: UIActivityIndicatorView.Style.large,
 //            welcomeView: AnyView(WelcomeView()),
@@ -52,6 +53,7 @@ class UIKitExampleController: UIViewController {
 //        options.progressBar.foregroundColor = UIColor.green
 //        options.progressBar.backgroundColor = UIColor.systemBackground
 //        options.listStyle = .insetGroupedListStyle
+//        options.navigationViewStyle = .defaultNavigationViewStyle
 //        options.other.activityIndicatorStyle = .large
 //        options.other.welcomeView = AnyView(WelcomeView())
 //        options.other.footer = AnyView(Footer())
