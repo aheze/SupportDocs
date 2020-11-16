@@ -63,7 +63,7 @@ This will be where you write your documents. GitHub Pages will translate your Ma
 3. Make sure it's set to `Public` (If you have `GitHub free`, GitHub Pages only works for public repos)
 4. Make sure to check **Include all branches**. This is **really** important.
 5. Click <kbd>Create repository from template</kbd>
-6. In your brand new repo, click the <kbd>Settings</kbd> tab
+6. In your brand new repo, switch to the <kbd>Settings</kbd> tab
 7. Scroll down to the GitHub Pages section, and select **DataSource** branch and **/ (root)** folder. Then click <kbd>Save</kbd>.
 8. That's it for the GitHub repo! Now time to install the library in your app.
 
@@ -90,12 +90,13 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 
 1. Go to your project settings
 2. Click your project
-3. Click the <kbd>+</kbd> button
-4. Enter `https://github.com/aheze/SupportDocs` in the text field
-5. Click <kbd>Next</kbd>
-6. Enter the latest version, `0.0.30`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
-7. Click <kbd>Next</kbd>
-8. Click <kbd>Finish</kbd>, and you're done!
+3. Switch to the <kbd>Swift Packages</kbd> tab
+4. Click the <kbd>+</kbd> button
+5. Enter `https://github.com/aheze/SupportDocs` in the text field
+6. Click <kbd>Next</kbd>
+7. Enter the latest version, `0.0.30`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
+8. Click <kbd>Next</kbd>
+9. Click <kbd>Finish</kbd>, and you're done!
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM2.png)
 | --- | --- |
