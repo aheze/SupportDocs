@@ -324,5 +324,8 @@ Pretty much everything in the SupportDocs library can be customized through the 
 
 ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/OtherPreview.png)
 
+## Dark Mode
+SupportDocs supports Dark Mode built-in! You don't need to do anything.
 
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/DarkMode.png)
 
