@@ -19,6 +19,17 @@
     -   [Foreground Color](#foreground-color)
     -   [Background Color](#background-color-1)
 -   [List Style](#list-style)
+-   [Navigation View Style](#navigation-view-style)
+-   [Dark Mode](#dark-mode)
+-   [Other](#other)
+
+---
+
+## Overview
+
+Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct.
+
+![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
 
 ## Examples
 
@@ -37,6 +48,8 @@
 ## Categories
 
 Group multiple documents in the same section. You make a category by specifying the tag(s), display name, and (optionally) color of the text in the category.
+
+![Categories Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CategoriesPreview.png)
 
 ### Important: Before You Begin
 
@@ -467,6 +480,8 @@ class UIKitExampleController_WithCategories: UIViewController {
 
 ## Navigation Bar
 
+![Navigation Bar Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationBarPreview.png)
+
 ### Title
 
 <table>
@@ -727,6 +742,8 @@ options.navigationBar.backgroundColor = UIColor(
 
 ## Progress Bar
 
+![Progress Bar Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ProgressBarPreview.png)
+
 ### Foreground Color
 
 <table>
@@ -829,50 +846,22 @@ options.progressBar.backgroundColor = UIColor.blue
 
 ## List Style
 
-<table>
+![List Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ListStylePreview.png)
 
+<table width="100%">
   <tr>
-  <td>
-  <code>.defaultListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
-  <td rowspan="30">
-  </td>
-  <td>
-  <code>.plainListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
+    <td>List Style</td>
+    <td>Result</td>
   </tr>
-  
   <tr>
+    <td><code>.defaultListStyle</code></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" width="160"></td>
   </tr>
-  
   <tr>
-  <td>
-    SwiftUI
-  </td>
-  <td rowspan="4">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/defaultListStyle.png" width="160">
-  </kbd>
-  </td>
-  <td>
-    SwiftUI
-  </td>
-  </td>
-  <td rowspan="4">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" width="160">
-  </kbd>
-  </td>
+    <td>SwiftUI</td>
   </tr>
-  
   <tr>
-  <td>
+<td>
 
 ```swift
 let options = SupportOptions(
@@ -880,8 +869,30 @@ let options = SupportOptions(
 )
 ```
 
-  </td>
-  <td>
+</td>
+  </tr>
+  <tr>
+    <td>UIKit</td>
+  </tr>
+  <tr>
+<td>
+
+```swift
+var options = SupportOptions()
+options.listStyle = .defaultListStyle
+```
+
+</td>
+  </tr>
+  <tr>
+    <td><code>.plainListStyle</code></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/plainListStyle.png" width="160"></td>
+  </tr>
+  <tr>
+    <td>SwiftUI</td>
+  </tr>
+  <tr>
+<td>
 
 ```swift
 let options = SupportOptions(
@@ -889,97 +900,30 @@ let options = SupportOptions(
 )
 ```
 
-  </td>
+</td>
   </tr>
-  
   <tr>
-  <td>
-    UIKit
-  </td>
-  <td>
-    UIKit
-  </td>
+    <td>UIKit</td>
   </tr>
-
   <tr>
-  <td>
+<td>
 
 ```swift
 var options = SupportOptions()
-options.listStyle = .defaultListStyle
+options.listStyle = .plainListStyle
 ```
 
-  </td>
-  <td>
-  
-  ```swift
-  var options = SupportOptions()
-  options.listStyle = .plainListStyle
-  ```
-  </td>
+</td>
   </tr>
-
   <tr>
-  <td colspan="5">
-  </td>
+    <td><code>.groupedListStyle</code></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" width="160"></td>
   </tr>
-  
   <tr>
+    <td>SwiftUI</td>
   </tr>
-  
   <tr>
-  <td colspan="5">
-  </td>
-  </tr>
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-  <code>.groupedListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
-  
-  </td>
-  <td>
-  <code>.insetGroupedListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
-  </tr>
-  
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-    SwiftUI
-  </td>
-  <td rowspan="4">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/groupedListStyle.png" width="160">
-  </kbd>
-  </td>
-  <td>
-    SwiftUI
-  </td>
-  </td>
-  <td rowspan="4">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" width="160">
-  </kbd>
-  </td>
-  </tr>
-  
-  </tr>
-  
-  <tr>
-  <td>
+<td>
 
 ```swift
 let options = SupportOptions(
@@ -987,8 +931,30 @@ let options = SupportOptions(
 )
 ```
 
-  </td>
-  <td>
+</td>
+  </tr>
+  <tr>
+    <td>UIKit</td>
+  </tr>
+  <tr>
+<td>
+
+```swift
+var options = SupportOptions()
+options.listStyle = .groupedListStyle
+```
+
+</td>
+  </tr>
+  <tr>
+    <td><code>.insetGroupedListStyle</code></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetGroupedListStyle.png" width="160"></td>
+  </tr>
+  <tr>
+    <td>SwiftUI</td>
+  </tr>
+  <tr>
+<td>
 
 ```swift
 let options = SupportOptions(
@@ -996,93 +962,30 @@ let options = SupportOptions(
 )
 ```
 
-  </td>
+</td>
   </tr>
-  
   <tr>
-  <td>
-    UIKit
-  </td>
-  <td>
-    UIKit
-  </td>
+    <td>UIKit</td>
   </tr>
-
   <tr>
-  <td>
+<td>
 
 ```swift
 var options = SupportOptions()
-options.listStyle = .groupedListStyle
+options.listStyle = .insetGroupedListStyle
 ```
 
-  </td>
-  <td>
-  
-  ```swift
-  var options = SupportOptions()
-  options.listStyle = .insetGroupedListStyle
-  ```
-  </td>
-  </tr>
-  
-  <tr>
-  <td colspan="5">
-  </td>
+</td>
   </tr>
   <tr>
+    <td><code>.insetListStyle</code></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" width="160"></td>
   </tr>
   <tr>
-  <td colspan="5">
-  </td>
+    <td>SwiftUI</td>
   </tr>
-  
   <tr>
-  </tr>
-  
-  
-  <tr>
-  <td>
-  <code>.insetListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
-  
-  </td>
-  <td>
-  <code>.sidebarListStyle</code>
-  </td>
-  <td>
-  Result
-  </td>
-  </tr>
-  
-  <tr>
-  </tr>
-  
-  <tr>
-  <td>
-    SwiftUI
-  </td>
-  <td rowspan="5">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/insetListStyle.png" width="160">
-  </kbd>
-  </td>
-  <td>
-    SwiftUI
-  </td>
-  </td>
-  <td rowspan="5">
-  <kbd>
-    <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" width="160">
-  </kbd>
-  </td>
-  </tr>
-  
-  <tr>
-  <td>
+<td>
 
 ```swift
 let options = SupportOptions(
@@ -1090,8 +993,30 @@ let options = SupportOptions(
 )
 ```
 
-  </td>
-  <td>
+</td>
+  </tr>
+  <tr>
+    <td>UIKit</td>
+  </tr>
+  <tr>
+<td>
+
+```swift
+var options = SupportOptions()
+options.listStyle = .insetListStyle
+```
+
+</td>
+  </tr>
+  <tr>
+    <td><code>.sidebarListStyle</code></td>
+    <td rowspan="5" style="text-align:center;"><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ListStyle/sidebarListStyle.png" width="160"></td>
+  </tr>
+  <tr>
+    <td>SwiftUI</td>
+  </tr>
+  <tr>
+<td>
 
 ```swift
 let options = SupportOptions(
@@ -1099,33 +1024,51 @@ let options = SupportOptions(
 )
 ```
 
-  </td>
+</td>
   </tr>
-  
   <tr>
-  <td>
-    UIKit
-  </td>
-  <td>
-    UIKit
-  </td>
+    <td>UIKit</td>
   </tr>
-
   <tr>
-  <td>
+<td>
 
 ```swift
 var options = SupportOptions()
-options.listStyle = .insetListStyle
+options.listStyle = .sidebarListStyle
 ```
 
-  </td>
-  <td>
-  
-  ```swift
-  var options = SupportOptions()
-  options.listStyle = .sidebarListStyle
-  ```
-  </td>
+</td>
   </tr>
 </table>
+
+## Navigation View Style
+
+![Navigation View Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
+
+| Navigation View Style              | Portrait Result                                                                                                                                                    | Landscape Result                                                                                                                                                                    |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.defaultNavigationViewStyle`      | ![Default Navigation View Style (Portrait)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)       | ![Default Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/defaultStyle_landscape.png)            |
+| `.doubleColumnNavigationViewStyle` | ![Double Column Navigation View Style (Portrait)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png) | ![Double Column Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/doubleColumnStyle_landscape.png) |
+| `.stackNavigationViewStyle`        | ![Stack Navigation View Style (Portrait)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)         | ![Stack Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/stackStyle_landscape.png)                |
+
+## Dark Mode
+
+SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
+
+![Dark Mode Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/DarkMode.png)
+
+## Other
+
+![Other](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/OtherPreview.png)
+
+| Parameter                | Type                            | Values                            | Default                              | Corresponding Graphic |
+| ------------------------ | ------------------------------- | --------------------------------- | ------------------------------------ | --------------------- |
+| `activityIndicatorStyle` | `UIActivityIndicatorView.Style` | `.large` or `.medium`             | `.medium`                            | Graphic #1            |
+| `welcomeView`            | `AnyView`                       | --                                | `nil`                                | Graphic #2            |
+| `footer`                 | `AnyView`                       | --                                | `nil`                                | Graphic #3            |
+| `error404`               | `URL`                           | `URL(string: "404.example.com")!` | `URL(string: "https://google.com")!` | Graphic #4            |
+
+-   `activityIndicatorStyle`: Style of the activity indicator, shown when the JSON is being downloaded
+-   `welcomeView`: A custom view that will be shown that will be shown at first. If you are using the `defaultNavigationViewStyle` or `doubleColumnNavigationViewStyle`, this view will be shown if no row is selected
+-   `footer`: A custom view you can add to the bottom of the list
+-   `error404`: A web page to display in case something cannot be found
