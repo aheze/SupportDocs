@@ -44,6 +44,8 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         case listStylePicker:
             let selectedStyle = listStyleOptions[row]
             options.listStyle = selectedStyle
+            
+            print("selected: \(selectedStyle), string: \(selectedStyle.getString())")
             DispatchQueue.main.async {
                 self.listStyleButton.setTitle(selectedStyle.getString(), for: .normal)
             }

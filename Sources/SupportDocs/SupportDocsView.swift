@@ -37,6 +37,19 @@ public struct SupportDocsView: View {
      This is only for SwiftUI -- You don't need to do this in UIKit. As long as you set `options.navigationBar.dismissButtonTitle = "Dismiss"`, SupportDocs will dismiss itself.
      */
     public init(dataSourceURL: URL, options: SupportOptions = SupportOptions(), isPresented: Binding<Bool>? = nil) {
+        
+        /**
+         The custom `NavigationConfigurator` modifier only works for iOS 14 and above, so for lower versions set `UINavigationBar.appearance()` instead.
+         */
+        if #available(iOS 14.0, *) { } else {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: options.navigationBar.titleColor]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: options.navigationBar.titleColor]
+            navBarAppearance.backgroundColor = options.navigationBar.backgroundColor
+            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+            UINavigationBar.appearance().standardAppearance = navBarAppearance
+            UINavigationBar.appearance().tintColor = options.navigationBar.buttonTintColor
+        }
         self.dataSourceURL = dataSourceURL
         self.options = options
         self.isPresented = isPresented
@@ -134,21 +147,7 @@ public struct SupportDocsView: View {
             }
             .transition(.opacity) /// Fade it in once the JSON loads.
             .navigationBarTitle(Text(options.navigationBar.title), displayMode: .large) /// Set your title.
-            .background(NavigationConfigurator { nc in /// Set the other properties of `options.navigationBar`.
-                let navBarAppearance = UINavigationBarAppearance()
-                navBarAppearance.configureWithOpaqueBackground()
-                navBarAppearance.titleTextAttributes = [.foregroundColor: options.navigationBar.titleColor]
-                navBarAppearance.largeTitleTextAttributes = [.foregroundColor: options.navigationBar.titleColor]
-                
-                if let backgroundColor = options.navigationBar.backgroundColor {
-                    navBarAppearance.backgroundColor = backgroundColor
-                    nc.navigationBar.scrollEdgeAppearance = navBarAppearance
-                }
-                nc.navigationBar.standardAppearance = navBarAppearance
-                
-                nc.navigationBar.barTintColor = options.navigationBar.backgroundColor
-                nc.navigationBar.tintColor = options.navigationBar.buttonTintColor
-            })
+            .configureNavigationBarIfAvailable(navigationOptions: options.navigationBar)
             
             /**
              If you have a dismiss button, display it.
@@ -177,7 +176,7 @@ public struct SupportDocsView: View {
              */
             options.other.welcomeView
         }
-        .navigationViewStyle(for: options.navigationViewStyle) /// Set the `navigationViewStyle` of your selection.
+        .navigationViewStyle(for: options.navigationViewStyle, customListStyle: options.listStyle) /// Set the `navigationViewStyle` of your selection.
         
         /**
          When everything first loads, load the JSON.

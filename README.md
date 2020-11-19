@@ -79,6 +79,8 @@ This will be where you write your documents. GitHub Pages will translate your Ma
 | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo4.png) |
 
+---
+
 ### Install the Library
 
 This is the actual interface that your users will see. You can install using **CocoaPods** or **Swift Package Manager**, whichever one you prefer.
@@ -97,12 +99,13 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 
 1. Go to your project settings
 2. Click your project
-3. Click the <kbd>+</kbd> button
-4. Enter `https://github.com/aheze/SupportDocs` in the text field
-5. Click <kbd>Next</kbd>
-6. Enter the latest version, `0.0.30`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
-7. Click <kbd>Next</kbd>
-8. Click <kbd>Finish</kbd>, and you're done!
+3. Switch to the <kbd>Swift Packages</kbd> tab
+4. Click the <kbd>+</kbd> button
+5. Enter `https://github.com/aheze/SupportDocs` in the text field
+6. Click <kbd>Next</kbd>
+7. Enter the latest version, `0.0.30`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
+8. Click <kbd>Next</kbd>
+9. Click <kbd>Finish</kbd>, and you're done!
 
 | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM2.png) |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
@@ -218,7 +221,74 @@ The library is the view that you embed in your app, and what the user sees. But 
 
 ![Data Source URL Location](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CopyDataSourceURL.png)
 
-Paste the URL in the SupportDocs constructor then you are ready to begin. Now you can present the view in your app. You can use SwiftUI or UIKit, and here's the least code that you need to write for it to work.
+
+### Using the Library
+The library is the view that you embed in your app, and what the user sees. But before you present it, you need to get the data source URL first! Go to your brand-new repo's **DataSource** branch, scroll down to the `README`, and **copy the URL**.
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CopyDataSourceURL.png)
+
+The custom GitHub Action generated this URL for you, so keep it safe! 
+
+Now you can present the view in your app. You can use SwiftUI *or* UIKit, and here's the least code that you need to write for it to work.
+
+#### SwiftUI
+```Swift
+import SwiftUI
+import SupportDocs
+
+struct SwiftUIExampleViewMinimalCode: View {
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/MyHelpCenter/DataSource/_data/supportdocs_datasource.json")!
+    @State var supportDocsPresented = false
+    
+    var body: some View {
+        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+        .sheet(isPresented: $supportDocsPresented, content: {
+            SupportDocsView(dataSourceURL: dataSource, isPresented: $supportDocsPresented)
+        })
+    }
+}
+```
+
+#### UIKit
+```Swift
+import UIKit
+import SupportDocs
+
+class UIKitExampleControllerMinimalCode: UIViewController {
+    
+    /**
+     Connect this inside the storyboard.
+     
+     This is just for demo purposes, so it's not connected yet.
+     */
+    @IBAction func presentButtonPressed(_ sender: Any) {
+        
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/MyHelpCenter/DataSource/_data/supportdocs_datasource.json")!
+        
+        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource)
+        self.present(supportDocsViewController, animated: true, completion: nil)
+    }
+}
+```
+
+Here's the result:
+
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/BasicResult.png)
+
+Cool, right? Go treat yourself to some hot chocolate and take a break!
+
+Now that you've got everything set up and working, you can customize SupportDocs -- for example, adding a "Dismiss" button or only showing documents with specific `tags`. Read more in the next section.
+
+---
+
+## Customization
+SupportDocs is heavily customizable, both in the rendered web page and the library view.
+
+### The Rendered Web Page
+
+### The Library View
+
+Pretty much everything in the SupportDocs library can be customized through the `SupportOptions` struct.
 
 #### SwiftUI
 

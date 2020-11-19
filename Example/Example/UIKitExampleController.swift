@@ -27,7 +27,8 @@ class UIKitExampleController: UIViewController {
 //            foregroundColor: UIColor.green,
 //            backgroundColor: UIColor.systemBackground
 //        ),
-//        listStyle: .insetGroupedListStyle,
+//        listStyle: .defaultListStyle,
+//        navigationViewStyle: .defaultNavigationViewStyle,
 //        other: .init(
 //            activityIndicatorStyle: UIActivityIndicatorView.Style.large,
 //            welcomeView: AnyView(WelcomeView()),
@@ -39,27 +40,32 @@ class UIKitExampleController: UIViewController {
     @IBOutlet weak var presentButton: UIButton!
     @IBAction func presentButtonPressed(_ sender: Any) {
         
+//        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+//
+//        // MARK: - UIKit way to make `SupportOptions`
+//        var options = SupportOptions()
+//        options.categories = [SupportOptions.Category(tag: "boba", displayName: "Boba is awesome!")]
+//        options.navigationBar.title = "Support"
+//        options.navigationBar.titleColor = UIColor.white
+//        options.navigationBar.dismissButtonView = AnyView(Text("Done"))
+//        options.navigationBar.buttonTintColor = UIColor.white
+//        options.navigationBar.backgroundColor = UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
+//        options.progressBar.foregroundColor = UIColor.green
+//        options.progressBar.backgroundColor = UIColor.systemBackground
+//        options.listStyle = .insetGroupedListStyle
+//        options.navigationViewStyle = .defaultNavigationViewStyle
+//        options.other.activityIndicatorStyle = .large
+//        options.other.welcomeView = AnyView(WelcomeView())
+//        options.other.footer = AnyView(Footer())
+//        options.other.error404 = URL(string: "https://google.com")!
+//
+//        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource, options: options)
+//        self.present(supportDocsViewController, animated: true, completion: nil)
+        
         let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
         
-        // MARK: - UIKit way to make `SupportOptions`
-        var options = SupportOptions()
-        options.categories = [SupportOptions.Category(tag: "boba", displayName: "Boba is awesome!")]
-        options.navigationBar.title = "Support"
-        options.navigationBar.titleColor = UIColor.white
-        options.navigationBar.dismissButtonView = AnyView(Text("Done"))
-        options.navigationBar.buttonTintColor = UIColor.white
-        options.navigationBar.backgroundColor = UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
-        options.progressBar.foregroundColor = UIColor.green
-        options.progressBar.backgroundColor = UIColor.systemBackground
-        options.listStyle = .insetGroupedListStyle
-        options.other.activityIndicatorStyle = .large
-        options.other.welcomeView = AnyView(WelcomeView())
-        options.other.footer = AnyView(Footer())
-        options.other.error404 = URL(string: "https://google.com")!
-        
-        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource, options: options)
+        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource)
         self.present(supportDocsViewController, animated: true, completion: nil)
-        
     }
 }
 
