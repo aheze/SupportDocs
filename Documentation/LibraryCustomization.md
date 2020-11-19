@@ -20,6 +20,7 @@
     -   [Background Color](#background-color-1)
 -   [List Style](#list-style)
 -   [Navigation View Style](#navigation-view-style)
+-   [Dark Mode](#dark-mode)
 -   [Other](#other)
 
 ---
@@ -1044,13 +1045,17 @@ options.listStyle = .sidebarListStyle
 
 ![Navigation View Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
 
-<!-- TODO: Switch repository images URL to aheze from hkamran80 -->
-
 | Navigation View Style              | Portrait Result                                                                                                                                                    | Landscape Result                                                                                                                                                                    |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `.defaultNavigationViewStyle`      | ![Default Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)       | ![Default Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/defaultStyle_landscape.png)            |
-| `.doubleColumnNavigationViewStyle` | ![Double Column Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png) | ![Double Column Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/doubleColumnStyle_landscape.png) |
-| `.stackNavigationViewStyle`        | ![Stack Navigation View Style (Portrait)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)         | ![Stack Navigation View Style (Landscape)](https://raw.githubusercontent.com/hkamran80/SupportDocs/main/Assets/Options/NavigationViewStyle/stackStyle_landscape.png)                |
+| `.defaultNavigationViewStyle`      | ![Default Navigation View Style (Portrait)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)       | ![Default Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/defaultStyle_landscape.png)            |
+| `.doubleColumnNavigationViewStyle` | ![Double Column Navigation View Style (Portrait)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png) | ![Double Column Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/doubleColumnStyle_landscape.png) |
+| `.stackNavigationViewStyle`        | ![Stack Navigation View Style (Portrait)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)         | ![Stack Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/stackStyle_landscape.png)                |
+
+## Dark Mode
+
+SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
+
+![Dark Mode Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/DarkMode.png)
 
 ## Other
 
