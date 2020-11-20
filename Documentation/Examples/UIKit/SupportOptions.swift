@@ -28,7 +28,7 @@ class SupportOptionsExample: UIViewController {
         options.other.activityIndicatorStyle = .large
         options.other.welcomeView = AnyView(WelcomeView())
         options.other.footer = AnyView(Footer())
-        options.other.error404 = URL(string: "https://google.com")!
+        options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")!
 
         let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
         self.present(supportDocsViewController, animated: true, completion: nil)

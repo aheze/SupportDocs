@@ -43,18 +43,14 @@ internal extension NavigationView {
     @ViewBuilder
     func navigationViewStyle(for customNavigationViewStyle: SupportOptions.CustomNavigationViewStyle, customListStyle: SupportOptions.CustomListStyle) -> some View {
         
-        let _ = print("nav style: \(customNavigationViewStyle), list: \(customListStyle)")
         if
             #available(iOS 14, *),
             customNavigationViewStyle != .stackNavigationViewStyle,
             (customListStyle == .defaultListStyle || customListStyle == .sidebarListStyle)
         {
             
-            let _ = print("defaulting to sidebar")
             self.modifier(SidebarNavigationStyle()) /// If iOS 14 and using a `SidebarListStyle` for the list style (or `DefaultListStyle`, which is the same thing), apply the workaround.
         } else {
-            
-            let _ = print("Not ios 14")
             
             /**
             If not, then no workaround is needed.

@@ -33,7 +33,7 @@ class UIKitExampleController: UIViewController {
 //            activityIndicatorStyle: UIActivityIndicatorView.Style.large,
 //            welcomeView: AnyView(WelcomeView()),
 //            footer: AnyView(Footer()),
-//            error404: URL(string: "https://google.com")!
+//            error404: URL(string: "https://aheze.github.io/SupportDocs/404")!
 //        )
 //    )
     
@@ -57,7 +57,7 @@ class UIKitExampleController: UIViewController {
 //        options.other.activityIndicatorStyle = .large
 //        options.other.welcomeView = AnyView(WelcomeView())
 //        options.other.footer = AnyView(Footer())
-//        options.other.error404 = URL(string: "https://google.com")!
+//        options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")!
 //
 //        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource, options: options)
 //        self.present(supportDocsViewController, animated: true, completion: nil)

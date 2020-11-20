@@ -119,7 +119,7 @@ extension PlaygroundsViewController {
         let defaultActivityIndicatorStyle = UIActivityIndicatorView.Style.large
         let defaultWelcomeView = WelcomeView()
         let defaultFooter = Footer()
-        let defaultError404URL = URL(string: "https://google.com")!
+        let defaultError404URL = URL(string: "https://aheze.github.io/SupportDocs/404")!
         
         // MARK: - Set options
         

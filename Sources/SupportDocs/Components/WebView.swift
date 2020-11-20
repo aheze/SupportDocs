@@ -52,7 +52,7 @@ internal struct WebViewContainer: View {
              
              The new page is pushed when `$webViewStateModel.presentNextPage` is true.
              */
-            NavigationLink(destination: WebViewContainer(url: webViewStateModel.nextUrl ?? URL(string: "https://google.com")!, progressBarOptions: progressBarOptions), isActive: $webViewStateModel.presentNextPage) {
+            NavigationLink(destination: WebViewContainer(url: webViewStateModel.nextUrl ?? URL(string: "https://aheze.github.io/SupportDocs/404")!, progressBarOptions: progressBarOptions), isActive: $webViewStateModel.presentNextPage) {
                 
                 /// No need for a button (it's presented automatically based on `$webViewStateModel.presentNextPage`)
                 EmptyView()

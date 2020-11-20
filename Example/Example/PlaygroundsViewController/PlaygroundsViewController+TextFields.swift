@@ -29,7 +29,7 @@ extension PlaygroundsViewController: UITextFieldDelegate {
             }
         case error404TextField:
             if updatedString.isEmpty {
-                options.other.error404 = URL(string: "https://google.com")!
+                options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")!
             } else {
                 if let url = URL(string: updatedString) {
                     options.other.error404 = url

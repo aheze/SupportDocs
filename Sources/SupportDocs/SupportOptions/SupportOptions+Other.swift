@@ -26,7 +26,7 @@ public extension SupportOptions {
             activityIndicatorStyle: UIActivityIndicatorView.Style = .medium,
             welcomeView: AnyView? = nil,
             footer: AnyView? = nil,
-            error404: URL = URL(string: "https://google.com")!
+            error404: URL = URL(string: "https://aheze.github.io/SupportDocs/404")!
         ) {
             self.activityIndicatorStyle = activityIndicatorStyle
             self.welcomeView = welcomeView
@@ -52,6 +52,6 @@ public extension SupportOptions {
         /**
          Web page to display in case something goes wrong.
          */
-        public var error404: URL = URL(string: "https://google.com")!
+        public var error404: URL = URL(string: "https://aheze.github.io/SupportDocs/404")!
     }
 }

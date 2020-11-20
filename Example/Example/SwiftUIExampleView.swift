@@ -33,7 +33,7 @@ struct SwiftUIExampleView: View {
             activityIndicatorStyle: UIActivityIndicatorView.Style.large,
             welcomeView: AnyView(WelcomeView()),
             footer: AnyView(Footer()),
-            error404: URL(string: "https://google.com")!
+            error404: URL(string: "https://aheze.github.io/SupportDocs/404")!
         )
     )
     
