@@ -128,7 +128,7 @@ The library is what's displayed to your users, in your app. All it needs is the 
 
 
 ## Using the GitHub Repository
-In you brand new repository that you set up earlier, switch to the `DataSource` branch. The example documents are inside `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` -- take a look around. Here's an [explanation of the directory listing](Documentation/DataSource.md#directory-listing).
+In you brand new repository that you set up earlier, [switch](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/SwitchToDataSourceBranch.png) to the `DataSource` branch. The example documents are inside `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` -- take a look around. Here's an [explanation of the directory listing](Documentation/DataSource.md#directory-listing).
 
 In you brand new repository that you set up earlier, switch to the `DataSource` branch. The example documents are inside the `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` folders -- take a look around. Here's a guide:
 
