@@ -165,21 +165,10 @@ Documents can be placed in the root directory or a subfolder. However, we recomm
 -   Documents tagged with `smoothies` are in the `Sample-Smoothies` folder
 
 #### Adding and Editing Documents
-In you brand new repository that you set up earlier, switch to the DataSource branch. The example documents are inside Sample-Boba, Sample-FastFood, and Sample-Smoothies -- take a look around. Here's an explanation of the directory listing.
 
-Documents can be placed in the root directory or a subfolder. However, we recommmend that you use folders to organize your documents. In the example,
-
-Documents tagged with boba are in the Sample-Boba folder
-Documents tagged with fastFood are in the Sample-FastFood folder
-Documents tagged with smoothies are in the Sample-Smoothies folder
-
-To add a document, click the `Create new file` button.
-
-If you want to add a document to add a folder, there are two ways:
-
-1. Navigate to the folder then click `Create new file`
-2. Click `Create new file` then, in the filename, put the folder name, followed by a slash (`/`), followed by the filename. (Example: `fastFood/Burgers.md`)
-    - This method must be used if you want to create a new folder (read more [here](https://stackoverflow.com/a/63635965/14351818))
+- To add a document, click the <kbd>Create new file</kbd> button.
+- If you want to add it to a folder, navigate to the folder first and then click the <kbd>Create new file</kbd> button.
+    - If you want to *create a new folder*, click <kbd>Create new file</kbd> -- then, in the filename, first put the folder name, then a slash (`/`), followed by the filename (Example: `fastFood/Burgers.md`). Read more [here](https://stackoverflow.com/a/63635965/14351818).
 
 | Add a Document                                                                                                               | Add a Document in the `Sample-Boba` Subfolder                                                                                   |
 | :--------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
