@@ -191,7 +191,7 @@ Everything after the `---` of the front matter is your document's content. You u
   Markdown
 </td>
 <td>
-  Result
+  Result　　　　　　　　　　<!-- 10 CJK spaces to the left to force a reasonably large image. DO NOT delete. -->
 </td>
 </tr>
 <tr>
