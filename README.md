@@ -23,15 +23,17 @@
         -   [SwiftUI](#swiftui)
         -   [UIKit](#uikit)
         -   [Result](#result)
--   [Library Customization](Documentation/LibraryCustomization.md)
-    -   [Examples](Documentation/LibraryCustomization.md#examples)
-    -   [Categories](Documentation/LibraryCustomization.md#categories)
-    -   [Navigation Bar](Documentation/LibraryCustomization.md#navigation-bar)
-    -   [Progress Bar](Documentation/LibraryCustomization.md#progress-bar)
-    -   [List Style](Documentation/LibraryCustomization.md#list-style)
-    -   [Navigation View Style](Documentation/LibraryCustomization.md#navigation-view-style)
-    -   [Dark Mode](Documentation/LibraryCustomization.md#dark-mode)
-    -   [Other](Documentation/LibraryCustomization.md#other)
+-   [Customization](#customization)
+    -   [Document Rendering](#document-rendering)
+    -   [Library](#library)
+        -   [Examples ↗](Documentation/LibraryCustomization.md#examples)
+        -   [Categories ↗](Documentation/LibraryCustomization.md#categories)
+        -   [Navigation Bar ↗](Documentation/LibraryCustomization.md#navigation-bar)
+        -   [Progress Bar ↗](Documentation/LibraryCustomization.md#progress-bar)
+        -   [List Style ↗](Documentation/LibraryCustomization.md#list-style)
+        -   [Navigation View Style ↗](Documentation/LibraryCustomization.md#navigation-view-style)
+        -   [Dark Mode ↗](Documentation/LibraryCustomization.md#dark-mode)
+        -   [Other ↗](Documentation/LibraryCustomization.md#other)
 
 ## How It Works
 
@@ -302,10 +304,10 @@ Now that you have the library set up and working, you can hop on over to the [li
 ---
 
 ## Customization
-SupportDocs is heavily customizable, both in the rendered web page and the library view.
+SupportDocs is heavily customizable, both in the rendered documents and the library view.
 
-### The Rendered Web Page
+### Document Rendering
 
-### The Library View
+### Library
 
 Pretty much everything in the SupportDocs library can be customized through the `SupportOptions` struct.
