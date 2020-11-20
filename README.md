@@ -14,19 +14,16 @@
     -   [Install the Library](#install-the-library)
         -   [CocoaPods](#cocoapods)
         -   [Swift Package Manager](#swift-package-manager)
--   [Basic Usage](#basic-usage)
-    -   [Adding and Editing Documents](#adding-and-editing-documents)
-    -   [Tagging Documents](#tagging-documents)
+-   [Usage](#usage)
+    -   [Using the GitHub Repository](#using-the-github-repository)
+        -   [Adding and Editing Documents](#adding-and-editing-documents)
+        -   [Tagging Documents](#tagging-documents)
+        -   [Extended Documentation ↗](Documentation/UsingTheRepository.md)
     -   [Using the Library](#using-the-library)
         -   [SwiftUI](#swiftui)
         -   [UIKit](#uikit)
         -   [Result](#result)
-    -   [Extended Documentation](Documentation/UsingTheRepository.md)
-        -   [Overview](#overview)
-        -   [Using the `DataSource` Branch](#using-the-datasource-branch)
-        -   [Adding and Editing Documents](#adding-and-editing-documents)
-        -   [Tagging Documents](#tagging-documents)
-        -   [Deleting Documents](#deleting-documents)
+        -   [Extended Documentation ↗](Documentation/UsingTheRepository.md)
 -   [Library Customization](Documentation/LibraryCustomization.md)
     -   [Examples](Documentation/LibraryCustomization.md#examples)
         -   [SwiftUI](Documentation/LibraryCustomization.md#swiftui)
@@ -111,9 +108,15 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM4.png) |
 
-## Basic Usage
+## Usage
 
-Extended Documentation:
+SupportDocs is pretty simple to use, with two parts: the GitHub repository and the library in your app.
+
+The GitHub repository is where you add and edit your documents using Markdown. This is online, so you can edit at any time and always show the latest information to your users. All your documents are compiled into a single JSON file, the URL of which you'll pass into the library.
+The library is what's displayed to your users, in your app. All it needs is the URL of the JSON file, and you can either use SwiftUI or UIKit to embed it.
+
+<details>
+  <summary>Show Extended Documentation</summary>
 
 -   [Overview](Documentation/UsingTheRepository.md#overview)
 -   [Using the `DataSource` Branch](Documentation/UsingTheRepository.md#using-the-datasource-branch)
@@ -121,7 +124,54 @@ Extended Documentation:
 -   [Tagging Documents](Documentation/UsingTheRepository.md#tagging-documents)
 -   [Deleting Documents](Documentation/UsingTheRepository.md#deleting-documents)
 
-### Adding and Editing Documents
+</details>
+
+
+## Using the GitHub Repository
+In you brand new repository that you set up earlier, switch to the `DataSource` branch. The example documents are inside `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` -- take a look around. Here's an [explanation of the directory listing](Documentation/DataSource.md#directory-listing).
+
+In you brand new repository that you set up earlier, switch to the `DataSource` branch. The example documents are inside the `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` folders -- take a look around. Here's a guide:
+
+<details>
+<summary><strong>Show guide</strong></summary>
+  
+<hr>
+  
+![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/Guide.png)
+
+- `.github/workflows` is for the GitHub Action, for compiling your documents into JSON
+- `Images` contains the images used in the example documents
+- `Sample-Boba` contains all documents tagged with <kbd>boba</kbd>
+- `Sample-FastFood` contains all documents tagged with <kbd>fastFood</kbd>
+- `Sample-Smoothies` contains all documents tagged with <kbd>smoothies</kbd>
+- `_data` contains the generated data source URL
+- `_layouts` is for GitHub Pages to convert your Markdown into HTML
+- `_sass` is where you can customize the look of the HTML, including light and dark mode colors
+- `_scripts` contains the script used by the GitHub Action, as well as the README template. This template is what you should edit if you want to change the README at all -- if you change it directly, your changes will be overriden.
+- `assets/css` applies the `_sass`
+- `.gitignore` is for git to ignore unnecessary files
+- `404.md` is the 404 document that will be displayed if your URLs are wrong. You can also pass this into `options.other.error404` in case your data source URL fails.
+- `README.md` is for your reference. It contains a link to the data source URL, and a table of contents that shows all your documents. **Do not** edit this file directly -- instead, edit the file in `_scripts/README.md`.
+- `_config.yml` sets the default theme, "Primer," for GitHub Pages. We recommend that you don't change this, as we customized dark mode specifically for the "Primer" theme -- you'll need to configure `assets/css/main.scss` if you use your own theme.
+
+<hr>
+
+</details>
+
+Documents can be placed in the root directory or a subfolder. However, we recommmend that you use folders to organize your documents. In the example,
+
+-   Documents tagged with `boba` are in the `Sample-Boba` folder
+-   Documents tagged with `fastFood` are in the `Sample-FastFood` folder
+-   Documents tagged with `smoothies` are in the `Sample-Smoothies` folder
+
+#### Adding and Editing Documents
+In you brand new repository that you set up earlier, switch to the DataSource branch. The example documents are inside Sample-Boba, Sample-FastFood, and Sample-Smoothies -- take a look around. Here's an explanation of the directory listing.
+
+Documents can be placed in the root directory or a subfolder. However, we recommmend that you use folders to organize your documents. In the example,
+
+Documents tagged with boba are in the Sample-Boba folder
+Documents tagged with fastFood are in the Sample-FastFood folder
+Documents tagged with smoothies are in the Sample-Smoothies folder
 
 To add a document, click the `Create new file` button.
 
@@ -196,7 +246,7 @@ Blue and yummy. Buy this at [google.com](https://google.com)
 </tr>
 </table>
 
-### Tagging Documents
+#### Tagging Documents
 
 With tags, you get a lot of control over what to display in the library. To add tags, just fill in the `tags`, underneath the `title`. For example, check out this [example document](https://github.com/aheze/SupportDocs/blob/DataSource/Sample-Boba/BuyBlueBoba.md) in the `DataSource` branch.
 
@@ -215,17 +265,12 @@ Here is a graphic which shows the documents, titles, and tags in the `DataSource
 
 Once your documents have tags, you can choose to show which documents to show and which ones to hide, in the library. This is covered in the [Categories section](Documentation/LibraryCustomization.md#categories) of the library customization documentation.
 
-### Using the Library
-
-The library is the view that you embed in your app, and what the user sees. But before you present it, you need to get the data source URL first! Go to your brand-new repository's `DataSource` branch, scroll down to the README, and copy the URL.
-
-![Data Source URL Location](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CopyDataSourceURL.png)
-
+---
 
 ### Using the Library
 The library is the view that you embed in your app, and what the user sees. But before you present it, you need to get the data source URL first! Go to your brand-new repo's **DataSource** branch, scroll down to the `README`, and **copy the URL**.
 
-![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CopyDataSourceURL.png)
+![Data Source URL Location](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CopyDataSourceURL.png)
 
 The custom GitHub Action generated this URL for you, so keep it safe! 
 
@@ -271,13 +316,11 @@ class UIKitExampleControllerMinimalCode: UIViewController {
 }
 ```
 
-Here's the result:
+#### Result
 
-![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/BasicResult.png)
+![Result Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/BasicResult.png)
 
-Cool, right? Go treat yourself to some hot chocolate and take a break!
-
-Now that you've got everything set up and working, you can customize SupportDocs -- for example, adding a "Dismiss" button or only showing documents with specific `tags`. Read more in the next section.
+Now that you have the library set up and working, you can hop on over to the [library customization](Documentation/LibraryCustomization.md) section and customize SupportDocs to your liking. Perhaps add a "Dismiss" button or only show documents with specific tags.
 
 ---
 
@@ -289,53 +332,3 @@ SupportDocs is heavily customizable, both in the rendered web page and the libra
 ### The Library View
 
 Pretty much everything in the SupportDocs library can be customized through the `SupportOptions` struct.
-
-#### SwiftUI
-
-[MinimalSupportDocs.swift](Documentation/Examples/SwiftUI/MinimalSupportDocs.swift)
-
-```swift
-import SwiftUI
-import SupportDocs
-
-struct MinimalSupportDocs: View {
-    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/MyHelpCenter/DataSource/_data/supportdocs_datasource.json")!
-
-    @State var supportDocsPresented: Bool = false
-    var body: some View {
-        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
-        .sheet(isPresented: $supportDocsPresented, content: {
-            SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
-        })
-    }
-}
-```
-
-#### UIKit
-
-[MinimalSupportDocs.swift](Documentation/Examples/UIKit/MinimalSupportDocs.swift)
-
-```swift
-import UIKit
-import SupportDocs
-
-class MinimalSupportDocs: UIViewController {
-    /**
-     Connect this inside the storyboard.
-
-     This is just for demo purposes, so it's not connected yet.
-     */
-    @IBAction func presentButtonPressed(_ sender: Any) {
-        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/MyHelpCenter/DataSource/_data/supportdocs_datasource.json")!
-
-        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource)
-        self.present(supportDocsViewController, animated: true, completion: nil)
-    }
-}
-```
-
-#### Result
-
-![Result Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/BasicResult.png)
-
-Now that you have the basic library imported, you can hop on over to the [library customization section](Documentation/LibraryCustomization.md) and customize SupportDocs to your liking. Perhaps add a "Dismiss" button or only show documents with specific tags.
