@@ -612,7 +612,7 @@ AnyView(Image(systemName: "xmark")) /// SF Symbols are best
 <td>
   
 ```Swift
-AnyView(Text("Done")) /// `Text` works just as well
+AnyView(Text("I Am Finished"))  /// `Text` works just as well
 ```
 </td>
 </tr>
@@ -627,7 +627,7 @@ You then pass it into `SupportOptions`'s `navigationBar.dismissButtonView` param
     SwiftUI
   </td>
   <td>
-    Result
+    Result　　　　　　　　　　<!-- 10 CJK spaces to the left to force a reasonably large image. DO NOT delete. -->
   </td>
   
   </tr>
@@ -638,7 +638,7 @@ You then pass it into `SupportOptions`'s `navigationBar.dismissButtonView` param
 ```swift
 let options = SupportOptions(
   navigationBar: .init(
-    dismissButtonView: AnyView(Image(systemName: "xmark")) /// or, AnyView(Text("Done"))
+    dismissButtonView: AnyView(Text("I Am Finished"))  /// or, AnyView(Image(systemName: "xmark"))
   )
 )
 ```
@@ -660,7 +660,7 @@ let options = SupportOptions(
 
 ```swift
 var options = SupportOptions()
-options.navigationBar.dismissButtonView = AnyView(Image(systemName: "xmark")) /// or, AnyView(Text("Done"))
+options.navigationBar.dismissButtonView = AnyView(Text("I Am Finished")) /// or, AnyView(Image(systemName: "xmark"))
 ```
 
   </td>
@@ -673,7 +673,7 @@ However, if you're using SwiftUI, you have the option of supplying a plain `Stri
 ```swift
 let options = SupportOptions(
   navigationBar: .init(
-    dismissButtonTitle: "Done" /// Just a normal String
+    dismissButtonTitle: "I Am Finished" /// Just a normal String
   )
 )
 ```
