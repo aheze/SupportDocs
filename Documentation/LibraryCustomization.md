@@ -1,5 +1,75 @@
 # Library Customization
 
+![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
+
+Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct. To use, just make an instance of `SupportOptions` and configure what you want!
+
+<table>
+<tr>
+<td>
+<strong>SwiftUI</strong>
+</td>
+<td>
+<strong>UIKit</strong>
+</td>
+</tr>
+<tr>
+<td>
+  
+```Swift
+import SwiftUI
+import SupportDocs
+
+struct ContentView: View {
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    let options = SupportOptions(
+        navigationBar: .init(
+            title: "Support" /// Set navigation bar title to "Support"
+        ),
+        listStyle: .insetGroupedListStyle, /// Inset grouped list style (iOS 14+)
+        other: .init(
+            activityIndicatorStyle: UIActivityIndicatorView.Style.large, /// Large loading indicator
+            error404: URL(string: "https://aheze.github.io/SupportDocs/404")! /// Custom 404 page (inside the DataSource branch)
+        )
+    )
+
+    @State var supportDocsPresented: Bool = false
+    var body: some View {
+        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+        .sheet(isPresented: $supportDocsPresented, content: {
+            SupportDocsView(dataSource: dataSource, options: options, isPresented: $supportDocsPresented)
+        })
+    }
+}
+```
+</td>
+<td>
+  
+```Swift
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var presentButton: UIButton! /// Connect these in the storyboard.
+    @IBAction func presentButtonPressed(_ sender: Any) {
+        
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+
+        // MARK: - UIKit way to make `SupportOptions`
+        var options = SupportOptions()
+        options.navigationBar.title = "Support" /// Set navigation bar title to "Support"
+        options.listStyle = .insetGroupedListStyle /// Inset grouped list style (iOS 14+)
+        options.other.activityIndicatorStyle = .large /// Large loading indicator
+        options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")! /// Custom 404 page (inside the DataSource branch)
+
+        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource, options: options)
+        self.present(supportDocsViewController, animated: true, completion: nil)
+        
+    }
+}
+```
+</td>
+</tr>
+</table>
+
 ## Table of Contents
 
 -   [Examples](#examples)
@@ -25,39 +95,40 @@
 
 ---
 
-## Overview
-
-Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct.
-
-![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
-
 ## Examples
+Here's some sample configurations to get you started.
 
 ### SwiftUI
-
--   [MinimalSupportDocs.swift](Examples/SwiftUI/MinimalSupportDocs.swift)
--   [SupportDocsWithCategories.swift](Examples/SwiftUI/SupportDocsWithCategories.swift)
--   [SupportOptions.swift](Examples/SwiftUI/SupportOptions.swift)
+-   [MinimalSupportDocs.swift](Examples/SwiftUI/MinimalSupportDocs.swift) -- the least code that you need to write. No `SupportOptions` are set.
+-   [SupportDocsWithCategories.swift](Examples/SwiftUI/SupportDocsWithCategories.swift) -- displays 2 categories, one for all documents tagged with `boba`, the other `fastFood`. No other `SupportOptions` are set.
+-   [SupportOptions.swift](Examples/SwiftUI/SupportOptions.swift) -- sets every single property inside `SupportOptions`, including a category of all documents tagged with `boba`.
 
 ### UIKit
-
--   [MinimalSupportDocs.swift](Examples/UIKit/MinimalSupportDocs.swift)
--   [SupportDocsWithCategories.swift](Examples/UIKit/SupportDocsWithCategories.swift)
--   [SupportOptions.swift](Examples/UIKit/SupportOptions.swift)
+-   [MinimalSupportDocs.swift](Examples/UIKit/MinimalSupportDocs.swift) -- the least code that you need to write. No `SupportOptions` are set.
+-   [SupportDocsWithCategories.swift](Examples/UIKit/SupportDocsWithCategories.swift) -- displays 2 categories, one for all documents tagged with `boba`, the other `fastFood`. No other `SupportOptions` are set.
+-   [SupportOptions.swift](Examples/UIKit/SupportOptions.swift) -- sets every single property inside `SupportOptions`, including a category of all documents tagged with `boba`.
 
 ## Categories
 
-Group multiple documents in the same section. You make a category by specifying the tag(s), display name, and (optionally) color of the text in the category.
+Group multiple documents in the same section. You make a category by specifying the tag(s), display name, and (optionally) color of the text in the category. 
 
 ![Categories Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CategoriesPreview.png)
 
 ### Important: Before You Begin
 
-Make sure you have added the correct front matter to your documents. See the [Tag Your Documents](../README.md#tag-your-documents) section of the README.
+Make sure you have added the correct tags to the front matter inside your documents. See the [Tag Your Documents](../README.md#tag-your-documents) section of the README.
 
-### One Tag
+### No Categories
 
-Once your documents have tags, you can start using categories inside your app. Here’s how to make SupportDocs display one category that contains all documents with the tag “boba”:
+By default, the categories are set to `nil`, and every single document is displayed no matter their tags.
+
+<kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/noCategories.png" width="200"></kbd>
+
+---
+
+### One Category
+
+Here’s how to make SupportDocs display one category that contains all documents with the tag `boba`:
 
 <table>
   <tr>
@@ -78,7 +149,7 @@ let options = SupportOptions(
     categories: [
         .init(
             tags: ["boba"],
-            displayName: "Display Name Is Boba",
+            displayName: "Display name is boba",
             displayColor: UIColor.blue
         )
     ]
@@ -104,7 +175,7 @@ let options = SupportOptions(
 var options = SupportOptions()
 let bobaCategory = SupportOptions.Category(
     tags: ["boba"],
-    displayName: "Display Name Is Boba",
+    displayName: "Display name is boba",
     displayColor: UIColor.blue
 )
 
@@ -135,7 +206,7 @@ struct SwiftUIExampleView_WithCategories: View {
         categories: [
             .init(
                 tags: ["boba"],
-                displayName: "Display Name Is Boba",
+                displayName: "Display name is boba",
                 displayColor: UIColor.blue
             )
         ]
@@ -175,7 +246,7 @@ class UIKitExampleController_WithCategories: UIViewController {
         var options = SupportOptions()
         let bobaCategory = SupportOptions.Category(
             tags: ["boba"],
-            displayName: "Display Name Is Boba",
+            displayName: "Display name is boba",
             displayColor: UIColor.blue
         )
 
@@ -194,7 +265,8 @@ class UIKitExampleController_WithCategories: UIViewController {
 
 ---
 
-### Two Tags
+### Two Categories
+This will display 2 categories, one for documents tagged with `boba` and another for those tagged with `fastFood`.
 
 <table>
   <tr>
@@ -213,7 +285,7 @@ let options = SupportOptions(
     categories: [
         .init(
             tags: ["boba"],
-            displayName: "Display Name Is Boba",
+            displayName: "Display name is boba",
             displayColor: UIColor.blue
         ),
         .init(
@@ -242,7 +314,7 @@ let options = SupportOptions(
 var options = SupportOptions()
 let bobaCategory = SupportOptions.Category(
     tags: ["boba"],
-    displayName: "Display Name Is Boba",
+    displayName: "Display name is boba",
     displayColor: UIColor.blue
 )
 let fastFoodCategory = SupportOptions.Category(
@@ -277,7 +349,7 @@ struct SwiftUIExampleView_WithCategories: View {
         categories: [
             .init(
                 tags: ["boba"],
-                displayName: "Display Name Is Boba",
+                displayName: "Display name is boba",
                 displayColor: UIColor.blue
             ),
             .init(
@@ -322,7 +394,7 @@ class UIKitExampleControllerWithCategories: UIViewController {
         var options = SupportOptions()
         let bobaCategory = SupportOptions.Category(
             tags: ["boba"],
-            displayName: "Display Name Is Boba",
+            displayName: "Display name is boba",
             displayColor: UIColor.blue
         )
         let fastFoodCategory = SupportOptions.Category(
@@ -347,6 +419,7 @@ class UIKitExampleControllerWithCategories: UIViewController {
 ---
 
 ### Multiple Tags in One Category
+You can even combine multiple documents with different tags in the same category!
 
 <table>
   <tr>
@@ -479,10 +552,12 @@ class UIKitExampleController_WithCategories: UIViewController {
 ---
 
 ## Navigation Bar
+This is the bar that's shown at the top of the screen. You can customize quite a lot of its elements.
 
 ![Navigation Bar Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationBarPreview.png)
 
 ### Title
+The title to display.
 
 <table>
   <tr>
@@ -531,6 +606,7 @@ options.navigationBar.title = "Custom Nav Title"
 </table>
 
 ### Title Color
+The color of the title.
 
 <table>
 
@@ -581,7 +657,37 @@ options.navigationBar.titleColor = UIColor.purple
   </tr>
 </table>
 
-### Dismiss Button Title
+### Dismiss Button View / Dismiss Button Title
+This is what will be shown as the dismiss button (press to dismiss SupportDocs). It's a bit more tricky. By default, you pass in an `AnyView` of your choice. This should either be an `Image` or a `Text`, but you can experiment with other elements. For example, both of these will work:
+
+<table>
+<tr>
+<td>
+
+`Image`
+</td>
+<td>
+
+`Text`
+</td>
+</tr>
+<tr>
+<td>
+  
+```Swift
+AnyView(Image(systemName: "xmark")) /// SF Symbols are best
+```
+</td>
+<td>
+  
+```Swift
+AnyView(Text("I Am Finished"))  /// `Text` works just as well
+```
+</td>
+</tr>
+</table>
+
+You then pass it into `SupportOptions`'s `navigationBar.dismissButtonView` parameter.
 
 <table>
 
@@ -590,7 +696,7 @@ options.navigationBar.titleColor = UIColor.purple
     SwiftUI
   </td>
   <td>
-    Result
+    Result　　　　　　　　　　<!-- 10 CJK spaces to the left to force a reasonably large image. DO NOT delete. -->
   </td>
   
   </tr>
@@ -601,7 +707,7 @@ options.navigationBar.titleColor = UIColor.purple
 ```swift
 let options = SupportOptions(
   navigationBar: .init(
-    dismissButtonTitle: "I Am Finished"
+    dismissButtonView: AnyView(Text("I Am Finished"))  /// or, AnyView(Image(systemName: "xmark"))
   )
 )
 ```
@@ -623,12 +729,23 @@ let options = SupportOptions(
 
 ```swift
 var options = SupportOptions()
-options.navigationBar.dismissButtonTitle = "I Am Finished"
+options.navigationBar.dismissButtonView = AnyView(Text("I Am Finished")) /// or, AnyView(Image(systemName: "xmark"))
 ```
 
   </td>
   </tr>
 </table>
+
+However, if you're using SwiftUI, you have the option of supplying a plain `String` instead. This is a little easier to read than `AnyView`, but is limited to a `String` and SwiftUI.
+
+
+```swift
+let options = SupportOptions(
+  navigationBar: .init(
+    dismissButtonTitle: "I Am Finished" /// Just a normal String
+  )
+)
+```
 
 ### Button Tint Color
 

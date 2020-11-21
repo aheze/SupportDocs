@@ -24,7 +24,7 @@ class SupportOptionsExample: UIViewController {
         options.navigationBar.backgroundColor = UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
         options.progressBar.foregroundColor = UIColor.green
         options.progressBar.backgroundColor = UIColor.systemBackground
-        options.listStyle = .groupedListStyle
+        options.listStyle = .insetGroupedListStyle
         options.other.activityIndicatorStyle = .large
         options.other.welcomeView = AnyView(WelcomeView())
         options.other.footer = AnyView(Footer())
