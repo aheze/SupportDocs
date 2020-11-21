@@ -9,7 +9,7 @@ Customize the rendered document's colors and HTML structure.
 -   [Custom HTML](#custom-html)
 
 ## Colors
-All colors for rendering are found in your **DataSource** branch's `_sass/_color-themes.scss` file. Here are the defaults:
+All colors for rendering are found in your **DataSource** branch's [`_sass/_color-themes.scss`](https://github.com/aheze/SupportDocs/blob/DataSource/_sass/_color-themes.scss) file. Here are the defaults:
 
 ```scss
 /* Customize colors here! */
@@ -85,4 +85,42 @@ Light mode | Dark mode
 ![Web page rendered in custom light mode colors](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/RenderingDocuments/customLight.png) | ![Web page rendered in default custom mode colors](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/RenderingDocuments/customDark.png)
 
 ## Custom HTML
+Because SupportDocs takes advantage of GitHub Pages, you have full control over what HTML to show. This is contained in your **DataSource** branch's [`_layouts/default.html`](https://github.com/aheze/SupportDocs/blob/DataSource/_layouts/default.html) file.
+
+```html
+<!-- Customize HTML between here... -->
+      
+    <div class="container-lg px-3 my-5 markdown-body">
+        {{ content }}
+    </div>
+
+<!-- ... and here -->
+```
+By default, the only thing that is shown is the Markdown content (as shown in the `{{ content }}` placeholder). You can add custom HTML before and after this.
+
+For example, let's say you want to display a feedback footer at the bottom of each document. That's as easy as doing this:
+
+
+```html
+<!-- Customize HTML between here... -->
+      
+    <div class="container-lg px-3 my-5 markdown-body">
+          {{ content }}
+          
+          <blockquote>
+              Something wrong? Send feedback <a href="https://github.com/aheze/SupportDocs/issues">here</a>!
+          </blockquote>
+    </div>
+
+<!-- ... and here -->
+```
+
+Result:
+![Web page rendered with footer at the bottom](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/RenderingDocuments/customFooter.png) 
+
+We recommend you add all custom HTML withing the `<div class="container-lg px-3 my-5 markdown-body">` to preserve the same colors and formatting as the Markdown content, but this is optional.
+
+However, if you add it outside, you'll need to create a new file inside the **DataSource** branch's `_sass` folder -- where you'll store the additional `scss`.
+
+
 
