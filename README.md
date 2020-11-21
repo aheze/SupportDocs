@@ -34,8 +34,10 @@
         -   [*Progress Bar ↗*](Documentation/LibraryCustomization.md#progress-bar)
         -   [*List Style ↗*](Documentation/LibraryCustomization.md#list-style)
         -   [*Navigation View Style ↗*](Documentation/LibraryCustomization.md#navigation-view-style)
-        -   [*Dark Mode ↗*](Documentation/LibraryCustomization.md#dark-mode)
         -   [*Other ↗*](Documentation/LibraryCustomization.md#other)
+-   [Authors](#authors)
+-   [License](#license)
+-   [Notes](#notes)
 
 ## How It Works
 
@@ -313,7 +315,40 @@ Document Rendering | Library
 --- | ---
 ![Document rendering graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/CustomizableRenderedDocument.png) | ![Library options graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/CustomizableOptions.png)
 
-## Dark Mode
+## Authors
+SupportDocs is a project maintained by [A. Zheng](https://aheze.medium.com/) and [H. Kamran](https://hkamran.com/).
+
+## License
+```
+MIT License
+
+Copyright (c) 2020 A. Zheng and H. Kamran
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Notes
+
+### Example repo
+You can find an example repository using SupportDocs [here](https://github.com/aheze/MyHelpCenter).
+
+### Dark Mode
 SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
 
 ![Dark Mode Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/DarkMode.png)
