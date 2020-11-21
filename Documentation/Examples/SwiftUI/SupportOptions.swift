@@ -17,7 +17,7 @@ struct SupportOptionsExample: View {
         navigationBar: .init(
             title: "Support",
             titleColor: UIColor.white,
-            dismissButtonTitle: "Done",
+            dismissButtonView: AnyView(Text("Done")),
             buttonTintColor: UIColor.white,
             backgroundColor: UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
         ),
