@@ -14,6 +14,7 @@
     -   [Install the Library](#install-the-library)
         -   [CocoaPods](#cocoapods)
         -   [Swift Package Manager](#swift-package-manager)
+-   [Example Project](#example-project)
 -   [Usage](#usage)
     -   [Using the GitHub Repository](#using-the-github-repository)
         -   [Adding and Editing Documents](#adding-and-editing-documents)
@@ -97,6 +98,16 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM2.png) |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM4.png) |
+
+---
+
+## Example Project
+Check out the example project in the [`Example`](https://github.com/aheze/SupportDocs/tree/main/Example) folder! It contains a playground where you can play around with how SupportDocs is displayed.
+
+<kbd>![Example project home page](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectHome.png)</kbd> | <kbd>![Example project options page](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectOptions.png)</kbd>  | <kbd>![Press the "Present" button to display the library](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectLibrary.png)</kbd>
+--- | --- | ---
+
+---
 
 ## Usage
 SupportDocs is pretty simple to use, with two parts: the GitHub repository and the library in your app.
