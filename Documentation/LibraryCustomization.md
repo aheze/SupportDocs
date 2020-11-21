@@ -2,7 +2,7 @@
 
 ![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
 
-Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct. To use, just make an instance of `SupportOptions` and configure what you want!
+Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct. To use, just make an instance of `SupportOptions` and configure what you want! You can find the declaration for the struct [here](https://github.com/aheze/SupportDocs/blob/main/Sources/SupportDocs/SupportOptions/SupportOptions.swift).
 
 <table>
 <tr>
@@ -90,7 +90,6 @@ class ViewController: UIViewController {
     -   [Background Color](#background-color-1)
 -   [List Style](#list-style)
 -   [Navigation View Style](#navigation-view-style)
--   [Dark Mode](#dark-mode)
 -   [Other](#other)
 
 ---
