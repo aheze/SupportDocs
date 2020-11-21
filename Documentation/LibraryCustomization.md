@@ -658,7 +658,9 @@ options.navigationBar.titleColor = UIColor.purple
 </table>
 
 ### Dismiss Button View / Dismiss Button Title
-This is what will be shown as the dismiss button (press to dismiss SupportDocs). It's a bit more tricky. By default, you pass in an `AnyView` of your choice. This should either be an `Image` or a `Text`, but you can experiment with other elements. For example, both of these will work:
+This is what will be shown as the dismiss button (press to dismiss SupportDocs), and leave it as `nil` to not show it at all.
+
+It's a bit more tricky. By default, you pass in an `AnyView` of your choice. This should either be an `Image` or a `Text`, but you can experiment with other elements. For example, both of these will work:
 
 <table>
 <tr>
@@ -748,6 +750,7 @@ let options = SupportOptions(
 ```
 
 ### Button Tint Color
+The color of the dismiss button (if any) and the back button (appears once you tap on a row in the list).
 
 <table>
 
@@ -799,6 +802,7 @@ options.navigationBar.buttonTintColor = UIColor.green
 </table>
 
 ### Background Color
+The background color of the navigation bar.
 
 <table>
 
@@ -858,10 +862,12 @@ options.navigationBar.backgroundColor = UIColor(
 </table>
 
 ## Progress Bar
+This shows up when the user has pressed a row in the list, waiting for the document to load.
 
 ![Progress Bar Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ProgressBarPreview.png)
 
 ### Foreground Color
+The color of the moving part of the bar.
 
 <table>
 
@@ -911,6 +917,7 @@ options.progressBar.foregroundColor = UIColor.red
 </table>
 
 ### Background Color
+The background color of the bar.
 
 <table>
 
@@ -962,6 +969,7 @@ options.progressBar.backgroundColor = UIColor.blue
 </table>
 
 ## List Style
+The SupportDocs library is written in SwiftUI, so you get access to SwiftUI's list styles! Customizing this changes the way the list is displayed.
 
 ![List Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ListStylePreview.png)
 
@@ -1159,14 +1167,15 @@ options.listStyle = .sidebarListStyle
 </table>
 
 ## Navigation View Style
+This controls the layout of the navigation view. This only applies to larger devices like the iPhone 7 Plus when they are in landscape, or iPads. If your app is portrait-only, you can ignore this. 
 
 ![Navigation View Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
 
-| Navigation View Style              | Portrait Result                                                                                                                                                    | Landscape Result                                                                                                                                                                    |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `.defaultNavigationViewStyle`      | ![Default Navigation View Style (Portrait)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)       | ![Default Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/defaultStyle_landscape.png)            |
-| `.doubleColumnNavigationViewStyle` | ![Double Column Navigation View Style (Portrait)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png) | ![Double Column Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/doubleColumnStyle_landscape.png) |
-| `.stackNavigationViewStyle`        | ![Stack Navigation View Style (Portrait)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png)         | ![Stack Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/stackStyle_landscape.png)                |
+| Navigation View Style | Portrait Result | Landscape Result | Landscape Interaction |
+| --- | --- | --- | --- |
+| `.defaultNavigationViewStyle`      | <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png" width="200" alt="Default Navigation View Style (Portrait)">      | ![Default Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/defaultStyle_landscape.png)            | ![Default Navigation View Style (Landscape interaction gif)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationViewStyle/defaultStyle.gif) |
+| `.doubleColumnNavigationViewStyle` | <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png" width="200" alt="Double Column Navigation View Style (Portrait)"> | ![Double Column Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/doubleColumnStyle_landscape.png) | ![Double Column Navigation View Style (Landscape interaction gif)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationViewStyle/doubleColumnStyle.gif) |
+| `.stackNavigationViewStyle`        | <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png" width="200" alt="Stack Navigation View Style (Portrait)"> | ![Stack Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/stackStyle_landscape.png)                | ![Stack Navigation View Style (Landscape interaction gif)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationViewStyle/stackStyle.gif) |
 
 ## Dark Mode
 
