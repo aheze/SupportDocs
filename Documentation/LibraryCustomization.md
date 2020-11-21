@@ -618,6 +618,8 @@ AnyView(Text("Done")) /// `Text` works just as well
 </tr>
 </table>
 
+You then pass it into `SupportOptions`'s `navigationBar.dismissButtonView` parameter.
+
 <table>
 
   <tr>
@@ -636,7 +638,7 @@ AnyView(Text("Done")) /// `Text` works just as well
 ```swift
 let options = SupportOptions(
   navigationBar: .init(
-    dismissButtonTitle: "I Am Finished"
+    dismissButtonView: AnyView(Image(systemName: "xmark")) /// or, AnyView(Text("Done"))
   )
 )
 ```
@@ -658,12 +660,23 @@ let options = SupportOptions(
 
 ```swift
 var options = SupportOptions()
-options.navigationBar.dismissButtonTitle = "I Am Finished"
+options.navigationBar.dismissButtonView = AnyView(Image(systemName: "xmark")) /// or, AnyView(Text("Done"))
 ```
 
   </td>
   </tr>
 </table>
+
+However, if you're using SwiftUI, you have the option of supplying a plain `String` instead. This is a little easier to read than `AnyView`, but is limited to a `String` and SwiftUI.
+
+
+```swift
+let options = SupportOptions(
+  navigationBar: .init(
+    dismissButtonTitle: "Done" /// Just a normal String
+  )
+)
+```
 
 ### Button Tint Color
 
