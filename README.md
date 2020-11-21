@@ -40,23 +40,20 @@
 -   [Notes](#notes)
 
 ## How It Works
-
-1. Write documents in Markdown
-2. Let GitHub Pages compile the documents into a website
-3. Wait for the GitHub Action to generate a JSON data source and a README for you
-4. The SupportDocs library downloads the JSON and compiles it into a customizable format
+1. Write documents in Markdown, on GitHub
+2. GitHub Pages will convert them into HTML and host it for free
+3. A custom GitHub Action will generate a JSON data source for you
+4. The SupportDocs library will download the JSON and display it to your users!
 
 ![How It Works - Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HowItWorks.png)
 
 ## Installation
-
 Installing SupportDocs takes two steps:
 
 1. Set up the GitHub repository where you write and host your documents
 2. Install the library inside your app
 
 ### Set Up the GitHub Repository
-
 This will be where you write your documents. GitHub Pages will translate your Markdown into HTML, and a custom GitHub Action will automatically compile the web pages into a JSON file.
 
 1. Scroll up to the top of this page and click <kbd>Use this template</kbd>
@@ -75,11 +72,9 @@ This will be where you write your documents. GitHub Pages will translate your Ma
 ---
 
 ### Install the Library
-
 This is the actual interface that your users will see. You can install using **CocoaPods** or **Swift Package Manager**, whichever one you prefer.
 
 #### CocoaPods
-
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To install SupportDocs into your Xcode project using CocoaPods, add it in your `Podfile`:
 
 ```ruby
@@ -87,7 +82,6 @@ pod 'SupportDocs'
 ```
 
 #### Swift Package Manager
-
 The [Swift Package Manager](https://swift.org/package-manager/) is built into Xcode, which makes it really easy to use.
 
 1. Go to your project settings
@@ -105,7 +99,6 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM4.png) |
 
 ## Usage
-
 SupportDocs is pretty simple to use, with two parts: the GitHub repository and the library in your app.
 
 The GitHub repository is where you add and edit your documents using Markdown. This is online, so you can edit at any time and always show the latest information to your users. All your documents are compiled into a single JSON file, the URL of which you'll pass into the library.
@@ -159,7 +152,6 @@ Documents can be placed in the root directory or a subfolder. However, we recomm
 -   Documents tagged with `smoothies` are in the `Sample-Smoothies` folder
 
 #### Adding and Editing Documents
-
 - To add a document, click the <kbd>Create new file</kbd> button.
 - If you want to add it to a folder, navigate to the folder first and then click the <kbd>Create new file</kbd> button.
     - If you want to *create a new folder*, click <kbd>Create new file</kbd> -- then, in the filename, first put the folder name, then a slash (`/`), followed by the filename (Example: `fastFood/Burgers.md`). Read more [here](https://stackoverflow.com/a/63635965/14351818).
@@ -230,7 +222,6 @@ Blue and yummy. Buy this at [google.com](https://google.com)
 </table>
 
 #### Tagging Documents
-
 With tags, you get a lot of control over what to display in the library. To add tags, just fill in the `tags`, underneath the `title`. For example, check out this [example document](https://github.com/aheze/SupportDocs/blob/DataSource/Sample-Boba/BuyBlueBoba.md) in the `DataSource` branch.
 
 ```yaml
