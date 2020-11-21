@@ -107,9 +107,9 @@ The library is what's displayed to your users, in your app. All it needs is the 
 <details>
   <summary><strong>Show Extended Documentation</strong></summary>
 
--   [Renaming Documents](UsingTheRepository-Extended.md/#renaming-documents)
--   [Ordering Documents](UsingTheRepository-Extended.md/#ordering-documents)
--   [Deleting Documents](UsingTheRepository-Extended.md/#deleting-documents)
+-   [Renaming Documents](Documentation/UsingTheRepository-Extended.md/#renaming-documents)
+-   [Ordering Documents](Documentation/UsingTheRepository-Extended.md/#ordering-documents)
+-   [Deleting Documents](Documentation/UsingTheRepository-Extended.md/#deleting-documents)
 
 </details>
 
