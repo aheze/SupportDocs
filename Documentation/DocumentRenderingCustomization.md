@@ -1,7 +1,7 @@
 # Document Rendering Customization
-Customize the rendered document's colors and HTML structure.
+![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/CustomizableRenderedDocument.png)
 
-![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
+Customize the rendered document's colors and HTML structure.
 
 ## Table of Contents
 
