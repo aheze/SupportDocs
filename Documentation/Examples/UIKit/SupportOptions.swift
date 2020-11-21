@@ -19,7 +19,7 @@ class SupportOptionsExample: UIViewController {
         options.categories = [SupportOptions.Category(tags: ["boba"], displayName: "Boba is awesome!")]
         options.navigationBar.title = "Support"
         options.navigationBar.titleColor = UIColor.white
-        options.navigationBar.dismissButtonTitle = "Done"
+        options.navigationBar.dismissButtonView = AnyView(Text("Done"))
         options.navigationBar.buttonTintColor = UIColor.white
         options.navigationBar.backgroundColor = UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
         options.progressBar.foregroundColor = UIColor.green
