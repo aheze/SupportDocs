@@ -18,16 +18,16 @@
     -   [Using the GitHub Repository](#using-the-github-repository)
         -   [Adding and Editing Documents](#adding-and-editing-documents)
         -   [Tagging Documents](#tagging-documents)
-        -   [Extended Documentation ↗](Documentation/UsingTheRepository-Extended.md)
+        -   [*Extended Documentation ↗*](Documentation/UsingTheRepository-Extended.md)
     -   [Using the Library](#using-the-library)
         -   [SwiftUI](#swiftui)
         -   [UIKit](#uikit)
         -   [Result](#result)
 -   [*Customization ↗*](#customization)
-    -   [*Document Rendering ↗*](#document-rendering)
+    -   [*Document Rendering ↗*](Documentation/DocumentRenderingCustomization.md)
         -   [*Colors ↗*](Documentation/DocumentRenderingCustomization.md#examples)
         -   [*Custom HTML ↗*](Documentation/DocumentRenderingCustomization.md#examples)
-    -   [*Library ↗*](#library)
+    -   [*Library ↗*](Documentation/LibraryCustomization.md)
         -   [*Examples ↗*](Documentation/LibraryCustomization.md#examples)
         -   [*Categories ↗*](Documentation/LibraryCustomization.md#categories)
         -   [*Navigation Bar ↗*](Documentation/LibraryCustomization.md#navigation-bar)
@@ -304,6 +304,9 @@ class UIKitExampleControllerMinimalCode: UIViewController {
 Now that you have the library set up and working, you can hop on over to the [library customization](Documentation/LibraryCustomization.md) section and customize SupportDocs to your liking. Perhaps add a "Dismiss" button or only show documents with specific tags.
 
 ---
+
+## Customization
+
 
 ## Dark Mode
 SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
