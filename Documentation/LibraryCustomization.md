@@ -1,6 +1,6 @@
 # Library Customization
 
-![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
+![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/CustomizableOptions.png)
 
 Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct. To use, just make an instance of `SupportOptions` and configure what you want! You can find the declaration for the struct [here](https://github.com/aheze/SupportDocs/blob/main/Sources/SupportDocs/SupportOptions/SupportOptions.swift).
 
