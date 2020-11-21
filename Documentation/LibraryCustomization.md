@@ -969,7 +969,7 @@ options.progressBar.backgroundColor = UIColor.blue
 </table>
 
 ## List Style
-The SupportDocs library is written in SwiftUI, so you get access to SwiftUI's list styles! Customizing this changes the way the list is displayed.
+The SupportDocs library is written in SwiftUI, so you get access to SwiftUI's [list styles](https://developer.apple.com/documentation/swiftui/liststyle)! Customizing this changes the way the list is displayed.
 
 ![List Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/ListStylePreview.png)
 
@@ -1167,7 +1167,7 @@ options.listStyle = .sidebarListStyle
 </table>
 
 ## Navigation View Style
-This controls the layout of the navigation view. This only applies to larger devices like the iPhone 7 Plus when they are in landscape, or iPads. If your app is portrait-only, you can ignore this. 
+This is [another thing](https://developer.apple.com/documentation/swiftui/navigationviewstyle) that comes from SwiftUI, which controls the layout of the navigation view. This only applies to larger devices like the iPhone 7 Plus when they are in landscape, or iPads. If your app is portrait-only, you can ignore this. 
 
 ![Navigation View Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
 
@@ -1177,13 +1177,10 @@ This controls the layout of the navigation view. This only applies to larger dev
 | `.doubleColumnNavigationViewStyle` | <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png" width="200" alt="Double Column Navigation View Style (Portrait)"> | ![Double Column Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/doubleColumnStyle_landscape.png) | ![Double Column Navigation View Style (Landscape interaction gif)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationViewStyle/doubleColumnStyle.gif) |
 | `.stackNavigationViewStyle`        | <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png" width="200" alt="Stack Navigation View Style (Portrait)"> | ![Stack Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/stackStyle_landscape.png)                | ![Stack Navigation View Style (Landscape interaction gif)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationViewStyle/stackStyle.gif) |
 
-## Dark Mode
-
-SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
-
-![Dark Mode Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/DarkMode.png)
+Keep in mind, if you go with `.defaultNavigationViewStyle` or `.doubleColumnNavigationViewStyle` (they're actually the same thing), you should supply a `welcomeView` as well. This is what will be shown at the start, when no list row has been selected yet. Scroll down to **Other** to see more.
 
 ## Other
+Some miscellaneous options for SupportDocs.
 
 ![Other](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/OtherPreview.png)
 
@@ -1192,9 +1189,9 @@ SupportDocs supports Dark Mode right out of the box! You don't need to do anythi
 | `activityIndicatorStyle` | `UIActivityIndicatorView.Style` | `.large` or `.medium`             | `.medium`                            | Graphic #1            |
 | `welcomeView`            | `AnyView`                       | --                                | `nil`                                | Graphic #2            |
 | `footer`                 | `AnyView`                       | --                                | `nil`                                | Graphic #3            |
-| `error404`               | `URL`                           | `URL(string: "404.example.com")!` | `URL(string: "https://google.com")!` | Graphic #4            |
+| `error404`               | `URL`                           | --                                | `URL(string: "https://aheze.github.io/SupportDocs/404")!` | Graphic #4            |
 
--   `activityIndicatorStyle`: Style of the activity indicator, shown when the JSON is being downloaded
--   `welcomeView`: A custom view that will be shown that will be shown at first. If you are using the `defaultNavigationViewStyle` or `doubleColumnNavigationViewStyle`, this view will be shown if no row is selected
--   `footer`: A custom view you can add to the bottom of the list
--   `error404`: A web page to display in case something cannot be found
+-   `activityIndicatorStyle`: Size of the activity indicator that's shown when the JSON is being downloaded. You can choose either `.large` or `.medium`.
+-   `welcomeView`: A custom view that will be shown at first, but only in landscape on larger devices and iPads (see [**Navigation View Style**](#navigation-view-style)). See [Example/WelcomeView.swift](https://github.com/aheze/SupportDocs/blob/main/Example/Example/WelcomeView.swift) for an example.
+-   `footer`: A custom view you can add to the bottom of the list. See [Example/Footer.swift](https://github.com/aheze/SupportDocs/blob/main/Example/Example/Footer.swift) for an example.
+-   `error404`: A web page to display in case something cannot be found.
