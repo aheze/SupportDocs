@@ -124,6 +124,8 @@ By default, the categories are set to `nil`, and every single document is displa
 
 <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/noCategories.png" width="200"></kbd>
 
+---
+
 ### One Category
 
 Here’s how to make SupportDocs display one category that contains all documents with the tag `boba`:
@@ -147,7 +149,7 @@ let options = SupportOptions(
     categories: [
         .init(
             tags: ["boba"],
-            displayName: "Display Name Is Boba",
+            displayName: "Display name is boba",
             displayColor: UIColor.blue
         )
     ]
@@ -173,7 +175,7 @@ let options = SupportOptions(
 var options = SupportOptions()
 let bobaCategory = SupportOptions.Category(
     tags: ["boba"],
-    displayName: "Display Name Is Boba",
+    displayName: "Display name is boba",
     displayColor: UIColor.blue
 )
 
@@ -204,7 +206,7 @@ struct SwiftUIExampleView_WithCategories: View {
         categories: [
             .init(
                 tags: ["boba"],
-                displayName: "Display Name Is Boba",
+                displayName: "Display name is boba",
                 displayColor: UIColor.blue
             )
         ]
@@ -244,7 +246,7 @@ class UIKitExampleController_WithCategories: UIViewController {
         var options = SupportOptions()
         let bobaCategory = SupportOptions.Category(
             tags: ["boba"],
-            displayName: "Display Name Is Boba",
+            displayName: "Display name is boba",
             displayColor: UIColor.blue
         )
 
@@ -283,7 +285,7 @@ let options = SupportOptions(
     categories: [
         .init(
             tags: ["boba"],
-            displayName: "Display Name Is Boba",
+            displayName: "Display name is boba",
             displayColor: UIColor.blue
         ),
         .init(
@@ -312,7 +314,7 @@ let options = SupportOptions(
 var options = SupportOptions()
 let bobaCategory = SupportOptions.Category(
     tags: ["boba"],
-    displayName: "Display Name Is Boba",
+    displayName: "Display name is boba",
     displayColor: UIColor.blue
 )
 let fastFoodCategory = SupportOptions.Category(
@@ -347,7 +349,7 @@ struct SwiftUIExampleView_WithCategories: View {
         categories: [
             .init(
                 tags: ["boba"],
-                displayName: "Display Name Is Boba",
+                displayName: "Display name is boba",
                 displayColor: UIColor.blue
             ),
             .init(
@@ -392,7 +394,7 @@ class UIKitExampleControllerWithCategories: UIViewController {
         var options = SupportOptions()
         let bobaCategory = SupportOptions.Category(
             tags: ["boba"],
-            displayName: "Display Name Is Boba",
+            displayName: "Display name is boba",
             displayColor: UIColor.blue
         )
         let fastFoodCategory = SupportOptions.Category(
