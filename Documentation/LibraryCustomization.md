@@ -1,4 +1,7 @@
 # Library Customization
+Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct. 
+
+![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
 
 ## Table of Contents
 
@@ -25,22 +28,15 @@
 
 ---
 
-## Overview
-
-Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct.
-
-![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
-
 ## Examples
+Here's some examples of some sample configurations.
 
 ### SwiftUI
-
--   [MinimalSupportDocs.swift](Examples/SwiftUI/MinimalSupportDocs.swift)
--   [SupportDocsWithCategories.swift](Examples/SwiftUI/SupportDocsWithCategories.swift)
+-   [MinimalSupportDocs.swift](Examples/SwiftUI/MinimalSupportDocs.swift) -- the least code that you need to write. No `SupportOptions` are set.
+-   [SupportDocsWithCategories.swift](Examples/SwiftUI/SupportDocsWithCategories.swift) 
 -   [SupportOptions.swift](Examples/SwiftUI/SupportOptions.swift)
 
 ### UIKit
-
 -   [MinimalSupportDocs.swift](Examples/UIKit/MinimalSupportDocs.swift)
 -   [SupportDocsWithCategories.swift](Examples/UIKit/SupportDocsWithCategories.swift)
 -   [SupportOptions.swift](Examples/UIKit/SupportOptions.swift)
