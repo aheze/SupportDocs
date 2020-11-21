@@ -62,7 +62,7 @@ This will be where you write your documents. GitHub Pages will translate your Ma
 4. Make sure to check **Include all branches**. This is **really** important.
 5. Click <kbd>Create repository from template</kbd>
 6. In your brand new repository, click the <kbd>Settings</kbd> tab
-7. Scroll down to the GitHub Pages section, and select `DataSource` branch and **/ (root)** folder. Then click <kbd>Save</kbd>.
+7. Scroll down to the GitHub Pages section, and select **`DataSource`** branch and **/ (root)** folder. Then click <kbd>Save</kbd>.
 8. That's it for the GitHub repository! Now time to install the library in your app.
 
 | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo1.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/GitHubRepo2.png) |
@@ -115,7 +115,7 @@ The library is what's displayed to your users, in your app. All it needs is the 
 
 
 ## Using the GitHub Repository
-In you brand new repository that you set up earlier, [switch](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/SwitchToDataSourceBranch.png) to the `DataSource` branch. The example documents are inside the `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` folders -- take a look around. Here's a guide:
+In you brand new repository that you set up earlier, [switch](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/SwitchToDataSourceBranch.png) to the **`DataSource`** branch. The example documents are inside the `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` folders -- take a look around. Here's a guide:
 
 <details>
 <summary><strong>Show guide</strong></summary>
@@ -220,7 +220,7 @@ Blue and yummy. Buy this at [google.com](https://google.com)
 </table>
 
 #### Tagging Documents
-With tags, you get a lot of control over what to display in the library. To add tags, just fill in the `tags`, underneath the `title`. For example, check out this [example document](https://github.com/aheze/SupportDocs/blob/DataSource/Sample-Boba/BuyBlueBoba.md) in the `DataSource` branch.
+With tags, you get a lot of control over what to display in the library. To add tags, just fill in the `tags`, underneath the `title`. For example, check out this [example document](https://github.com/aheze/SupportDocs/blob/DataSource/Sample-Boba/BuyBlueBoba.md) in the **`DataSource`** branch.
 
 ```yaml
 ---
@@ -229,9 +229,9 @@ tags: boba
 ---
 ````
 
-This document has the tag `boba`. As you might assume, there are other documents in the `DataSource` branch also tagged with `boba`.
+This document has the tag `boba`. As you might assume, there are other documents in the **`DataSource`** branch also tagged with `boba`.
 
-Here is a graphic which shows the documents, titles, and tags in the `DataSource` branch.
+Here is a graphic which shows the documents, titles, and tags in the **`DataSource`** branch.
 
 ![Documents with Front Matter](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Tags.png)
 
@@ -240,7 +240,7 @@ Once your documents have tags, you can choose to show which documents to show an
 ---
 
 ### Using the Library
-The library is the view that you embed in your app, and what the user sees. But before you present it, you need to get the data source URL first! Go to your brand-new repo's **DataSource** branch, scroll down to the `README`, and **copy the URL**.
+The library is the view that you embed in your app, and what the user sees. But before you present it, you need to get the data source URL first! Go to your brand-new repo's **`DataSource`** branch, scroll down to the `README`, and **copy the URL**.
 
 ![Data Source URL Location](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/CopyDataSourceURL.png)
 
