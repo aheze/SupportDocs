@@ -135,7 +135,8 @@ if __name__ == "__main__":
         readme = jinja2.Template(readme_file.read(), trim_blocks=True)
 
     # Table of Contents
-    toc_data = data
+    toc_data = []
+    toc_data.extend(data)
     if os.path.exists(os.path.abspath("404.md")):
         toc_data.append(
             {
@@ -157,7 +158,7 @@ if __name__ == "__main__":
             + f" ({', '.join(support_document['tags']) if support_document['tags'] else 'No Tags'})"
             + f" ([edit]({edit_link}))\n"
         )
-
+    
     del toc_data
 
     # README Rendering
@@ -194,6 +195,9 @@ if __name__ == "__main__":
             )
             sdg.write(json.dumps(filename_sorted_data, indent=4))
         
+        with open("DATA.tmp.txt", "w") as data_file:
+            data_file.write(f"{data}\n\n\n{toc_data}")
+
         dev_readme_output = codecs.open("README.tmp.md", "w", "utf-8")
         dev_readme_output.write(rendered_readme)
         dev_readme_output.close()
