@@ -18,45 +18,42 @@
     -   [Using the GitHub Repository](#using-the-github-repository)
         -   [Adding and Editing Documents](#adding-and-editing-documents)
         -   [Tagging Documents](#tagging-documents)
-        -   [*Extended Documentation ↗*](Documentation/UsingTheRepository-Extended.md)
+        -   [*Extended Documentation ![](Assets/ExternalLink.png)*](Documentation/UsingTheRepository-Extended.md)
     -   [Using the Library](#using-the-library)
         -   [SwiftUI](#swiftui)
         -   [UIKit](#uikit)
         -   [Result](#result)
 -   [Customization](#customization)
-    -   [*Document Rendering ↗*](Documentation/DocumentRenderingCustomization.md)
-        -   [*Colors ↗*](Documentation/DocumentRenderingCustomization.md#examples)
-        -   [*Custom HTML ↗*](Documentation/DocumentRenderingCustomization.md#examples)
-    -   [*Library ↗*](Documentation/LibraryCustomization.md)
-        -   [*Examples ↗*](Documentation/LibraryCustomization.md#examples)
-        -   [*Categories ↗*](Documentation/LibraryCustomization.md#categories)
-        -   [*Navigation Bar ↗*](Documentation/LibraryCustomization.md#navigation-bar)
-        -   [*Progress Bar ↗*](Documentation/LibraryCustomization.md#progress-bar)
-        -   [*List Style ↗*](Documentation/LibraryCustomization.md#list-style)
-        -   [*Navigation View Style ↗*](Documentation/LibraryCustomization.md#navigation-view-style)
-        -   [*Other ↗*](Documentation/LibraryCustomization.md#other)
+    -   [*Document Rendering ![](Assets/ExternalLink.png)*](Documentation/DocumentRenderingCustomization.md)
+        -   [*Colors ![](Assets/ExternalLink.png)*](Documentation/DocumentRenderingCustomization.md#examples)
+        -   [*Custom HTML ![](Assets/ExternalLink.png)*](Documentation/DocumentRenderingCustomization.md#examples)
+    -   [*Library ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md)
+        -   [*Examples ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#examples)
+        -   [*Categories ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#categories)
+        -   [*Navigation Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#navigation-bar)
+        -   [*Progress Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#progress-bar)
+        -   [*List Style ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#list-style)
+        -   [*Navigation View Style ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#navigation-view-style)
+        -   [*Other ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#other)
 -   [Authors](#authors)
 -   [License](#license)
 -   [Notes](#notes)
 
 ## How It Works
-
-1. Write documents in Markdown
-2. Let GitHub Pages compile the documents into a website
-3. Wait for the GitHub Action to generate a JSON data source and a README for you
-4. The SupportDocs library downloads the JSON and compiles it into a customizable format
+1. Write documents in Markdown, on GitHub
+2. GitHub Pages will convert them into HTML and host it for free
+3. A custom GitHub Action will generate a JSON data source for you
+4. The SupportDocs library will download the JSON and display it to your users!
 
 ![How It Works - Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HowItWorks.png)
 
 ## Installation
-
 Installing SupportDocs takes two steps:
 
 1. Set up the GitHub repository where you write and host your documents
 2. Install the library inside your app
 
 ### Set Up the GitHub Repository
-
 This will be where you write your documents. GitHub Pages will translate your Markdown into HTML, and a custom GitHub Action will automatically compile the web pages into a JSON file.
 
 1. Scroll up to the top of this page and click <kbd>Use this template</kbd>
@@ -75,11 +72,9 @@ This will be where you write your documents. GitHub Pages will translate your Ma
 ---
 
 ### Install the Library
-
 This is the actual interface that your users will see. You can install using **CocoaPods** or **Swift Package Manager**, whichever one you prefer.
 
 #### CocoaPods
-
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To install SupportDocs into your Xcode project using CocoaPods, add it in your `Podfile`:
 
 ```ruby
@@ -87,7 +82,6 @@ pod 'SupportDocs'
 ```
 
 #### Swift Package Manager
-
 The [Swift Package Manager](https://swift.org/package-manager/) is built into Xcode, which makes it really easy to use.
 
 1. Go to your project settings
@@ -105,7 +99,6 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM3.png) | ![](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Installation/SPM4.png) |
 
 ## Usage
-
 SupportDocs is pretty simple to use, with two parts: the GitHub repository and the library in your app.
 
 The GitHub repository is where you add and edit your documents using Markdown. This is online, so you can edit at any time and always show the latest information to your users. All your documents are compiled into a single JSON file, the URL of which you'll pass into the library.
@@ -114,11 +107,9 @@ The library is what's displayed to your users, in your app. All it needs is the 
 <details>
   <summary><strong>Show Extended Documentation</strong></summary>
 
--   [Overview](Documentation/UsingTheRepository.md#overview)
--   [Using the `DataSource` Branch](Documentation/UsingTheRepository.md#using-the-datasource-branch)
--   [Adding and Editing Documents](Documentation/UsingTheRepository.md#adding-and-editing-documents)
--   [Tagging Documents](Documentation/UsingTheRepository.md#tagging-documents)
--   [Deleting Documents](Documentation/UsingTheRepository.md#deleting-documents)
+-   [Renaming Documents](Documentation/UsingTheRepository-Extended.md/#renaming-documents)
+-   [Ordering Documents](Documentation/UsingTheRepository-Extended.md/#ordering-documents)
+-   [Deleting Documents](Documentation/UsingTheRepository-Extended.md/#deleting-documents)
 
 </details>
 
@@ -159,7 +150,6 @@ Documents can be placed in the root directory or a subfolder. However, we recomm
 -   Documents tagged with `smoothies` are in the `Sample-Smoothies` folder
 
 #### Adding and Editing Documents
-
 - To add a document, click the <kbd>Create new file</kbd> button.
 - If you want to add it to a folder, navigate to the folder first and then click the <kbd>Create new file</kbd> button.
     - If you want to *create a new folder*, click <kbd>Create new file</kbd> -- then, in the filename, first put the folder name, then a slash (`/`), followed by the filename (Example: `fastFood/Burgers.md`). Read more [here](https://stackoverflow.com/a/63635965/14351818).
@@ -230,7 +220,6 @@ Blue and yummy. Buy this at [google.com](https://google.com)
 </table>
 
 #### Tagging Documents
-
 With tags, you get a lot of control over what to display in the library. To add tags, just fill in the `tags`, underneath the `title`. For example, check out this [example document](https://github.com/aheze/SupportDocs/blob/DataSource/Sample-Boba/BuyBlueBoba.md) in the `DataSource` branch.
 
 ```yaml
