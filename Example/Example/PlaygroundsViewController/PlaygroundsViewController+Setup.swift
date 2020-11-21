@@ -123,18 +123,7 @@ extension PlaygroundsViewController {
         
         // MARK: - Set options
         
-        let bobaCategory = SupportOptions.Category(tag: "boba", displayName: "Display name is boba")
-        let fastFoodCategory = SupportOptions.Category(tag: "fastFood", displayName: "These aren't really healthy")
-        let smoothiesCategory = SupportOptions.Category(tags: ["smoothies"], displayName: "Smoothies")
-        
-//        options.categories = nil
-        options.categories = [bobaCategory, fastFoodCategory, smoothiesCategory]
-//        options.categories = [bobaCategory, fastFoodCategory]
-        
-//        let bobaAndFastFoodCategory = SupportOptions.Category(tags: ["boba", "fastFood"], displayName: "Food that tastes great!", displayColor: UIColor.orange)
-//        let fastFoodCategory = SupportOptions.Category(tags: ["fastFood"], displayName: "These aren't really healthy", displayColor: UIColor.red)
-        
-//        options.categories = [bobaAndFastFoodCategory]
+        options.categories = nil
                               
         options.navigationBar.title = defaultNavigationBarTitle
         options.navigationBar.titleColor = defaultNavigationBarTitleColor
@@ -201,6 +190,7 @@ extension SupportOptions.CustomListStyle {
         }
     }
 }
+
 extension SupportOptions.CustomNavigationViewStyle {
     func getString() -> String {
         switch self {
@@ -213,6 +203,7 @@ extension SupportOptions.CustomNavigationViewStyle {
         }
     }
 }
+
 extension UIActivityIndicatorView.Style {
     func getString() -> String {
         switch self {
