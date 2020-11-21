@@ -107,11 +107,9 @@ The library is what's displayed to your users, in your app. All it needs is the 
 <details>
   <summary><strong>Show Extended Documentation</strong></summary>
 
--   [Overview](Documentation/UsingTheRepository.md#overview)
--   [Using the `DataSource` Branch](Documentation/UsingTheRepository.md#using-the-datasource-branch)
--   [Adding and Editing Documents](Documentation/UsingTheRepository.md#adding-and-editing-documents)
--   [Tagging Documents](Documentation/UsingTheRepository.md#tagging-documents)
--   [Deleting Documents](Documentation/UsingTheRepository.md#deleting-documents)
+-   [Renaming Documents](UsingTheRepository-Extended.md/#renaming-documents)
+-   [Ordering Documents](UsingTheRepository-Extended.md/#ordering-documents)
+-   [Deleting Documents](UsingTheRepository-Extended.md/#deleting-documents)
 
 </details>
 
