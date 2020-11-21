@@ -92,8 +92,6 @@ class ViewController: UIViewController {
 -   [Navigation View Style](#navigation-view-style)
 -   [Other](#other)
 
----
-
 ## Examples
 Here's some sample configurations to get you started.
 
