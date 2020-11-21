@@ -8,8 +8,6 @@ Customize the rendered document's colors and HTML structure.
 -   [Colors](#colors)
 -   [Custom HTML](#custom-html)
 
----
-
 ## Colors
 All colors for rendering are found in your **DataSource** branch's `_sass/_color-themes.scss` file. Here are the defaults:
 
@@ -50,7 +48,6 @@ Light mode | Dark mode
 --- | ---
 ![Web page rendered in default light mode colors](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/RenderingDocuments/defaultLight.png) | ![Web page rendered in default dark mode colors](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/RenderingDocuments/defaultDark.png)
 
-
 Let's say you want to change the text color and table border color. Simply edit the values!
 ```scss
 /* Customize colors here! */
@@ -83,6 +80,9 @@ $themes: (
     ),
 );
 ```
+Light mode | Dark mode
+--- | ---
+![Web page rendered in custom light mode colors](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/RenderingDocuments/customLight.png) | ![Web page rendered in default custom mode colors](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/RenderingDocuments/customDark.png)
 
 ## Custom HTML
 
