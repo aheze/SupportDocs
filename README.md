@@ -3,8 +3,9 @@
 ![SupportDocs Header](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HeaderImage.png)
 
 ### Generate help centers for your iOS apps, with Markdown!
+All you need to do is write your documents on GitHub, and install the library in your app. SupportDocs' custom GitHub Action and GitHub Pages will take care of the rest.
 
-# SupportDocs is currently under heavy development. Check back in a couple days!
+# Update 11/20/20: SupportDocs is now available! Thanks to everyone here 
 
 ## Table of Contents
 
@@ -91,7 +92,7 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 4. Click the <kbd>+</kbd> button
 5. Enter `https://github.com/aheze/SupportDocs` in the text field
 6. Click <kbd>Next</kbd>
-7. Enter the latest version, `0.0.30`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
+7. Enter the latest version, `1.0.0`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
 8. Click <kbd>Next</kbd>
 9. Click <kbd>Finish</kbd>, and you're done!
 
