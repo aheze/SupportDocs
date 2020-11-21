@@ -1,7 +1,74 @@
 # Library Customization
-Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct. 
 
 ![SupportOptions Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CustomizableOptions.png)
+
+Almost everything in the SupportDocs library can be customized through the `SupportOptions` struct. To use, just make an instance of `SupportOptions` and configure what you want!
+
+<table>
+<tr>
+<td>
+<strong>SwiftUI</strong>
+</td>
+<td>
+<strong>UIKit</strong>
+</td>
+</tr>
+<tr>
+<td>
+  
+```Swift
+import SwiftUI
+import SupportDocs
+
+struct ContentView: View {
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    let options = SupportOptions(
+        navigationBar: .init(
+            title: "Support"
+        ),
+        listStyle: .insetGroupedListStyle,
+        other: .init(
+            activityIndicatorStyle: UIActivityIndicatorView.Style.large,
+            error404: URL(string: "https://aheze.github.io/SupportDocs/404")!
+        )
+    )
+
+    @State var supportDocsPresented: Bool = false
+    var body: some View {
+        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+        .sheet(isPresented: $supportDocsPresented, content: {
+            SupportDocsView(dataSource: dataSource, options: options, isPresented: $supportDocsPresented)
+        })
+    }
+}
+```
+</td>
+<td>
+  
+```Swift
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var presentButton: UIButton! /// Connect these in the storyboard.
+    @IBAction func presentButtonPressed(_ sender: Any) {
+        
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+
+        // MARK: - UIKit way to make `SupportOptions`
+        var options = SupportOptions()
+        options.navigationBar.title = "Support"
+        options.listStyle = .insetGroupedListStyle
+        options.other.footer = AnyView(Footer())
+        options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")!
+
+        let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource, options: options)
+        self.present(supportDocsViewController, animated: true, completion: nil)
+        
+    }
+}
+```
+</td>
+</tr>
+</table>
 
 ## Table of Contents
 
