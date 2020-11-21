@@ -30,7 +30,7 @@ else:
     GITHUB_USERNAME = "demo"
     FULL_GITHUB_REPOSITORY = "demo/SupportDocs"
     GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
-    GITHUB_BRANCH = "refs/head/DataSource"
+    GITHUB_BRANCH = "DataSource"
 
 
 def add_help_file(title: str, _directory: str, filename: str, tags: list):
@@ -65,6 +65,7 @@ if __name__ == "__main__":
 
     remove_preexisting_data()
 
+    # Search for Files
     directory_list = [
         directory
         for directory in next(os.walk("."))[1]
@@ -133,8 +134,20 @@ if __name__ == "__main__":
     with open(READ_README_FILE_PATH, "r") as readme_file:
         readme = jinja2.Template(readme_file.read(), trim_blocks=True)
 
+    # Table of Contents
+    toc_data = []
+    toc_data.extend(data)
+    if os.path.exists(os.path.abspath("404.md")):
+        toc_data.append(
+            {
+                "title": "404 Page",
+                "url": f"https://{GITHUB_USERNAME}.github.io/{GITHUB_REPOSITORY}/404",
+                "tags": ["SupportDocs Integrated File"],
+            }
+        )
+
     toc = ""
-    for support_document in sorted(data, key=lambda item: item["title"].lower()):
+    for support_document in sorted(toc_data, key=lambda item: item["title"].lower()):
         if "SupportDocs/" in "/".join(support_document["url"].split("/")[-2:]):
             edit_link = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{support_document['url'].split('/')[-1]}.md"
         else:
@@ -145,7 +158,10 @@ if __name__ == "__main__":
             + f" ({', '.join(support_document['tags']) if support_document['tags'] else 'No Tags'})"
             + f" ([edit]({edit_link}))\n"
         )
+    
+    del toc_data
 
+    # README Rendering
     deployment_progress = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/deployments/activity_log?environment=github-pages"
     editable_readme_url = f"https://github.com/{GITHUB_USERNAME}/{GITHUB_REPOSITORY}/edit/{GITHUB_BRANCH}/{READ_README_FILE_PATH}"
     datasource_url = (
@@ -161,7 +177,7 @@ if __name__ == "__main__":
         deployment_progress=deployment_progress,
         editable_readme_url=editable_readme_url,
     )
-    
+
     if not DEVELOPER_MODE:
         with open(DATA_JSON_FILE_PATH, "w") as data_json:
             filename_sorted_data = sorted(
@@ -178,3 +194,10 @@ if __name__ == "__main__":
                 data, key=lambda item: item["url"].split("/")[-1]
             )
             sdg.write(json.dumps(filename_sorted_data, indent=4))
+        
+        with open("DATA.tmp.txt", "w") as data_file:
+            data_file.write(f"{data}\n\n\n{toc_data}")
+
+        dev_readme_output = codecs.open("README.tmp.md", "w", "utf-8")
+        dev_readme_output.write(rendered_readme)
+        dev_readme_output.close()
