@@ -9,14 +9,13 @@
 Pod::Spec.new do |spec|
 
   spec.name          = "SupportDocs"
-  spec.version       = "0.0.35"
-  spec.summary       = "Generate help centers for your iOS apps, with Markdown!"
+  spec.version       = "1.0.0"
+  spec.summary       = "Markdown-generated help center for your iOS apps. Hosted by GitHub Pages and written with SwiftUI."
   spec.description   = <<-DESC
-                   A lightweight Swift framework written in SwiftUI. Generate help centers using Markdown, hosted on GitHub pages.
+                   All you need to do is write your documents on GitHub and install the library in your app. SupportDocs' custom GitHub Action and GitHub Pages will take care of the rest.
                 DESC
   spec.homepage      = "http://github.com/aheze/SupportDocs"
   spec.license       = { :type => "MIT", :file => "LICENSE" }
-
 
 
   spec.authors       = 'A. Zheng', 'H. Kamran'
