@@ -23,7 +23,7 @@
         -   [SwiftUI](#swiftui)
         -   [UIKit](#uikit)
         -   [Result](#result)
--   [*Customization ↗*](#customization)
+-   [Customization](#customization)
     -   [*Document Rendering ↗*](Documentation/DocumentRenderingCustomization.md)
         -   [*Colors ↗*](Documentation/DocumentRenderingCustomization.md#examples)
         -   [*Custom HTML ↗*](Documentation/DocumentRenderingCustomization.md#examples)
@@ -298,7 +298,6 @@ class UIKitExampleControllerMinimalCode: UIViewController {
 ```
 
 #### Result
-
 ![Result Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/BasicResult.png)
 
 Now that you have the library set up and working, you can hop on over to the [library customization](Documentation/LibraryCustomization.md) section and customize SupportDocs to your liking. Perhaps add a "Dismiss" button or only show documents with specific tags.
@@ -306,7 +305,13 @@ Now that you have the library set up and working, you can hop on over to the [li
 ---
 
 ## Customization
+You get a lot of control over what to display.
+- [Document Rendering](Documentation/DocumentRenderingCustomization.md): How your Markdown should be rendered. Customize colors and add your own HTML if you want!
+- [Library](Documentation/LibraryCustomization.md): The basic navigation that's displayed to the user. Customize pretty much anything, from categories to the navigation bar color.
 
+Document Rendering | Library
+--- | ---
+![Document rendering graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/CustomizableRenderedDocument.png) | ![Library options graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/CustomizableOptions.png)
 
 ## Dark Mode
 SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
