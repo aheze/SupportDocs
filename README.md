@@ -305,11 +305,7 @@ Now that you have the library set up and working, you can hop on over to the [li
 
 ---
 
-## Customization
-SupportDocs is heavily customizable, both in the rendered documents and the library view.
+## Dark Mode
+SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
 
-### Document Rendering
-
-### Library
-
-Pretty much everything in the SupportDocs library can be customized through the `SupportOptions` struct.
+![Dark Mode Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/DarkMode.png)
