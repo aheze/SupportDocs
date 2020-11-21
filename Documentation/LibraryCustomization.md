@@ -24,12 +24,12 @@ struct ContentView: View {
     let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
     let options = SupportOptions(
         navigationBar: .init(
-            title: "Support"
+            title: "Support" /// Set navigation bar title to "Support"
         ),
-        listStyle: .insetGroupedListStyle,
+        listStyle: .insetGroupedListStyle, /// Inset grouped list style (iOS 14+)
         other: .init(
-            activityIndicatorStyle: UIActivityIndicatorView.Style.large,
-            error404: URL(string: "https://aheze.github.io/SupportDocs/404")!
+            activityIndicatorStyle: UIActivityIndicatorView.Style.large, /// Large loading indicator
+            error404: URL(string: "https://aheze.github.io/SupportDocs/404")! /// Custom 404 page (inside the DataSource branch)
         )
     )
 
@@ -55,10 +55,10 @@ class ViewController: UIViewController {
 
         // MARK: - UIKit way to make `SupportOptions`
         var options = SupportOptions()
-        options.navigationBar.title = "Support"
-        options.listStyle = .insetGroupedListStyle
-        options.other.footer = AnyView(Footer())
-        options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")!
+        options.navigationBar.title = "Support" /// Set navigation bar title to "Support"
+        options.listStyle = .insetGroupedListStyle /// Inset grouped list style (iOS 14+)
+        options.other.activityIndicatorStyle = .large /// Large loading indicator
+        options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")! /// Custom 404 page (inside the DataSource branch)
 
         let supportDocsViewController = SupportDocsViewController(dataSourceURL: dataSource, options: options)
         self.present(supportDocsViewController, animated: true, completion: nil)
