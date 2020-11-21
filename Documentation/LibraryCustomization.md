@@ -29,31 +29,37 @@ Almost everything in the SupportDocs library can be customized through the `Supp
 ---
 
 ## Examples
-Here's some examples of some sample configurations.
+Here's some sample configurations to get you started.
 
 ### SwiftUI
 -   [MinimalSupportDocs.swift](Examples/SwiftUI/MinimalSupportDocs.swift) -- the least code that you need to write. No `SupportOptions` are set.
--   [SupportDocsWithCategories.swift](Examples/SwiftUI/SupportDocsWithCategories.swift) 
--   [SupportOptions.swift](Examples/SwiftUI/SupportOptions.swift)
+-   [SupportDocsWithCategories.swift](Examples/SwiftUI/SupportDocsWithCategories.swift) -- displays 2 categories, one for all documents tagged with `boba`, the other `fastFood`. No other `SupportOptions` are set.
+-   [SupportOptions.swift](Examples/SwiftUI/SupportOptions.swift) -- sets every single property inside `SupportOptions`, including a category of all documents tagged with `boba`.
 
 ### UIKit
--   [MinimalSupportDocs.swift](Examples/UIKit/MinimalSupportDocs.swift)
--   [SupportDocsWithCategories.swift](Examples/UIKit/SupportDocsWithCategories.swift)
--   [SupportOptions.swift](Examples/UIKit/SupportOptions.swift)
+-   [MinimalSupportDocs.swift](Examples/UIKit/MinimalSupportDocs.swift) -- the least code that you need to write. No `SupportOptions` are set.
+-   [SupportDocsWithCategories.swift](Examples/UIKit/SupportDocsWithCategories.swift) -- displays 2 categories, one for all documents tagged with `boba`, the other `fastFood`. No other `SupportOptions` are set.
+-   [SupportOptions.swift](Examples/UIKit/SupportOptions.swift) -- sets every single property inside `SupportOptions`, including a category of all documents tagged with `boba`.
 
 ## Categories
 
-Group multiple documents in the same section. You make a category by specifying the tag(s), display name, and (optionally) color of the text in the category.
+Group multiple documents in the same section. You make a category by specifying the tag(s), display name, and (optionally) color of the text in the category. 
 
 ![Categories Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/CategoriesPreview.png)
 
 ### Important: Before You Begin
 
-Make sure you have added the correct front matter to your documents. See the [Tag Your Documents](../README.md#tag-your-documents) section of the README.
+Make sure you have added the correct tags to the front matter inside your documents. See the [Tag Your Documents](../README.md#tag-your-documents) section of the README.
 
-### One Tag
+### No Categories
 
-Once your documents have tags, you can start using categories inside your app. Here’s how to make SupportDocs display one category that contains all documents with the tag “boba”:
+By default, the categories are set to `nil`, and every single document is displayed no matter their tags.
+
+<kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/noCategories.png" width="200"></kbd>
+
+### One Category
+
+Here’s how to make SupportDocs display one category that contains all documents with the tag `boba`:
 
 <table>
   <tr>
@@ -190,7 +196,8 @@ class UIKitExampleController_WithCategories: UIViewController {
 
 ---
 
-### Two Tags
+### Two Categories
+This will display 2 categories, one for documents tagged with `boba` and another for those tagged with `fastFood`.
 
 <table>
   <tr>
@@ -343,6 +350,7 @@ class UIKitExampleControllerWithCategories: UIViewController {
 ---
 
 ### Multiple Tags in One Category
+You can even combine multiple documents with different tags in the same category!
 
 <table>
   <tr>
@@ -475,10 +483,12 @@ class UIKitExampleController_WithCategories: UIViewController {
 ---
 
 ## Navigation Bar
+This is the bar that's shown at the top of the screen. You can customize quite a lot of its elements.
 
 ![Navigation Bar Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationBarPreview.png)
 
 ### Title
+The title to display.
 
 <table>
   <tr>
@@ -527,6 +537,7 @@ options.navigationBar.title = "Custom Nav Title"
 </table>
 
 ### Title Color
+The color of the title.
 
 <table>
 
@@ -577,7 +588,35 @@ options.navigationBar.titleColor = UIColor.purple
   </tr>
 </table>
 
-### Dismiss Button Title
+### Dismiss Button View / Dismiss Button Title
+This is what will be shown as the dismiss button (press to dismiss SupportDocs). It's a bit more tricky. By default, you pass in an `AnyView` of your choice. This should either be an `Image` or a `Text`, but you can experiment with other elements. For example, both of these will work:
+
+<table>
+<tr>
+<td>
+
+`Image`
+</td>
+<td>
+
+`Text`
+</td>
+</tr>
+<tr>
+<td>
+  
+```Swift
+AnyView(Image(systemName: "xmark")) /// SF Symbols are best
+```
+</td>
+<td>
+  
+```Swift
+AnyView(Text("Done")) /// `Text` works just as well
+```
+</td>
+</tr>
+</table>
 
 <table>
 
