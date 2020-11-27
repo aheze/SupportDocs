@@ -14,12 +14,27 @@ struct SwiftUIExampleView: View {
     
     let options = SupportOptions(
         categories: [
-            .init(
-                tags: ["boba", "fastFood"],
-                displayName: "Food that tastes great",
-                displayColor: UIColor.orange
-            )
-        ]
+            .init(tag: "boba", displayName: "Boba is awesome!")
+        ],
+        navigationBar: .init(
+            title: "Support",
+            titleColor: UIColor.white,
+            dismissButtonTitle: "Done",
+            buttonTintColor: UIColor.white,
+            backgroundColor: UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
+        ),
+        progressBar: .init(
+            foregroundColor: UIColor.green,
+            backgroundColor: UIColor.systemBackground
+        ),
+        listStyle: .insetGroupedListStyle,
+        navigationViewStyle: .defaultNavigationViewStyle,
+        other: .init(
+            activityIndicatorStyle: UIActivityIndicatorView.Style.large,
+            welcomeView: AnyView(WelcomeView()),
+            footer: AnyView(Footer()),
+            error404: URL(string: "https://aheze.github.io/SupportDocs/404")!
+        )
     )
     
     @State var supportDocsPresented = false

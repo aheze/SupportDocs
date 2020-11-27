@@ -27,7 +27,7 @@ class UIKitExampleController: UIViewController {
 //            foregroundColor: UIColor.green,
 //            backgroundColor: UIColor.systemBackground
 //        ),
-//        listStyle: .defaultListStyle,
+//        listStyle: .insetGroupedListStyle,
 //        navigationViewStyle: .defaultNavigationViewStyle,
 //        other: .init(
 //            activityIndicatorStyle: UIActivityIndicatorView.Style.large,
