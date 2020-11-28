@@ -49,6 +49,8 @@ All you need to do is write your documents on GitHub, and install the library in
 
 ![How It Works - Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HowItWorks.png)
 
+The SupportDocs library is written in SwiftUI, so it's only for iOS 13 and above.
+
 ## Installation
 Installing SupportDocs takes two steps:
 
