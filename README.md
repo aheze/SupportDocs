@@ -5,7 +5,7 @@
 ### Generate help centers for your iOS apps, with Markdown!
 All you need to do is write your documents on GitHub, and install the library in your app. SupportDocs' custom GitHub Action and GitHub Pages will take care of the rest.
 
-# ✅ Update 11/20/20: SupportDocs is now available! Thanks for checking it out! 😄
+# ⚠️ Update 12/10/20: On iOS 13 (iOS 14 and above is not affected), the web page [crashes](https://stackoverflow.com/q/65224739/14351818). I'm looking in to a fix. 
 
 ## Table of Contents
 
