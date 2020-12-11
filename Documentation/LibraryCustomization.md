@@ -121,7 +121,6 @@ By default, the categories are set to `nil`, and every single document is displa
 
 <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/noCategories.png" width="200"></kbd>
 
----
 
 ### One Category
 
@@ -185,6 +184,9 @@ options.categories = [bobaCategory]
 
 <details>
   <summary>Show full code</summary>
+  
+--- 
+
 <table>
   <tr>
   <td>
@@ -258,9 +260,10 @@ class UIKitExampleController_WithCategories: UIViewController {
   </td>
   </tr>
 </table>
-</details>
 
 ---
+
+</details>
 
 ### Two Categories
 This will display 2 categories, one for documents tagged with `boba` and another for those tagged with `fastFood`.
@@ -329,6 +332,8 @@ options.categories = [bobaCategory, fastFoodCategory]
 
 <details>
   <summary>Show full code</summary>
+
+---
 
 <table>
   <tr>
@@ -411,9 +416,11 @@ class UIKitExampleControllerWithCategories: UIViewController {
   </td>
 </tr>
 </table>
-</details>
 
 ---
+
+</details>
+
 
 ### Multiple Tags in One Category
 You can even combine multiple documents with different tags in the same category!
@@ -472,6 +479,9 @@ options.categories = [bobaAndFastFoodCategory]
 
 <details>
   <summary>Show full code</summary>
+  
+---
+  
 <table>
   <tr>
   <td>
@@ -544,6 +554,9 @@ class UIKitExampleController_WithCategories: UIViewController {
   </td>
   </tr>
 </table>
+
+---
+
 </details>
 
 ---
