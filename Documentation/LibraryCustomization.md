@@ -82,7 +82,7 @@ class ViewController: UIViewController {
 -   [Navigation Bar](#navigation-bar)
     -   [Title](#title)
     -   [Title Color](#title-color)
-    -   [Dismiss Button Title](#dismiss-button-title)
+    -   [Dismiss Button View / Dismiss Button Title](#dismiss-button-view)
     -   [Button Tint Color](#button-tint-color)
     -   [Background Color](#background-color)
 -   [Progress Bar](#progress-bar)
@@ -654,10 +654,12 @@ options.navigationBar.titleColor = UIColor.purple
   </tr>
 </table>
 
-### Dismiss Button View / Dismiss Button Title
+### Dismiss Button View
+With convenience overload: Dismiss Button Title
+
 This is what will be shown as the dismiss button (press to dismiss SupportDocs), and leave it as `nil` to not show it at all.
 
-It's a bit more tricky. By default, you pass in an `AnyView` of your choice. This should either be an `Image` or a `Text`, but you can experiment with other elements. For example, both of these will work:
+By default, you pass in an `AnyView` of your choice. This should either be an `Image` or a `Text`, but you can experiment with other elements. For example, both of these will work:
 
 <table>
 <tr>
@@ -857,6 +859,116 @@ options.navigationBar.backgroundColor = UIColor(
   </td>
   </tr>
 </table>
+
+## Search Bar
+New in 1.1.0! This lets your users search the documents in your help center.
+
+![Search Bar Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/SearchBarPreview.png)
+
+
+### Placeholder
+The placeholder to display when no text has been entered yet.
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        placeholder: "Type here to search!"
+    )
+)
+```
+
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/placeholder.png"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.placeholder = "Type here to search!"
+```
+
+  </td>
+  </tr>
+</table>
+
+### Placeholder Color
+The color of the placeholder.
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        placeholder: "Type here to search!",
+        placeholderColor: UIColor.blue.withAlphaComponent(0.75)
+    )
+)
+```
+
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/placeholder.png"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.placeholder = "Type here to search!"
+options.searchBar.placeholderColor = UIColor.blue.withAlphaComponent(0.75)
+```
+
+  </td>
+  </tr>
+</table>
+
+
+
+
 
 ## Progress Bar
 This shows up when the user has pressed a row in the list, waiting for the document to load.
