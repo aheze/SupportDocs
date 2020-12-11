@@ -943,7 +943,7 @@ let options = SupportOptions(
 
   </td>
   <td rowspan="3">
-    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/placeholder.jpeg"></kbd>
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/placeholderColor.jpeg"></kbd>
   </td>
   </tr>
 
@@ -967,6 +967,153 @@ options.searchBar.placeholderColor = UIColor.blue.withAlphaComponent(0.75)
 </table>
 
 
+### Text Color
+The color of the text entered in the search bar.
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        textColor: UIColor.red
+    )
+)
+```
+
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/textColor.jpeg"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.textColor = UIColor.red
+```
+
+  </td>
+  </tr>
+</table>
+
+### Tint Color
+The color of the cursor and the "Cancel" button
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        tintColor: UIColor.orange
+    )
+)
+```
+
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/tintColor.jpeg"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.tintColor = UIColor.orange
+```
+
+  </td>
+  </tr>
+</table>
+
+
+### Background Color
+Background color of the search bar.
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        backgroundColor: UIColor.gray
+    )
+)
+```
+
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/backgroundColor.jpeg"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.backgroundColor = UIColor.gray
+```
+
+  </td>
+  </tr>
+</table>
 
 
 
