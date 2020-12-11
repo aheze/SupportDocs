@@ -94,7 +94,7 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 4. Click the <kbd>+</kbd> button
 5. Enter `https://github.com/aheze/SupportDocs` in the text field
 6. Click <kbd>Next</kbd>
-7. Enter the latest version, `1.1.0`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
+7. Enter the latest version, **`1.1.0`**, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
 8. Click <kbd>Next</kbd>
 9. Click <kbd>Finish</kbd>, and you're done!
 
