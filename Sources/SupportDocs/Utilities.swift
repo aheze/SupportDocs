@@ -75,47 +75,6 @@ extension View {
     }
 }
 
-/**
- Workaround to access the parent view controller of the SwiftUI View.
- */
-internal final class ViewControllerResolver: UIViewControllerRepresentable {
-    
-    /// Closure to call when `didMove`
-    let onResolve: (UIViewController) -> Void
-        
-    init(onResolve: @escaping (UIViewController) -> Void) {
-        self.onResolve = onResolve
-    }
-    
-    func makeUIViewController(context: Context) -> ParentResolverViewController {
-        ParentResolverViewController(onResolve: onResolve)
-    }
-    
-    func updateUIViewController(_ uiViewController: ParentResolverViewController, context: Context) { }
-}
-
-internal class ParentResolverViewController: UIViewController {
-    
-    let onResolve: (UIViewController) -> Void
-    
-    init(onResolve: @escaping (UIViewController) -> Void) {
-        self.onResolve = onResolve
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("Use init(onResolve:) to instantiate ParentResolverViewController.")
-    }
-        
-    override func didMove(toParent parent: UIViewController?) {
-        super.didMove(toParent: parent)
-        
-        if let parent = parent {
-            onResolve(parent)
-        }
-    }
-}
-
 // MARK: - Other Utilities
 
 /**

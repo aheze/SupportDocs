@@ -76,23 +76,33 @@ public extension SupportOptions {
 }
 
 /**
- Instantiate a search bar and set the text updating delegate.
+ Search bar at the top of the NavigationView.
+ 
+ Source: [http://blog.eppz.eu/swiftui-search-bar-in-the-navigation-bar/]( http://blog.eppz.eu/swiftui-search-bar-in-the-navigation-bar/).
+ 
+ MIT License
  */
 class SearchBarConfigurator: NSObject, ObservableObject {
     
     let objectWillChange = PassthroughSubject<Void, Never>()
     
+    /// The text inside the search bar.
     @Published var searchText: String = "" {
         willSet {
             self.objectWillChange.send()
         }
     }
     
+    /// Instance of the search controller.
     let searchController: UISearchController = UISearchController(searchResultsController: nil)
     
     override init() {
         super.init()
-        self.searchController.obscuresBackgroundDuringPresentation = false /// Prevent the List from being covered.
+        
+        /// Prevent a gray overlay over the list.
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        
+        /// Set the delegate.
         self.searchController.searchResultsUpdater = self
     }
 }

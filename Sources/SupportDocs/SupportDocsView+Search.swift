@@ -7,46 +7,6 @@
 
 import SwiftUI
 
-
-/**
- Search bar at the top of the NavigationView.
- 
- Source: [http://blog.eppz.eu/swiftui-search-bar-in-the-navigation-bar/]( http://blog.eppz.eu/swiftui-search-bar-in-the-navigation-bar/).
- 
- MIT License
- */
-internal class SearchBarConfigurator: NSObject, ObservableObject {
-    
-    /// The text inside the search bar.
-    @Published var searchText: String = ""
-    
-    /// Instance of the search controller.
-    let searchController: UISearchController = UISearchController(searchResultsController: nil)
-    
-    override init() {
-        super.init()
-        
-        /// Prevent a gray overlay over the list.
-        self.searchController.obscuresBackgroundDuringPresentation = false
-        
-        /// Set the delegate.
-        self.searchController.searchResultsUpdater = self
-    }
-}
-
-/**
- Delegate method of `UISearchController`
- */
-extension SearchBarConfigurator: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        
-        /// Publish search bar text changes.
-        if let searchBarText = searchController.searchBar.text {
-            self.searchText = searchBarText
-        }
-    }
-}
-
 /**
  View Modifier for applying the search bar.
  */
