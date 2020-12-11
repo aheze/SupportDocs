@@ -85,9 +85,15 @@ class ViewController: UIViewController {
     -   [Dismiss Button View / Dismiss Button Title](#dismiss-button-view)
     -   [Button Tint Color](#button-tint-color)
     -   [Background Color](#background-color)
+-   [Search Bar](#search-bar)
+    - [Placeholder](#placeholder)
+    - [Placeholder Color](#placeholder-color)
+    - [Text Color](#text-color)
+    - [Tint Color](#tint-color)
+    - [Background Color](#background-color-1)
 -   [Progress Bar](#progress-bar)
     -   [Foreground Color](#foreground-color)
-    -   [Background Color](#background-color-1)
+    -   [Background Color](#background-color-2)
 -   [List Style](#list-style)
 -   [Navigation View Style](#navigation-view-style)
 -   [Other](#other)
@@ -872,6 +878,8 @@ options.navigationBar.backgroundColor = UIColor(
   </td>
   </tr>
 </table>
+
+---
 
 ## Search Bar
 New in 1.1.0! This lets your users search the documents in your help center.
