@@ -49,6 +49,8 @@ All you need to do is write your documents on GitHub, and install the library in
 
 ![How It Works - Graphic](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HowItWorks.png)
 
+The SupportDocs library is written in SwiftUI, so it's only for iOS 13 and above.
+
 ## Installation
 Installing SupportDocs takes two steps:
 
@@ -348,6 +350,9 @@ SOFTWARE.
 
 ### Example repo
 You can find an example repository using SupportDocs [here](https://github.com/aheze/MyHelpCenter).
+
+### Searching
+A search feature is coming soon! I'm just trying to figure out the animations, but it should be done by 12/10 at the latest.
 
 ### Dark Mode
 SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
