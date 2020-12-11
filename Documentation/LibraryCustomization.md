@@ -1115,7 +1115,49 @@ options.searchBar.backgroundColor = UIColor.gray
   </tr>
 </table>
 
+### Clear Button Mode
+When to show the clear button. This is one of Apple's [built-in](https://developer.apple.com/documentation/uikit/uitextfield/viewmode) enums for text fields and search bars.
 
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        clearButtonMode: .whileEditing
+    )
+)
+```
+
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.clearButtonMode = .whileEditing
+```
+
+  </td>
+  </tr>
+</table>
+
+`.whileEditing` | `.unlessEditing` | `.always` | `.never`
+--- | --- | --- | ---
+![While editing gif](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/whileEditing.gif) | ![Unless editing gif](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/unlessEditing.gif) | ![Always gif](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/always.gif) | ![Never gif](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/never.gif)
+
+Note: It seems that `.whileEditing` and `.always` are the same thing. Similarly, `.unlessEditing` and `.never` are also interchangeable.
+
+---
 
 ## Progress Bar
 This shows up when the user has pressed a row in the list, waiting for the document to load.
@@ -1223,6 +1265,8 @@ options.progressBar.backgroundColor = UIColor.blue
   </td>
   </tr>
 </table>
+
+---
 
 ## List Style
 The SupportDocs library is written in SwiftUI, so you get access to SwiftUI's [list styles](https://developer.apple.com/documentation/swiftui/liststyle)! Customizing this changes the way the list is displayed.
@@ -1422,10 +1466,43 @@ options.listStyle = .sidebarListStyle
   </tr>
 </table>
 
+---
+
 ## Navigation View Style
 This is [another thing](https://developer.apple.com/documentation/swiftui/navigationviewstyle) that comes from SwiftUI, which controls the layout of the navigation view. This only applies to larger devices like the iPhone 7 Plus when they are in landscape, or iPads. If your app is portrait-only, you can ignore this. 
 
 ![Navigation View Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    navigationViewStyle: .defaultNavigationViewStyle
+)
+```
+
+  <td>
+
+```swift
+var options = SupportOptions()
+options.navigationViewStyle = .defaultNavigationViewStyle
+```
+
+  </td>
+  </tr>
+</table>
 
 | Navigation View Style | Portrait Result | Landscape Result | Landscape Interaction |
 | --- | --- | --- | --- |
@@ -1434,6 +1511,8 @@ This is [another thing](https://developer.apple.com/documentation/swiftui/naviga
 | `.stackNavigationViewStyle`        | <img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/portraitNVS.png" width="200" alt="Stack Navigation View Style (Portrait)"> | ![Stack Navigation View Style (Landscape)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Options/NavigationViewStyle/stackStyle_landscape.png)                | ![Stack Navigation View Style (Landscape interaction gif)](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/NavigationViewStyle/stackStyle.gif) |
 
 Keep in mind, if you go with `.defaultNavigationViewStyle` or `.doubleColumnNavigationViewStyle` (they're actually the same thing), you should supply a `welcomeView` as well. This is what will be shown at the start, when no list row has been selected yet. Scroll down to **Other** to see more.
+
+---
 
 ## Other
 Some miscellaneous options for SupportDocs.
