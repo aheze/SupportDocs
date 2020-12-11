@@ -37,19 +37,6 @@ public struct SupportDocsView: View {
      This is only for SwiftUI -- You don't need to do this in UIKit. As long as you set `options.navigationBar.dismissButtonTitle = "Dismiss"`, SupportDocs will dismiss itself.
      */
     public init(dataSourceURL: URL, options: SupportOptions = SupportOptions(), isPresented: Binding<Bool>? = nil) {
-        
-        /**
-         The custom `NavigationConfigurator` modifier only works for iOS 14 and above, so for lower versions set `UINavigationBar.appearance()` instead.
-         */
-        if #available(iOS 14.0, *) { } else {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.titleTextAttributes = [.foregroundColor: options.navigationBar.titleColor]
-            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: options.navigationBar.titleColor]
-            navBarAppearance.backgroundColor = options.navigationBar.backgroundColor
-            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-            UINavigationBar.appearance().standardAppearance = navBarAppearance
-            UINavigationBar.appearance().tintColor = options.navigationBar.buttonTintColor
-        }
         self.dataSourceURL = dataSourceURL
         self.options = options
         self.isPresented = isPresented
@@ -111,26 +98,47 @@ public struct SupportDocsView: View {
      */
     @State internal var sections: [SupportSection] = [SupportSection]()
     
+    /**
+     Reference of the search bar and its delegate.
+     */
+    @ObservedObject var searchBarConfigurator = SearchBarConfigurator()
+    
     public var body: some View {
         NavigationView {
-            Group {
+            ZStack {
                 if isDownloadingJSON {
                     
                     /// Show the loading spinner if JSON is downloading.
                     ActivityIndicator(isAnimating: $isDownloadingJSON, style: options.other.activityIndicatorStyle)
                 } else {
+                    
                     List {
                         
                         /// First, display the titles of your documents.
-                        ForEach(sections) { section in
+                        ForEach(
+                            
+                            /// Filter the sections. Display only those that contain documents where their titles contain the search bar's text.
+                            sections.filter { section in
+                                return searchBarConfigurator.searchText.isEmpty || section.supportItems.contains(where: {
+                                    $0.title.localizedStandardContains(searchBarConfigurator.searchText)
+                                })
+                            }
+                        ) { section in
                             Section(header: Text(section.name)) {
-                                ForEach(section.supportItems) { item in
+                                ForEach(
+                                    
+                                    /// Filter the documents in each section.
+                                    section.supportItems.filter { item in
+                                        return searchBarConfigurator.searchText.isEmpty || item.title.localizedStandardContains(searchBarConfigurator.searchText)
+                                    }
+                                ) { item in
                                     SupportItemRow(
                                         title: item.title,
                                         titleColor: section.color,
                                         url: URL(string: item.url) ?? options.other.error404,
                                         progressBarOptions: options.progressBar
                                     )
+                                    .animation(nil)
                                 }
                             }
                             .displayTextAsConfigured() /// Prevent default all-caps behavior if possible (iOS 14 and above).
@@ -138,16 +146,18 @@ public struct SupportDocsView: View {
                         
                         /// Then, display the footer. Customize this inside `options.other.footer`.
                         options.other.footer
-                        .listRowInsets(EdgeInsets())
-                        .frame(maxWidth: .infinity, minHeight: 60)
-                        .background(Color(UIColor.systemGroupedBackground))
+                            .listRowInsets(EdgeInsets())
+                            .frame(maxWidth: .infinity, minHeight: 60)
+                            .background(Color(UIColor.systemGroupedBackground))
+                        
                     }
                     .listStyle(for: options.listStyle) /// Set the `listStyle` of your selection.
+                    .transition(.opacity) /// Fade the List in once the JSON loads.
+                    
                 }
             }
-            .transition(.opacity) /// Fade it in once the JSON loads.
             .navigationBarTitle(Text(options.navigationBar.title), displayMode: .large) /// Set your title.
-            .configureNavigationBarIfAvailable(navigationOptions: options.navigationBar)
+            .configureBar(for: options, searchBarConfigurator: searchBarConfigurator)
             
             /**
              If you have a dismiss button, display it.

@@ -13,6 +13,7 @@ import SwiftUI
  # Parameters
  - `categories`: Allows you to group documents with the same `tag` into the same section of the list. Each category may contain more than one `tag`.
  - `navigationBar`: Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
+ - `searchBar`: Customize the `placeholder`, `placeholderColor`, `textColor`, `tintColor`, and `backgroundColor` of the Search Bar.
  - `progressBar`: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
  - `listStyle`: The style of the `List`. Defaults to `.insetGroupedListStyle`.
  - `navigationViewStyle`: The style of the `NavigationView`. Defaults to `.defaultNavigationViewStyle`.
@@ -22,6 +23,8 @@ public struct SupportOptions {
     
     /**
      Allows you to group documents with the same `tag` into the same section of the list. Each category may contain more than one `tag`.
+     
+     Leave as `nil` to display all documents regardless of their `tag`s.
      */
     public var categories: [Category]? = nil
     
@@ -31,6 +34,13 @@ public struct SupportOptions {
      `dismissButtonView` is set to nil here to avoid an "ambiguous init" compiler error. By default, `dismissButtonView` is already nil, so this doesn't affect anything.
      */
     public var navigationBar: NavigationBar = NavigationBar(dismissButtonView: nil)
+    
+    /**
+     Customize the appearance of the Search Bar.
+     
+     Set to `nil` to not show a search bar.
+     */
+    public var searchBar: SearchBar? = SearchBar()
     
     /**
      Customize the `foregroundColor` and `backgroundColor` of the progress bar.
@@ -57,6 +67,7 @@ public struct SupportOptions {
      
      - parameter categories: Allows you to group documents with the same `tag` into the same section of the list. Each category may contain more than one `tag`.
      - parameter navigationBar: Customize the Navigation Bar's `title`, `titleColor`, `dismissButtonTitle`, `buttonTintColor`, and `backgroundColor`.
+     - parameter searchBar: Customize the `placeholder`, `placeholderColor`, `textColor`, `tintColor`, `backgroundColor`, and `clearButtonMode` of the Search Bar.
      - parameter progressBar: Customize the `foregroundColor` and `backgroundColor` of the progress bar.
      - parameter listStyle: The style of the `List`. Defaults to `.insetGroupedListStyle`.
      - parameter navigationViewStyle: The style of the `NavigationView`. Defaults to `.defaultNavigationViewStyle`.
@@ -65,6 +76,7 @@ public struct SupportOptions {
     public init(
         categories: [Category]? = nil,
         navigationBar: NavigationBar = NavigationBar(dismissButtonView: nil),
+        searchBar: SearchBar? = SearchBar(),
         progressBar: ProgressBar = ProgressBar(),
         listStyle: CustomListStyle = CustomListStyle.insetGroupedListStyle,
         navigationViewStyle: CustomNavigationViewStyle = CustomNavigationViewStyle.defaultNavigationViewStyle,
@@ -72,6 +84,7 @@ public struct SupportOptions {
     ) {
         self.categories = categories
         self.navigationBar = navigationBar
+        self.searchBar = searchBar
         self.progressBar = progressBar
         self.listStyle = listStyle
         self.navigationViewStyle = navigationViewStyle

@@ -7,53 +7,75 @@
 
 import SwiftUI
 
-/**
- Configure the navigation bar's look, for iOS 14 and above.
- 
- Source: [https://stackoverflow.com/a/58427754/14351818](https://stackoverflow.com/a/58427754/14351818).
- */
-internal struct NavigationConfigurator: UIViewControllerRepresentable {
-    var configure: (UINavigationController) -> Void = { _ in }
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
-        UIViewController()
-    }
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
-        if let nc = uiViewController.navigationController {
-            self.configure(nc)
-        }
-    }
-}
+// MARK: - Navigation and Search Bar Configuration
+/// Partially from https://github.com/Geri-Borbas/iOS.Blog.SwiftUI_Search_Bar_in_Navigation_Bar, MIT License
 
 /**
- Apply the `NavigationConfigurator`.
+ ViewModifier that applies SupportOptions' `NavigationBar` and `SearchBar` configurations.
  */
-internal extension View {
-    @ViewBuilder
-    func configureNavigationBarIfAvailable(navigationOptions: SupportOptions.NavigationBar) -> some View {
-        if #available(iOS 14, *) {
-            self.background(
-                NavigationConfigurator { nc in /// Set the properties of `options.navigationBar`.
-                    let navBarAppearance = UINavigationBarAppearance()
-                    navBarAppearance.configureWithOpaqueBackground()
-                    navBarAppearance.titleTextAttributes = [.foregroundColor: navigationOptions.titleColor]
-                    navBarAppearance.largeTitleTextAttributes = [.foregroundColor: navigationOptions.titleColor]
+struct BarModifier: ViewModifier {
+    
+    let options: SupportOptions
+    let searchBarConfigurator: SearchBarConfigurator
+    
+    func body(content: Content) -> some View {
+        content
+        .overlay( /// Workaround to apply the `ViewControllerResolver`
+            ViewControllerResolver { viewController in
+                
+                /**
+                 Only add a search bar if it's not set to `nil`.
+                 */
+                if let searchBarOptions = options.searchBar {
+                    viewController.navigationItem.searchController = self.searchBarConfigurator.searchController
                     
-                    if let backgroundColor = navigationOptions.backgroundColor {
-                        navBarAppearance.backgroundColor = backgroundColor
-                        nc.navigationBar.scrollEdgeAppearance = navBarAppearance
-                    }
-                    nc.navigationBar.standardAppearance = navBarAppearance
+                    let searchBar = searchBarConfigurator.searchController.searchBar
                     
-                    nc.navigationBar.barTintColor = navigationOptions.backgroundColor
-                    nc.navigationBar.tintColor = navigationOptions.buttonTintColor
+                    let icon = UIImage(systemName: "magnifyingglass")?.withTintColor(searchBarOptions.placeholderColor, renderingMode: .alwaysOriginal)
+                    searchBar.setImage(icon, for: UISearchBar.Icon.search, state: .normal)
+                    searchBar.tintColor = searchBarOptions.tintColor
+                    
+                    searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: searchBarOptions.placeholder, attributes: [.foregroundColor: searchBarOptions.placeholderColor])
+                    searchBar.searchTextField.textColor = searchBarOptions.textColor
+                    searchBar.searchTextField.backgroundColor = searchBarOptions.backgroundColor
+                    
+                    searchBar.searchTextField.clearButtonMode = searchBarOptions.clearButtonMode
                 }
-            )
-        } else {
-            self
-        }
+                
+                /**
+                 Now set the Navigation Bar's configuration
+                 */
+                let navBarAppearance = UINavigationBarAppearance()
+                navBarAppearance.configureWithOpaqueBackground()
+                navBarAppearance.titleTextAttributes = [.foregroundColor: options.navigationBar.titleColor]
+                navBarAppearance.largeTitleTextAttributes = [.foregroundColor: options.navigationBar.titleColor]
+                
+                if let backgroundColor = options.navigationBar.backgroundColor {
+                    navBarAppearance.backgroundColor = backgroundColor
+                    viewController.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+                }
+                
+                viewController.navigationController?.navigationBar.standardAppearance = navBarAppearance
+                
+                viewController.navigationController?.navigationBar.barTintColor = options.navigationBar.backgroundColor
+                viewController.navigationController?.navigationBar.tintColor = options.navigationBar.buttonTintColor
+                
+            }
+            .frame(width: 0, height: 0)
+        )
     }
 }
+
+/**
+ For easier usage of the bar modifier.
+ */
+extension View {
+    func configureBar(for options: SupportOptions, searchBarConfigurator: SearchBarConfigurator) -> some View {
+        return self.modifier(BarModifier(options: options, searchBarConfigurator: searchBarConfigurator))
+    }
+}
+
+// MARK: - Other Utilities
 
 /**
  Hide or show a View (support for iOS 13).
