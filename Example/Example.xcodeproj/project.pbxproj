@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4939A1C22574BF7000C1177B /* PlaygroundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939A1C12574BF6F00C1177B /* PlaygroundsView.swift */; };
 		49702F0D25562B4400DCD8DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49702F0C25562B4400DCD8DD /* AppDelegate.swift */; };
 		49702F0F25562B4400DCD8DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49702F0E25562B4400DCD8DD /* SceneDelegate.swift */; };
 		49702F1125562B4400DCD8DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49702F1025562B4400DCD8DD /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4939A1C12574BF6F00C1177B /* PlaygroundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundsView.swift; sourceTree = "<group>"; };
 		49702F0925562B4400DCD8DD /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49702F0C25562B4400DCD8DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49702F0E25562B4400DCD8DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4939A1C42574BF7400C1177B /* PlaygroundsView */ = {
+			isa = PBXGroup;
+			children = (
+				4939A1C12574BF6F00C1177B /* PlaygroundsView.swift */,
+			);
+			path = PlaygroundsView;
+			sourceTree = "<group>";
+		};
 		49702F0025562B4300DCD8DD = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 				49702F38255636F400DCD8DD /* SwiftUIExampleView.swift */,
 				497CF2492557283B006B3E4E /* WelcomeView.swift */,
 				49702F3025562C0000DCD8DD /* Footer.swift */,
+				4939A1C42574BF7400C1177B /* PlaygroundsView */,
 				49702F2D25562BE800DCD8DD /* PlaygroundsViewController */,
 				49702F1525562B4700DCD8DD /* Assets.xcassets */,
 				49702F1725562B4700DCD8DD /* LaunchScreen.storyboard */,
@@ -196,6 +207,7 @@
 				49702F0D25562B4400DCD8DD /* AppDelegate.swift in Sources */,
 				49702F3225562C0000DCD8DD /* InputViewButton.swift in Sources */,
 				49702F2A25562BE300DCD8DD /* PlaygroundsViewController+Pickers.swift in Sources */,
+				4939A1C22574BF7000C1177B /* PlaygroundsView.swift in Sources */,
 				49702F36255636C400DCD8DD /* UIKitExampleController.swift in Sources */,
 				49702F3325562C0000DCD8DD /* Footer.swift in Sources */,
 				49702F0F25562B4400DCD8DD /* SceneDelegate.swift in Sources */,

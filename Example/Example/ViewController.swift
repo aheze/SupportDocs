@@ -25,6 +25,13 @@ class ViewController: UIViewController {
             playgroundsViewController.navigationItem.largeTitleDisplayMode = .never
             navigationController?.pushViewController(playgroundsViewController, animated: true)
             
+            
+//            let hostingViewController = UIHostingController(rootView: PlaygroundsView())
+//            
+//            hostingViewController.title = "Playgrounds"
+//            hostingViewController.navigationItem.largeTitleDisplayMode = .never
+//            navigationController?.pushViewController(hostingViewController, animated: true)
+            
         }
     }
     
