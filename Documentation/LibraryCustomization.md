@@ -1494,6 +1494,7 @@ This is [another thing](https://developer.apple.com/documentation/swiftui/naviga
 
 ![Navigation View Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
 
+
 <table>
   <tr>
   <td>
@@ -1539,6 +1540,46 @@ Keep in mind, if you go with `.defaultNavigationViewStyle` or `.doubleColumnNavi
 Some miscellaneous options for SupportDocs.
 
 ![Other](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/OtherPreview.png)
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    other: .init(
+        activityIndicatorStyle: .medium,
+        welcomeView: AnyView(Text("Swipe right")),
+        footer: AnyView(Text("Contact us if you didn't find what you were looking for!")),
+        error404: URL(string: "https://aheze.github.io/SupportDocs/404")!
+    )
+)
+```
+
+  <td>
+
+```swift
+var options = SupportOptions()
+options.other.activityIndicatorStyle = .medium
+options.other.welcomeView = AnyView(Text("Swipe right"))
+options.other.footer = AnyView(Text("Contact us if you didn't find what you were looking for!"))
+options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")!
+```
+
+  </td>
+  </tr>
+</table>
+
 
 | Parameter                | Type                            | Values                            | Default                              | Corresponding Graphic |
 | ------------------------ | ------------------------------- | --------------------------------- | ------------------------------------ | --------------------- |
