@@ -893,7 +893,7 @@ let options = SupportOptions(
 
   </td>
   <td rowspan="3">
-    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/placeholder.png"></kbd>
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/placeholder.jpeg"></kbd>
   </td>
   </tr>
 
@@ -943,7 +943,7 @@ let options = SupportOptions(
 
   </td>
   <td rowspan="3">
-    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/placeholder.png"></kbd>
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/placeholder.jpeg"></kbd>
   </td>
   </tr>
 
