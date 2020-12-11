@@ -33,7 +33,7 @@ All you need to do is write your documents on GitHub, and install the library in
         -   [*Examples ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#examples)
         -   [*Categories ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#categories)
         -   [*Navigation Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#navigation-bar)
-        -   [*Search Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#search-bar)
+        -   [*Search Bar **(NEW!)** ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#search-bar)
         -   [*Progress Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#progress-bar)
         -   [*List Style ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#list-style)
         -   [*Navigation View Style ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#navigation-view-style)
