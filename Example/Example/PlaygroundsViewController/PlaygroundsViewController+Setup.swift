@@ -14,6 +14,7 @@ extension PlaygroundsViewController {
         dataSourceView.clipsToBounds = true
         categoriesView.clipsToBounds = true
         navigationBarView.clipsToBounds = true
+        searchBarView.clipsToBounds = true
         progressBarView.clipsToBounds = true
         listStyleView.clipsToBounds = true
         navigationViewStyleView.clipsToBounds = true
@@ -22,6 +23,7 @@ extension PlaygroundsViewController {
         dataSourceView.layer.cornerRadius = 12
         categoriesView.layer.cornerRadius = 12
         navigationBarView.layer.cornerRadius = 12
+        searchBarView.layer.cornerRadius = 12
         progressBarView.layer.cornerRadius = 12
         listStyleView.layer.cornerRadius = 12
         navigationViewStyleView.layer.cornerRadius = 12
@@ -30,8 +32,16 @@ extension PlaygroundsViewController {
         titleColorButton.layer.cornerRadius = 8
         buttonTintColorButton.layer.cornerRadius = 8
         navigationBackgroundColorButton.layer.cornerRadius = 8
+        
+        searchPlaceholderColorButton.layer.cornerRadius = 8
+        searchTextColorButton.layer.cornerRadius = 8
+        searchTintColorButton.layer.cornerRadius = 8
+        searchBackgroundColorButton.layer.cornerRadius = 8
+        clearButtonModeButton.layer.cornerRadius = 8
+        
         foregroundColorButton.layer.cornerRadius = 8
         backgroundColorButton.layer.cornerRadius = 8
+        
         listStyleButton.layer.cornerRadius = 8
         navigationViewStyleButton.layer.cornerRadius = 8
         activityIndicatorStyleButton.layer.cornerRadius = 8
@@ -39,6 +49,12 @@ extension PlaygroundsViewController {
         addShadow(button: titleColorButton)
         addShadow(button: buttonTintColorButton)
         addShadow(button: navigationBackgroundColorButton)
+        
+        addShadow(button: searchPlaceholderColorButton)
+        addShadow(button: searchTextColorButton)
+        addShadow(button: searchTintColorButton)
+        addShadow(button: searchBackgroundColorButton)
+        
         addShadow(button: foregroundColorButton)
         addShadow(button: backgroundColorButton)
         
@@ -49,11 +65,28 @@ extension PlaygroundsViewController {
         dataSourceTextField.delegate = self
         titleTextField.delegate = self
         dismissButtonTitleTextField.delegate = self
+        searchPlaceholderTextField.delegate = self
         error404TextField.delegate = self
     }
     
     func setupPickerDelegates() {
         
+        /// Clear button
+        clearButtonModePicker.delegate = self
+        clearButtonModeButton.inputView = clearButtonModePicker
+        
+        let clearButtonModeToolbar = UIToolbar()
+        clearButtonModeToolbar.sizeToFit()
+    
+        let clearFlexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let clearDoneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissPicker))
+        
+        clearButtonModeToolbar.setItems([clearFlexibleButton, clearDoneButton], animated: true)
+        clearButtonModeToolbar.isUserInteractionEnabled = true
+        
+        clearButtonModeButton.inputAccessoryView = clearButtonModeToolbar
+        
+        /// List style
         listStylePicker.delegate = self
         listStyleButton.inputView = listStylePicker
         
@@ -68,30 +101,32 @@ extension PlaygroundsViewController {
         
         listStyleButton.inputAccessoryView = listStyleToolbar
         
+        /// Navigation View
         navigationViewStylePicker.delegate = self
         navigationViewStyleButton.inputView = navigationViewStylePicker
         
         let navigationViewToolbar = UIToolbar()
         navigationViewToolbar.sizeToFit()
         
-        let navigationViewFlexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let navigationViewDoneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissPicker))
+        let navFlexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let navDoneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissPicker))
         
-        navigationViewToolbar.setItems([navigationViewFlexibleButton, navigationViewDoneButton], animated: true)
+        navigationViewToolbar.setItems([navFlexibleButton, navDoneButton], animated: true)
         navigationViewToolbar.isUserInteractionEnabled = true
         
         navigationViewStyleButton.inputAccessoryView = navigationViewToolbar
         
+        /// Activity Indicator
         activityIndicatorStylePicker.delegate = self
         activityIndicatorStyleButton.inputView = activityIndicatorStylePicker
         
         let activityIndicatorStyleToolbar = UIToolbar()
         activityIndicatorStyleToolbar.sizeToFit()
         
-        let activityIndicatorFlexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let activityIndicatorDoneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissPicker))
+        let actFlexibleButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let actDoneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissPicker))
         
-        activityIndicatorStyleToolbar.setItems([activityIndicatorFlexibleButton, activityIndicatorDoneButton], animated: true)
+        activityIndicatorStyleToolbar.setItems([actFlexibleButton, actDoneButton], animated: true)
         activityIndicatorStyleToolbar.isUserInteractionEnabled = true
         
         activityIndicatorStyleButton.inputAccessoryView = activityIndicatorStyleToolbar
@@ -108,6 +143,13 @@ extension PlaygroundsViewController {
         let defaultNavigationBarDismissButtonTitle = "Done"
         let defaultNavigationBarButtonTintColor = UIColor.blue
         let defaultNavigationBarBackgroundColor: UIColor? = nil
+        
+        let defaultPlaceholder = "Search"
+        let defaultPlaceholderColor = UIColor.secondaryLabel.withAlphaComponent(0.75)
+        let defaultSearchTextColor = UIColor.label
+        let defaultSearchTintColor = UIColor.blue
+        let defaultSearchBackgroundColor = UIColor.white.withAlphaComponent(0.3)
+        let defaultSearchClearButtonMode: UITextField.ViewMode = .whileEditing
         
         let defaultProgressBarForegroundColor = UIColor.blue
         let defaultProgressBarBackgroundColor = UIColor.secondarySystemBackground
@@ -131,6 +173,13 @@ extension PlaygroundsViewController {
         options.navigationBar.buttonTintColor = defaultNavigationBarButtonTintColor
         options.navigationBar.backgroundColor = defaultNavigationBarBackgroundColor
         
+        options.searchBar?.placeholder = defaultPlaceholder
+        options.searchBar?.placeholderColor = defaultPlaceholderColor
+        options.searchBar?.textColor = defaultSearchTextColor
+        options.searchBar?.tintColor = defaultSearchTintColor
+        options.searchBar?.backgroundColor = defaultSearchBackgroundColor
+        options.searchBar?.clearButtonMode = defaultSearchClearButtonMode
+        
         options.progressBar.foregroundColor = defaultProgressBarForegroundColor
         options.progressBar.backgroundColor = defaultProgressBarBackgroundColor
         
@@ -153,6 +202,13 @@ extension PlaygroundsViewController {
         navigationBackgroundColorButton.backgroundColor = UIColor.systemBackground
         navigationBackgroundColorButton.setTitle("Nil", for: .normal)
         
+        searchPlaceholderTextField.placeholder = defaultPlaceholder
+        searchPlaceholderColorButton.backgroundColor = defaultPlaceholderColor
+        searchTextColorButton.backgroundColor = defaultSearchTextColor
+        searchTintColorButton.backgroundColor = defaultSearchTintColor
+        searchBackgroundColorButton.backgroundColor = defaultSearchBackgroundColor
+        clearButtonModeButton.setTitle(defaultSearchClearButtonMode.getString(), for: .normal)
+        
         foregroundColorButton.backgroundColor = defaultProgressBarForegroundColor
         backgroundColorButton.backgroundColor = defaultProgressBarBackgroundColor
         
@@ -169,6 +225,23 @@ extension PlaygroundsViewController {
         button.layer.shadowOffset = CGSize(width: 0.25, height: 1)
         button.layer.shadowOpacity = 0.3
         button.layer.shadowRadius = 2.0
+    }
+}
+
+extension UITextField.ViewMode {
+    func getString() -> String {
+        switch self {
+        case .never:
+            return "Never"
+        case .whileEditing:
+            return "While Editing"
+        case .unlessEditing:
+            return "Unless Editing"
+        case .always:
+            return "Always"
+        @unknown default:
+            return "Unknown"
+        }
     }
 }
 

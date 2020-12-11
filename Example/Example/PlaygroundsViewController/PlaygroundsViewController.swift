@@ -64,6 +64,58 @@ class PlaygroundsViewController: UIViewController {
         }
     }
     
+    // MARK: - Search Bar
+    
+    @IBOutlet weak var searchBarView: UIView!
+    @IBOutlet weak var searchPlaceholderTextField: UITextField!
+    @IBOutlet weak var searchPlaceholderColorButton: UIButton!
+    @IBOutlet weak var searchTextColorButton: UIButton!
+    @IBOutlet weak var searchTintColorButton: UIButton!
+    @IBOutlet weak var searchBackgroundColorButton: UIButton!
+    
+    @IBAction func searchPlaceholderColorButtonPressed(_ sender: UIButton) {
+        colorButtonHandler(button: sender) { [weak self] (color) in
+            guard let color = color else { return }
+            sender.backgroundColor = color
+            self?.options.searchBar?.placeholderColor = color
+        }
+    }
+    @IBAction func searchTextColorButtonPressed(_ sender: UIButton) {
+        colorButtonHandler(button: sender) { [weak self] (color) in
+            guard let color = color else { return }
+            sender.backgroundColor = color
+            self?.options.searchBar?.textColor = color
+        }
+    }
+    @IBAction func searchTintColorButtonPressed(_ sender: UIButton) {
+        colorButtonHandler(button: sender) { [weak self] (color) in
+            guard let color = color else { return }
+            sender.backgroundColor = color
+            self?.options.searchBar?.tintColor = color
+        }
+    }
+    @IBAction func searchBackgroundColorButtonPressed(_ sender: UIButton) {
+        colorButtonHandler(button: sender) { [weak self] (color) in
+            guard let color = color else { return }
+            sender.backgroundColor = color
+            self?.options.searchBar?.backgroundColor = color
+        }
+    }
+    
+    let clearButtonModePicker = UIPickerView()
+    let clearButtonModeOptions: [UITextField.ViewMode] = [.whileEditing, .unlessEditing, .always, .never]
+    
+    @IBOutlet weak var clearButtonModeButton: InputViewButton!
+    @IBAction func clearButtonModePressed(_ sender: InputViewButton) {
+        let currentClearButtonMode = options.searchBar?.clearButtonMode
+        
+        if let mode = currentClearButtonMode, let firstIndex = clearButtonModeOptions.firstIndex(of: mode) {
+            clearButtonModePicker.selectRow(firstIndex, inComponent: 0, animated: false)
+        }
+        
+        clearButtonModeButton.becomeFirstResponder()
+    }
+    
     // MARK: - Progress Bar
     @IBOutlet weak var progressBarView: UIView!
     @IBOutlet weak var foregroundColorButton: UIButton!
