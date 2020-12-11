@@ -9,8 +9,8 @@
 Pod::Spec.new do |spec|
 
   spec.name          = "SupportDocs"
-  spec.version       = "1.0.0"
-  spec.summary       = "Markdown-generated help center for your iOS apps. Hosted by GitHub Pages and written with SwiftUI."
+  spec.version       = "1.1.0"
+  spec.summary       = "Generate help centers for your iOS apps. Hosted by GitHub and always up-to-date."
   spec.description   = <<-DESC
                    All you need to do is write your documents on GitHub and install the library in your app. SupportDocs' custom GitHub Action and GitHub Pages will take care of the rest.
                 DESC
