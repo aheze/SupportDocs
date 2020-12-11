@@ -82,12 +82,18 @@ class ViewController: UIViewController {
 -   [Navigation Bar](#navigation-bar)
     -   [Title](#title)
     -   [Title Color](#title-color)
-    -   [Dismiss Button Title](#dismiss-button-title)
+    -   [Dismiss Button View / Dismiss Button Title](#dismiss-button-view)
     -   [Button Tint Color](#button-tint-color)
     -   [Background Color](#background-color)
+-   [Search Bar](#search-bar)
+    - [Placeholder](#placeholder)
+    - [Placeholder Color](#placeholder-color)
+    - [Text Color](#text-color)
+    - [Tint Color](#tint-color)
+    - [Background Color](#background-color-1)
 -   [Progress Bar](#progress-bar)
     -   [Foreground Color](#foreground-color)
-    -   [Background Color](#background-color-1)
+    -   [Background Color](#background-color-2)
 -   [List Style](#list-style)
 -   [Navigation View Style](#navigation-view-style)
 -   [Other](#other)
@@ -121,7 +127,6 @@ By default, the categories are set to `nil`, and every single document is displa
 
 <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Categories/noCategories.png" width="200"></kbd>
 
----
 
 ### One Category
 
@@ -185,6 +190,9 @@ options.categories = [bobaCategory]
 
 <details>
   <summary>Show full code</summary>
+  
+--- 
+
 <table>
   <tr>
   <td>
@@ -258,9 +266,10 @@ class UIKitExampleController_WithCategories: UIViewController {
   </td>
   </tr>
 </table>
-</details>
 
 ---
+
+</details>
 
 ### Two Categories
 This will display 2 categories, one for documents tagged with `boba` and another for those tagged with `fastFood`.
@@ -329,6 +338,8 @@ options.categories = [bobaCategory, fastFoodCategory]
 
 <details>
   <summary>Show full code</summary>
+
+---
 
 <table>
   <tr>
@@ -411,9 +422,11 @@ class UIKitExampleControllerWithCategories: UIViewController {
   </td>
 </tr>
 </table>
-</details>
 
 ---
+
+</details>
+
 
 ### Multiple Tags in One Category
 You can even combine multiple documents with different tags in the same category!
@@ -472,6 +485,9 @@ options.categories = [bobaAndFastFoodCategory]
 
 <details>
   <summary>Show full code</summary>
+  
+---
+  
 <table>
   <tr>
   <td>
@@ -544,6 +560,9 @@ class UIKitExampleController_WithCategories: UIViewController {
   </td>
   </tr>
 </table>
+
+---
+
 </details>
 
 ---
@@ -654,10 +673,12 @@ options.navigationBar.titleColor = UIColor.purple
   </tr>
 </table>
 
-### Dismiss Button View / Dismiss Button Title
+### Dismiss Button View
+With convenience overload: Dismiss Button Title
+
 This is what will be shown as the dismiss button (press to dismiss SupportDocs), and leave it as `nil` to not show it at all.
 
-It's a bit more tricky. By default, you pass in an `AnyView` of your choice. This should either be an `Image` or a `Text`, but you can experiment with other elements. For example, both of these will work:
+By default, you pass in an `AnyView` of your choice. This should either be an `Image` or a `Text`, but you can experiment with other elements. For example, both of these will work:
 
 <table>
 <tr>
@@ -858,6 +879,307 @@ options.navigationBar.backgroundColor = UIColor(
   </tr>
 </table>
 
+---
+
+## Search Bar
+New in 1.1.0! This lets your users search the documents in your help center.
+
+![Search Bar Preview](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/SearchBarPreview.png)
+
+
+### Placeholder
+The placeholder to display when no text has been entered yet.
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        placeholder: "Type here to search!"
+    )
+)
+```
+
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/placeholder.jpeg"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.placeholder = "Type here to search!"
+```
+
+  </td>
+  </tr>
+</table>
+
+### Placeholder Color
+The color of the placeholder.
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        placeholder: "Type here to search!",
+        placeholderColor: UIColor.blue.withAlphaComponent(0.75)
+    )
+)
+```
+
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/placeholderColor.jpeg"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.placeholder = "Type here to search!"
+options.searchBar.placeholderColor = UIColor.blue.withAlphaComponent(0.75)
+```
+
+  </td>
+  </tr>
+</table>
+
+
+### Text Color
+The color of the text entered in the search bar.
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        textColor: UIColor.red
+    )
+)
+```
+
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/textColor.jpeg"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.textColor = UIColor.red
+```
+
+  </td>
+  </tr>
+</table>
+
+### Tint Color
+The color of the cursor and the "Cancel" button
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        tintColor: UIColor.orange
+    )
+)
+```
+
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/tintColor.jpeg"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.tintColor = UIColor.orange
+```
+
+  </td>
+  </tr>
+</table>
+
+
+### Background Color
+Background color of the search bar.
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    Result
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        backgroundColor: UIColor.gray
+    )
+)
+```
+
+  </td>
+  <td rowspan="3">
+    <kbd><img src="https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/backgroundColor.jpeg"></kbd>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    UIKit
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.backgroundColor = UIColor.gray
+```
+
+  </td>
+  </tr>
+</table>
+
+### Clear Button Mode
+When to show the clear button. This is one of Apple's [built-in](https://developer.apple.com/documentation/uikit/uitextfield/viewmode) enums for text fields and search bars.
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    searchBar: .init(
+        clearButtonMode: .whileEditing
+    )
+)
+```
+
+  <td>
+
+```swift
+var options = SupportOptions()
+options.searchBar.clearButtonMode = .whileEditing
+```
+
+  </td>
+  </tr>
+</table>
+
+`.whileEditing` | `.unlessEditing` | `.always` | `.never`
+--- | --- | --- | ---
+![While editing gif](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/whileEditing.gif) | ![Unless editing gif](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/unlessEditing.gif) | ![Always gif](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/always.gif) | ![Never gif](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SearchBar/never.gif)
+
+Note: It seems that `.whileEditing` and `.always` are the same thing. Similarly, `.unlessEditing` and `.never` are also interchangeable.
+
+---
+
 ## Progress Bar
 This shows up when the user has pressed a row in the list, waiting for the document to load.
 
@@ -964,6 +1286,8 @@ options.progressBar.backgroundColor = UIColor.blue
   </td>
   </tr>
 </table>
+
+---
 
 ## List Style
 The SupportDocs library is written in SwiftUI, so you get access to SwiftUI's [list styles](https://developer.apple.com/documentation/swiftui/liststyle)! Customizing this changes the way the list is displayed.
@@ -1163,10 +1487,44 @@ options.listStyle = .sidebarListStyle
   </tr>
 </table>
 
+---
+
 ## Navigation View Style
 This is [another thing](https://developer.apple.com/documentation/swiftui/navigationviewstyle) that comes from SwiftUI, which controls the layout of the navigation view. This only applies to larger devices like the iPhone 7 Plus when they are in landscape, or iPads. If your app is portrait-only, you can ignore this. 
 
 ![Navigation View Style](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/NavigationStylePreview.png)
+
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    navigationViewStyle: .defaultNavigationViewStyle
+)
+```
+
+  <td>
+
+```swift
+var options = SupportOptions()
+options.navigationViewStyle = .defaultNavigationViewStyle
+```
+
+  </td>
+  </tr>
+</table>
 
 | Navigation View Style | Portrait Result | Landscape Result | Landscape Interaction |
 | --- | --- | --- | --- |
@@ -1176,10 +1534,52 @@ This is [another thing](https://developer.apple.com/documentation/swiftui/naviga
 
 Keep in mind, if you go with `.defaultNavigationViewStyle` or `.doubleColumnNavigationViewStyle` (they're actually the same thing), you should supply a `welcomeView` as well. This is what will be shown at the start, when no list row has been selected yet. Scroll down to **Other** to see more.
 
+---
+
 ## Other
 Some miscellaneous options for SupportDocs.
 
 ![Other](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/OptionsPreview/OtherPreview.png)
+
+<table>
+  <tr>
+  <td>
+    SwiftUI
+  </td>
+  <td>
+    UIKit
+  </td>
+  
+  </tr>
+
+  <tr>
+  <td>
+
+```swift
+let options = SupportOptions(
+    other: .init(
+        activityIndicatorStyle: .medium,
+        welcomeView: AnyView(Text("Swipe right")),
+        footer: AnyView(Text("Contact us if you didn't find what you were looking for!")),
+        error404: URL(string: "https://aheze.github.io/SupportDocs/404")!
+    )
+)
+```
+
+  <td>
+
+```swift
+var options = SupportOptions()
+options.other.activityIndicatorStyle = .medium
+options.other.welcomeView = AnyView(Text("Swipe right"))
+options.other.footer = AnyView(Text("Contact us if you didn't find what you were looking for!"))
+options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")!
+```
+
+  </td>
+  </tr>
+</table>
+
 
 | Parameter                | Type                            | Values                            | Default                              | Corresponding Graphic |
 | ------------------------ | ------------------------------- | --------------------------------- | ------------------------------------ | --------------------- |

@@ -33,6 +33,7 @@ All you need to do is write your documents on GitHub, and install the library in
         -   [*Examples ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#examples)
         -   [*Categories ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#categories)
         -   [*Navigation Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#navigation-bar)
+        -   [*Search Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#search-bar)
         -   [*Progress Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#progress-bar)
         -   [*List Style ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#list-style)
         -   [*Navigation View Style ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#navigation-view-style)
@@ -94,7 +95,7 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 4. Click the <kbd>+</kbd> button
 5. Enter `https://github.com/aheze/SupportDocs` in the text field
 6. Click <kbd>Next</kbd>
-7. Enter the latest version, `1.1.0`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
+7. Enter the latest version, **`1.1.0`**, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
 8. Click <kbd>Next</kbd>
 9. Click <kbd>Finish</kbd>, and you're done!
 
@@ -128,7 +129,7 @@ The library is what's displayed to your users, in your app. All it needs is the 
 </details>
 
 
-## Using the GitHub Repository
+### Using the GitHub Repository
 In you brand new repository that you set up earlier, [switch](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/SwitchToDataSourceBranch.png) to the **`DataSource`** branch. The example documents are inside the `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` folders -- take a look around. Here's a guide:
 
 <details>
@@ -350,9 +351,6 @@ SOFTWARE.
 
 ### Example repo
 You can find an example repository using SupportDocs [here](https://github.com/aheze/MyHelpCenter).
-
-### Searching
-A search feature is coming soon! I'm just trying to figure out the animations, but it should be done by 12/10 at the latest.
 
 ### Dark Mode
 SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
