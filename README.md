@@ -5,8 +5,6 @@
 ### Generate help centers for your iOS apps, with Markdown!
 All you need to do is write your documents on GitHub, and install the library in your app. SupportDocs' custom GitHub Action and GitHub Pages will take care of the rest.
 
-# ⚠️ Update 12/10/20: On iOS 13 (iOS 14 and above is not affected), the web page [crashes](https://stackoverflow.com/q/65224739/14351818). I'm looking in to a fix. 
-
 ## Table of Contents
 
 -   [How It Works](#how-it-works)
@@ -33,7 +31,7 @@ All you need to do is write your documents on GitHub, and install the library in
         -   [*Examples ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#examples)
         -   [*Categories ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#categories)
         -   [*Navigation Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#navigation-bar)
-        -   [*Search Bar **(NEW!)** ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#search-bar)
+        -   [*Search Bar **(NEW in 1.1.0!)** ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#search-bar)
         -   [*Progress Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#progress-bar)
         -   [*List Style ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#list-style)
         -   [*Navigation View Style ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#navigation-view-style)
@@ -351,6 +349,9 @@ SOFTWARE.
 
 ### Example repo
 You can find an example repository using SupportDocs [here](https://github.com/aheze/MyHelpCenter).
+
+### Testing on Apple Silicon / Big Sur
+On my MacBook Pro M1 running Big Sur 11.0.1, I get a [crash](https://stackoverflow.com/q/65224739/14351818) when loading the web page on iOS 13 simulators. It works fine for iOS 14, and the crash doesn't happen at all when I run on my Intel Mac. I'm pretty sure that this won't be a problem for actual devices, but keep in mind that you might run into some issues during testing. Apple is still polishing up Big Sur.
 
 ### Dark Mode
 SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
