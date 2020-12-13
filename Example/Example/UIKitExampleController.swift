@@ -23,6 +23,14 @@ class UIKitExampleController: UIViewController {
 //            buttonTintColor: UIColor.white,
 //            backgroundColor: UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
 //        ),
+//        searchBar: .init(
+//            placeholder: "Type here to search",
+//            placeholderColor: UIColor.white.withAlphaComponent(0.75),
+//            textColor: UIColor.white,
+//            tintColor: UIColor.green,
+//            backgroundColor: UIColor.white.withAlphaComponent(0.3),
+//            clearButtonMode: .whileEditing
+//        ),
 //        progressBar: .init(
 //            foregroundColor: UIColor.green,
 //            backgroundColor: UIColor.systemBackground
@@ -50,6 +58,12 @@ class UIKitExampleController: UIViewController {
         options.navigationBar.dismissButtonView = AnyView(Text("Done"))
         options.navigationBar.buttonTintColor = UIColor.white
         options.navigationBar.backgroundColor = UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
+        options.searchBar?.placeholder = "Type here to search"
+        options.searchBar?.placeholderColor = UIColor.white.withAlphaComponent(0.75)
+        options.searchBar?.textColor = UIColor.white
+        options.searchBar?.tintColor = UIColor.green
+        options.searchBar?.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        options.searchBar?.clearButtonMode = .whileEditing
         options.progressBar.foregroundColor = UIColor.green
         options.progressBar.backgroundColor = UIColor.systemBackground
         options.listStyle = .insetGroupedListStyle
