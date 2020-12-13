@@ -1,6 +1,6 @@
 ![SupportDocs Logo](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SupportDocsSmall.png)
 
-![SupportDocs Header](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HeaderImage.png)
+![SupportDocs Header](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/TitleImage.png)
 
 ### Generate help centers for your iOS apps, with Markdown!
 All you need to do is write your documents on GitHub, and install the library in your app. SupportDocs' custom GitHub Action and GitHub Pages will take care of the rest.
