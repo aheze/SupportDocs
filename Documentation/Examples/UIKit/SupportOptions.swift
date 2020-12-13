@@ -11,6 +11,8 @@ import SupportDocs
 
 class SupportOptionsExample: UIViewController {
     @IBOutlet weak var presentButton: UIButton!
+    
+    /// Connect this inside the storyboard
     @IBAction func presentButtonPressed(_ sender: Any) {
         let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
 
