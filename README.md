@@ -348,7 +348,10 @@ SOFTWARE.
 ## Notes
 
 ### Example repo
-You can find an example repository using SupportDocs [here](https://github.com/aheze/MyHelpCenter).
+You can find an example repository with SupportDocs installed [here](https://github.com/aheze/MyHelpCenter).
+
+### Data collection
+SupportDocs does not collect any data. We provide this note to help you fill out your [App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/).
 
 ### Testing on Apple Silicon / Big Sur
 On my MacBook Pro M1 running Big Sur 11.0.1, I get a [crash](https://stackoverflow.com/q/65224739/14351818) when loading the web page on iOS 13 simulators. It works fine for iOS 14, and the crash doesn't happen at all when I run on my Intel Mac. I'm pretty sure that this won't be a problem for actual devices, but keep in mind that you might run into some issues during testing. Apple is still polishing up Big Sur.
