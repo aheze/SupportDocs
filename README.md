@@ -106,7 +106,7 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 ## Example Project
 Check out the example project in the [`Example`](https://github.com/aheze/SupportDocs/tree/main/Example) folder! It contains a playground where you can play around with how SupportDocs is displayed.
 
-<kbd>![Example project home page](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectHome.png)</kbd> | <kbd>![Example project options page](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectOptions.png)</kbd>  | <kbd>![Press the "Present" button to display the library](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectLibrary.png)</kbd>
+![Example project home page](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectHome.png) | ![Example project options page](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectOptions.png) | ![Press the "Present" button to display the library](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectLibrary.png)
 --- | --- | ---
 
 ---
