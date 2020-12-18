@@ -165,14 +165,11 @@ extension PlaygroundsViewController {
         
         // MARK: - Set options
         
-//        options.categories = nil
-        
-        // MARK: - Uncomment to show these categories
         let bobaCategory = SupportOptions.Category(tag: "boba", displayName: "Boba")
         let fastFoodCategory = SupportOptions.Category(tag: "fastFood", displayName: "Fast Food")
         let smoothiesCategory = SupportOptions.Category(tag: "smoothies", displayName: "Smoothies")
         options.categories = [bobaCategory, fastFoodCategory, smoothiesCategory]
-                              
+                                
         options.navigationBar.title = defaultNavigationBarTitle
         options.navigationBar.titleColor = defaultNavigationBarTitleColor
         options.navigationBar.dismissButtonView = AnyView(Text(defaultNavigationBarDismissButtonTitle))
