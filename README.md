@@ -348,7 +348,7 @@ SOFTWARE.
 ## Notes
 
 ### Example repo
-You can find an example repository with SupportDocs installed [here](https://github.com/aheze/MyHelpCenter).
+You can find an example repository generated from SupportDocs [here](https://github.com/aheze/MyHelpCenter).
 
 ### Data collection
 SupportDocs does not collect any data. We provide this note to help you fill out your [App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/).
