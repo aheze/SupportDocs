@@ -2,7 +2,7 @@
 This branch is where SupportDocs gets its data! You can add, edit, and delete documents here. For usage instructions, check out the `README`'s [usage](https://github.com/aheze/SupportDocs#using-the-github-repo) section in the main branch.
 
 ## Data Source JSON URL
-<a href="https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
+<a href="https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
 
 <details>
 <summary><strong>Show examples</strong></summary>
@@ -12,7 +12,7 @@ This branch is where SupportDocs gets its data! You can add, edit, and delete do
 ### SwiftUI
 ```swift
 struct SwiftUIExampleView_MinimalCode: View {
-    let dataSource = URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
     @State var supportDocsPresented = false
     
     var body: some View {
@@ -33,7 +33,7 @@ class UIKitExampleController_MinimalCode: UIViewController {
     This is just for demo purposes, so it's not connected yet.
     */
     @IBAction func presentButtonPressed(_ sender: Any) {
-        let dataSource = URL(string: "https://raw.githubusercontent.com/hkamran80/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
     
         let supportDocsViewController = SupportDocsViewController(dataSource: dataSource)
         self.present(supportDocsViewController, animated: true, completion: nil)
