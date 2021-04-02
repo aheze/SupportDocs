@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct PlaygroundsView: View {
-    
     @State var dataSourceURL = ""
     var body: some View {
         ZStack {
             Color(UIColor.secondarySystemBackground)
             VStack {
-                
                 VStack(alignment: .leading) {
                     Text("Data Source")
                         .foregroundColor(Color.secondary)
@@ -40,9 +38,7 @@ struct PlaygroundsView: View {
                         .background(Color.white)
                         .cornerRadius(12)
                         .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-                        
                 }
-                
             }
         }
     }

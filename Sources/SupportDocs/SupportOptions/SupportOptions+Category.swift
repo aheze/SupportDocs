@@ -5,10 +5,8 @@
 //  Created by Zheng on 10/25/20.
 //
 
-import UIKit
 
 public extension SupportOptions {
-    
     /**
      A group of `Documents` to be displayed as a section inside the `List`.
      
@@ -21,14 +19,13 @@ public extension SupportOptions {
      ```
      let options: SupportOptions = SupportOptions(
          categories: [
-             .init(tag: "friending", displayName: "Friends", displayColor: UIColor.label)
+             .init(tag: "friending", displayName: "Friends", displayColor: Colors.label)
          ]
      )
      ```
      You are allowed to have more than one `tag` for each Markdown file, and each `category` can include more than one tag.
      */
     struct Category {
-        
         /**
          A group of `Documents` to be displayed as a section inside the `List`
          
@@ -39,7 +36,7 @@ public extension SupportOptions {
         public init(
             tags: [String],
             displayName: String,
-            displayColor: UIColor = UIColor.label
+            displayColor: Colors = Colors.label
         ) {
             self.tags = tags
             self.displayName = displayName
@@ -53,7 +50,7 @@ public extension SupportOptions {
          ```
          let options: SupportOptions = SupportOptions(
              categories: [
-                 .init(tags: ["friending", "help", "betaHelp"], displayName: "Miscellaneous", displayColor: UIColor.label)
+                 .init(tags: ["friending", "help", "betaHelp"], displayName: "Miscellaneous", displayColor: Colors.label)
              ]
          )
          ```
@@ -69,13 +66,11 @@ public extension SupportOptions {
         /**
          The color of the row in the `List`.
          */
-        public var displayColor: UIColor = UIColor.label
-        
+        public var displayColor = Colors.label
     }
 }
 
 public extension SupportOptions.Category {
-    
     /**
      A group of `Documents` to be displayed as a section inside the `List`
      
@@ -88,7 +83,7 @@ public extension SupportOptions.Category {
     init(
         tag: String,
         displayName: String,
-        displayColor: UIColor = UIColor.label
+        displayColor: Colors = Colors.label
     ) {
         self.tags = [tag]
         self.displayName = displayName

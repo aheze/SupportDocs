@@ -1,6 +1,6 @@
 //
 //  SupportDocsView+Lists.swift
-//  SupportDocsSwiftUI
+//  SupportDocs
 //
 //  Created by Zheng on 10/13/20.
 //
@@ -14,7 +14,7 @@ internal struct SupportSection: Identifiable {
     let id = UUID() /// Required for the List.
     
     var name: String
-    var color: UIColor
+    var color: Colors
     var supportItems: [SupportItem]
 }
 
@@ -34,7 +34,6 @@ internal struct SupportItem: Identifiable {
  Think of this as the `Cell` class for `cellForItemAt` if this was UIKit.
  */
 internal struct SupportItemRow: View {
-    
     /**
      Title of the document.
      */
@@ -43,7 +42,7 @@ internal struct SupportItemRow: View {
     /**
      Color of the title.
      */
-    var titleColor: UIColor
+    var titleColor: Colors
     
     /**
      The URL to load when this `View` is tapped.
@@ -59,15 +58,15 @@ internal struct SupportItemRow: View {
         NavigationLink(
             destination:
                 
-                /**
-                 Push to the web view when tapped.
-                 */
-                WebViewContainer(url: url, progressBarOptions: progressBarOptions)
+            /**
+                Push to the web view when tapped.
+                */
+            WebViewContainer(url: url, progressBarOptions: progressBarOptions)
                 .navigationBarTitle(Text(title), displayMode: .inline)
                 .edgesIgnoringSafeArea([.leading, .bottom, .trailing]) /// Allow the web view to go under the home indicator, on devices similar to the iPhone X.
         ) {
             Text(title)
-            .foregroundColor(Color(titleColor))
+                .foregroundColor(Color(titleColor))
         }
     }
 }

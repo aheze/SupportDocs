@@ -8,12 +8,10 @@
 import SwiftUI
 
 public extension SupportOptions {
-    
     /**
      Enum wrapper for `ListStyle`.
      */
     enum CustomListStyle {
-        
         /**
          Translates into [DefaultListStyle](https://developer.apple.com/documentation/swiftui/defaultliststyle).
          */
@@ -49,7 +47,6 @@ public extension SupportOptions {
           Translates into [SidebarListStyle](https://developer.apple.com/documentation/swiftui/sidebarliststyle).
          */
         case sidebarListStyle
-        
     }
 }
 
@@ -62,30 +59,35 @@ internal extension List {
     @ViewBuilder
     func listStyle(for customListStyle: SupportOptions.CustomListStyle) -> some View {
         switch customListStyle {
-        case .defaultListStyle:
-            listStyle(DefaultListStyle())
-        case .plainListStyle:
-            listStyle(PlainListStyle())
-        case .groupedListStyle:
-            listStyle(GroupedListStyle())
-        case .insetGroupedListStyle:
-            if #available(iOS 14.0, *) {
-                listStyle(InsetGroupedListStyle())
-            } else {
+            case .defaultListStyle:
                 listStyle(DefaultListStyle())
-            }
-        case .insetListStyle:
-            if #available(iOS 14.0, *) {
-                listStyle(InsetListStyle())
-            } else {
-                listStyle(DefaultListStyle())
-            }
-        case .sidebarListStyle:
-            if #available(iOS 14.0, *) {
-                listStyle(SidebarListStyle())
-            } else {
-                listStyle(DefaultListStyle())
-            }
+                
+            case .plainListStyle:
+                listStyle(PlainListStyle())
+                
+            case .groupedListStyle:
+                listStyle(GroupedListStyle())
+                
+            case .insetGroupedListStyle:
+                if #available(iOS 14.0, *) {
+                    listStyle(InsetGroupedListStyle())
+                } else {
+                    listStyle(DefaultListStyle())
+                }
+                
+            case .insetListStyle:
+                if #available(iOS 14.0, *) {
+                    listStyle(InsetListStyle())
+                } else {
+                    listStyle(DefaultListStyle())
+                }
+                
+            case .sidebarListStyle:
+                if #available(iOS 14.0, *) {
+                    listStyle(SidebarListStyle())
+                } else {
+                    listStyle(DefaultListStyle())
+                }
         }
     }
 }

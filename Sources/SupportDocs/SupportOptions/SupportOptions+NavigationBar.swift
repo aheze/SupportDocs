@@ -5,16 +5,13 @@
 //  Created by Zheng on 10/24/20.
 //
 
-import UIKit
 import SwiftUI
 
 public extension SupportOptions {
-    
     /**
      Customize the appearance of the Navigation Bar.
      */
     struct NavigationBar {
-        
         /**
          Customize the appearance of the Navigation Bar.
          
@@ -26,10 +23,10 @@ public extension SupportOptions {
          */
         public init(
             title: String = "Support",
-            titleColor: UIColor = UIColor.label,
+            titleColor: Colors = Colors.label,
             dismissButtonView: AnyView? = nil,
-            buttonTintColor: UIColor? = nil,
-            backgroundColor: UIColor? = nil
+            buttonTintColor: Colors? = nil,
+            backgroundColor: Colors? = nil
         ) {
             self.title = title
             self.titleColor = titleColor
@@ -46,7 +43,7 @@ public extension SupportOptions {
         /**
          Color of the title.
          */
-        public var titleColor: UIColor = UIColor.label
+        public var titleColor = Colors.label
         
         /**
          The view to be shown as the dismiss button
@@ -77,23 +74,21 @@ public extension SupportOptions {
          }
          ```
          */
-        public var dismissButtonView: AnyView? = nil
+        public var dismissButtonView: AnyView?
         
         /**
          Color of the Back and Dismiss buttons.
          */
-        public var buttonTintColor: UIColor? = nil
+        public var buttonTintColor: Colors?
         
         /**
          Background color of the Navigation Bar.
          */
-        public var backgroundColor: UIColor? = nil
-        
+        public var backgroundColor: Colors?
     }
 }
 
-extension SupportOptions.NavigationBar {
-    
+public extension SupportOptions.NavigationBar {
     /**
      Customize the appearance of the Navigation Bar.
      
@@ -105,12 +100,12 @@ extension SupportOptions.NavigationBar {
      
      This is an overload of the main initializer, `init(title:titleColor:dismissButtonView:buttonTintColor:backgroundColor:)`, allowing you to initialize a navigation bar's dismiss button with a plain `String` instead of `AnyView`. This makes it easier since most time you just want a `String` for the dismiss button, not some custom `Image` or something else.
      */
-    public init(
+    init(
         title: String = "Support",
-        titleColor: UIColor = UIColor.label,
+        titleColor: Colors = Colors.label,
         dismissButtonTitle: String = "",
-        buttonTintColor: UIColor? = nil,
-        backgroundColor: UIColor? = nil
+        buttonTintColor: Colors? = nil,
+        backgroundColor: Colors? = nil
     ) {
         self.title = title
         self.titleColor = titleColor

@@ -1,6 +1,6 @@
 //
 //  JSONSupportDocument.swift
-//  SupportDocsSwiftUI
+//  SupportDocs
 //
 //  Created by Zheng on 10/17/20.
 //

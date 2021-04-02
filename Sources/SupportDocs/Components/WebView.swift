@@ -1,6 +1,6 @@
 //
 //  WebView.swift
-//  SupportDocsSwiftUI
+//  SupportDocs
 //
 //  Created by Zheng on 10/16/20.
 //

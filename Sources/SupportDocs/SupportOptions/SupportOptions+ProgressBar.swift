@@ -8,12 +8,10 @@
 import SwiftUI
 
 public extension SupportOptions {
-    
     /**
      Options for the progress bar color.
      */
     struct ProgressBar {
-        
         /**
          Options for the progress bar color.
          
@@ -21,8 +19,8 @@ public extension SupportOptions {
          - parameter backgroundColor: Color of the progress bar's background.
          */
         public init(
-            foregroundColor: UIColor = UIColor.systemBlue,
-            backgroundColor: UIColor = UIColor.secondarySystemBackground
+            foregroundColor: Colors = Colors.systemBlue,
+            backgroundColor: Colors = Colors.secondarySystemBackground
         ) {
             self.foregroundColor = foregroundColor
             self.backgroundColor = backgroundColor
@@ -31,12 +29,11 @@ public extension SupportOptions {
         /**
          Color of the moving part of the progress bar.
          */
-        public var foregroundColor: UIColor = UIColor.systemBlue
+        public var foregroundColor = Colors.systemBlue
         
         /**
          Color of the progress bar's background.
          */
-        public var backgroundColor: UIColor = UIColor.secondarySystemBackground
+        public var backgroundColor = Colors.secondarySystemBackground
     }
 }
-

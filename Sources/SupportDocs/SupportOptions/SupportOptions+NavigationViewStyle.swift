@@ -8,12 +8,10 @@
 import SwiftUI
 
 public extension SupportOptions {
-    
     /**
      Enum wrapper for `NavigationViewStyle`.
      */
     enum CustomNavigationViewStyle {
-        
         /**
          Translates into [DefaultNavigationViewStyle](https://developer.apple.com/documentation/swiftui/defaultnavigationviewstyle).
          */
@@ -28,7 +26,6 @@ public extension SupportOptions {
          Translates into [StackNavigationViewStyle](https://developer.apple.com/documentation/swiftui/stacknavigationviewstyle).
          */
         case stackNavigationViewStyle
-        
     }
 }
 
@@ -42,19 +39,16 @@ public extension SupportOptions {
 internal extension NavigationView {
     @ViewBuilder
     func navigationViewStyle(for customNavigationViewStyle: SupportOptions.CustomNavigationViewStyle, customListStyle: SupportOptions.CustomListStyle) -> some View {
-        
         if
             #available(iOS 14, *),
             customNavigationViewStyle != .stackNavigationViewStyle,
-            (customListStyle == .defaultListStyle || customListStyle == .sidebarListStyle)
+            customListStyle == .defaultListStyle || customListStyle == .sidebarListStyle
         {
-            
             self.modifier(SidebarNavigationStyle()) /// If iOS 14 and using a `SidebarListStyle` for the list style (or `DefaultListStyle`, which is the same thing), apply the workaround.
         } else {
-            
             /**
-            If not, then no workaround is needed.
-             */
+             If not, then no workaround is needed.
+               */
             switch customNavigationViewStyle {
             case .defaultNavigationViewStyle:
                 navigationViewStyle(DefaultNavigationViewStyle())

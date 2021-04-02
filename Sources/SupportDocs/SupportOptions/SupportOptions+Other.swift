@@ -8,12 +8,10 @@
 import SwiftUI
 
 public extension SupportOptions {
-    
     /**
      Set the loading spinner size, welcome view, footer to be displayed at the bottom of the `List`, and error 404 page.
      */
     struct Other {
-        
         /**
          Set the loading spinner size, welcome view, and an optional footer to be displayed at the bottom of the `List`.
          
@@ -42,16 +40,16 @@ public extension SupportOptions {
         /**
          A custom `View` that will be presented at first, if you're in landscape mode with `doubleColumnNavigationViewStyle`  -- when you don't have any row selected in the list yet.
          */
-        public var welcomeView: AnyView? = nil
+        public var welcomeView: AnyView?
         
         /**
          A custom `View` that you can add to the bottom of the list.
          */
-        public var footer: AnyView? = nil
+        public var footer: AnyView?
         
         /**
          Web page to display in case something goes wrong.
          */
-        public var error404: URL = URL(string: "https://aheze.github.io/SupportDocs/404")!
+        public var error404 = URL(string: "https://aheze.github.io/SupportDocs/404")!
     }
 }

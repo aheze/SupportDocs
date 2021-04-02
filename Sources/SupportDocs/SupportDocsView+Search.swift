@@ -1,6 +1,6 @@
 //
 //  SupportDocsView+Search.swift
-//  SupportDocsSwiftUI
+//  SupportDocs
 //
 //  Created by Zheng on 11/28/20.
 //

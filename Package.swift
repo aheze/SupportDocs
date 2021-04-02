@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SupportDocs",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v13), .macOS(.v10_14)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -27,5 +27,4 @@ let package = Package(
         .testTarget(
             name: "SupportDocsTests",
             dependencies: ["SupportDocs"])
-    ]
-)
+    ])

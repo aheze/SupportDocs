@@ -1,21 +1,19 @@
 //
 //  SupportOptions+SearchBar.swift
-//  SupportDocsSwiftUI
+//  SupportDocs
 //
 //  Created by Zheng on 11/28/20.
 //
 
-import UIKit
-import SwiftUI
 import Combine
+import SwiftUI
+import UIKit
 
 public extension SupportOptions {
-    
     /**
      Customize the appearance of the Search Bar.
      */
     struct SearchBar {
-        
         /**
          Customize the appearance of the Search Bar.
          
@@ -28,10 +26,10 @@ public extension SupportOptions {
          */
         public init(
             placeholder: String = "Search",
-            placeholderColor: UIColor = UIColor.secondaryLabel.withAlphaComponent(0.75),
-            textColor: UIColor = UIColor.label,
-            tintColor: UIColor = UIColor.blue,
-            backgroundColor: UIColor =  UIColor.white.withAlphaComponent(0.3),
+            placeholderColor: Colors = Colors.secondaryLabel.withAlphaComponent(0.75),
+            textColor: Colors = Colors.label,
+            tintColor: Colors = Colors.blue,
+            backgroundColor: Colors = Colors.white.withAlphaComponent(0.3),
             clearButtonMode: UITextField.ViewMode = .whileEditing
         ) {
             self.placeholder = placeholder
@@ -42,7 +40,6 @@ public extension SupportOptions {
             self.clearButtonMode = clearButtonMode
         }
         
-        
         /**
          The placeholder shown in the search bar before the user has entered text.
          */
@@ -51,22 +48,22 @@ public extension SupportOptions {
         /**
          Color of the placeholder and search icon.
          */
-        public var placeholderColor: UIColor = UIColor.secondaryLabel.withAlphaComponent(0.75)
+        public var placeholderColor = Colors.secondaryLabel.withAlphaComponent(0.75)
         
         /**
          Color of the search text.
          */
-        public var textColor: UIColor = UIColor.label
+        public var textColor = Colors.label
         
         /**
          Color of the cursor and "Cancel" button.
          */
-        public var tintColor: UIColor = UIColor.blue
+        public var tintColor = Colors.blue
         
         /**
          Background color of the search text field.
          */
-        public var backgroundColor: UIColor = UIColor.white.withAlphaComponent(0.3)
+        public var backgroundColor = Colors.white.withAlphaComponent(0.3)
         
         /**
          A mode that controls when the standard Clear button appears in the text field.
@@ -83,7 +80,6 @@ public extension SupportOptions {
  MIT License
  */
 class SearchBarConfigurator: NSObject, ObservableObject {
-    
     let objectWillChange = PassthroughSubject<Void, Never>()
     
     /// The text inside the search bar.
@@ -94,7 +90,7 @@ class SearchBarConfigurator: NSObject, ObservableObject {
     }
     
     /// Instance of the search controller.
-    let searchController: UISearchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
     
     override init() {
         super.init()
@@ -112,7 +108,6 @@ class SearchBarConfigurator: NSObject, ObservableObject {
  */
 extension SearchBarConfigurator: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        
         /// Publish search bar text changes.
         if let searchBarText = searchController.searchBar.text {
             self.searchText = searchBarText
