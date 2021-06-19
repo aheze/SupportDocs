@@ -18,18 +18,16 @@ WRITE_README_FILE_PATH = "README.md"
 
 DEVELOPER_MODE = os.environ.get("DEVELOPER_MODE", False)
 if not DEVELOPER_MODE:
-    GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
     FULL_GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
-    GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
+    GITHUB_USERNAME, GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")
     GITHUB_BRANCH = (
         os.environ.get("GITHUB_REF").split("/")[-1]
         if os.environ.get("GITHUB_REF")
         else GITHUB_REPOSITORY
     )
 else:
-    GITHUB_USERNAME = "demo"
     FULL_GITHUB_REPOSITORY = "demo/SupportDocs"
-    GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")[1]
+    GITHUB_USERNAME, GITHUB_REPOSITORY = FULL_GITHUB_REPOSITORY.split("/")
     GITHUB_BRANCH = "DataSource"
 
 
