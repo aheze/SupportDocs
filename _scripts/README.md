@@ -4,7 +4,7 @@ This branch is where SupportDocs gets its data! You can add, edit, and delete do
 ## Data Source JSON URL
 <a href="{{ datasource_url }}">{{ datasource_url }}</a>
 
-<details>
+<details markdown="1">
 <summary><strong>Show examples</strong></summary>
 
 <hr>
