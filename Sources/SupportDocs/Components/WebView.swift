@@ -12,9 +12,8 @@ import WebKit
  The web view, with a progress bar at the top.
  
  This is presented when a cell is tapped (in the main page).
-*/
+ */
 internal struct WebViewContainer: View {
-    
     /// URL to load.
     var url: URL
     
@@ -22,24 +21,22 @@ internal struct WebViewContainer: View {
     var progressBarOptions: SupportOptions.ProgressBar
     
     /**
-     Callback from the `WKNavigationDelegate`.
-     - `pageTitle` - the name of the page (supplied in the `Title` property at the top of your GitHub Pages).
-     - `progress` - get how much the page is loaded.
-     - `estimatedProgressObserver` - the observer that keeps track of the page load progress.
-     - `nextUrl` - the url of the next page. Used when a link is pressed.
-     - `presentNextPage` - determines whether a new page should be presented (when a link is pressed).
-    */
-    @ObservedObject var webViewStateModel: WebViewStateModel = WebViewStateModel()
+      Callback from the `WKNavigationDelegate`.
+      - `pageTitle` - the name of the page (supplied in the `Title` property at the top of your GitHub Pages).
+      - `progress` - get how much the page is loaded.
+      - `estimatedProgressObserver` - the observer that keeps track of the page load progress.
+      - `nextUrl` - the url of the next page. Used when a link is pressed.
+      - `presentNextPage` - determines whether a new page should be presented (when a link is pressed).
+     */
+    @ObservedObject var webViewStateModel: WebViewStateModel = .init()
     
     var body: some View {
         ZStack(alignment: .center) {
-            
             /// First, the Web View at the bottom of everything.
             WebView(url: url, webViewStateModel: self.webViewStateModel)
             
             /// Then, the progress bar at the top of the screen.
             VStack {
-                
                 /// Reads the value inside `$webViewStateModel.progress`.
                 /// This is set inside the `NSKeyValueObservation` as the page loads.
                 ProgressBar(value: $webViewStateModel.progress, progressBarOptions: progressBarOptions)
@@ -53,14 +50,12 @@ internal struct WebViewContainer: View {
              The new page is pushed when `$webViewStateModel.presentNextPage` is true.
              */
             NavigationLink(destination: WebViewContainer(url: webViewStateModel.nextUrl ?? URL(string: "https://aheze.github.io/SupportDocs/404")!, progressBarOptions: progressBarOptions), isActive: $webViewStateModel.presentNextPage) {
-                
                 /// No need for a button (it's presented automatically based on `$webViewStateModel.presentNextPage`)
                 EmptyView()
             }
         }
     }
 }
-
 
 /**
  Callback from the `WKNavigationDelegate`.
@@ -87,11 +82,11 @@ internal class WebViewStateModel: ObservableObject {
  Made possible with `UIViewRepresentable` and `WebViewStateModel: ObservableObject` for delegate callback.
  */
 internal struct WebView: View {
-     enum NavigationAction {
-           case decidePolicy(WKNavigationAction,  (WKNavigationActionPolicy) -> Void)
-           case didStartProvisionalNavigation(WKNavigation)
-           case didFinish(WKNavigation)
-       }
+    enum NavigationAction {
+        case decidePolicy(WKNavigationAction, (WKNavigationActionPolicy) -> Void)
+        case didStartProvisionalNavigation(WKNavigation)
+        case didFinish(WKNavigation)
+    }
        
     /// Callback for the SwiftUI view.
     @ObservedObject var webViewStateModel: WebViewStateModel
@@ -100,7 +95,6 @@ internal struct WebView: View {
     let uRLRequest: URLRequest
     
     var body: some View {
-        
         /// Return the `UIViewRepresentable`.
         WebViewWrapper(webViewStateModel: webViewStateModel,
                        request: uRLRequest)
@@ -115,8 +109,7 @@ internal struct WebView: View {
 /**
  WKWebView ported over to SwiftUI with `UIViewRepresentable`.
  */
-internal final class WebViewWrapper: UIViewRepresentable {
-    
+internal struct WebViewWrapper: UIViewRepresentable {
     /// Port the `WKNavigationDelegate` delegate over to SwiftUI.
     @ObservedObject var webViewStateModel: WebViewStateModel
     
@@ -128,7 +121,7 @@ internal final class WebViewWrapper: UIViewRepresentable {
     }
     
     /// `UIViewRepresentable` required function #1.
-    func makeUIView(context: Context) -> WKWebView  {
+    func makeUIView(context: Context) -> WKWebView {
         let view = WKWebView()
         view.isOpaque = false
         view.navigationDelegate = context.coordinator
@@ -140,8 +133,7 @@ internal final class WebViewWrapper: UIViewRepresentable {
     }
       
     /// `UIViewRepresentable` required function #2, but no need for this in our case.
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-    }
+    func updateUIView(_ uiView: WKWebView, context: Context) {}
     
     /// `UIViewRepresentable` function for making the delegate.
     func makeCoordinator() -> Coordinator {
@@ -156,6 +148,7 @@ internal final class WebViewWrapper: UIViewRepresentable {
                 setupEstimatedProgressObserver()
             }
         }
+
         init(webViewStateModel: WebViewStateModel) {
             self.webViewStateModel = webViewStateModel
         }
@@ -167,23 +160,19 @@ internal final class WebViewWrapper: UIViewRepresentable {
  */
 extension WebViewWrapper.Coordinator: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
         /**
          If the user presses a link, open it in a new page (push a new page onto the `NavigationView`.
          */
         if navigationAction.navigationType == WKNavigationType.linkActivated {
             decisionHandler(WKNavigationActionPolicy.cancel)
             if let url = navigationAction.request.url {
-                
                 /// Set the URL to present.
                 webViewStateModel.nextUrl = url
                 
                 /// Set `webViewStateModel.presentNextPage` to true so the `NavigationView` pushes the new page.
                 webViewStateModel.presentNextPage = true
-                
             }
         } else {
-            
             /// Not likely to happen, but allow anyway.
             decisionHandler(.allow)
         }
@@ -191,7 +180,7 @@ extension WebViewWrapper.Coordinator: WKNavigationDelegate {
     
     /// The page started loading, so set the progress bar's progress a bit.
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        self.webViewStateModel.progress = Float(0.15)
+        webViewStateModel.progress = Float(0.15)
     }
     
     /// The page finished loading, and the `title` is available.

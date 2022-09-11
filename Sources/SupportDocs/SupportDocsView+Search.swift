@@ -11,17 +11,16 @@ import SwiftUI
  View Modifier for applying the search bar.
  */
 internal struct SearchBarModifier: ViewModifier {
-    
     var searchBarConfigurator: SearchBarConfigurator
     
     func body(content: Content) -> some View {
         content
-        .overlay(
-            ViewControllerResolver { viewController in
-                viewController.navigationItem.searchController = self.searchBarConfigurator.searchController
-            }
-            .frame(width: 0, height: 0)
-        )
+            .overlay(
+                ViewControllerResolver { viewController in
+                    viewController.navigationItem.searchController = self.searchBarConfigurator.searchController
+                }
+                .frame(width: 0, height: 0)
+            )
     }
 }
 
@@ -30,15 +29,14 @@ internal struct SearchBarModifier: ViewModifier {
  */
 extension View {
     func add(_ searchBarConfigurator: SearchBarConfigurator) -> some View {
-        return self.modifier(SearchBarModifier(searchBarConfigurator: searchBarConfigurator))
+        return modifier(SearchBarModifier(searchBarConfigurator: searchBarConfigurator))
     }
 }
 
 /**
  Access the parent view controller of the SwiftUI View.
  */
-internal final class ViewControllerResolver: UIViewControllerRepresentable {
-    
+internal struct ViewControllerResolver: UIViewControllerRepresentable {
     /// Closure to call when `didMove`
     let onResolve: (UIViewController) -> Void
         
@@ -50,11 +48,10 @@ internal final class ViewControllerResolver: UIViewControllerRepresentable {
         ParentResolverViewController(onResolve: onResolve)
     }
     
-    func updateUIViewController(_ uiViewController: ParentResolverViewController, context: Context) { }
+    func updateUIViewController(_ uiViewController: ParentResolverViewController, context: Context) {}
 }
 
 internal class ParentResolverViewController: UIViewController {
-    
     let onResolve: (UIViewController) -> Void
     
     init(onResolve: @escaping (UIViewController) -> Void) {
@@ -62,6 +59,7 @@ internal class ParentResolverViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("Use init(onResolve:) to instantiate ParentResolverViewController.")
     }
