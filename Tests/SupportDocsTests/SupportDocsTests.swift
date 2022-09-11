@@ -1,5 +1,5 @@
-import XCTest
 @testable import SupportDocs
+import XCTest
 
 final class SupportDocsTests: XCTestCase {
     func testExample() {

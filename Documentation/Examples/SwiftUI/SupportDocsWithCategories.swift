@@ -5,8 +5,8 @@
 //  Created by H. Kamran on 11/11/20.
 //
 
-import SwiftUI
 import SupportDocs
+import SwiftUI
 
 struct SupportDocsWithCategories: View {
     let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
@@ -21,15 +21,15 @@ struct SupportDocsWithCategories: View {
                 tags: ["fastFood"],
                 displayName: "These aren't really healthy",
                 displayColor: UIColor.red
-            )
+            ),
         ]
     )
 
     @State var supportDocsPresented: Bool = false
     var body: some View {
         Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
-        .sheet(isPresented: $supportDocsPresented, content: {
-            SupportDocsView(dataSource: dataSource, options: options)
-        })
+            .sheet(isPresented: $supportDocsPresented, content: {
+                SupportDocsView(dataSource: dataSource, options: options)
+            })
     }
 }

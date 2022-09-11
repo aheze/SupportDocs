@@ -8,10 +8,9 @@
 import UIKit
 
 public extension SupportOptions {
-    
     /**
      A group of `Documents` to be displayed as a section inside the `List`.
-     
+
      Before you create a `Category`, you must be using the `tag` property inside the MarkDown file on GitHub. Assign an array of `Strings` like this:
      ```
      title: "How to add a friend"
@@ -28,10 +27,9 @@ public extension SupportOptions {
      You are allowed to have more than one `tag` for each Markdown file, and each `category` can include more than one tag.
      */
     struct Category {
-        
         /**
          A group of `Documents` to be displayed as a section inside the `List`
-         
+
          - parameter tags: Determines which `tag`s this category should include.
          - parameter displayName: What to display in the header of the section, in the `List`.
          - parameter displayColor: The color of the row in the `List`.
@@ -45,10 +43,10 @@ public extension SupportOptions {
             self.displayName = displayName
             self.displayColor = displayColor
         }
-        
+
         /**
          Determines which `tag`s this category should include.
-         
+
          You may include multiple `tag`s, like so:
          ```
          let options: SupportOptions = SupportOptions(
@@ -60,29 +58,27 @@ public extension SupportOptions {
          Each `category` gets its own section in the `List`.
          */
         public var tags: [String]
-        
+
         /**
          What to display in the header of the section, in the `List`.
          */
         public var displayName: String
-        
+
         /**
          The color of the row in the `List`.
          */
-        public var displayColor: UIColor = UIColor.label
-        
+        public var displayColor: UIColor = .label
     }
 }
 
 public extension SupportOptions.Category {
-    
     /**
      A group of `Documents` to be displayed as a section inside the `List`
-     
+
      - parameter tag: Determines which `tag` this category's documents should have.
      - parameter displayName: What to display in the header of the section, in the `List`.
      - parameter displayColor: The color of the row in the `List`.
-     
+
      This is an overload of the main initializer, `init(tags:displayName:displayColor:)`, allowing you to initialize a category with only 1 tag.
      */
     init(
@@ -90,7 +86,7 @@ public extension SupportOptions.Category {
         displayName: String,
         displayColor: UIColor = UIColor.label
     ) {
-        self.tags = [tag]
+        tags = [tag]
         self.displayName = displayName
         self.displayColor = displayColor
     }

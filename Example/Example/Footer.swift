@@ -10,7 +10,7 @@ import SwiftUI
 struct Footer: View {
     var body: some View {
         Button(action: {
-            let urlToOpen = URL.init(string: "https://www.apple.com")!
+            let urlToOpen = URL(string: "https://www.apple.com")!
             if UIApplication.shared.canOpenURL(urlToOpen) {
                 UIApplication.shared.open(urlToOpen)
             }
@@ -18,11 +18,11 @@ struct Footer: View {
             (
                 Text("Didn't find what you were looking for? Contact us at our ")
                     +
-                Text("website")
-                .underline()
-                .foregroundColor(Color.blue)
+                    Text("website")
+                    .underline()
+                    .foregroundColor(Color.blue)
                     +
-                Text("!")
+                    Text("!")
             )
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(Font.system(size: 16, weight: .regular))

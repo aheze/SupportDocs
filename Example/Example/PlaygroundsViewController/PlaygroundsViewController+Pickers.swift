@@ -5,15 +5,15 @@
 //  Created by Zheng on 10/31/20.
 //
 
-import SwiftUI
 import SupportDocs
+import SwiftUI
 
 extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in _: UIPickerView) -> Int {
         return 1
     }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent _: Int) -> Int {
         switch pickerView {
         case listStylePicker:
             return listStyleOptions.count
@@ -25,8 +25,8 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
             return 0
         }
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent _: Int) -> String? {
         switch pickerView {
         case listStylePicker:
             return listStyleOptions[row].getString()
@@ -38,13 +38,13 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
             return nil
         }
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent _: Int) {
         switch pickerView {
         case listStylePicker:
             let selectedStyle = listStyleOptions[row]
             options.listStyle = selectedStyle
-            
+
             DispatchQueue.main.async {
                 self.listStyleButton.setTitle(selectedStyle.getString(), for: .normal)
             }
@@ -64,7 +64,7 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
             return
         }
     }
-    
+
     @objc func dismissPicker() {
         view.endEditing(true)
     }

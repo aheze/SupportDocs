@@ -5,19 +5,19 @@
 //  Created by Zheng on 10/31/20.
 //
 
-import UIKit
-import SwiftUI
 import SupportDocs
+import SwiftUI
+import UIKit
 
 extension PlaygroundsViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+    func textFieldShouldReturn(_: UITextField) -> Bool {
+        view.endEditing(true)
         return false
     }
-    
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) else { return true }
-        
+
         switch textField {
         case dataSourceTextField:
             if updatedString.isEmpty {
@@ -45,13 +45,12 @@ extension PlaygroundsViewController: UITextFieldDelegate {
             if updatedString.isEmpty {
                 options.navigationBar.dismissButtonView = AnyView(Text("Done"))
             } else {
-                options.navigationBar.dismissButtonView = AnyView(Text(updatedString)) 
+                options.navigationBar.dismissButtonView = AnyView(Text(updatedString))
             }
         default:
             print("unknown textfield")
         }
-        
+
         return true
     }
 }
-

@@ -5,14 +5,14 @@
 //  Created by H. Kamran on 11/11/20.
 //
 
-import SwiftUI
 import SupportDocs
+import SwiftUI
 
 struct SupportOptionsExample: View {
     let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
     let options = SupportOptions(
         categories: [
-            .init(tags: ["boba"], displayName: "Boba is awesome!")
+            .init(tags: ["boba"], displayName: "Boba is awesome!"),
         ],
         navigationBar: .init(
             title: "Support",

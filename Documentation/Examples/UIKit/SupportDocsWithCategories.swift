@@ -5,9 +5,9 @@
 //  Created by H. Kamran on 11/11/20.
 //
 
-import UIKit
-import SwiftUI
 import SupportDocs
+import SwiftUI
+import UIKit
 
 class SupportDocsWithCategories: UIViewController {
     /**
@@ -15,7 +15,7 @@ class SupportDocsWithCategories: UIViewController {
 
      This is just for demo purposes, so it's not connected yet.
      */
-    @IBAction func presentButtonPressed(_ sender: Any) {
+    @IBAction func presentButtonPressed(_: Any) {
         let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
 
         var options = SupportOptions()
@@ -33,6 +33,6 @@ class SupportDocsWithCategories: UIViewController {
         options.categories = [bobaCategory, fastFoodCategory]
 
         let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
-        self.present(supportDocsViewController, animated: true, completion: nil)
+        present(supportDocsViewController, animated: true, completion: nil)
     }
 }

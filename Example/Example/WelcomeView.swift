@@ -13,7 +13,5 @@ struct WelcomeView: View {
             .font(.system(size: 18, weight: .medium))
             .foregroundColor(Color(.secondaryLabel))
             .fixedSize()
-            
     }
 }
-

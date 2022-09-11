@@ -12,7 +12,7 @@ import SwiftUI
  */
 internal struct SearchBarModifier: ViewModifier {
     var searchBarConfigurator: SearchBarConfigurator
-    
+
     func body(content: Content) -> some View {
         content
             .overlay(
@@ -39,34 +39,34 @@ extension View {
 internal struct ViewControllerResolver: UIViewControllerRepresentable {
     /// Closure to call when `didMove`
     let onResolve: (UIViewController) -> Void
-        
+
     init(onResolve: @escaping (UIViewController) -> Void) {
         self.onResolve = onResolve
     }
-    
-    func makeUIViewController(context: Context) -> ParentResolverViewController {
+
+    func makeUIViewController(context _: Context) -> ParentResolverViewController {
         ParentResolverViewController(onResolve: onResolve)
     }
-    
-    func updateUIViewController(_ uiViewController: ParentResolverViewController, context: Context) {}
+
+    func updateUIViewController(_: ParentResolverViewController, context _: Context) {}
 }
 
 internal class ParentResolverViewController: UIViewController {
     let onResolve: (UIViewController) -> Void
-    
+
     init(onResolve: @escaping (UIViewController) -> Void) {
         self.onResolve = onResolve
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("Use init(onResolve:) to instantiate ParentResolverViewController.")
     }
-        
+
     override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
-        
+
         if let parent = parent {
             onResolve(parent)
         }

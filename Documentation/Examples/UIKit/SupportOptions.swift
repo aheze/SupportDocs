@@ -5,16 +5,17 @@
 //  Created by H. Kamran on 11/11/20.
 //
 
-import UIKit
-import SwiftUI
 import SupportDocs
+import SwiftUI
+import UIKit
 
 class SupportOptionsExample: UIViewController {
-    @IBOutlet weak var presentButton: UIButton!
-    @IBAction func presentButtonPressed(_ sender: Any) {
+    @IBOutlet var presentButton: UIButton!
+    @IBAction func presentButtonPressed(_: Any) {
         let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
 
         // MARK: - UIKit way to make `SupportOptions`
+
         var options = SupportOptions()
         options.categories = [SupportOptions.Category(tags: ["boba"], displayName: "Boba is awesome!")]
         options.navigationBar.title = "Support"
@@ -31,6 +32,6 @@ class SupportOptionsExample: UIViewController {
         options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")!
 
         let supportDocsViewController = SupportDocsViewController(dataSource: dataSource, options: options)
-        self.present(supportDocsViewController, animated: true, completion: nil)
+        present(supportDocsViewController, animated: true, completion: nil)
     }
 }

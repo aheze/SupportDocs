@@ -5,16 +5,15 @@
 //  Created by Zheng on 11/6/20.
 //
 
-import SwiftUI
 import SupportDocs
+import SwiftUI
 
 struct SwiftUIExampleView: View {
-    
     let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
-    
+
     let options = SupportOptions(
         categories: [
-            .init(tag: "boba", displayName: "Boba is awesome!")
+            .init(tag: "boba", displayName: "Boba is awesome!"),
         ],
         navigationBar: .init(
             title: "Support",
@@ -36,9 +35,9 @@ struct SwiftUIExampleView: View {
             error404: URL(string: "https://aheze.github.io/SupportDocs/404")!
         )
     )
-    
+
     @State var supportDocsPresented = false
-    
+
     var body: some View {
         VStack {
             Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
@@ -57,18 +56,18 @@ struct SwiftUIExampleView: View {
 struct SwiftUIExampleViewMinimalCode: View {
     let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
     @State var supportDocsPresented = false
-    
+
     var body: some View {
         Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
-        .sheet(isPresented: $supportDocsPresented, content: {
-            SupportDocsView(dataSourceURL: dataSource, isPresented: $supportDocsPresented)
-        })
+            .sheet(isPresented: $supportDocsPresented, content: {
+                SupportDocsView(dataSourceURL: dataSource, isPresented: $supportDocsPresented)
+            })
     }
 }
 
 struct SwiftUIExampleViewWithCategories: View {
     let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
-    
+
     let options = SupportOptions(
         categories: [
             .init(
@@ -80,17 +79,16 @@ struct SwiftUIExampleViewWithCategories: View {
                 tag: "fastFood",
                 displayName: "These aren't really healthy",
                 displayColor: UIColor.red
-            )
+            ),
         ]
     )
-    
+
     @State var supportDocsPresented = false
-    
+
     var body: some View {
         Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
-        .sheet(isPresented: $supportDocsPresented, content: {
-            SupportDocsView(dataSourceURL: dataSource, options: options)
-        })
+            .sheet(isPresented: $supportDocsPresented, content: {
+                SupportDocsView(dataSourceURL: dataSource, options: options)
+            })
     }
 }
-

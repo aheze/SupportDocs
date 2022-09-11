@@ -9,14 +9,13 @@ import SwiftUI
 import UIKit
 
 internal extension SupportDocsView {
-    
     /**
      Load the JSON.
      */
     func loadData() {
         let request = URLRequest(url: dataSourceURL)
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            
+        URLSession.shared.dataTask(with: request) { data, _, _ in
+
             guard
                 let data = data,
                 let supportDocuments = try? JSONDecoder().decode([JSONSupportDocument].self, from: data)
@@ -29,34 +28,31 @@ internal extension SupportDocsView {
                 }
                 return
             }
-            
+
             DispatchQueue.main.async {
                 self.documents = supportDocuments
-                
+
                 /**
                  This will be what the List gets it data from.
                  */
                 var sections = [SupportSection]()
-                
+
                 /**
                  If you configured categories, they will be sorted here.
                  */
                 if let categories = options.categories {
                     for category in categories {
-                        
                         /**
                          For each `category`, see which documents contain the same `tags`.
                          */
                         var containingSupportItems = [SupportItem]()
-                        
+
                         for tag in category.tags { /// Loop through each of your categories.
                             for document in documents { /// Loop through every document in the JSON.
-                                
                                 /**
                                  If the document's `tags` contains this `tag` in the category, append it to the `containingSupportItems`.
                                  */
                                 if document.tags.contains(tag) {
-                                    
                                     /**
                                      Prevent duplicate documents in each section -- only append it if its `URL` is unique.
                                      */
@@ -67,7 +63,7 @@ internal extension SupportDocsView {
                                 }
                             }
                         }
-                        
+
                         /**
                          After going through all the documents and seeing which ones belong to this `category` (by comparing their `tags`), convert it into a `SupportSection`.
                          */
@@ -79,7 +75,6 @@ internal extension SupportDocsView {
                         sections.append(section)
                     }
                 } else { /// If you did not configure categories.
-                    
                     /**
                      Just append every document to one section.
                      */
@@ -93,15 +88,15 @@ internal extension SupportDocsView {
                             name: "", /// This doesn't matter because there's only one section, no need to add a header.
                             color: UIColor.label, /// Also doesn't matter.
                             supportItems: containingSupportItems
-                        )
+                        ),
                     ]
                 }
-                
+
                 /**
                  Populate `self.sections` (what the List gets it data from) with `sections`.
                  */
                 self.sections = sections
-                
+
                 /**
                  Hide the loading spinner and show the List.
                  */

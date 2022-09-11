@@ -12,7 +12,7 @@ import UIKit
 class InputViewButton: UIButton {
     var viewForInput = UIView()
     var toolBarView = UIView()
-    
+
     override var inputView: UIView {
         get {
             return self.viewForInput
@@ -22,7 +22,7 @@ class InputViewButton: UIButton {
             self.viewForInput = newValue
         }
     }
-    
+
     override var inputAccessoryView: UIView {
         get {
             return self.toolBarView
