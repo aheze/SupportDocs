@@ -15,6 +15,8 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent _: Int) -> Int {
         switch pickerView {
+        case clearButtonModePicker:
+            return clearButtonModeOptions.count
         case listStylePicker:
             return listStyleOptions.count
         case navigationViewStylePicker:
@@ -28,6 +30,8 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent _: Int) -> String? {
         switch pickerView {
+        case clearButtonModePicker:
+            return clearButtonModeOptions[row].getString()
         case listStylePicker:
             return listStyleOptions[row].getString()
         case navigationViewStylePicker:
@@ -41,6 +45,13 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent _: Int) {
         switch pickerView {
+        case clearButtonModePicker:
+            let selectedMode = clearButtonModeOptions[row]
+            options.searchBar?.clearButtonMode = selectedMode
+            
+            DispatchQueue.main.async {
+                self.clearButtonModeButton.setTitle(selectedMode.getString(), for: .normal)
+            }
         case listStylePicker:
             let selectedStyle = listStyleOptions[row]
             options.listStyle = selectedStyle
@@ -66,6 +77,7 @@ extension PlaygroundsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     }
 
     @objc func dismissPicker() {
+        print("dis!")
         view.endEditing(true)
     }
 }

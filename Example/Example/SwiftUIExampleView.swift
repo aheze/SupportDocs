@@ -22,6 +22,14 @@ struct SwiftUIExampleView: View {
             buttonTintColor: UIColor.white,
             backgroundColor: UIColor(red: 6 / 255, green: 151 / 255, blue: 0 / 255, alpha: 1)
         ),
+        searchBar: .init(
+            placeholder: "Type here to search",
+            placeholderColor: UIColor.white.withAlphaComponent(0.75),
+            textColor: UIColor.white,
+            tintColor: UIColor.green,
+            backgroundColor: UIColor.white.withAlphaComponent(0.3),
+            clearButtonMode: .whileEditing
+        ),
         progressBar: .init(
             foregroundColor: UIColor.green,
             backgroundColor: UIColor.systemBackground

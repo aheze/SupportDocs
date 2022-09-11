@@ -27,6 +27,12 @@ extension PlaygroundsViewController: UITextFieldDelegate {
                     dataSource = url
                 }
             }
+        case searchPlaceholderTextField:
+            if updatedString.isEmpty {
+                options.searchBar?.placeholder = "Search"
+            } else {
+                options.searchBar?.placeholder = updatedString
+            }
         case error404TextField:
             if updatedString.isEmpty {
                 options.other.error404 = URL(string: "https://aheze.github.io/SupportDocs/404")!

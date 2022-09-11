@@ -1,11 +1,12 @@
 ![SupportDocs Logo](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/SupportDocsSmall.png)
 
-![SupportDocs Header](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/HeaderImage.png)
+![SupportDocs Header](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/TitleImage.png)
 
 ### Generate help centers for your iOS apps, with Markdown!
 All you need to do is write your documents on GitHub, and install the library in your app. SupportDocs' custom GitHub Action and GitHub Pages will take care of the rest.
 
-# ✅ Update 11/20/20: SupportDocs is now available! Thanks for checking it out! 😄
+# Update - July 30, 2022
+### [Some parts](https://github.com/aheze/SupportDocs/issues/18) of this library are broken in iOS 16. I might raise the minimum deployment target.
 
 ## Table of Contents
 
@@ -33,6 +34,7 @@ All you need to do is write your documents on GitHub, and install the library in
         -   [*Examples ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#examples)
         -   [*Categories ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#categories)
         -   [*Navigation Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#navigation-bar)
+        -   [*Search Bar **(NEW in 1.1.0!)** ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#search-bar)
         -   [*Progress Bar ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#progress-bar)
         -   [*List Style ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#list-style)
         -   [*Navigation View Style ![](Assets/ExternalLink.png)*](Documentation/LibraryCustomization.md#navigation-view-style)
@@ -94,7 +96,7 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 4. Click the <kbd>+</kbd> button
 5. Enter `https://github.com/aheze/SupportDocs` in the text field
 6. Click <kbd>Next</kbd>
-7. Enter the latest version, `1.0.0`, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
+7. Enter the latest version, **`1.1.0`**, in the text field. Leave <kbd>Up to Next Major</kbd> selected.
 8. Click <kbd>Next</kbd>
 9. Click <kbd>Finish</kbd>, and you're done!
 
@@ -107,7 +109,7 @@ The [Swift Package Manager](https://swift.org/package-manager/) is built into Xc
 ## Example Project
 Check out the example project in the [`Example`](https://github.com/aheze/SupportDocs/tree/main/Example) folder! It contains a playground where you can play around with how SupportDocs is displayed.
 
-<kbd>![Example project home page](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectHome.png)</kbd> | <kbd>![Example project options page](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectOptions.png)</kbd>  | <kbd>![Press the "Present" button to display the library](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectLibrary.png)</kbd>
+![Example project home page](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectHome.png) | ![Example project options page](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectOptions.png) | ![Press the "Present" button to display the library](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/ExampleProjectLibrary.png)
 --- | --- | ---
 
 ---
@@ -128,7 +130,7 @@ The library is what's displayed to your users, in your app. All it needs is the 
 </details>
 
 
-## Using the GitHub Repository
+### Using the GitHub Repository
 In you brand new repository that you set up earlier, [switch](https://raw.githubusercontent.com/aheze/SupportDocs/main/Assets/Usage/SwitchToDataSourceBranch.png) to the **`DataSource`** branch. The example documents are inside the `Sample-Boba`, `Sample-FastFood`, and `Sample-Smoothies` folders -- take a look around. Here's a guide:
 
 <details>
@@ -325,7 +327,7 @@ SupportDocs is a project maintained by [A. Zheng](https://aheze.medium.com/) and
 ```
 MIT License
 
-Copyright (c) 2020 A. Zheng and H. Kamran
+Copyright (c) 2021 A. Zheng and H. Kamran
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -349,10 +351,13 @@ SOFTWARE.
 ## Notes
 
 ### Example repo
-You can find an example repository using SupportDocs [here](https://github.com/aheze/MyHelpCenter).
+You can find an example repository generated from SupportDocs [here](https://github.com/aheze/MyHelpCenter).
 
-### Searching
-A search feature is coming soon! I'm just trying to figure out the animations, but it should be done by 12/10 at the latest.
+### Data collection
+SupportDocs does not collect any data. We provide this note to help you fill out your [App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/).
+
+### Testing on Apple Silicon / Big Sur
+On my MacBook Pro M1 running Big Sur 11.0.1, I get a [crash](https://stackoverflow.com/q/65224739/14351818) when loading the web page on iOS 13 simulators. It works fine for iOS 14, and the crash doesn't happen at all when I run on my Intel Mac. I'm pretty sure that this won't be a problem for actual devices, but keep in mind that you might run into some issues during testing. Apple is still polishing up Big Sur.
 
 ### Dark Mode
 SupportDocs supports Dark Mode right out of the box! You don't need to do anything.
