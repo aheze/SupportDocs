@@ -327,7 +327,7 @@ SupportDocs is a project maintained by [A. Zheng](https://aheze.medium.com/) and
 ```
 MIT License
 
-Copyright (c) 2021 A. Zheng and H. Kamran
+Copyright (c) 2022 A. Zheng and H. Kamran
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
