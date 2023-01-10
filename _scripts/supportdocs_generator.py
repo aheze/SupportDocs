@@ -181,7 +181,7 @@ if __name__ == "__main__":
             filename_sorted_data = sorted(
                 data, key=lambda item: item["url"].split("/")[-1]
             )
-            data_json.write(json.dumps(filename_sorted_data, indent=4))
+            data_json.write(json.dumps(filename_sorted_data))
 
         readme_output = codecs.open(WRITE_README_FILE_PATH, "w", "utf-8")
         readme_output.write(rendered_readme)
